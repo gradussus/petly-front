@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/petly-front/static/css/main.7acaea2f.css",
+    "main.js": "/petly-front/static/js/main.74fa39a4.js",
+    "index.html": "/petly-front/index.html",
+    "main.7acaea2f.css.map": "/petly-front/static/css/main.7acaea2f.css.map",
+    "main.74fa39a4.js.map": "/petly-front/static/js/main.74fa39a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.74fa39a4.js"
+  ]
+}
