@@ -10,5 +10,4 @@ font-weight: ${p => p.theme.fontWeights.bold};
 color: ${p => p.theme.colors.primeText};
 background-color: ${p => p.theme.colors.background};
 font-family: ${p => p.theme.fonts.body};
-
 `;
