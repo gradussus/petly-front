@@ -1,3 +1,5 @@
-export default function UserPage() {
+const UserPage = () => {
   return <p>UserPage</p>;
-}
+};
+
+export default UserPage;

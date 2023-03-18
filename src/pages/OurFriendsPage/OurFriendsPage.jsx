@@ -1,3 +1,5 @@
-export default function OurFriendsPage() {
+const OurFriendsPage = () => {
   return <p>OurFriendsPage</p>;
-}
+};
+
+export default OurFriendsPage;
