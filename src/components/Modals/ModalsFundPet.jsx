@@ -86,9 +86,7 @@ export const ModalFundPet = ({ toggleModal }) => {
                     <BtnContact type="button" >Contact</BtnContact>
                     <BtnAdd type="button">Add to <span ><img src={Vector} className="Vector" alt="Vector" /></span></BtnAdd>
                 </ContainerBtn>
-
             </Modal>
-
         </Container>
     )
 }
