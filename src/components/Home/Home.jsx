@@ -1,10 +1,15 @@
 import imgHeart from '../../pages/HomePage/images/desktop/heart.png';
 import titleImg from '../../pages/HomePage/images/mobile/labro.png';
+import bgrImage from '../../pages/HomePage/images/mobile/Vector.png';
 
 
-const Home = ({heart = imgHeart, labro = titleImg}) => {
+const Home = ({
+    heart = imgHeart,
+    labro = titleImg,
+    vector = bgrImage
+}) => {
     return (
-        <div>
+        <div className="home">
         
                 <h1>
                     <span>Take good care of</span>
@@ -13,28 +18,11 @@ const Home = ({heart = imgHeart, labro = titleImg}) => {
                 </h1>
             <img src={heart} alt={heart} />
             <img src={labro} alt={labro} />
-            
+            <img src={vector} alt={vector} />
      
            
         </div>
     );
 };
 
-// ReactDOM.render(<App />, document.querySelector('#root'));
-
 export default Home;
-
-// export const Home = () => {
-//     return (
-//         <div className={scss.home__container}>
-//             <Container>
-//                 <h1 className={scss.home__title}>
-//                     <span>{t('Take good care of')}</span>
-//                     <br />
-//                     <span>{t('your small pets')}</span>
-//                 </h1>
-//                 <img src={heart} alt="heart" className={scss.home__heart} />
-//             </Container>
-//         </div>
-//     );
-// };
