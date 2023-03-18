@@ -3,7 +3,7 @@ import { lazy } from 'react';
 
 import { SharedLayout } from 'components/SharedLayout';
 
-const HomePage = lazy(() => import('pages/HomePage'));
+const HomePage = lazy(() => import('pages/HomePage/'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const NewsPage = lazy(() => import('pages/NewsPage'));
