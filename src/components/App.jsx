@@ -1,19 +1,15 @@
 import { Title } from "./App.Style";
-import { FoundPets } from "./FundPets/FoundPets";
+import { lazy } from 'react';
+
+const LoginPage = lazy(() => import('../pages/Login/Login'));
 
 export const App = () => {
 
 
   
   return (
-    <div>
-      <FoundPets/>
-      <Title>      
-      Petly
-    </Title> 
-    
-    
-    </div>
-   
+     <Title>
+      <LoginPage/>
+    </Title>
   );
 };
