@@ -1,10 +1,19 @@
 import { Title } from "./App.Style";
+import { FoundPets } from "./FundPets/FoundPets";
 
 export const App = () => {
+
+
   
   return (
-    <Title>
+    <div>
+      <FoundPets/>
+      <Title>      
       Petly
-    </Title>
+    </Title> 
+    
+    
+    </div>
+   
   );
 };
