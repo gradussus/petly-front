@@ -16,7 +16,6 @@ export const Modal = styled.div`
 position: relative;  
   padding: 20px;
   width: 80vw;
-  /* height: 95%; */
   background-color: ${p => p.theme.colors.white};
   justify-content: center;
   align-items: center;
@@ -28,9 +27,9 @@ position: relative;
     display: flex;
      display: grid; 
      padding: 32px 32px 20px;    
- gap: 8px 20px;
+ gap: 0px 20px;
    grid-template-columns: 288px 1fr 50px; 
-  grid-template-rows: 76px 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 76px auto auto 1fr 90px; 
   
   }
 `;
@@ -58,6 +57,7 @@ font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.fontWeights.heading};
 @media screen and (min-width: 767px){
     grid-row: 1/2;
+    margin: 0;
     font-weight: ${p => p.theme.fontWeights.bold};
     font-size: ${p => p.theme.fontSizes.lx};
     line-height: ${p => p.theme.fontWeights.body};
@@ -87,6 +87,7 @@ line-height: ${p => p.theme.fontWeights.heading};
 @media screen and (min-width: 767px){
     grid-column: 2;
     grid-row: 2;
+    margin: 0;
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.fontWeights.heading};
@@ -94,15 +95,9 @@ line-height: ${p => p.theme.fontWeights.heading};
 `;
 
 export const Image = styled.img`
-/* position: absolute; */
-/* display: flex; */
 width: 240px;
 height: 100%;
 object-fit: cover;
-/* margin-top: 40px; */
-/* justify-content: center; */
-/* margin-left: 50%;
-transform: translateX(-50%); */
 margin-right: auto;
 border-radius: 0px 0px 40px 40px;
  @media screen and (min-width: 767px){
@@ -152,7 +147,8 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
 color: ${p => p.theme.colors.primeText};
-@media screen and (min-width: 767px){    
+@media screen and (min-width: 767px){   
+    
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.fontWeights.heading};
@@ -184,9 +180,7 @@ font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.none};
 margin-bottom: 12px;
-
 `;
-
 export const ContainerItem = styled.div`
 display: grid;
   grid-gap: 8px;
@@ -195,15 +189,15 @@ display: grid;
   @media screen and (min-width: 767px){
     grid-column: 2;
     grid-row: 3;
+    margin: 0px;
+    align-items: flex-start;
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
-    line-height: ${p => p.theme.fontWeights.heading};
+    line-height: ${p => p.theme.fontWeights.heading};    
 }
 `;
-
 export const BtnAdd = styled.button`
 width: 240px;
-/* height: 40px; */
 padding-top: 9px;
 padding-bottom: 9px;
 border-radius: ${p => p.theme.radii.large};
@@ -216,5 +210,4 @@ border: ${p => p.theme.borders.large};
 @media screen and (min-width: 767px){
     margin-left: 10px;
 }
-
 `;
