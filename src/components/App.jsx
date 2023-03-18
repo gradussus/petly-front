@@ -7,7 +7,8 @@ const LoginPage = lazy(() => import('../pages/Login/Login'));
 export const App = () => {
   
   return (
-     <Title>
+    <Title>
+      <HomePage/>
       <LoginPage/>
     </Title>
   );
