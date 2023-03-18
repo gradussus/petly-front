@@ -1,14 +1,21 @@
-export const Home = () => {
+import ReactDOM from "react-dom";
+
+function Home() {
     return (
         <div>
-                <h1>
-                    <span>Take good care of</span>
-                    <br />
-                    <span>your small pets</span>
-                </h1>
+            <h1>
+                <span>Take good care of</span>
+                <br />
+                <span>your small pets</span>
+                <img src={heart} alt="heart" className={scss.home__heart} />
+            </h1>
+            <img src="" alt="" width={} />
+            
         </div>
     );
 };
+
+ReactDOM.render(<Home />, document.querySelector('#root'));
 
 // export const Home = () => {
 //     return (

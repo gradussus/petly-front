@@ -1,7 +1,7 @@
 import { Title } from "./App.Style";
 import { lazy } from 'react';
 
-const Home = lazy(() => import('../pages/HomePage/HomePage'))
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
 const LoginPage = lazy(() => import('../pages/Login/Login'));
 
 export const App = () => {
