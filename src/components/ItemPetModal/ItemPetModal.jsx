@@ -2,9 +2,9 @@ import {
     Container, Modal, BtnClose, Title, Image,
     ContainerBtn, Text, BtnContact, Box,
     BtnAdd, Item, ContainerItem, Status, ContainerImg
-} from "./ModalFundPet.Style";
-import Vector from "../../image/Vector.svg";
-import Cross from "../../image/Cross.svg";
+} from "./ItemPetModal.Style";
+import Vector from "../ItemPetModal/image/Vector.svg";
+import Cross from "../ItemPetModal/image/Cross.svg";
 
 // const state = `{
 //     "category": "in-good-hands",

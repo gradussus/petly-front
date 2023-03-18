@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { ModalFundPet } from "../Modals/ModalsFundPet";
-import { BtnAdd } from "../Modals/ModalFundPet.Style";
+import { ModalFundPet } from "../ItemPetModal/ItemPetModal";
+import { BtnAdd } from "../ItemPetModal/ItemPetModal.Style";
 import styled from "styled-components";
 
 const Container = styled.div`
