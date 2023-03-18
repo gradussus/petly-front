@@ -21,6 +21,17 @@ position: relative;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  @media screen and (min-width: 767px){
+    width: 704px;
+    height: 540px;
+    display: flex;
+     display: grid; 
+    
+  grid-gap: 8px;
+   grid-template-columns: 2fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  
+  }
 `;
 export const BtnClose = styled.button`
 position: absolute;
@@ -42,12 +53,16 @@ line-height: ${p => p.theme.fontWeights.heading};
 `;
 export const ContainerImg = styled.div`
 position: relative;
+
+
+  
 `;
 export const Box = styled.div`
  display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 2fr;
 margin-top: 16px;
+
 
 font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
@@ -66,6 +81,9 @@ margin-left: 50%;
 transform: translateX(-50%);
 margin-right: auto;
 border-radius: 0px 0px 40px 40px;
+/* @media screen and (min-width: 767px){
+grid-template-columns: 1;
+  grid-template-rows: 1 / span 2;} */
 `;
 export const Status = styled.a`
 position: absolute;

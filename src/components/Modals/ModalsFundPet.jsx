@@ -50,9 +50,9 @@ export const ModalFundPet = ({ toggleModal }) => {
     return (
         <Container>
             <Modal>
+            <BtnClose type="button" onClick={toggleModal}><img src={Cross} className="Cross" alt="Cross" /></BtnClose>
 
                 <ContainerImg>
-                    <BtnClose type="button" onClick={toggleModal}><img src={Cross} className="Cross" alt="Cross" /></BtnClose>
                     <Image src={imageURL} />
                     {{sell} && <Status> sell </Status>}
                     {!{sell} && <Status> in-good-hands </Status>}
