@@ -1,14 +1,13 @@
 import { Title } from "./App.Style";
 import { lazy } from 'react';
-
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
-const LoginPage = lazy(() => import('../pages/Login/Login'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 
 export const App = () => {
+
+
   
   return (
-    <Title>
-      <HomePage/>
+     <Title>
       <LoginPage/>
     </Title>
   );

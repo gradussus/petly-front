@@ -1,28 +1,24 @@
-import imgHeart from '../../pages/HomePage/images/desktop/heart.png';
-import titleImg from '../../pages/HomePage/images/mobile/labro.png';
-import bgrImage from '../../pages/HomePage/images/mobile/Vector.png';
+import { HomePageContainer } from './HomePage.styled';
+import { HomePage } from 'pages/HomePage/HomePage';
+import HomeLabro from '../../pages/HomePage/images/mobile/labro.png';
+import HomeHeart from '../../pages/HomePage/images/desktop/heart.png';
+import { Wrapper } from './SharedLayout.styled';
 
+export const HomePage = ({ HomeHeart, HomeLabro }) => {
 
-const Home = ({
-    heart = imgHeart,
-    labro = titleImg,
-    vector = bgrImage
-}) => {
     return (
-        <div className="home">
-        
-                <h1>
-                    <span>Take good care of</span>
-                    <br />
-                    <span>your small pets</span>
-                </h1>
-            <img src={heart} alt={heart} />
-            <img src={labro} alt={labro} />
-            <img src={vector} alt={vector} />
-     
-           
-        </div>
+        <Wrapper>
+        <HomePageContainer>
+            <h1>
+                <span>Take good care of</span>
+                  <br />
+                <span>your small pets</span>
+            </h1>
+            <img src={HomeHeart} alt={HomeHeart} />
+            <img src={HomeLabro} alt={HomeLabro} />
+            {/* <HomeLabro />
+            <HomeHeart /> */}
+            </HomePageContainer>
+            </Wrapper>
     );
-};
-
-export default Home;
+  };
