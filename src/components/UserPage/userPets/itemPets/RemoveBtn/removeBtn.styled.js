@@ -6,7 +6,6 @@ export const ItemPetsRemoveBtn = styled.div`
   border-radius: 50%;
 
   position: absolute;
-  top: 255px;
   right: 10px;
 
   background: ${props => props.theme.colors.white};
@@ -15,6 +14,10 @@ export const ItemPetsRemoveBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 767px) {
+    top: 255px;
+  }
 
   @media (min-width: 1279px) {
     top: 20px;

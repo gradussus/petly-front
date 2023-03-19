@@ -37,6 +37,7 @@ export const UserImgLabel = styled.label`
 
   position: absolute;
   right: 0;
+  top: 0;
 
   display: flex;
   align-items: center;
@@ -44,10 +45,6 @@ export const UserImgLabel = styled.label`
 
   @media (min-width: 768px) and (max-width: 1279px) {
     top: 10px;
-  }
-
-  @media (min-width: 1279px) and (max-width: 767px) {
-    top: 0;
   }
 
   @media (min-width: 768px) {
