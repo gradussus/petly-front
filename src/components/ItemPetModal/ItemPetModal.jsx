@@ -1,10 +1,9 @@
 import {
-    Container, Modal, BtnClose, Title, Image,
+    Title, Image, Container,
     ContainerBtn, Text, BtnContact, Box,
     BtnAdd, Item, ContainerItem, Status, ContainerImg
 } from "./ItemPetModal.Style";
-import Vector from "../ItemPetModal/image/Vector.svg";
-import Cross from "../ItemPetModal/image/Cross.svg";
+import Vector from "components/ItemPetModal/image/Vector.svg";
 
 // const state = `{
 //     "category": "in-good-hands",
@@ -43,16 +42,13 @@ const state = `{
     "updatedAt": "2023-03-17T21:30:09.308Z"
 }`
 
-export const ModalFundPet = ({ toggleModal }) => {
+export const ItemPetModal = () => {
     const data = JSON.parse(state)
     const { name, birthDate, breed, location, sex, email, Phone, imageURL, comments, price, sell } = data
 
     return (
         <Container>
-            <Modal>
-            <BtnClose type="button" onClick={toggleModal}><img src={Cross} className="Cross" alt="Cross" /></BtnClose>
-
-                <ContainerImg>
+         <ContainerImg>
                     <Image src={imageURL} />
                     {{sell} && <Status> sell </Status>}
                     {!{sell} && <Status> in-good-hands </Status>}
@@ -86,7 +82,6 @@ export const ModalFundPet = ({ toggleModal }) => {
                     <BtnContact type="button" >Contact</BtnContact>
                     <BtnAdd type="button">Add to <span ><img src={Vector} className="Vector" alt="Vector" /></span></BtnAdd>
                 </ContainerBtn>
-            </Modal>
         </Container>
     )
 }

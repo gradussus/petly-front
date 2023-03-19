@@ -1,24 +1,32 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(17, 17, 17, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
+ width: 100%;
+ height: 100%;
+ padding: 20px;
+  
+  @media screen and (min-width: 767px){
+    display: flex;
+    width: 704px;
+    height: 540px;
+    display: flex;
+     display: grid; 
+     padding: 32px 32px 20px;    
+ gap: 0px 20px;
+   grid-template-columns: 288px 1fr 50px; 
+  grid-template-rows: 76px auto auto 1fr 90px;   
+  }
 `;
 
 export const Modal = styled.div`
-position: relative;  
+position: absolute; 
+top: 50%;
+left: 50%;
+transform: translateX(-50%);
+transform: translateX(-50%);
   padding: 20px;
   width: 80vw;
-  background-color: ${p => p.theme.colors.white};
-  justify-content: center;
-  align-items: center;
+  background-color: ${p => p.theme.colors.white};  
   border-radius: 20px;
   @media screen and (min-width: 767px){
     display: flex;
@@ -66,15 +74,17 @@ line-height: ${p => p.theme.fontWeights.heading};
 `;
 export const ContainerImg = styled.div`
 position: relative;
+left: 50%;
+transform: translateX(-50%);
 height: 240px;
+margin-top: 40px;
+
 @media screen and (min-width: 767px){
     width: 288px;
     height: 328px; 
     grid-row: 1 / span 3;
-}
-
-
-  
+    margin: 0;
+}  
 `;
 export const Box = styled.div`
  display: grid;
@@ -87,7 +97,7 @@ line-height: ${p => p.theme.fontWeights.heading};
 @media screen and (min-width: 767px){
     grid-column: 2;
     grid-row: 2;
-    margin: 0;
+    margin-top: 20px;    
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.fontWeights.heading};
@@ -134,6 +144,7 @@ line-height: ${p => p.theme.fontWeights.heading};
 @media screen and (min-width: 767px){
     grid-column: 1 / span 3;
     grid-row: 4;
+    margin-top: 28px;
     font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
@@ -164,7 +175,7 @@ align-items: center;
     grid-row: 5;
    flex-direction: row;
     align-items: baseline;
-    justify-content: end;
+    align-self: end;
 
 }
 `;
@@ -180,12 +191,20 @@ font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.none};
 margin-bottom: 12px;
+&:focus, :hover {
+    background-color: ${p => p.theme.colors.white};
+    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+  }
 `;
 export const ContainerItem = styled.div`
 display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 2fr;
   margin-top: 8px;
+  &:focus, :hover {
+    background-color: ${p => p.theme.colors.white};
+    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+  }
   @media screen and (min-width: 767px){
     grid-column: 2;
     grid-row: 3;
@@ -207,6 +226,10 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.large};
+&:focus, :hover {
+    background-color: ${p => p.theme.colors.white};
+    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+  }
 @media screen and (min-width: 767px){
     margin-left: 10px;
 }

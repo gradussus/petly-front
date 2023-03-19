@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { ModalFundPet } from "../ItemPetModal/ItemPetModal";
-import { BtnAdd } from "../ItemPetModal/ItemPetModal.Style";
+import { ItemPetModal } from "components/ItemPetModal/ItemPetModal";
+import { BtnAdd } from "components/ItemPetModal/ItemPetModal.Style";
+import { ModalSample } from "components/Modal/Modal";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -15,8 +16,10 @@ export const FoundPets = () => {
     }
     return (
         <Container>
-            {showModal && <ModalFundPet toggleModal={toggleModal} />}
-            <BtnAdd type="button" onClick={() => toggleModal()}>Lean more</BtnAdd>
+            {showModal && <ModalSample toggleModal={toggleModal} >
+                <ItemPetModal/>
+                </ModalSample>}
+                <BtnAdd type="button" onClick={() => toggleModal()}>Lean more</BtnAdd>
         </Container>
     )
 }
