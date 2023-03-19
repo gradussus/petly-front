@@ -1,23 +1,30 @@
 
 import * as HeaderStyle from './Header.styled';
 
+
+import { HeaderLogo } from './HeaderLogo/HeaderLogo';
+import { HeaderNavLinks } from './HeaderNavLinks/HaderNavLinks';
+import { LoginUserButton } from './HeaderButtons/AuthorisedNavButton';
+import {UnauthorizedUserButton} from './HeaderButtons/UnathorisedNavButtons';
+
+
+
 export const Header = () => {
     return ( 
-        <HeaderStyle.HeaderBody>
-    
-            <HeaderStyle.Logo>pet<HeaderStyle.Accent>l</HeaderStyle.Accent>y</HeaderStyle.Logo>
-    
-            <HeaderStyle.NavLink>News</HeaderStyle.NavLink>
-            <HeaderStyle.ActiveLink>Find pet</HeaderStyle.ActiveLink>
-            <HeaderStyle.NavLink>Our friends</HeaderStyle.NavLink>
-    
-            <HeaderStyle.SimpleButton>Login</HeaderStyle.SimpleButton>
-            <HeaderStyle.ActiveButton>Registration</HeaderStyle.ActiveButton>
-    
-        </HeaderStyle.HeaderBody>
+        
+    <HeaderStyle.HeaderBody>
+             
+     <HeaderLogo/>
+     <HeaderNavLinks/>
+     <LoginUserButton/>
+     <UnauthorizedUserButton/>
+           
+   
+    </HeaderStyle.HeaderBody>
       
         );
 };
+
 
 
 
