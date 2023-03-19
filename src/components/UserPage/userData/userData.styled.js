@@ -29,7 +29,7 @@ export const UserDataContent = styled.div`
     display: block;
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     padding-left: 0;
     border-radius: 0 40px 40px 0;
     position: relative;

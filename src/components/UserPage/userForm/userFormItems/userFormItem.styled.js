@@ -15,7 +15,7 @@ export const UserFormLabel = styled.label`
   line-height: ${props => props.theme.lineHeights.heading};
   flex: 0 0 85px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 767px) {
     font-size: ${props => props.theme.fontSizes.s};
     flex: 0 0 60px;
   }
@@ -32,8 +32,8 @@ export const UserFormInput = styled.input`
   border: 1px solid rgba(245, 146, 86, 0.5);
   border-radius: 40px;
 
-  @media (max-width: 400px) {
-    font-size: 14px;
+  @media (max-width: 767px) {
+    font-size: 12px;
   }
 
   &:disabled {

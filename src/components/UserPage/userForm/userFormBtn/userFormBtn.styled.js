@@ -10,13 +10,13 @@ export const FormBtn = styled.div`
   background: #fdf7f2;
   border-radius: 50%;
   cursor: pointer;
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     &:hover * {
       transition: 0.4s;
       fill: ${props => props.theme.colors.accent};
     }
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     * {
       fill: ${props => props.theme.colors.accent};
     }

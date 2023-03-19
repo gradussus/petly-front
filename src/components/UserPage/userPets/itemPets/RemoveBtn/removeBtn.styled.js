@@ -16,7 +16,7 @@ export const ItemPetsRemoveBtn = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1279px) {
     top: 20px;
     right: 20px;
     background: ${props => props.theme.colors.background};

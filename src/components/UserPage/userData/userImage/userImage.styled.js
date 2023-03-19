@@ -42,15 +42,15 @@ export const UserImgLabel = styled.label`
   align-items: center;
   gap: 5px;
 
-  @media (min-width: 767px) and (max-width: 1280px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     top: 10px;
   }
 
-  @media (min-width: 1280px) and (max-width: 767px) {
+  @media (min-width: 1279px) and (max-width: 767px) {
     top: 0;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     &:hover {
       color: ${props => props.theme.colors.accent};
     }
