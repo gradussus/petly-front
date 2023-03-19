@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpetly_front=self.webpackChunkpetly_front||[]).push([[833],{833:function(n,e,r){r.r(e),r.d(e,{default:function(){return u}});var t=r(184),u=function(){return(0,t.jsx)("p",{children:"OurFriendsPage"})}}}]);
+//# sourceMappingURL=833.f4925eda.chunk.js.map
