@@ -32,7 +32,3 @@ export const Header = () => {
   // user nav gap 20px -> 2 buttons login + register (link from reactRouterDOM) styled component 
   // header обернуть -> logo в компонент вынести и 
   // header body flex
-  // навигация -> массив из него рендерим все ссылки в массиве href or title 
-  // [{href: '/news', title: "News"},]
-  // [{href: '/find', title: "Find pet"}]
-  // 
