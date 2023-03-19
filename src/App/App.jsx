@@ -24,8 +24,8 @@ export const App = () => {
           <Route path="notices/:categoryName" element={<NoticesPage />}></Route>
           <Route path="friends" element={<OurFriendsPage />}></Route>
           <Route path="user" element={<UserPage />}></Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
         </Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>
   );
