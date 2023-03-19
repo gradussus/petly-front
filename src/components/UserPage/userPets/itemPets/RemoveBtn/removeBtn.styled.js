@@ -19,7 +19,7 @@ export const ItemPetsRemoveBtn = styled.div`
     top: 255px;
   }
 
-  @media (min-width: 1279px) {
+  @media (min-width: 1280px) {
     top: 20px;
     right: 20px;
     background: ${props => props.theme.colors.background};
