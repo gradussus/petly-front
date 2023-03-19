@@ -23,7 +23,6 @@ const PhoneInput = ({ value, focus, handleData, handleFocus }) => {
     <UserFormItem>
       <UserFormLabel>Phone:</UserFormLabel>
       <UserFormInput
-        pattern="^\+380\d{9}"
         type="tel"
         disabled={focus !== 'phone'}
         value={input}

@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 
 export const ItemPetsRemoveBtn = styled.div`
-  position: absolute;
   width: 44px;
   height: 44px;
-  background: ${props => props.theme.colors.background};
   border-radius: 50%;
-  top: 20px;
-  right: 20px;
+
+  position: absolute;
+  right: 10px;
+
+  background: ${props => props.theme.colors.white};
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  @media (max-width: 580px) {
-    right: 10px;
-    top: 265px;
-    background: ${props => props.theme.colors.white};
+
+  @media (max-width: 767px) {
+    top: 255px;
   }
-  &:hover * {
-    transition: 0.4s;
-    fill: ${props => props.theme.colors.accent};
+
+  @media (min-width: 1280px) {
+    top: 20px;
+    right: 20px;
+    background: ${props => props.theme.colors.background};
+
+    &:hover * {
+      transition: 0.4s;
+      fill: ${props => props.theme.colors.accent};
+    }
   }
 `;
