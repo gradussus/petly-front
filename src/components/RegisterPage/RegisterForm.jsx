@@ -3,6 +3,9 @@ import { AccentButton, TransparentButton, NextBtn } from '../LoginPage/Buttons/B
 import { AuthForm }  from 'components/AuthForm/AuthForm';
 import { RedirectLink } from 'components/RegisterPage/RedirectLink/RedirectLink';
 import { useState } from 'react';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/';
 
 export const RegisterForm = () => {
   const [isSecondStep, setSecondStep] = useState(false);
@@ -11,7 +14,7 @@ export const RegisterForm = () => {
   const [confPassword, setConfPassword] = useState('');
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
-  const [tel, setTel] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -33,7 +36,7 @@ export const RegisterForm = () => {
         setCity(value)
         break;
         case "tel":
-        setTel(value)
+        setPhone(value)
         break;
 
         default:
@@ -45,8 +48,23 @@ export const RegisterForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
 
-    alert(JSON.stringify({email, password, confPassword, name, city, tel}));
+    const data = {email, password, name, city, phone};
 
+    // const req = async () => {
+    //   try {
+    //     const res = await axios.post('/api/auth/register', data)
+    //     .then((response) => {
+    //       console.log(response);
+    //     })
+    //     return res.data;
+    //   } catch (error) {
+    //     return error.message;
+    //   }
+    // };
+    // req();
+  
+
+    console.log(data);
     form.reset();
   };
 
@@ -56,7 +74,7 @@ export const RegisterForm = () => {
               <>
               <Input placeholder="Name" type="text" name="name" value={name} onChange={handleChange} />
               <Input placeholder="City, region" type="text" name="city" value={city} onChange={handleChange} />
-              <Input placeholder="Mobile phone" type="tel" name="tel" value={tel} onChange={handleChange} />
+              <Input placeholder="Mobile phone" type="tel" name="tel" value={phone} onChange={handleChange} />
               <AccentButton type="submit">Register</AccentButton>
               <TransparentButton type="button" onClick={() => setSecondStep(!isSecondStep)}>Back</TransparentButton>
               </>
@@ -66,9 +84,7 @@ export const RegisterForm = () => {
               <Input placeholder="Password" type="password" name="password" value={password} onChange={handleChange} />
               <Input placeholder="Confirm Password" type="password" name="confPassword" value={confPassword} onChange={handleChange} />
               <NextBtn onClick={() => setSecondStep(!isSecondStep)}>Next</NextBtn>
-              {/* <AccentButton  onClick={() => setSecondStep(!isSecondStep)}>Next</AccentButton> */}
-              {/* <AccentButton type="submit">Register</AccentButton>  */}
-
+            
               </>
               )}
               <RedirectLink/>
