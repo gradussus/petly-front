@@ -9,7 +9,7 @@ export const theme = {
       accent: '#F59256', 
       grey: 'rgba(17, 17, 17, 0.6)'     
     },
-    space: [0, 2, 4, 8, 16, 32, 48, 64, 128, 256],
+    space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
     fonts: {
       body: 'Manrope',
      

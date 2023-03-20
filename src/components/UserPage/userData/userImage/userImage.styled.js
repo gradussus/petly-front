@@ -26,25 +26,28 @@ export const UserImgInput = styled.input`
 `;
 
 export const UserImgLabel = styled.label`
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  text-align: right;
   font-weight: ${props => props.theme.fontWeights.normal};
   font-size: ${props => props.theme.fontSizes.s};
   line-height: ${props => props.theme.lineHeights.heading};
   color: ${props => props.theme.colors.primeText};
+
+  cursor: pointer;
+  text-align: right;
   transition: color 0.3s;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
   display: flex;
   align-items: center;
   gap: 5px;
-  @media (max-width: 1080px) {
+
+  @media (min-width: 768px) and (max-width: 1279px) {
     top: 10px;
   }
-  @media (max-width: 767px) {
-    top: 0;
-  }
-  @media (min-width: 992px) {
+
+  @media (min-width: 768px) {
     &:hover {
       color: ${props => props.theme.colors.accent};
     }
