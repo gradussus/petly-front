@@ -4,22 +4,22 @@ export const theme = {
     white: '#fff',
     primeText: '#111111',
     headerText: '#181C27',
-    background: '#FDF7F2',     
+    background: '#FDF7F2',
     secondary: '#3091EB',
-    accent: '#F59256',      
+    accent: '#F59256',
   },
-  space: [0, 2, 4, 8, 16, 32, 48, 64, 128, 256],
   fonts: {
     body: 'Manrope',
-   
   },
+  space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
   fontSizes: {
     xs: '12px',
     s: '14px',
     m: '16px',
+    xm: '18px',
     mx: '20px',
     ml: '24px',
-    lx: '32px',
+    lx: '28px',
     l: '36px',
     xl: '68px',
   },
@@ -44,4 +44,10 @@ export const theme = {
     large: '40px',
     round: '50%',
   },
+  media: {
+    mobile: '(max-width: 767px)',
+    tablet: '(min-width: 768px) and (max-width 1279px)',
+    desktop: '(min-width: 1280px)',
+  },
 };
+
