@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const UserPageBody = styled.div`
-  display: flex;
-  @media (max-width: 1080px) {
-    display: block;
+  display: block;
+
+  @media (${props => props.theme.media.desktop}) {
+    display: flex;
   }
 `;

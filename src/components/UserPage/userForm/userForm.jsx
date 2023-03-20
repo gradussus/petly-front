@@ -1,68 +1,160 @@
 import React, { useState } from 'react';
+import { Formik } from 'formik';
+import * as yup from 'yup';
 
 import { UserFormBody } from './userForm.styled';
+import { UserFormInput, UserFormItem, UserFormLabel } from './userForm.styled';
 
-import CityInput from './userFormItems/cityInput';
-import NameInput from './userFormItems/nameInput';
-import EmailInput from './userFormItems/emailInput';
-import BirthdayInput from './userFormItems/birthdayInput';
-import PhoneInput from './userFormItems/phoneInput';
+import FormButtons from './userFormBtn/UserFormBtn';
 import Logout from '../logout/logout';
 
-const fakeData = {
-  name: 'Anna',
-  email: 'anna00@gmail.com',
-  birthday: null,
-  phone: '+380000000000',
-  city: 'Kiev',
-};
-
 const UserForm = () => {
-  const [data, setData] = useState(fakeData);
-  const [focus, setFocus] = useState('');
-
-  const handleData = field => {
-    setData({ ...data, ...field });
+  const fakeData = {
+    name: 'Anna',
+    email: 'anna00@gmail.com',
+    birthday: null,
+    phone: '+380000000000',
+    city: 'Kiev',
   };
 
-  const handleFocus = focus => {
-    setFocus(focus);
+  const [targetInput, setTargetInput] = useState('');
+
+  const handleTarget = target => {
+    setTargetInput(target);
   };
 
+  const validationSchema = yup.object().shape({
+    name: yup.string().required('Name is required'),
+    phone: yup
+      .string()
+      .required('Phone is required')
+      .matches(/^\+380\d{9}$/, 'Must start +380 and have 12 characters'),
+    city: yup.string().required('City is required'),
+    email: yup
+      .string()
+      .required('Email is required')
+      .email('Email is not correct'),
+  });
   return (
-    <UserFormBody>
-      <NameInput
-        value={data?.name}
-        handleData={handleData}
-        focus={focus}
-        handleFocus={handleFocus}
-      />
-      <EmailInput
-        value={data?.email}
-        handleData={handleData}
-        focus={focus}
-        handleFocus={handleFocus}
-      />
-      <BirthdayInput
-        value={data?.birthday}
-        handleData={handleData}
-        focus={focus}
-        handleFocus={handleFocus}
-      />
-      <PhoneInput
-        value={data?.phone}
-        handleData={handleData}
-        focus={focus}
-        handleFocus={handleFocus}
-      />
-      <CityInput
-        value={data?.city}
-        handleData={handleData}
-        focus={focus}
-        handleFocus={handleFocus}
-      />
-      <Logout />
-    </UserFormBody>
+    <>
+      <Formik
+        initialValues={fakeData}
+        validateOnBlur
+        onSubmit={values => {
+          console.log(values);
+          setTargetInput('');
+        }}
+        validationSchema={validationSchema}
+      >
+        {({
+          values,
+          errors,
+          handleChange,
+          handleBlur,
+          isValid,
+          handleSubmit,
+        }) => (
+          <UserFormBody>
+            <UserFormItem>
+              <UserFormLabel htmlFor={`name`}>Name:</UserFormLabel>
+              <UserFormInput
+                type="text"
+                name="name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+                disabled={targetInput !== 'name'}
+              />
+              <FormButtons
+                error={errors?.name}
+                owner="name"
+                isValid={isValid}
+                targetInput={targetInput}
+                handleTarget={handleTarget}
+                handleSubmit={handleSubmit}
+              />
+            </UserFormItem>
+            <UserFormItem>
+              <UserFormLabel htmlFor={`email`}>Email:</UserFormLabel>
+              <UserFormInput
+                type="text"
+                name="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+                disabled={targetInput !== 'email'}
+              />
+              <FormButtons
+                error={errors?.email}
+                owner="email"
+                isValid={isValid}
+                targetInput={targetInput}
+                handleTarget={handleTarget}
+                handleSubmit={handleSubmit}
+              />
+            </UserFormItem>
+            <UserFormItem>
+              <UserFormLabel htmlFor={`birthday`}>Birthday:</UserFormLabel>
+              <UserFormInput
+                type="date"
+                name="birthday"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.birthday ? values.birthday : ''}
+                disabled={targetInput !== 'birthday'}
+              />
+              <FormButtons
+                error={errors?.birthday}
+                owner="birthday"
+                isValid={isValid}
+                targetInput={targetInput}
+                handleTarget={handleTarget}
+                handleSubmit={handleSubmit}
+              />
+            </UserFormItem>
+            <UserFormItem>
+              <UserFormLabel htmlFor={`phone`}>Phone:</UserFormLabel>
+              <UserFormInput
+                type="text"
+                name="phone"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.phone}
+                disabled={targetInput !== 'phone'}
+              />
+              <FormButtons
+                error={errors?.phone}
+                owner="phone"
+                isValid={isValid}
+                targetInput={targetInput}
+                handleTarget={handleTarget}
+                handleSubmit={handleSubmit}
+              />
+            </UserFormItem>
+            <UserFormItem>
+              <UserFormLabel htmlFor={`city`}>City:</UserFormLabel>
+              <UserFormInput
+                type="text"
+                name="city"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.city}
+                disabled={targetInput !== 'city'}
+              />
+              <FormButtons
+                error={errors?.city}
+                owner="city"
+                isValid={isValid}
+                targetInput={targetInput}
+                handleTarget={handleTarget}
+                handleSubmit={handleSubmit}
+              />
+            </UserFormItem>
+            <Logout />
+          </UserFormBody>
+        )}
+      </Formik>
+    </>
   );
 };
 
