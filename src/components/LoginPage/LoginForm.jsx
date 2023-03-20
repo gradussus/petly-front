@@ -4,6 +4,10 @@ import { AuthForm }  from 'components/AuthForm/AuthForm';
 import { RedirectLink } from 'components/LoginPage/RedirectLink/RedirectLink';
 import { useState } from 'react';
 
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/';
+
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,8 +25,22 @@ export const LoginForm = () => {
      e.preventDefault();
      const form = e.currentTarget;
    
-     console.log(JSON.stringify({email, password}));
-     alert(JSON.stringify({email, password}));
+     const data = { email, password };
+
+     const req = async () => {
+      try {
+        const res = await axios.post('/api/auth/login', data)
+        .then((response) => {
+          console.log(response);
+        })
+        return res.data;
+      } catch (error) {
+        return error.message;
+      }
+    };
+    req();
+
+    console.log(data);;
      form.reset();
    };
 
