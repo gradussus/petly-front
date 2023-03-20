@@ -8,10 +8,10 @@ export const theme = {
     secondary: '#3091EB',
     accent: '#F59256',
   },
-  space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
   fonts: {
     body: 'Manrope',
   },
+  space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
   fontSizes: {
     xs: '12px',
     s: '14px',
