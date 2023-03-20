@@ -1,4 +1,5 @@
 export const theme = {
+
   colors: {
     black: '#000',
     white: '#fff',
@@ -26,6 +27,7 @@ export const theme = {
   fontWeights: {
     normal: 400,
     middle: 500,
+    interMiddle: 600,
     bold: 700,
   },
   lineHeights: {
@@ -49,3 +51,4 @@ export const theme = {
     desktop: '(min-width: 1280px)',
   },
 };
+
