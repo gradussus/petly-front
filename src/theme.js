@@ -1,4 +1,5 @@
 export const theme = {
+
   media: {
     mobile: '(max-width: 767px)',
     tablet: '(max-width: 1279px) and (min-width: 768px)',
@@ -14,6 +15,7 @@ export const theme = {
     background: '#FDF7F2',
     secondary: '#3091EB',
     accent: '#F59256',
+    grey: 'rgba(17, 17, 17, 0.6)' 
   },
   space: [0, 2, 4, 8, 16, 32, 48, 64, 128, 256],
   fonts: {
@@ -21,14 +23,15 @@ export const theme = {
     manrope: 'Manrope, sans-serif',
   },
   fontSizes: {
-    xs: '12px',
-    s: '14px',
-    m: '16px',
-    mx: '20px',
-    ml: '24px',
-    lx: '32px',
-    l: '36px',
-    xl: '68px',
+      xs: '12px',
+      s: '14px',
+      m: '16px',
+      mx: '20px',
+      ml: '24px',
+      lx: '32px',
+      l: '36px',
+      xxm: '48px',
+      xl: '68px',
   },
   fontWeights: {
     normal: 400,
