@@ -11,7 +11,7 @@ export const ItemPetsBody = styled.div`
   border-radius: 40px;
   margin-bottom: 22px;
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     display: block;
     padding: 16px 20px 28px;
   }
@@ -30,7 +30,7 @@ export const ItemPetsImg = styled.div`
     border-radius: 40px;
   }
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     width: 240px;
     height: 240px;
     margin: 0 auto 20px;
@@ -49,7 +49,7 @@ export const ItemPetsText = styled.div`
   span {
     font-weight: ${props => props.theme.fontWeights.normal};
   }
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     font-size: ${props => props.theme.fontSizes.s};
   }
 `;

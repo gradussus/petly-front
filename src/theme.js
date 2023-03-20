@@ -20,6 +20,7 @@ export const theme = {
     mx: '20px',
     ml: '24px',
     lx: '28px',
+    llx: '32px',
     l: '36px',
     xxm: '48px',
     xl: '68px',
@@ -47,7 +48,7 @@ export const theme = {
   },
   media: {
     mobile: '(max-width: 767px)',
-    tablet: '(min-width: 768px) and (max-width 1279px)',
+    tablet: '(min-width: 768px) and (max-width: 1279px)',
     desktop: '(min-width: 1280px)',
   },
 };

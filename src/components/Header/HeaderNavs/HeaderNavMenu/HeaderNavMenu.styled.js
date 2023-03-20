@@ -8,14 +8,16 @@ export const NavMenu = styled.nav`
   gap: 80px;
   flex: 1 1 auto;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (${props => props.theme.media.tablet}) {
     position: absolute;
     top: -100%;
     left: 0;
+    z-index: 2;
     display: block;
     width: 100vw;
     height: 100%;
     overflow: auto;
+    background: ${props => props.theme.colors.background};
     padding-top: 88px;
     transition: top 0.3s;
     a {
@@ -31,7 +33,7 @@ export const NavMenu = styled.nav`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     display: block;
 
     a {
@@ -48,13 +50,14 @@ export const NavMenu = styled.nav`
 export const NavsBody = styled.div`
   display: flex;
 
-  @media (min-width: 1280px) {
+  @media (${props => props.theme.media.desktop}) {
     flex: 1 1 auto;
   }
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     position: absolute;
     top: -1000px;
+    z-index: 2;
     left: 0;
     flex-direction: column-reverse;
     width: 100vw;
@@ -82,7 +85,7 @@ export const NavButtons = styled.div`
     z-index: 3;
   }
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     justify-content: center;
     margin-bottom: 60px;
     margin-top: 46px;
@@ -105,8 +108,12 @@ export const NavItem = styled(NavLink)`
     color: ${props => props.theme.colors.accent};
   }
 
-  @media (max-width: 1279px) {
+  @media (${props => props.theme.media.tablet}) {
     font-size: ${props => props.theme.fontSizes.xxm};
     line-height: ${props => props.theme.lineHeights.body};
+  }
+
+  @media (${props => props.theme.media.mobile}) {
+    font-size: ${props => props.theme.fontSizes.llx};
   }
 `;
