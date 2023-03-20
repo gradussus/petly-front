@@ -1,33 +1,39 @@
 .container {
     display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./images/mobile/labro_mobile.png'), url('./images/mobile/bg_mobile.png');
+    background-position: right bottom, bottom;
+    background-repeat: no-repeat;
+    background-size: 20rem, 100vw;
+    padding-top: 50px;
+    height: calc(100vh - 72px);
+
+    @media screen and (min-width: 768px) {
+      align-items: flex-start;
+      background-image: url('./images/tablet/labro_tablet.png'), url('./images/tablet/bg_tablet.png');
+      background-size: 31rem, 100vw;
+    }
   
-  background-position: right bottom, bottom;
-  background-repeat: no-repeat;
-  background-size: 20rem, 100vw;
-  padding-top: 50px;
-  height: calc(100vh - 72px);
+    @media screen and (min-width: 1280px) {
+      background-image: url('./images/desktop/labro_desk.png'), url('./images/desktop/bg_desk_right.png'), url('./images/desktop/bg_desk_left.png');
+      background-size: 35rem, 100vw;
+    }
+}
   
-
-}
-
-.img_vector {
-    height: 20rem;
-    width: 100vw;
-}
-
 .home_title {
-    transition-duration: 1s;
-  max-width: 280px;
-  font-weight: 700;
-  font-size: 32;
-  line-height: 1.37;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    max-width: 280px;
+    line-height: 1.37;
   height: 88px;
   opacity: 0%;
-  color: var(--text__color);
+
   animation-name: title;
-  animation-duration: var(--animation__duration__woman);
+  animation-duration: 1000ms;;
   animation-timing-function: linear;
   animation-delay: 500ms;
   animation-fill-mode: forwards;
@@ -59,13 +65,14 @@
   100% {
     opacity: 100%;
   }
+
 }
 
 .img_heart {
     position: absolute;
   width: 0px;
   animation-name: heart;
-  animation-duration: var(--animation__duration__heart);
+  animation-duration: 1000ms;
   animation-timing-function: linear;
   animation-delay: 1500ms;
   animation-fill-mode: forwards;
@@ -98,7 +105,7 @@
 
 
 .img_labro {
-    position: absolute;
+  position: absolute;
 
   width: 230px;
   bottom: 0px;
