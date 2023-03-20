@@ -43,7 +43,7 @@ export const UserImgLabel = styled.label`
   align-items: center;
   gap: 5px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (${props => props.theme.media.tablet}) {
     top: 10px;
   }
 

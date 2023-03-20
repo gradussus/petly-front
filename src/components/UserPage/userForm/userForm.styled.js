@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const UserFormBody = styled.div`
   padding-right: 0;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (${props => props.theme.media.tablet}) {
     margin-bottom: 0;
     flex: 1 1 auto;
     padding-right: 52px;
@@ -25,7 +25,7 @@ export const UserFormLabel = styled.label`
   line-height: ${props => props.theme.lineHeights.heading};
   flex: 0 0 85px;
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     font-size: ${props => props.theme.fontSizes.s};
     flex: 0 0 60px;
   }
@@ -42,7 +42,7 @@ export const UserFormInput = styled.input`
   border: 1px solid rgba(245, 146, 86, 0.5);
   border-radius: 40px;
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     font-size: 12px;
   }
 

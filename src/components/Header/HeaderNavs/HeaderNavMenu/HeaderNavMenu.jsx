@@ -6,7 +6,7 @@ import LoginButton from '../HeaderNavButton/LoginButton';
 const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
   const navItems = [
     { href: '/news', title: 'News' },
-    { href: '/notices/categoryName', title: 'Find pet' },
+    { href: '/notices/sell', title: 'Find pet' },
     { href: '/friends', title: 'Our friends' },
   ];
 
