@@ -10,7 +10,6 @@ export const CardWrapper = styled.div`
   align-items: center;
   max-width: 280px;
 
-  border: ${props => props.theme.borders.normal};
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
