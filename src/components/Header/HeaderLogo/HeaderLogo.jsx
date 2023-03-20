@@ -1,8 +1,8 @@
-import * as LogoStyle from './HeaderLogo.styled';
+import { HeaderLogotype } from './HeaderLogo.styled';
 export const HeaderLogo = () => {
   return (
-    <LogoStyle.Logo to="/">
-      pet<LogoStyle.Accent>l</LogoStyle.Accent>y
-    </LogoStyle.Logo>
+    <HeaderLogotype to="/">
+      pet<span>l</span>y
+    </HeaderLogotype>
   );
 };

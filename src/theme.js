@@ -1,4 +1,5 @@
 export const theme = {
+
     colors: {
       black: '#000',
       white: '#fff',
@@ -22,6 +23,7 @@ export const theme = {
       ml: '24px',
       lx: '32px',
       l: '36px',
+      xxm: '48px',
       xl: '68px',
     },
     fontWeights: {
@@ -46,3 +48,4 @@ export const theme = {
       round: '50%',
     },
   };
+
