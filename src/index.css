@@ -12,6 +12,10 @@ body {
   line-height: 1.5;
 }
 
+body.active {
+  overflow: hidden;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

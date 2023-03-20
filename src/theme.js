@@ -1,5 +1,4 @@
 export const theme = {
-
   colors: {
     black: '#000',
     white: '#fff',
@@ -22,6 +21,7 @@ export const theme = {
     ml: '24px',
     lx: '28px',
     l: '36px',
+    xxm: '48px',
     xl: '68px',
   },
   fontWeights: {
@@ -51,4 +51,3 @@ export const theme = {
     desktop: '(min-width: 1280px)',
   },
 };
-
