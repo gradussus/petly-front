@@ -14,7 +14,7 @@ export const HeaderBody = styled.header`
       left: 0;
       width: 100vw;
       height: 88px;
-      z-index: 2;
+      z-index: 3;
       background: ${props => props.theme.colors.background};
     }
   }
@@ -38,7 +38,7 @@ export const BurgerMenu = styled.div`
     transition: all 0.3s ease 0s;
   }
 
-  @media (min-width: 1280px) {
+  @media (${props => props.theme.media.desktop}) {
     display: none;
   }
 

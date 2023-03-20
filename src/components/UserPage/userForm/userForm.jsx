@@ -6,6 +6,7 @@ import { UserFormBody } from './userForm.styled';
 import { UserFormInput, UserFormItem, UserFormLabel } from './userForm.styled';
 
 import FormButtons from './userFormBtn/UserFormBtn';
+import Logout from '../logout/logout';
 
 const UserForm = () => {
   const fakeData = {
@@ -35,7 +36,7 @@ const UserForm = () => {
       .email('Email is not correct'),
   });
   return (
-    <div>
+    <>
       <Formik
         initialValues={fakeData}
         validateOnBlur
@@ -149,10 +150,11 @@ const UserForm = () => {
                 handleSubmit={handleSubmit}
               />
             </UserFormItem>
+            <Logout />
           </UserFormBody>
         )}
       </Formik>
-    </div>
+    </>
   );
 };
 

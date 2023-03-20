@@ -1,11 +1,13 @@
 export const theme = {
 
+
   media: {
     mobile: '(max-width: 767px)',
     tablet: '(max-width: 1279px) and (min-width: 768px)',
     fromTablet: '(min-width: 768px)',
     desktop: '(min-width: 1280px)',
   },
+
 
   colors: {
     black: '#000',
@@ -56,4 +58,3 @@ export const theme = {
   },
 };
 
-export default theme;
