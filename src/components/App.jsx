@@ -7,8 +7,8 @@ export const App = () => {
 
   
   return (
-     <Title>
-      <LoginPage/>
+    <Title>
+      <LoginPage />
     </Title>
   );
 };
