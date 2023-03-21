@@ -23,17 +23,18 @@ const NoticesCategoriesList = ({ type }) => {
     if (!states) {
       return
     }
-    const fetchNotice = async () => {
+   async function fetchNotice() {
        console.log("NAME_URL",`'${NAME_URL}${pets}'`)
       try {
         const { data } = await axios.get(`${NAME_URL}${pets}`)
-        setStates(data)
+       
         setPets(`notices/${type}`);
+        setStates(data)
       } catch (error) {
       }
     }
-    fetchNotice()
-  }, [pets, type])
+    
+  }, [pets, type, states])
 
   console.log("first", states)
 
