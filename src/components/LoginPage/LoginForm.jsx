@@ -1,53 +1,57 @@
-import { Input } from './Input/Input'
-import { AccentButton } from './Buttons/Buttons';
-import { AuthForm }  from 'components/AuthForm/AuthForm';
-import { RedirectLink } from 'components/LoginPage/RedirectLink/RedirectLink'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
+import { userLogIn } from '../../redux/auth/operations';
+
+import { toast } from 'react-toastify';
+import { useAuth } from '../../hooks/useAuth';
+
+import { Input } from './Input/Input';
+import { AccentButton } from './Buttons/Buttons';
+import { AuthForm } from 'components/AuthForm/AuthForm';
+import { RedirectLink } from 'components/LoginPage/RedirectLink/RedirectLink';
 import { ErrorMessages } from '../RegisterPage/ErrorMessages/ErrorMessages';
 import { LoginValidation } from './Shema';
 
-// import axios from 'axios';
-
-// axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/';
-
 const initialValues = {
-  email: 'xlebushek@gmail.com',
-  password: 'AgSgfgnhh3',
-}
+  email: '',
+  password: '',
+};
 
 export const LoginForm = () => {
+  const dispatch = useDispatch();
 
-  const handleSubmit = (values, {resetForm}) => {
+  const { error } = useAuth();
 
-    //  const req = async () => {
-    //   try {
-    //     const res = await axios.post('/api/auth/login', values)
-    //     .then((response) => {
-    //       console.log(response);
-    //     })
-    //     return res.data;
-    //   } catch (error) {
-    //     return error.message;
-    //   }
-    // };
-    // req();
+  const handleLogin = values => {
+    dispatch(userLogIn(values));
+  };
 
-    console.log(values);;
+  const handleSubmit = (values, { resetForm }) => {
+    handleLogin(values);
     resetForm();
-   };
+  };
 
-      return (
-        <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={LoginValidation}>
-          <AuthForm title="Login" onSubmit={handleSubmit}>
-              <Input placeholder="Email" type="email" name="email" />
-              <ErrorMessage name='email' component={ErrorMessages}/>
+  useEffect(() => {
+    if (error) toast.error(`${error}`, { theme: 'colored' });
+  }, [error]);
 
-              <Input placeholder="Password" type="password" name="password" />
-              <ErrorMessage name='password' component={ErrorMessages}/>
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={LoginValidation}
+    >
+      <AuthForm title="Login" onSubmit={handleSubmit}>
+        <Input placeholder="Email" type="email" name="email" />
+        <ErrorMessage name="email" component={ErrorMessages} />
 
-              <AccentButton type='submit'>Login</AccentButton>
-              <RedirectLink/>
-          </AuthForm>
-        </Formik>
-      );
-    };
+        <Input placeholder="Password" type="password" name="password" />
+        <ErrorMessage name="password" component={ErrorMessages} />
+
+        <AccentButton type="submit">Login</AccentButton>
+        <RedirectLink />
+      </AuthForm>
+    </Formik>
+  );
+};

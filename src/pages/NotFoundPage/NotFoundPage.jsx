@@ -1,7 +1,7 @@
 import * as Page from './NotFoundPage.styled';
 
 const NotFoundPage = () => {
-  return (
+    return (
     <>
     <Page.NotFoundPage>
      <Page.Image>
@@ -15,5 +15,5 @@ const NotFoundPage = () => {
     </>
   );
 };
-
+  
 export default NotFoundPage;
