@@ -1,44 +1,26 @@
 import styled from 'styled-components';
-import { theme } from '../../theme'
+import { theme } from '../../theme';
 
 export const AuthForm = styled.form`
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-margin-left:auto;
-margin-right:auto;
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  padding: 60px 80px;
+  magrin-top: 80px;
+  border-radius: ${theme.radii.large};
+  background: ${theme.colors.white};
 
-padding: 60px 80px;
-border-radius: ${theme.radii.large};
-background: transparent;
-
-text-align: center;
-
-@media screen and (min-width: 768px){
-    margin-top: 200px;
-    background: ${theme.colors.white};
-    width: 608px;
-    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
-}
-
-@media screen and (min-width: 1280px){
-    margin-top: 80px;
-    width: 620px;
-
-}
-margin-top: 40px;
-
- `;
-
-export const Title = styled.h3`
-margin-bottom: 40px;
-
-font-family: ${theme.fonts.body};
-font-weight: ${theme.fontWeights.middle};
-font-size: ${theme.fontSizes.l};
-line-height: 49px;
-letter-spacing: 0.04em;
-`
+  box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
+  text-align: center;
+`;
+// font-weight: ${theme.fontWeights.bold};
+// font-size: ${theme.fontSizes.mx};
+// width: 100%;
+// border-radius: ${theme.radii.large};
+// padding: 10px;
+// border: ${theme.borders.large};
+// background: ${theme.colors.accent};
+// color: ${theme.colors.white};

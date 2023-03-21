@@ -1,69 +1,53 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
+import NoticeCategoryItem from "components/NoticesPage/NoticeCategoryItem/NoticeCategoryItem";
 import axios from "axios";
-import { Ul, Li, ImgCart } from "../NoticesPage/NoticesPage.Style";
+import { Ul, ContainerCard } from "../NoticesPage/NoticesPage.Style";
 
 import { useEffect, useState } from "react";
 
 import noticesSelectors from '../../redux/notices/noticesSelectors';
+// import { Container } from 'components/ItemPetModal/ItemPetModal.Style';
 
 const { selectNotices } = noticesSelectors;
 const NAME_URL = 'https://petly-vxdt.onrender.com/'
 
-const NoticesCategoriesList = ({type}) => {
-  const [state, setState] = useState([]) 
-  const [dog, setDog] = useState('notices')
-  // const [type, setType] = useState('notices')
+const NoticesCategoriesList = ({ type }) => {
+  const [states, setStates] = useState([])
+  const [pets, setPets] = useState('notices')
   console.log("name", type)
-  // setDog(type)
-// const onChange = () => setDog({dog: type})
-  console.log("dog", dog)
+  
+  console.log("dog", pets)
   useEffect(() => {
     console.log('type change')
-    setDog(type);
-    if(!state ) {
+    
+    if (!states) {
       return
     }
-    const fetchNotice = async () => { 
-             console.log("NAME_URL",`'https://petly-vxdt.onrender.com/${dog}'`)
+    const fetchNotice = async () => {
+       console.log("NAME_URL",`'${NAME_URL}${pets}'`)
       try {
-        // setDog(type)
-        const {data} = await axios.get(`https://petly-vxdt.onrender.com/${dog}`)        
-        setState(data)   
-       
-        console.log("data", setDog(type))    
+        const { data } = await axios.get(`${NAME_URL}${pets}`)
+        setStates(data)
+        setPets(`notices/${type}`);
       } catch (error) {
       }
     }
     fetchNotice()
-  }, [dog, type])
- 
+  }, [pets, type])
 
-  const pets = state
-console.log("first", pets)
+  console.log("first", states)
 
   // const notices = useSelector(selectNotices);
   // const noticesList = notices.result ? notices.result : [];
   return (
-    <Ul>
-          { pets?.map(pet => 
-            <Li key={pet.id}>              
-              <ImgCart src={pet.imageURL} alt={pet.title}/>
-              <div>
-              <p>{pet.breed}</p>
-              <p>{pet.location}</p>
-              <p>{pet.birthDate}</p>
-              </div>
-              
-             
-            </Li>
-          )}
-        </Ul>
+    <ContainerCard>
+      <Ul>
+      {states?.map(state => <NoticeCategoryItem noticeData={state} />
 
-    // <ul>
-    //   {noticesList.map(itemData => {
-    //     return <li key={itemData._id}>{itemData.name}</li>;
-    //   })}
-    // </ul>
+      )}
+    </Ul>
+    </ContainerCard>
+   
   );
 };
 

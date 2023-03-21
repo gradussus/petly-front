@@ -1,5 +1,4 @@
 export const theme = {
-
   media: {
     mobile: '(max-width: 767px)',
     tablet: '(max-width: 1279px) and (min-width: 768px)',
@@ -15,9 +14,9 @@ export const theme = {
     background: '#FDF7F2',
     secondary: '#3091EB',
     accent: '#F59256',
-    grey: 'rgba(17, 17, 17, 0.6)' 
+    grey: 'rgba(17, 17, 17, 0.6)',
   },
-  space: [0, 2, 4, 8, 16, 32, 48, 64, 128, 256],
+  space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
   fonts: {
     body: 'Manrope',
     manrope: 'Manrope, sans-serif',
@@ -28,6 +27,7 @@ export const theme = {
       m: '16px',
       mx: '20px',
       ml: '24px',
+      mm: '28px',
       lx: '32px',
       l: '36px',
       ll: '48px',
@@ -56,5 +56,3 @@ export const theme = {
     round: '50%',
   },
 };
-
-export default theme;

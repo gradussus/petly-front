@@ -204,6 +204,7 @@ bottom: 100px;
 right: 100px;
 width: 80px;
 height: 80px;
+z-index: 5;
 transform: translate(-50% -50%);
 text-align: center;
 border: ${p => p.theme.borders.none};
@@ -232,31 +233,51 @@ line-height: ${p => p.theme.lineHeights.heading};
 export const ContainerAdd = styled.div`
 display: flex;
 gap: 12px;
-margin-right: auto;
+margin-left: auto;
 align-items: baseline;
+
 `;
 export const Img = styled.img`
 display: inline-block;
+`;
+export const Label = styled.label`
+ position: relative;
+  
+`;
+export const FoundImg = styled.img`
+ position: absolute;
+ top: 50%;
+ right: 16px;
+ transform: translateY(-50% ) translateX(-50% )
+  
+`;
+
+
+export const ContainerCard = styled.div`
+margin-top: 30px;
+justify-content: center;
+@media screen  and (${p => p.theme.media.fromTablet}){
+  margin-top: 60px;
+}
+
 `;
 export const Ul = styled.ul`
 display: flex;
 flex-wrap: wrap;
 gap: 12px;
+margin-top: 30px;
 /* flex-direction: column; */
 justify-content: center;
-/* @media screen  and (${p => p.theme.media.fromTablet}){
-  display: grid; 
-  gap: 32px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;}
+@media screen  and (${p => p.theme.media.fromTablet}){
+  margin-top: 30px;
+}
 @media screen  and (${p => p.theme.media.desktop}){
-  display: grid;   
-  grid-template-columns: repeat(4, 1fr);
-} */
+  margin-top: 30px;
+}
 `;
 
 export const Li = styled.li`
-margin-top: 32px;
+/* margin-top: 32px; */
 
 `;
 export const ImgCart = styled.img`

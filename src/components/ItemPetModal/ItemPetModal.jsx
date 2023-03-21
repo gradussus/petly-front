@@ -2,7 +2,7 @@ import {
     Title, Image, Container,
     ContainerBtn, Text, BtnContact, Box,
     BtnAdd, Item, ContainerItem, Status, ContainerImg
-} from "./ItemPetModal.Style";
+} from "./ItemPetModal.Style"
 import Vector from "components/ItemPetModal/image/Vector.svg";
 
 // const state = `{
@@ -44,44 +44,45 @@ const state = `{
 
 export const ItemPetModal = () => {
     const data = JSON.parse(state)
-    const { name, birthDate, breed, location, sex, email, Phone, imageURL, comments, price, sell } = data
+    const { name, birthDate, breed, location, sex, email, Phone, imageURL,
+        comments, price, sell } = data
 
     return (
         <Container>
-         <ContainerImg>
-                    <Image src={imageURL} />
-                    {{sell} && <Status> sell </Status>}
-                    {!{sell} && <Status> in-good-hands </Status>}
-                </ContainerImg>
+            <ContainerImg>
+                <Image src={imageURL} />
+                {{ sell } && <Status> sell </Status>}
+                {!{ sell } && <Status> in-good-hands </Status>}
+            </ContainerImg>
 
-                <Title>Сute dog looking for a home</Title>
-                <Box>
-                    <div>Name:</div>
-                    <div>{name}</div>
-                    <div>Birthday:</div>
-                    <div>{birthDate}</div>
-                    <div>Breed:</div>
-                    <div>{breed}</div>
-                    <div>Location:</div>
-                    <div>{location}</div>
-                    <div>The sex:</div>
-                    <div>{sex}</div>
-                </Box>
-                <ContainerItem>
-                    <div>Email:</div>
-                    <Item href="">{email}</Item>
-                    <div>Phone:</div>
-                    <Item href=""> {Phone}</Item>
-                    {price && <div>Price:</div>
-                    }
-                    {price &&
-                        <div>{price}</div>}
-                </ContainerItem>
-                <Text>Comments: {comments}</Text>
-                <ContainerBtn>
-                    <BtnContact type="button" >Contact</BtnContact>
-                    <BtnAdd type="button">Add to <span ><img src={Vector} className="Vector" alt="Vector" /></span></BtnAdd>
-                </ContainerBtn>
+            <Title>Сute dog looking for a home</Title>
+            <Box>
+                <div>Name:</div>
+                <div>{name}</div>
+                <div>Birthday:</div>
+                <div>{birthDate}</div>
+                <div>Breed:</div>
+                <div>{breed}</div>
+                <div>Location:</div>
+                <div>{location}</div>
+                <div>The sex:</div>
+                <div>{sex}</div>
+            </Box>
+            <ContainerItem>
+                <div>Email:</div>
+                <Item href="">{email}</Item>
+                <div>Phone:</div>
+                <Item href=""> {Phone}</Item>
+                {price && <div>Price:</div>
+                }
+                {price &&
+                    <div>{price}</div>}
+            </ContainerItem>
+            <Text>Comments: {comments}</Text>
+            <ContainerBtn>
+                <BtnContact type="button" >Contact</BtnContact>
+                <BtnAdd type="button">Add to <span ><img src={Vector} className="Vector" alt="Vector" /></span></BtnAdd>
+            </ContainerBtn>
         </Container>
     )
 }

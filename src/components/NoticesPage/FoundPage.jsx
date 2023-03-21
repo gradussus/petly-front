@@ -1,14 +1,16 @@
 import  found  from "components/ItemPetModal/image/found.svg";
-import { Input, Found,
-    
-  } from "./NoticesPage.Style";
+import { Input, Found, FoundImg, Label  } from "./NoticesPage.Style";
 
 const NoticeFound = () => {
 
     return (
         <Found>
-        <Input placeholder="Search"/> 
-        <img src={found} alt="found" />       
+          <Label>
+          <Input placeholder="Search"/> 
+          <FoundImg src={found} alt="found" />
+          </Label>
+        
+               
       </Found>
     )
 };

@@ -4,7 +4,7 @@ export const UserDataBody = styled.div`
   padding-right: 0;
   margin-bottom: 20px;
 
-  @media (min-width: 1280px) {
+  @media (${props => props.theme.media.desktop}) {
     flex: 0 0 35%;
     padding-right: 32px;
   }
@@ -24,7 +24,7 @@ export const UserDataContent = styled.div`
   flex-direction: row-reverse;
   align-items: center;
 
-  @media (min-width: 1280px) {
+  @media (${props => props.theme.media.desktop}) {
     border-radius: 40px;
     display: block;
   }
@@ -44,7 +44,7 @@ export const UserDataContent = styled.div`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (${props => props.theme.media.mobile}) {
     display: block;
   }
 `;

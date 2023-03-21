@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../theme';
+import { theme } from '../../theme';
 
 const Section = styled.section`
   background-color: ${theme.colors.background};
@@ -18,22 +18,24 @@ const Section = styled.section`
 
 const Container = styled.div`
   margin: 0 auto;
-  /* @media screen and (${theme.media.mobile}) {
+  @media screen and (${theme.media.mobile}) {
    
-  } */
+  }
   padding: 0 20px;
     width: 320px;
   @media screen and (${theme.media.tablet}) {
-    display: grid; 
+    /* display: flex;  */
     gap: 12px;
-    grid-template-columns: 1fr 130px;
+    /* grid-template-columns: 1fr 130px; */
     padding: 0 32px;
     width: 768px;
   }
   @media screen and (${theme.media.desktop}) {
-    display: grid; 
+    /* display: flex;  */
     gap: 12px;
-    grid-template-columns: 1fr 130px;
+    /* display: grid; 
+    gap: 12px;
+    grid-template-columns: 1fr 130px; */
     padding: 0 16px;
     width: 1280px;
   }

@@ -5,8 +5,8 @@ export const Container = styled.div`
  height: 100%;
  padding: 20px;
   
-  @media screen and (min-width: 768px){
-    display: flex;
+  @media screen and (${p => p.theme.media.fromTablet}){
+    /* display: flex; */
     width: 704px;
     height: 540px;
     display: flex;
@@ -22,13 +22,12 @@ export const Modal = styled.div`
 position: absolute; 
 top: 50%;
 left: 50%;
-transform: translateX(-50%);
-transform: translateX(-50%);
+transform: translate(-50% -50%);
   padding: 20px;
   width: 80vw;
   background-color: ${p => p.theme.colors.white};  
   border-radius: 20px;
-  @media screen and (min-width: 768px){
+  @media screen and (${p => p.theme.media.fromTablet}){
     display: flex;
     width: 704px;
     height: 540px;
@@ -50,7 +49,7 @@ height: 34px;
 background-color: ${p => p.theme.colors.background};
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.round};
-@media screen and (min-width: 768px){
+@media screen and (${p => p.theme.media.fromTablet}){
     right: 32px;
     top: 32px;
 }
@@ -63,11 +62,12 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (min-width: 768){
-    grid-row: 1/2;
+@media screen and (${p => p.theme.media.fromTablet}){
+    grid-column: 2;
+    grid-row: 1;
     margin: 0;
     font-weight: ${p => p.theme.fontWeights.bold};
-    font-size: ${p => p.theme.fontSizes.lx};
+    font-size: ${p => p.theme.fontSizes.mm};
     line-height: ${p => p.theme.fontWeights.body};
 }
 
@@ -79,9 +79,10 @@ transform: translateX(-50%);
 height: 240px;
 margin-top: 40px;
 
-@media screen and (min-width: 768){
+@media screen and (${p => p.theme.media.fromTablet}){
     width: 288px;
     height: 328px; 
+    grid-column: 1;
     grid-row: 1 / span 3;
     margin: 0;
 }  
@@ -94,7 +95,7 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (min-width: 768){
+@media screen and (${p => p.theme.media.fromTablet}){
     grid-column: 2;
     grid-row: 2;
     margin-top: 20px;    
@@ -141,7 +142,7 @@ margin-bottom: 40px;
 font-weight: ${p => p.theme.fontWeights.interMiddle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (min-width: 768){
+@media screen and (${p => p.theme.media.fromTablet}){
     grid-column: 1 / span 3;
     grid-row: 4;
     margin-top: 28px;
@@ -158,7 +159,7 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
 color: ${p => p.theme.colors.primeText};
-@media screen and (min-width: 768){   
+@media screen and (${p => p.theme.media.fromTablet}){   
     
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
@@ -170,9 +171,9 @@ export const ContainerBtn = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-@media screen and (min-width: 768){
+@media screen and (${p => p.theme.media.fromTablet}){
     grid-column: 2 / span 3;
-    grid-row: 5;
+    grid-row: 4;
    flex-direction: row;
     align-items: baseline;
     align-self: end;
@@ -201,11 +202,11 @@ display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 2fr;
   margin-top: 8px;
-  &:focus, :hover {
+  /* &:focus, :hover {
     background-color: ${p => p.theme.colors.white};
     box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  }
-  @media screen and (min-width: 768){
+  } */
+  @media screen and (${p => p.theme.media.fromTablet}){
     grid-column: 2;
     grid-row: 3;
     margin: 0px;
@@ -219,6 +220,10 @@ export const BtnAdd = styled.button`
 width: 240px;
 padding-top: 9px;
 padding-bottom: 9px;
+display: flex;
+justify-content: center;
+align-items: baseline;
+gap: 10px;
 border-radius: ${p => p.theme.radii.large};
 background-color: ${p => p.theme.colors.background};
 color: ${p => p.theme.colors.primeText};
@@ -226,11 +231,11 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.large};
-&:focus, :hover {
+/* &:focus, :hover {
     background-color: ${p => p.theme.colors.white};
     box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  }
-@media screen and (min-width: 768){
+  } */
+@media screen and (${p => p.theme.media.fromTablet}){
     margin-left: 10px;
 }
 `;
