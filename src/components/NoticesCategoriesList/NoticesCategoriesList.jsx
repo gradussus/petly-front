@@ -29,11 +29,11 @@ const NoticesCategoriesList = ({ type }) => {
         const { data } = await axios.get(`${NAME_URL}${pets}`)
        
         setPets(`notices/${type}`);
-        setStates(data)
+        setStates(data.result)
       } catch (error) {
       }
     }
-    
+    fetchNotice()
   }, [pets, type, states])
 
   console.log("first", states)
