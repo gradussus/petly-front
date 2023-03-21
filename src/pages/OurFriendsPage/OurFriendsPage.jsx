@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getFriends } from './getFriends';
-import { OurFriends } from '../../components/OurFriendsPage/OurFriends';
+import { OurFriends } from '../../components/OurFriends/OurFriends';
+import { FriendsPageBody, FriendsTitle } from './OurFriendsPage.styled';
 
 const OurFriendsPage = () => {
   const [friends, setFriends] = useState([]);
+
+  // console.log(friends)
 
   useEffect(() => {
     async function fetch() {
@@ -18,10 +21,10 @@ const OurFriendsPage = () => {
   }, []);
 
   return (
-    <>
-      <h1>Our Friends</h1>
+    <FriendsPageBody>
+      <FriendsTitle>Our Friends</FriendsTitle>
       <OurFriends friends={friends} />
-    </>
+    </FriendsPageBody>
   );
 };
 
