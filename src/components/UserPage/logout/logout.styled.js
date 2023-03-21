@@ -12,7 +12,7 @@ export const LogoutBody = styled.div`
     color: rgba(17, 17, 17, 0.6);
     cursor: pointer;
     transition: color 0.3s;
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       &:hover {
         color: ${props => props.theme.colors.accent};
       }

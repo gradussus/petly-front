@@ -1,32 +1,29 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-
-`;
 export const Title = styled.h1`
 width: 100vw;
 text-align: center;
 text-decoration: 0;
 margin: 0;
-margin-top: 42px;
+/* margin-top: 42px; */
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+@media screen  and (${p => p.theme.media.fromTablet}){
     margin-top: 90px;
     margin-top: 40px;
     font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ll};
 line-height: ${p => p.theme.lineHeights.heading};
 }
-@media screen  and (min-width: 1280px){
+@media screen  and (${p => p.theme.media.desktop}){
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
 }
 `;
 export const Found = styled.div`
-/* position: relative; */
+position: relative;
 display: flex;
 margin: 28px 0px;
 justify-content: center;
@@ -34,16 +31,17 @@ justify-content: center;
 `;
 export const ImgFound = styled.img`
 position: absolute;
+resize: 50%;
 `;
 export const Input = styled.input`
-position: relative;
+/* position: relative; */
 width: 280px;
 padding: 9px 12px;
 border: ${p => p.theme.borders.none};
 border-radius: 20px;
 margin-left: auto;
 margin-right: auto;
-@media screen  and (min-width: 768px){
+@media screen  and (${p => p.theme.media.fromTablet}){
     width: 608px;
 padding: 8px 20px;
 &::placeholder{
@@ -52,7 +50,7 @@ font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
 }
 }
-@media screen  and (min-width: 1280px){
+@media screen  and (${p => p.theme.media.desktop}){
     font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
@@ -62,7 +60,7 @@ line-height: ${p => p.theme.lineHeights.heading};
 export const ContainerBtn = styled.div`
 margin-top: 28px;
 margin-bottom: 30px;
-@media screen  and (min-width: 768px){
+@media screen  and (${p => p.theme.media.fromTablet}){
     display: grid; 
     gap: 12px;
     grid-template-columns: 1fr 130px;
@@ -83,12 +81,18 @@ width: 131px;
 padding: 8px;
 border: ${p => p.theme.borders.large};
 border-radius: 20px;
-background-color: ${p => p.theme.colors.background};
+background-color: ${p => p.theme.colors.white};
 color: ${p => p.theme.colors.primeText};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+&:hover,
+  &:focus,
+  &.active {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
+@media screen  and (${p => p.theme.media.fromTablet}){
 width: 162px;
 font-weight: ${p => p.theme.fontWeights.middle};
 padding: 10px 28px;
@@ -106,7 +110,13 @@ color: ${p => p.theme.colors.white};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+&:hover,
+  &:focus,
+  &.active {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
+@media screen  and (${p => p.theme.media.fromTablet}){
 width: 197px;
 font-weight: ${p => p.theme.fontWeights.middle};
 padding: 10px 28px;
@@ -121,11 +131,17 @@ grid-row: 3;
 border: ${p => p.theme.borders.large};
 border-radius: 20px;
 color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.background};
+background-color: ${p => p.theme.colors.white};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+&:hover,
+  &:focus,
+  &.active {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
+@media screen  and (${p => p.theme.media.fromTablet}){
 width: 175px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -140,11 +156,17 @@ grid-row: 2;
 border: ${p => p.theme.borders.large};
 border-radius: 20px;
 color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.background};
+background-color: ${p => p.theme.colors.white};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+&:hover,
+  &:focus,
+  &.active {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
+@media screen  and (${p => p.theme.media.fromTablet}){
 width: 91px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -159,11 +181,17 @@ grid-row: 3;
 border: ${p => p.theme.borders.large};
 border-radius: 20px;
 color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.background};
+background-color: ${p => p.theme.colors.white};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (min-width: 768px){
+&:hover,
+  &:focus,
+  &.active {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
+@media screen  and (${p => p.theme.media.fromTablet}){
 width: 126px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -213,17 +241,18 @@ display: inline-block;
 export const Ul = styled.ul`
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
-align-items: center;
-@media screen  and (min-width: 768px){
+gap: 12px;
+/* flex-direction: column; */
+justify-content: center;
+/* @media screen  and (${p => p.theme.media.fromTablet}){
   display: grid; 
   gap: 32px;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;}
-@media screen  and (min-width: 1280px){
+@media screen  and (${p => p.theme.media.desktop}){
   display: grid;   
   grid-template-columns: repeat(4, 1fr);
-}
+} */
 `;
 
 export const Li = styled.li`

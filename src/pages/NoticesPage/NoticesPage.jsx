@@ -1,53 +1,66 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Container, Title, Input, Found,
-  BtnLost, BtnGood, BtnFavorite, BtnSell,
-  BtnMy, BtnAdd, Btn, ContainerAdd,
-  ContainerBtn, Img, Ul, ImgCart, Li, P, TabletBtnAdd
-} from "./NoticesPage.Style";
-import  cross  from "components/ItemPetModal/image/cross2.svg";
-import  found  from "components/ItemPetModal/image/found.svg";
- const NAME_URL = 'https://petly-vxdt.onrender.com/notices'
+import AddNoticeButton from "components/NoticesPage/AddNoticeButton";
+// import { useEffect, useState } from "react";
 
-const NoticesPage = () => {
-  const [state, setState] = useState([]) 
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+import  NoticeFound from "components/NoticesPage/FoundPage";
+import {  Title } from "../../components/NoticesPage/NoticesPage.Style";
+import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
+import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
+import elements from './NoticesPage.styled';
+import { Helmet } from 'react-helmet';
+const { Section, Container } = elements;
 
-  useEffect(() => {
-    window.onresize = () => {setWindowWidth(window.screen.width)};
-  
-    return () => {window.onresize = false};
-}, [windowWidth]);
-console.log("windowWidth", window.onresize)
-const screen = windowWidth
-console.log("screen", screen) 
 
-  useEffect(() => {
-    if(!state ) {
-      return
-    }
-    const fetchNotice = async () => {        
-      try {
-        const {data} = await axios.get(`${NAME_URL}`)        
-        setState(data)   
-        console.log("data", state)    
-      } catch (error) {
-      }
-    }
-    fetchNotice()
-  }, [])
  
 
-  const pets = state
-console.log("first", pets)
+const NoticesPage = () => {
+  // const [state, setState] = useState([]) 
+  // const [windowWidth, setWindowWidth] = useState(window.screen.width);
+
+//   useEffect(() => {
+//     window.onresize = () => {setWindowWidth(window.screen.width)};
+  
+//     return () => {window.onresize = false};
+// }, [windowWidth]);
+// console.log("windowWidth", window.onresize)
+// const screen = windowWidth
+// console.log("screen", screen) 
+
+//   useEffect(() => {
+//     if(!state ) {
+//       return
+//     }
+//     const fetchNotice = async () => {        
+//       try {
+//         const {data} = await axios.get(`${NAME_URL}`)        
+//         setState(data)   
+//         console.log("data", state)    
+//       } catch (error) {
+//       }
+//     }
+//     fetchNotice()
+//   }, [])
+ 
+
+//   const pets = state
+// console.log("first", pets)
   return (
+    <>
+     <Section>
+    <Helmet>
+      <title>Notices</title>
+    </Helmet>
+    <Title>Find your favorite pet</Title>
+    <NoticeFound/>
     <Container>
-      <Title>Find your favorite pet</Title>
-      <Found>
-        <Input placeholder="Search"/> 
-        <img src={found} alt="found" />       
-      </Found>
-      <ContainerBtn>
+      <NoticesCategoriesNav />      
+      <AddNoticeButton/>
+     
+    </Container>
+    <NoticesCategoriesList />
+  </Section>
+   
+      
+      {/* <ContainerBtn>
           <Btn>
             <BtnLost type="button">lost/found</BtnLost>
             <BtnGood type="button">in good hands</BtnGood>
@@ -61,25 +74,18 @@ console.log("first", pets)
           <br/></TabletBtnAdd></ContainerAdd>
           )}
 
-        </ContainerBtn>
-        <Ul>
-          { pets?.map(pet => 
-            <Li key={pet.id}>              
-              <ImgCart src={pet.imageURL} alt={pet.title}/>
-              <div>
-              <p>{pet.breed}</p>
-              <p>{pet.location}</p>
-              <p>{pet.birthDate}</p>
-              </div>
-              
-             
-            </Li>
-          )}
-        </Ul>
-    </Container>
+        </ContainerBtn> */}
+        
+   
+    </>
+   
   )
-
 
 };
 
+// const NoticesPage = () => {
+//   return (
+   
+//   );
+// 
 export default NoticesPage;
