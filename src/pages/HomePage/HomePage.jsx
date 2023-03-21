@@ -1,22 +1,23 @@
-import heartImg from './images/desktop/heart.png';
-import labro from './images/mobile/labro_mobile.png';
-import vector from './images/mobile/bg_mobile.png';
-// import { Container } from './Container/Container';
-import styles from "../HomePage/HomePage.module.css";
+import * as SC from './HomePage.styled.js';
 
-const HomePage = ({heart, labrador, background}) => {
-  return <home className={styles.container}>
-    {/* <Container className={styles.container}> */}
-      <div className={styles.home_title}>
+import heartImg from './images/desktop/heart.png';
+import labro from './images/desktop/labro_desk.png';
+import vectorL from './images/desktop/bg_desk_left.png';
+import vectorSm from './images/tablet/bg_tablet.png';
+
+
+const HomePage = () => {
+  return <SC.Home>
+    <SC.Title>
         <span>Take good care of</span>
         <br />
         <span>your small pets</span>
-      </div>
-    <img className={styles.img_heart} src={heartImg} alt="heart" />
-      <img className={styles.img_labro} src={labro} alt="labrador" />
-    <img className={styles.img_vector} src={vector} alt="background" />
-    {/* </Container> */}
-  </home>;
+      </SC.Title>
+    <SC.Heart src={heartImg} alt="heart" />
+    <SC.Labro src={labro} alt="labrador" />
+    <SC.BackgroundL src={vectorL} alt="background" /> 
+    <SC.BackgroundSm src={vectorSm} alt="background" />
+  </SC.Home>;
 };
 
 export default HomePage;
