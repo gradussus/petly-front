@@ -87,7 +87,7 @@ margin-top: 40px;
     margin: 0;
 }  
 `;
-export const Box = styled.div`
+export const Box = styled.ul`
  display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 2fr;
