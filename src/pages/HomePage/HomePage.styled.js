@@ -40,15 +40,19 @@ export const BackgroundL = styled.img`
 
 export const BackgroundSm = styled.img`
     position: absolute;
-    width: 100%;
-    bottom: 0;
+    width: 100vw;
     z-index: -1;
     padding: 0;
-    left: -20px;
-    max-height: 1280px;
+    bottom: 0;
+    left: -20px; 
+
+    @media (${props => props.theme.media.tablet}) {
+      bottom: -320px;
+    };
   
     @media (${props => props.theme.media.desktop}) {
       width: 0px;
+      
     };
 `;
 
@@ -98,7 +102,7 @@ export const Heart = styled.img`
   position: absolute;
   width: 0px;
   animation-name: heart;
-  animation-duration: 1000ms;
+  animation-duration: 2000ms;
   animation-timing-function: linear;
   animation-delay: 1500ms;
   animation-fill-mode: forwards;
@@ -130,118 +134,32 @@ export const Heart = styled.img`
 export const Labro = styled.img`
   position: absolute;
   align-item: centre;
-  width: 280px;
+  width: 380px;
   bottom: 0px;
   right: 0px;
-
-  // opacity: 1;
-
+  padding: 0 auto;
+  opacity: 1;
   z-index: 100;
   background: url(./images/mobile/labro_mobile.png);
   transition-duration: 1000ms;
+
   @media (${props => props.theme.media.tablet}) {
     background: url(./images/mobile/labro_mobile.png);
-    width: 320px;
+    width: 382px;
+
   } 
 
   @media (${props => props.theme.media.fromTablet}) {
     background: url(./images/tablet/labro_tablet.png);
-    width: 320px;
+    right: 200px;
+    bottom: 0px;
   } 
 
   @media (${props => props.theme.media.desktop}) {
     background: url(./images/desktop/labro_desk.png);
     width: 524px;
+    right: 0;
   }
-//   // @media screen and (min-width: 320px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 320px) and (max-height: 700px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 320px) and (max-height: 550px) {
-//   //   width: 230px;
-//   // }
-
-
-
-//   // @media screen and (min-width: 460px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 460px) and (min-height: 1281px) {
-//   //   width: 699px;
-//   // }
-
-//   // @media (min-width: 460px) and (max-height: 1280px) {
-//   //   width: 524px;
-//   // }
-
-//   // @media (min-width: 460px) and (max-height: 1000px) {
-//   //   width: 500px;
-//   // }
-
-//   // @media (min-width: 460px) and (max-height: 600px) {
-//   //   width: 400px;
-//   // }
-
-//   // @media (min-width: 460px) and (max-height: 500px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 460px) and (max-height: 400px) {
-//   //   width: 230px;
-//   // }
-
-
-
-//   // @media screen and (min-width: 768px) {
-//   //   width: 699px;
-//   // }
-
-//   // @media (min-width: 768px) and (max-height: 800px) {
-//   //   width: 524px;
-//   // }
-
-//   // @media (min-width: 768px) and (max-height: 718px) {
-//   //   width: 500px;
-//   // }
-
-//   // @media (min-width: 768px) and (max-height: 600px) {
-//   //   width: 400px;
-//   // }
-
-//   // @media (min-width: 768px) and (max-height: 500px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 768px) and (max-height: 400px) {
-//   //   width: 230px;
-//   // }
-
- 
-
-//   // @media screen and (min-width: 1280px) {
-//   //   width: 524px;
-//   // }
-
-//   // @media (min-width: 1280px) and (max-height: 718px) {
-//   //   width: 500px;
-//   // }
-
-//   // @media (min-width: 1280px) and (max-height: 600px) {
-//   //   width: 400px;
-//   // }
-
-//   // @media (min-width: 1280px) and (max-height: 500px) {
-//   //   width: 320px;
-//   // }
-
-//   // @media (min-width: 1280px) and (max-height: 400px) {
-//   //   width: 230px;
-//   // }
 `;
 
 
