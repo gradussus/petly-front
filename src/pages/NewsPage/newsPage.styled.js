@@ -4,11 +4,9 @@ export const Container = styled.div`
   @media ${p => p.theme.media.mobile} {
     padding: 100px 20px 100px 20px;
   }
-
   @media ${p => p.theme.media.tablet} {
     padding: 160px 32px 100px 32px;
   }
-
   @media ${p => p.theme.media.desktop} {
     padding: 126px 16px 200px 16px;
   }
@@ -19,16 +17,17 @@ export const Title = styled.h1`
     text-align: center;
     margin-bottom: 28px;
     font-size: 24px;
-    line-height: 1.36px;
+    line-height: 1.36;
   }
-
   @media ${p => p.theme.media.tablet} {
+    text-align: center;
     margin-bottom: 40px;
     font-size: 48px;
     line-height: 66px;
   }
 
   @media ${p => p.theme.media.desktop} {
+    text-align: center;
     margin-bottom: 40px;
     font-size: 48px;
     line-height: 66px;
@@ -44,8 +43,19 @@ export const SearchBox = styled.form`
     width: 280px;
     height: 40px;
   }
+  @media ${p => p.theme.media.tablet} {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 
-  @media${p => p.theme.media.tablet} {
+    margin-bottom: 60px;
+    width: 608px;
+    height: 44px;
+  }
+  @media ${p => p.theme.media.desktop} {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 60px;
     width: 608px;
     height: 44px;
@@ -57,7 +67,7 @@ export const Button = styled.button`
   right: 15px;
   top: 30%;
   border: none;
-  background: trasparent;
+  background: transparent;
   cursor: pointer;
 `;
 
@@ -71,15 +81,34 @@ export const Input = styled.input`
     width: 100%;
     height: 40px;
     background-color: #ffffff;
-
     ::placeholder {
       color: #535353;
     }
   }
-
-  @media ${p => p.theme.media.tablet} {
+  @media ${p => p.theme.media.fromTablet} {
+    display: block;
+    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+    border: 1px white solid;
+    border-radius: 20px;
+    padding-left: 15px;
+    width: 100%;
     height: 44px;
+    background-color: #ffffff;
+    ::placeholder {
+      color: #535353;
   }
+
+    @media ${p => p.theme.media.desktop} {
+    display: block;
+    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+    border: 1px white solid;
+    border-radius: 20px;
+    padding-left: 15px;
+    width: 100%;
+    height: 44px;
+    background-color: #ffffff;
+    ::placeholder {
+      color: #535353;
 `;
 
 export const Box = styled.ul`
@@ -87,12 +116,44 @@ export const Box = styled.ul`
     display: flex;
     flex-wrap: wrap;
   }
+  @media ${p => p.theme.media.desktop} {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+
+export const Card = styled.li`
+  @media ${p => p.theme.media.mobile} {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    &:nth-last-child() {
+      margin-bottom: 0px;
+    }
+  }
+  @media ${p => p.theme.media.tablet} {
+    width: calc((100% - 32px) / 2);
+    margin-left: 32px;
+    margin-bottom: 60px;
+    margin-right: 0px;
+    &:nth-child(2n + 1) {
+      margin-left: 0px;
+    }
+  }
+  @media ${p => p.theme.media.desktop} {
+    width: calc((100% - 64px) / 3);
+    &:nth-child(2n + 1) {
+      margin-left: 32px;
+    }
+    &:nth-child(3n + 1) {
+      margin-left: 0px;
+    }
+  }
 `;
 
 export const NotFound = styled.p`
   font-size: 18px;
   color: red;
-
   @media ${p => p.theme.media.tablet} {
     font-size: 30px;
   }
