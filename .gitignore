@@ -9,7 +9,7 @@
 /.pnp
 .pnp.js
 
-package.json
+package-lock.json
 
 # testing
 /coverage
