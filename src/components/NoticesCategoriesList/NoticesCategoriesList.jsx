@@ -5,10 +5,10 @@ import { Ul, ContainerCard } from "../NoticesPage/NoticesPage.Style";
 
 import { useEffect, useState } from "react";
 
-import noticesSelectors from '../../redux/notices/noticesSelectors';
+// import noticesSelectors from '../../redux/notices/noticesSelectors';
 // import { Container } from 'components/ItemPetModal/ItemPetModal.Style';
 
-const { selectNotices } = noticesSelectors;
+// const { selectNotices } = noticesSelectors;
 const NAME_URL = 'https://petly-vxdt.onrender.com/'
 
 const NoticesCategoriesList = ({ type }) => {
