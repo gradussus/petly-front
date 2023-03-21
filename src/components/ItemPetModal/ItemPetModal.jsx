@@ -54,7 +54,6 @@ export const ItemPetModal = () => {
                 {{ sell } && <Status> sell </Status>}
                 {!{ sell } && <Status> in-good-hands </Status>}
             </ContainerImg>
-
             <Title>Сute dog looking for a home</Title>
             <Box>
                 <div>Name:</div>
