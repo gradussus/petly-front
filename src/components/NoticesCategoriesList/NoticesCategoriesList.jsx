@@ -18,21 +18,18 @@ const NoticesCategoriesList = ({ type }) => {
   useEffect(() => {
     console.log('type change')
     
-    if (!states) {
-      return
-    }
    async function fetchNotice() {
        console.log("NAME_URL",`'${NAME_URL}${pets}'`)
       try {
         const { data } = await axios.get(`${NAME_URL}${pets}`)
        
         setPets(`notices/${type}`);
-        setStates(data.result)
+        setStates(data)
       } catch (error) {
       }
     }
     fetchNotice()
-  }, [pets, type, states])
+  }, [pets, type])
 
   console.log("first", states)
   // const notices = useSelector(selectNotices);
