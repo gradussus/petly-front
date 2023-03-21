@@ -6,6 +6,7 @@ top: 0;
   left: 0; 
   width: 100vw;
   height: 100vh;
+  z-index: 10;
   background-color: rgba(17, 17, 17, 0.6);
   
 `;
@@ -22,6 +23,9 @@ border-radius: 20px;
 `;
 export const BtnClose = styled.button`
 position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
 right: 20px;
 top: 20px;
 width: 34px;

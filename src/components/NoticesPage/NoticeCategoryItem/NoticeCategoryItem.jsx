@@ -1,5 +1,9 @@
+import { useState } from "react";
 import { ReactComponent as FavoriteIcon } from './tmp/icons-heart-default.svg';
 import { ReactComponent as InFavoriteIcon } from './tmp/icons-heart-variant1.svg';
+import { ModalSample } from "components/Modal/Modal";
+import { ItemPetModal } from "components/ItemPetModal/ItemPetModal";
+
 
 import {
   CardWrapper,
@@ -73,7 +77,8 @@ const categorySelector = category => {
 // };
 
 // Компонент должен принять в виде пропов: объекта и двух функций
-const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore }) => {
+const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
+  const [showModal, setShowModal] = useState(false);
   const {
     _id: id,
     category,
@@ -89,6 +94,8 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore 
   const petAge = getPetAge(birthDate);
   const formattedCategory = categorySelector(category);
 
+
+// console.log('noticeData', noticeData )
   const handleAddToFavoritesClick = () => {
     if (userIsLoggedIn) {
       handleAddToFavorites(id);
@@ -96,8 +103,11 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore 
       alert('You need to be logged in to use this feature.'); // TODO: Заменить на нотификацию библиотеки
     }
   };
-
+  const toggleModal = () => {
+    setShowModal(!showModal)
+}
   return (
+    <>
     <CardWrapper>
       <Img src={imageURL} alt="pet" />
       <CategoryOverlay>
@@ -130,7 +140,7 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore 
       <BtnOverlay>
         <LearnMoreButton
           type="button"
-          onClick={() => handleLearnMore(noticeData)}
+          onClick={() =>  toggleModal()}
         >
           Learn more
         </LearnMoreButton>
@@ -139,8 +149,13 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore 
             Delete
           </DeleteButton>
         )}
-      </BtnOverlay>
+      </BtnOverlay>     
     </CardWrapper>
+    {showModal && <ModalSample toggleModal={toggleModal} >
+                <ItemPetModal/>
+                </ModalSample>}
+    </>
+    
   );
 };
 
