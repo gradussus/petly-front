@@ -1,34 +1,36 @@
+import React, { useState, useEffect } from 'react';
 
-import * as HeaderStyle from './Header.styled';
-
-
+import { BurgerMenu, HeaderBody } from './Header.styled';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
-import { HeaderNavLinks } from './HeaderNavLinks/HaderNavLinks';
-import { LoginUserButton } from './HeaderButtons/AuthorisedNavButton';
-import {UnauthorizedUserButton} from './HeaderButtons/UnathorisedNavButtons';
 
-
+import HeaderNavMenu from './HeaderNavs/HeaderNavMenu/HeaderNavMenu';
 
 export const Header = () => {
-    return ( 
-        
-    <HeaderStyle.HeaderBody>
-             
-     <HeaderLogo/>
-     <HeaderNavLinks/>
-     <LoginUserButton/>
-     <UnauthorizedUserButton/>
-           
-   
-    </HeaderStyle.HeaderBody>
-      
-        );
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenu = open => {
+    setMenuOpen(open);
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('active');
+    }
+    if (!menuOpen) {
+      document.body.classList.remove('active');
+    }
+  }, [menuOpen]);
+
+  return (
+    <HeaderBody>
+      <HeaderLogo />
+      <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
+      <BurgerMenu
+        onClick={() => handleMenu(!menuOpen)}
+        className={menuOpen ? 'active' : ''}
+      >
+        <span></span>
+      </BurgerMenu>
+    </HeaderBody>
+  );
 };
-
-
-
-
-  // auth nav  login nav - два компонента, 
-  // user nav gap 20px -> 2 buttons login + register (link from reactRouterDOM) styled component 
-  // header обернуть -> logo в компонент вынести и 
-  // header body flex
