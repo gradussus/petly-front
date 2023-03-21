@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { theme } from '../../../theme'
+import { Field } from 'formik';
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   width: 100%;
   box-sizing: border-box;
   margin-left:auto;

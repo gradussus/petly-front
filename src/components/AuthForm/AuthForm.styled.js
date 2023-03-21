@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { theme } from '../../theme'
+import { Form } from 'formik';
 
-export const AuthForm = styled.form`
+export const AuthForm = styled(Form)`
 
 margin-left:auto;
 margin-right:auto;

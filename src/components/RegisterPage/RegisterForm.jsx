@@ -4,6 +4,8 @@ import { AuthForm }  from 'components/AuthForm/AuthForm';
 import { RedirectLink } from 'components/RegisterPage/RedirectLink/RedirectLink';
 import { useState } from 'react';
 import axios from 'axios';
+import { Formik } from 'formik';
+
 
 axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/';
 
@@ -15,6 +17,15 @@ export const RegisterForm = () => {
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [phone, setPhone] = useState('');
+
+  const initialValues = {
+    email: '123',
+    password: '123',
+    confPassword: '',
+    name: '',
+    city: '',
+    phone: ''
+  }
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -44,11 +55,48 @@ export const RegisterForm = () => {
   };
 }
   
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
+  const handleSubmit = (values, actions) => {
+    // e.preventDefault();
+    // const form = e.target;
+    // const {email, password, name, city, phone} = e.target.elements.value;
+    // const email = e.target.elements.email.value;
+    
 
-    const data = {email, password, name, city, phone};
+  
+
+    console.log(values);
+    // form.reset();
+  };
+
+      return (
+        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+          <AuthForm title="Registration" >
+            {isSecondStep ? (
+              <>
+              <Input placeholder="Name" type="text" name="name" value={name} onChange={handleChange} />
+              <Input placeholder="City, region" type="text" name="city" value={city} onChange={handleChange} />
+              <Input placeholder="Mobile phone" type="tel" name="tel" value={phone} onChange={handleChange} />
+              <AccentButton type="submit">Register</AccentButton>
+              <TransparentButton type="button" onClick={() => setSecondStep(!isSecondStep)}>Back</TransparentButton>
+              </>
+              ):(
+              <>
+              <Input placeholder="Email" type="email" name="email" onChange={handleChange} />
+              <Input placeholder="Password" type="password" name="password" value={password} onChange={handleChange} />
+              <Input placeholder="Confirm Password" type="password" name="confPassword" value={confPassword} onChange={handleChange} />
+              <NextBtn onClick={() => setSecondStep(!isSecondStep)}>Next</NextBtn>
+            
+              </>
+              )}
+              <RedirectLink/>
+          </AuthForm>
+        </Formik>
+      
+      );
+    };
+
+
+        // const data = {email, password, name, city, phone};
 
     // const req = async () => {
     //   try {
@@ -62,33 +110,3 @@ export const RegisterForm = () => {
     //   }
     // };
     // req();
-  
-
-    console.log(data);
-    form.reset();
-  };
-
-      return (
-          <AuthForm title="Registration" onSubmit={handleSubmit}>
-            {isSecondStep ? (
-              <>
-              <Input placeholder="Name" type="text" name="name" value={name} onChange={handleChange} />
-              <Input placeholder="City, region" type="text" name="city" value={city} onChange={handleChange} />
-              <Input placeholder="Mobile phone" type="tel" name="tel" value={phone} onChange={handleChange} />
-              <AccentButton type="submit">Register</AccentButton>
-              <TransparentButton type="button" onClick={() => setSecondStep(!isSecondStep)}>Back</TransparentButton>
-              </>
-              ):(
-              <>
-              <Input placeholder="Email" type="email" name="email" value={email} onChange={handleChange} />
-              <Input placeholder="Password" type="password" name="password" value={password} onChange={handleChange} />
-              <Input placeholder="Confirm Password" type="password" name="confPassword" value={confPassword} onChange={handleChange} />
-              <NextBtn onClick={() => setSecondStep(!isSecondStep)}>Next</NextBtn>
-            
-              </>
-              )}
-              <RedirectLink/>
-          </AuthForm>
-      
-      );
-    };
