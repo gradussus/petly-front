@@ -1,7 +1,12 @@
 import React from 'react';
+
 import { NavsBody, NavMenu, NavButtons } from './HeaderNavMenu.styled';
+
 import HeaderNavMenuItem from './HeaderNavMenuItem';
 import LoginButton from '../HeaderNavButton/LoginButton';
+
+import { useAuth } from '../../../../hooks/useAuth';
+import AccountButton from '../HeaderNavButton/AccountButton';
 
 const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
   const navItems = [
@@ -9,6 +14,8 @@ const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
     { href: '/notices/sell', title: 'Find pet' },
     { href: '/friends', title: 'Our friends' },
   ];
+
+  const { isLoggedIn } = useAuth();
 
   return (
     <NavsBody className={menuOpen ? 'active' : ''}>
@@ -23,7 +30,11 @@ const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
         ))}
       </NavMenu>
       <NavButtons>
-        <LoginButton handleMenu={handleMenu} />
+        {isLoggedIn ? (
+          <AccountButton />
+        ) : (
+          <LoginButton handleMenu={handleMenu} />
+        )}
       </NavButtons>
     </NavsBody>
   );
