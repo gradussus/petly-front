@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Container, Box, Title, SearchBox, Input, Button, NotFoundBox, NotFound } from "./newsPage.styled";
+import { ToastContainer } from "react-toastify";
+import { Container, Box, Card, Title, SearchBox, Input, Button, NotFoundBox, NotFound } from "./newsPage.styled";
+import NewsCard from "../../components/NewsPage/NewsCard";
+import searchIcon from "../../img/search.svg";
 import getNews from "./getNews";
 
-
-
-const News = () => {
+function News() {
   const [news, setNews] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? "";
+  const [searchParams, setSeachParams] = useSearchParams();
+  const query = searchParams.get("query") ?? "";
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -25,13 +26,13 @@ const News = () => {
   }, []);
 
   const handleChange = e => {
-    setSearchParams({ query: e.currentTarget.value.toLocalLowerCase().trim() });
-    setSearch(e.currentTarget.value.toLocalLowerCase());
+    setSeachParams({ query: e.currentTarget.value.toLocaleLowerCase().trim() });
+    setSearch(e.currentTarget.value.toLocaleLowerCase());
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query: search });
+    setSeachParams({ query: search });
   };
 
   const getFilteredNews = () => {
@@ -45,21 +46,28 @@ const News = () => {
   return (
     <Container>
       <Title>News</Title>
+      <ToastContainer />
       <SearchBox onSubmit={handleSubmit}>
         <Input type="text" name="query" value={search} placeholder="Search" autoFocus onChange={handleChange} />
         <Button type="submit">
-          {/* <img src={searchIcon} alt="searchIcon" /> */}
+          <img src={searchIcon} alt="searchIcon" />
         </Button>
       </SearchBox>
       <Box>
+        {news.length > 0 &&
+          filteredNews.map(newItem => (
+            <Card key={newItem._id}>
+              <NewsCard newItem={newItem} />
+            </Card>
+          ))}
       </Box>
       {search !== "" && query && filteredNews.length === 0 && (
         <NotFoundBox>
-          <NotFound>Nothing found.Please,try again.</NotFound>
+          <NotFound>Nothing found. Please, try again.</NotFound>
         </NotFoundBox>
       )}
     </Container>
   );
-};
+}
 
 export default News;
