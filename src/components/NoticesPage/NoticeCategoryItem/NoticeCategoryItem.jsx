@@ -50,30 +50,30 @@ const categorySelector = category => {
 };
 
 // ! Пример объекта для теста
-const noticeData = {
-  _id: '64170d5b224ab824d2bd485f',
-  category: 'in-good-hands',
-  title: 'Buldog',
-  name: 'Test e',
-  birthDate: '16.12.2020',
-  breed: 'Pomeranian',
-  sex: 'female',
-  location: 'Dublin, Scotland',
-  comments: 'The swettyiest dog ever',
-  price: 1,
-  owner: {
-    _id: '6415b1f36140bcbc04c3a518',
-    email: 'polly@ukr.net',
-    phone: '0979482826',
-  },
-  imageURL:
-    'https://images.pexels.com/photos/13240748/pexels-photo-13240748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  createdAt: '2023-03-19T13:25:47.743Z',
-  updatedAt: '2023-03-19T13:25:47.743Z',
-};
+// const noticeData = {
+//   _id: '64170d5b224ab824d2bd485f',
+//   category: 'in-good-hands',
+//   title: 'Buldog',
+//   name: 'Test e',
+//   birthDate: '16.12.2020',
+//   breed: 'Pomeranian',
+//   sex: 'female',
+//   location: 'Dublin, Scotland',
+//   comments: 'The swettyiest dog ever',
+//   price: 1,
+//   owner: {
+//     _id: '6415b1f36140bcbc04c3a518',
+//     email: 'polly@ukr.net',
+//     phone: '0979482826',
+//   },
+//   imageURL:
+//     'https://images.pexels.com/photos/13240748/pexels-photo-13240748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//   createdAt: '2023-03-19T13:25:47.743Z',
+//   updatedAt: '2023-03-19T13:25:47.743Z',
+// };
 
 // Компонент должен принять в виде пропов: объекта и двух функций
-const NoticeCategoryItem = ({ handleAddToFavorites, handleLearnMore }) => {
+const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, handleLearnMore }) => {
   const {
     _id: id,
     category,
@@ -145,5 +145,3 @@ const NoticeCategoryItem = ({ handleAddToFavorites, handleLearnMore }) => {
 };
 
 export default NoticeCategoryItem;
-
-// TODO: Добавить в кнопку удаления иконку
