@@ -1,13 +1,5 @@
-import NoticeCategoryItem from 'components/NoticesPage/NoticeCategoryItem/NoticeCategoryItem';
-
 const HomePage = () => {
-  return <NoticeCategoryItem />;
+  return <p>HomePage</p>;
 };
 
 export default HomePage;
-
-// const HomePage = () => {
-//   return <p>HomePage</p>;
-// };
-
-// export default HomePage;
