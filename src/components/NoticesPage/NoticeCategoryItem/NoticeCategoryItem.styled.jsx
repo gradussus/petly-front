@@ -30,14 +30,14 @@ export const CardWrapper = styled.div`
 
 export const CategoryOverlay = styled.div`
   position: absolute;
-  top: ${props => props.theme.space[6]}px;
+  top: 20px;
   left: 0;
 
   display: flex;
   align-items: center;
   width: 158px;
   height: 28px;
-  padding-left: ${props => props.theme.space[5]}px;
+  padding-left: 20px;
 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
