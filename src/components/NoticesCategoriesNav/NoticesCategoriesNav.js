@@ -1,85 +1,63 @@
 import elements from './NoticesCategoriesNav.styled';
-import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import noticesOperations from '../../redux/notices/noticesOperations';
-import NoticesCategoriesList from '../NoticesCategoriesList/NoticesCategoriesList';
+
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
 
-const { fetchNoticesByCategory } = noticesOperations;
 const { NoticesCategoriesNavLink, Container } = elements;
 
-const NoticesCategoriesNav = () => {
+function NoticesCategoriesNav({ onTypeChanged }) {
   const { pathname } = useLocation();
-  const dispatch = useDispatch();
-  const [type, setType] = useState('');
-
-  useEffect(() => {
-  }, [type]);
 
   useEffect(() => {
     if (pathname.includes('sell')) {
-      dispatch(fetchNoticesByCategory({ category: 'sell' }));
+      onTypeChanged('sell');
     } else if (pathname.includes('lost-found')) {
-      dispatch(fetchNoticesByCategory({ category: 'lostfound' }));
+      onTypeChanged('lost-found');
     } else if (pathname.includes('for-free')) {
-      dispatch(fetchNoticesByCategory({ category: 'forfree' }));
+      onTypeChanged('for-free');
+    } else if (pathname.includes('own')) {
+      onTypeChanged('own');
+    } else if (pathname.includes('favorite')) {
+      onTypeChanged('favorite');
     }
   });
-
-  // const handleCategoryFetch = filter => {
-  //   dispatch(fetchNoticesByCategory(filter));
-
-  // };
 
   return (
     <>
       <Container>
         <NoticesCategoriesNavLink
-          // to="sell"
-          onClick={() => setType('sell')}
+          to="sell"
+          onClick={() => onTypeChanged('sell')}
         >
           sell
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink
-          // to="lost-found"
-          onClick={() => setType('lost-found')}
+          to="lost-found"
+          onClick={() => onTypeChanged('lost-found')}
         >
           lost/found
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink
-          // to="for-free"
-          onClick={() => setType('for-free')}
+          to="for-free"
+          onClick={() => onTypeChanged('for-free')}
         >
           in good hands
         </NoticesCategoriesNavLink>
+        <NoticesCategoriesNavLink to="own" onClick={() => onTypeChanged('own')}>
+          own
+        </NoticesCategoriesNavLink>
+        <NoticesCategoriesNavLink
+          to="favorite"
+          onClick={() => onTypeChanged('favorite')}
+        >
+          favorite
+        </NoticesCategoriesNavLink>
+
         <AddNoticeButton />
       </Container>
-      <NoticesCategoriesList type={type} />
     </>
-
-    // <Container>
-    //   <NoticesCategoriesNavLink
-    //     to="sell"
-    //     onClick={() => handleCategoryFetch({ category: 'sell' })}
-    //   >
-    //     sell
-    //   </NoticesCategoriesNavLink>
-    //   <NoticesCategoriesNavLink
-    //     to="lost-found"
-    //     onClick={() => handleCategoryFetch({ category: 'lostfound' })}
-    //   >
-    //     lost/found
-    //   </NoticesCategoriesNavLink>
-    //   <NoticesCategoriesNavLink
-    //     to="for-free"
-    //     onClick={() => handleCategoryFetch({ category: 'forfree' })}
-    //   >
-    //     in good hands
-    //   </NoticesCategoriesNavLink>
-    //   <NoticesCategoriesList handleCategoryFetch={() => handleCategoryFetch}/>
-    // </Container>
   );
-};
+}
 
 export default NoticesCategoriesNav;

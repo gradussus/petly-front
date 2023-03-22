@@ -43,7 +43,7 @@ export const Card = ({ friends }) => {
               <div>
                 <FriendsPar>Time:</FriendsPar>
                 <FriendsPar>
-                  Address:<br></br>
+                  Address:<br />
                   <a href={addressUrl} target="_blank" rel="noreferrer">
                     {address ? (
                       <FriendsAddress>{address}</FriendsAddress>
@@ -53,11 +53,11 @@ export const Card = ({ friends }) => {
                   </a>
                 </FriendsPar>
                 <FriendsPar type="email">
-                  Email:<br></br>
+                  Email:<br />
                   {email ? <span>{email}</span> : <hr />}
                 </FriendsPar>
                 <FriendsPar type="phone">
-                  Phone:<br></br>
+                  Phone:<br />
                   {phone ? <span>{phone}</span> : <hr />}
                 </FriendsPar>
               </div>

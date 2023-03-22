@@ -6,10 +6,11 @@ import {
 import Vector from "components/ItemPetModal/image/Vector.svg";
 
 export const ItemPetModal = ({ modalCard }) => {
-    console.log("first", modalCard)
+    console.log("modalCard", modalCard)
     const { name, birthDate, breed, location, sex, imageURL,
         comments, price, sell, owner } = modalCard
-
+// console.log('owner', owner)
+// console.log('phone', phone)
     return (
         <Container>
             <ContainerImg>
@@ -32,9 +33,9 @@ export const ItemPetModal = ({ modalCard }) => {
             </Box>
             <ContainerItem>
                 <div>Email:</div>
-                <Item href="">{owner.email}</Item>
+                <Item href="">{owner?.email}</Item>
                 <div>Phone:</div>
-                <Item href=""> {owner.phone}</Item>
+                <Item href="">{owner?.phone}</Item>
                 {price && <div>Price:</div>
                 }
                 {price &&

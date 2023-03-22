@@ -84,6 +84,16 @@ export const HeartButton = styled.button`
   }
 `;
 export const Title = styled.p`
+  align-self: flex-start;
+  width: 240px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: calc(2 * var(--line-height)); /* высота двух строк */
+  overflow: hidden;
+  text-overflow: ellipsis; /* добавление трех точек */
+  white-space: normal; /* разрешение переноса слов */
+  -webkit-line-clamp: 2; /* необязательное свойство для браузеров, поддерживающих line-clamp */
+  
   padding: 0 20px;
   margin: 0 0 20px 0;
   font-family: 'Manrope';
@@ -101,6 +111,11 @@ export const NoticeList = styled.ul`
 `;
 
 export const NoticeItem = styled.li`
+  width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
@@ -120,8 +135,8 @@ export const NoticeItemName = styled.span`
 `;
 
 export const BtnOverlay = styled.div`
+  margin-top: auto;
   width: 100%;
-  flex-grow: 1;
   align-self: flex-end;
   padding: 20px 15px 30px 15px;
 `;
@@ -183,4 +198,8 @@ export const DeleteButton = styled.button`
     background: #f59256;
     transform: scale(1.05);
   }
+`;
+
+export const DetailsWrapper = styled.div`
+  margin-top: auto;
 `;
