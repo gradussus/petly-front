@@ -17,8 +17,7 @@ export const FriendsItem = styled.li`
 
   @media screen and (${theme.media.tablet}) {
     width: 336px;
-    height: 246px;
-
+    
     &:nth-last-child(-n + 2) {
       margin-bottom: 0;
     }
@@ -26,7 +25,6 @@ export const FriendsItem = styled.li`
 
   @media screen and (${theme.media.desktop}) {
     width: 395px;
-    height: 287px;
   }
 `;
 
