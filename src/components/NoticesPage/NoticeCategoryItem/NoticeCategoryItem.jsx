@@ -1,9 +1,5 @@
-import { useState } from "react";
 import { ReactComponent as FavoriteIcon } from './tmp/icons-heart-default.svg';
 import { ReactComponent as InFavoriteIcon } from './tmp/icons-heart-variant1.svg';
-import { ModalSample } from "components/Modal/Modal";
-import { ItemPetModal } from "components/ItemPetModal/ItemPetModal";
-
 
 import {
   CardWrapper,
@@ -77,8 +73,8 @@ const categorySelector = category => {
 // };
 
 // Компонент должен принять в виде пропов: объекта и двух функций
-const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
-  const [showModal, setShowModal] = useState(false);
+const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, onChangeModal, handleChange }) => {
+  // const [showModal, setShowModal] = useState(false);
   const {
     _id: id,
     category,
@@ -103,11 +99,10 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
       alert('You need to be logged in to use this feature.'); // TODO: Заменить на нотификацию библиотеки
     }
   };
-  const toggleModal = () => {
-    setShowModal(!showModal)
-}
-  return (
-    <>
+//   const toggleModal = () => {
+//     setShowModal(!showModal)
+// }
+  return (  
     <CardWrapper>
       <Img src={imageURL} alt="pet" />
       <CategoryOverlay>
@@ -140,7 +135,7 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
       <BtnOverlay>
         <LearnMoreButton
           type="button"
-          onClick={() =>  toggleModal()}
+          onClick={() => {onChangeModal(); handleChange(id)}}
         >
           Learn more
         </LearnMoreButton>
@@ -150,12 +145,7 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
           </DeleteButton>
         )}
       </BtnOverlay>     
-    </CardWrapper>
-    {showModal && <ModalSample toggleModal={toggleModal} >
-                <ItemPetModal/>
-                </ModalSample>}
-    </>
-    
+    </CardWrapper>    
   );
 };
 

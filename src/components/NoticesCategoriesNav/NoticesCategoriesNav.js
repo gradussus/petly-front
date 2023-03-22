@@ -15,7 +15,6 @@ const NoticesCategoriesNav = () => {
   const [type, setType] = useState('');
 
   useEffect(() => {
-    console.log('type', type);
   }, [type]);
 
   useEffect(() => {

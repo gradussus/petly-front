@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { BtnAdd, ContainerAdd, P, TabletBtnAdd, Img } from "./NoticesPage.Style";
 import  cross  from "components/ItemPetModal/image/cross2.svg";
 
-
 const AddNoticeButton = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.screen.width);
@@ -11,9 +10,6 @@ const AddNoticeButton = () => {
       
         return () => {window.onresize = false};
     }, [windowWidth]);
-    // console.log("windowWidth", window.onresize)
-    const screen = windowWidth
-    console.log("screen", screen) 
 
     return (
         <>
