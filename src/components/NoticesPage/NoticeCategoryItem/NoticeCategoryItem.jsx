@@ -1,6 +1,7 @@
 import { ReactComponent as FavoriteIcon } from './tmp/icons-heart-default.svg';
 import { ReactComponent as InFavoriteIcon } from './tmp/icons-heart-variant1.svg';
 
+
 import {
   CardWrapper,
   CategoryOverlay,
@@ -15,6 +16,7 @@ import {
   LearnMoreButton,
   DeleteButton,
   DetailsWrapper,
+  DeleteIcons
 } from './NoticeCategoryItem.styled';
 
 const getPetAge = dateString => {
@@ -65,7 +67,7 @@ const NoticeCategoryItem = ({
     imageURL,
   } = noticeData;
   const userIsLoggedIn = true;
-  const noticeIsFavorite = false;
+  const noticeIsFavorite = true;
   const petAge = getPetAge(birthDate);
   const formattedCategory = categorySelector(category);
 
@@ -124,6 +126,7 @@ const NoticeCategoryItem = ({
               onClick={() => handleAddToFavorites(id)}
             >
               Delete
+              <DeleteIcons />
             </DeleteButton>
           )}
         </BtnOverlay>
