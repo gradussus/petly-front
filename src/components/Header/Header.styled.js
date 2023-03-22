@@ -14,7 +14,7 @@ export const HeaderBody = styled.header`
       left: 0;
       width: 100vw;
       height: 88px;
-      z-index: 3;
+      z-index: 990;
       background: ${props => props.theme.colors.background};
     }
   }
@@ -44,7 +44,7 @@ export const BurgerMenu = styled.div`
 
   @media (max-width: 1279px) {
     position: relative;
-    z-index: 3;
+    z-index: 991;
     &.active {
       span {
         display: none;

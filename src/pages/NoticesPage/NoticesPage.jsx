@@ -1,22 +1,16 @@
+import { useState } from 'react';
 
-import { 
-  useState } from "react";
-
-import NoticeFound from "components/NoticesPage/FoundPage";
-import { Title } from "../../components/NoticesPage/NoticesPage.Style";
+import NoticeFound from 'components/NoticesPage/FoundPage';
 import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
 import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
-// import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
+
+import { Title } from '../../components/NoticesPage/NoticesPage.Style';
 import elements from './NoticesPage.styled';
-import { Helmet } from 'react-helmet';
 
 const { Section, Container } = elements;
 
-
-
-
 const NoticesPage = () => {
-  // const [state, setState] = useState([]) 
+  // const [state, setState] = useState([])
   // const [windowWidth, setWindowWidth] = useState(window.screen.width);
 
   //   useEffect(() => {
@@ -26,33 +20,30 @@ const NoticesPage = () => {
   // }, [windowWidth]);
   // console.log("windowWidth", window.onresize)
   // const screen = windowWidth
-  // console.log("screen", screen) 
+  // console.log("screen", screen)
 
   //   useEffect(() => {
   //     if(!state ) {
   //       return
   //     }
-  //     const fetchNotice = async () => {        
+  //     const fetchNotice = async () => {
   //       try {
-  //         const {data} = await axios.get(`${NAME_URL}`)        
-  //         setState(data)   
-  //         console.log("data", state)    
+  //         const {data} = await axios.get(`${NAME_URL}`)
+  //         setState(data)
+  //         console.log("data", state)
   //       } catch (error) {
   //       }
   //     }
   //     fetchNotice()
   //   }, [])
-  
-const [type, setType] = useState('');
- function handleTypeChange(newType) {
-   setType(newType);
- }
+
+  const [type, setType] = useState('');
+  function handleTypeChange(newType) {
+    setType(newType);
+  }
   return (
     <>
       <Section>
-        <Helmet>
-          <title>Notices</title>
-        </Helmet>
         <Title>Find your favorite pet</Title>
         <NoticeFound />
         <Container>
@@ -71,7 +62,7 @@ const [type, setType] = useState('');
             <BtnMy type="button">my ads</BtnMy>
           </Btn>
           {(windowWidth < 768) ? (<BtnAdd type="button"><Img src={cross} alt="Cross" />
-          <br/>Add pet</BtnAdd>): 
+          <br/>Add pet</BtnAdd>):
           (<ContainerAdd><P>Add pet</P> <TabletBtnAdd type="button"><Img src={cross} alt="Cross" />
           <br/></TabletBtnAdd></ContainerAdd>
           )}
@@ -79,12 +70,6 @@ const [type, setType] = useState('');
         </ContainerBtn> */}
     </>
   );
-
 };
 
-// const NoticesPage = () => {
-//   return (
-
-//   );
-// 
 export default NoticesPage;

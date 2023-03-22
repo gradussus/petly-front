@@ -4,10 +4,10 @@ import { ItemPetsBody, ItemPetsImg, ItemPetsText } from './itemPets.styled';
 
 import RemoveBtn from './RemoveBtn/removeBtn';
 
-const ItemPets = ({ id, name, breed, image, comments, birth }) => {
+const ItemPets = ({ id, name, breed, image, comments, birth, removePet }) => {
   return (
     <ItemPetsBody>
-      <RemoveBtn id={id} />
+      <RemoveBtn id={id} removePet={removePet} />
       <ItemPetsImg>
         <img src={image} alt="pet" />
       </ItemPetsImg>
