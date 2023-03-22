@@ -12,4 +12,5 @@ export const ErrorMessages = styled.div`
     top: -35px;
     right: -20px;
     margin-right: auto;
+
 `
