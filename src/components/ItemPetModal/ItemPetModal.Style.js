@@ -5,8 +5,7 @@ export const Container = styled.div`
  height: 100%;
  padding: 20px;
   
-  @media screen and (${p => p.theme.media.tablet}){
-    /* display: flex; */
+  @media screen and (min-width: 768px){
     width: 704px;
     height: 540px;
     display: flex;
@@ -14,7 +13,7 @@ export const Container = styled.div`
      padding: 32px 32px 20px;    
  gap: 0px 20px;
    grid-template-columns: 288px 1fr 50px; 
-  grid-template-rows: 76px auto auto 1fr 90px;   
+  grid-template-rows: auto auto auto 1fr 1fr;   
   }
 `;
 
@@ -27,7 +26,7 @@ transform: translate(-50% -50%);
   width: 80vw;
   background-color: ${p => p.theme.colors.white};  
   border-radius: 20px;
-  @media screen and (${p => p.theme.media.tablet}){
+  @media screen and (min-width: 768px){
     display: flex;
     width: 704px;
     height: 540px;
@@ -49,7 +48,7 @@ height: 34px;
 background-color: ${p => p.theme.colors.background};
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.round};
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     right: 32px;
     top: 32px;
 }
@@ -62,10 +61,11 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     grid-column: 2;
     grid-row: 1;
     margin: 0;
+    margin-bottom: 20px;  
     font-weight: ${p => p.theme.fontWeights.bold};
     font-size: ${p => p.theme.fontSizes.mm};
     line-height: ${p => p.theme.fontWeights.body};
@@ -79,7 +79,7 @@ transform: translateX(-50%);
 height: 240px;
 margin-top: 40px;
 
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     width: 288px;
     height: 328px; 
     grid-column: 1;
@@ -95,10 +95,10 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     grid-column: 2;
     grid-row: 2;
-    margin-top: 20px;    
+     
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.fontWeights.heading};
@@ -142,7 +142,7 @@ margin-bottom: 40px;
 font-weight: ${p => p.theme.fontWeights.interMiddle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     grid-column: 1 / span 3;
     grid-row: 4;
     margin-top: 28px;
@@ -159,7 +159,7 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
 color: ${p => p.theme.colors.primeText};
-@media screen and (${p => p.theme.media.tablet}){   
+@media screen and (min-width: 768px){   
     
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
@@ -169,11 +169,12 @@ color: ${p => p.theme.colors.primeText};
 `;
 export const ContainerBtn = styled.div`
 display: flex;
+gap: 12px;
 flex-direction: column;
 align-items: center;
-@media screen and (${p => p.theme.media.tablet}){
+@media screen and (min-width: 768px){
     grid-column: 2 / span 3;
-    grid-row: 4;
+    grid-row: 5;
    flex-direction: row;
     align-items: baseline;
     align-self: end;
@@ -191,7 +192,6 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.none};
-margin-bottom: 12px;
 &:focus, :hover {
     background-color: ${p => p.theme.colors.white};
     box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
@@ -201,12 +201,8 @@ export const ContainerItem = styled.div`
 display: grid;
   grid-gap: 8px;
   grid-template-columns: 1fr 2fr;
-  margin-top: 8px;
-  /* &:focus, :hover {
-    background-color: ${p => p.theme.colors.white};
-    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  } */
-  @media screen and (${p => p.theme.media.tablet}){
+  margin-top: 8px; 
+  @media screen and (min-width: 768px){
     grid-column: 2;
     grid-row: 3;
     margin: 0px;
@@ -231,11 +227,9 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.large};
-/* &:focus, :hover {
-    background-color: ${p => p.theme.colors.white};
-    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  } */
-@media screen and (${p => p.theme.media.tablet}){
+
+@media screen and (min-width: 768px){
     margin-left: 10px;
 }
+
 `;

@@ -4,7 +4,6 @@ export const Home = styled.div`
     display: flex;
     flex-direction: column;
     align-items: start;
-    background-image: url('./images/mobile/labro_mobile.png'), url('./images/mobile/bg_mobile.png');
     background-position: right bottom, bottom;
     background-repeat: no-repeat;
     background-size: 20rem, 100vw;
@@ -12,7 +11,7 @@ export const Home = styled.div`
     height: calc(100vh - 72px);
     max-height: 601px
 
-    @media (${props => props.theme.media.fromTablet}) {
+    @media (${props => props.theme.media.tablet}) {
       align-items: flex-start;
       background-image: url('./images/tablet/labro_tablet.png'), url('./images/tablet/bg_tablet.png');
       background-size: 31rem, 100vw;
@@ -33,13 +32,15 @@ export const BackgroundL = styled.img`
     width: 0px;
 
     @media (${props => props.theme.media.desktop}) {
-      width: 100vw;
+      align-items: flex-start;
+      width: 1248px;
       bottom: 0;
     };
 `;
 
 export const BackgroundSm = styled.img`
     position: absolute;
+    align-items: flex-start;
     width: 100vw;
     z-index: -1;
     padding: 0;
@@ -47,7 +48,15 @@ export const BackgroundSm = styled.img`
     left: -20px; 
 
     @media (${props => props.theme.media.tablet}) {
-      bottom: -320px;
+      align-items: flex-start;
+      background-size: 31rem,100vw;
+      background-position: 100% 100%,bottom;
+      background-repeat: no-repeat;
+      background-size: 20rem,100vw;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 72px);
+      padding-top: 50px;
     };
   
     @media (${props => props.theme.media.desktop}) {
@@ -75,12 +84,12 @@ export const Title = styled.h1`
 
   @media (${props => props.theme.media.tablet}) {
     font-size: ${props => props.theme.fontSizes.xl};
-    max-width: 588px;
-  }
-
-  @media (${props => props.theme.media.fromTablet}) {
     max-width: 700px;
   }
+
+  // @media (${props => props.theme.media.fromTablet}) {
+  //   max-width: 700px;
+  // }
 
   @media (${props => props.theme.media.desktop}) {
     font-size: ${props => props.theme.fontSizes.xl};
@@ -140,25 +149,25 @@ export const Labro = styled.img`
   padding: 0 auto;
   opacity: 1;
   z-index: 100;
-  background: url(./images/mobile/labro_mobile.png);
+  // background: url(./images/mobile/labro_mobile.png);
   transition-duration: 1000ms;
 
   @media (${props => props.theme.media.tablet}) {
     background: url(./images/mobile/labro_mobile.png);
     width: 382px;
-
-  } 
-
-  @media (${props => props.theme.media.fromTablet}) {
-    background: url(./images/tablet/labro_tablet.png);
-    right: 200px;
     bottom: 0px;
-  } 
+  }; 
+
+  // @media (${props => props.theme.media.fromTablet}) {
+  //   background: url(./images/tablet/labro_tablet.png);
+  //   right: 200px;
+  //   bottom: 0px;
+  // } 
 
   @media (${props => props.theme.media.desktop}) {
     background: url(./images/desktop/labro_desk.png);
     width: 524px;
-    right: 0;
+    padding-right: 18px;
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ReactComponent as DeleteIcon } from './tmp/icon-delete.svg';
 
 export const CardWrapper = styled.div`
   position: relative;
@@ -8,7 +9,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 280px;
+  width: 280px;
 
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -22,18 +23,22 @@ export const CardWrapper = styled.div`
   ul {
     padding: 0 20px;
   }
+
+  @media screen and (${props => props.theme.media.tablet}) {
+    width: 336px;
+  }
 `;
 
 export const CategoryOverlay = styled.div`
   position: absolute;
-  top: ${props => props.theme.space[6]}px;
+  top: 20px;
   left: 0;
 
   display: flex;
   align-items: center;
   width: 158px;
   height: 28px;
-  padding-left: ${props => props.theme.space[5]}px;
+  padding-left: 20px;
 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
@@ -93,7 +98,7 @@ export const Title = styled.p`
   text-overflow: ellipsis; /* добавление трех точек */
   white-space: normal; /* разрешение переноса слов */
   -webkit-line-clamp: 2; /* необязательное свойство для браузеров, поддерживающих line-clamp */
-  
+
   padding: 0 20px;
   margin: 0 0 20px 0;
   font-family: 'Manrope';
@@ -104,6 +109,7 @@ export const Title = styled.p`
   letter-spacing: -0.01em;
   color: #111111;
 `;
+
 export const NoticeList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -115,7 +121,7 @@ export const NoticeItem = styled.li`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  
+
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
@@ -155,6 +161,9 @@ export const LearnMoreButton = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #f59256;
 
   background: #ffffff;
   border: 2px solid #f59256;
@@ -185,21 +194,30 @@ export const DeleteButton = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #ff6101;
 
   background: #ffffff;
-  border: 2px solid #f59256;
+  border: 2px solid #ff6101;
   border-radius: 40px;
+  fill: #ff6101;
 
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
     color: #ffffff;
-    background: #f59256;
+    background: #ff6101;
     transform: scale(1.05);
+    fill: #ffffff;
   }
 `;
 
 export const DetailsWrapper = styled.div`
   margin-top: auto;
+`;
+
+export const DeleteIcons = styled(DeleteIcon)`
+  margin-left: 13px;
 `;
