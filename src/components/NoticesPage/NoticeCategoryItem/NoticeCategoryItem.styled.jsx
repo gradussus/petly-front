@@ -8,7 +8,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 280px;
+  width: 280px;
 
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -21,6 +21,10 @@ export const CardWrapper = styled.div`
 
   ul {
     padding: 0 20px;
+  }
+
+  @media screen and (${props => props.theme.media.tablet}) {
+    width: 336px;
   }
 `;
 
@@ -93,7 +97,7 @@ export const Title = styled.p`
   text-overflow: ellipsis; /* добавление трех точек */
   white-space: normal; /* разрешение переноса слов */
   -webkit-line-clamp: 2; /* необязательное свойство для браузеров, поддерживающих line-clamp */
-  
+
   padding: 0 20px;
   margin: 0 0 20px 0;
   font-family: 'Manrope';
@@ -115,7 +119,7 @@ export const NoticeItem = styled.li`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  
+
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
