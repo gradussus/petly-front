@@ -9,7 +9,7 @@ margin: 0;
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (min-width: 768px){
     margin-top: 90px;
     margin-top: 40px;
     font-weight: ${p => p.theme.fontWeights.bold};
@@ -41,7 +41,7 @@ border: ${p => p.theme.borders.none};
 border-radius: 20px;
 margin-left: auto;
 margin-right: auto;
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
     width: 608px;
 padding: 8px 20px;
 &::placeholder{
@@ -60,7 +60,7 @@ line-height: ${p => p.theme.lineHeights.heading};
 export const ContainerBtn = styled.div`
 margin-top: 28px;
 margin-bottom: 30px;
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
     display: grid; 
     gap: 12px;
     grid-template-columns: 1fr 130px;
@@ -92,7 +92,7 @@ line-height: ${p => p.theme.lineHeights.heading};
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
   }
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
 width: 162px;
 font-weight: ${p => p.theme.fontWeights.middle};
 padding: 10px 28px;
@@ -116,7 +116,7 @@ line-height: ${p => p.theme.lineHeights.heading};
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
   }
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
 width: 197px;
 font-weight: ${p => p.theme.fontWeights.middle};
 padding: 10px 28px;
@@ -141,7 +141,7 @@ line-height: ${p => p.theme.lineHeights.heading};
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
   }
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
 width: 175px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -166,7 +166,7 @@ line-height: ${p => p.theme.lineHeights.heading};
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
   }
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
 width: 91px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -191,7 +191,7 @@ line-height: ${p => p.theme.lineHeights.heading};
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
   }
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
 width: 126px;
 padding: 10px 28px;
 font-weight: ${p => p.theme.fontWeights.middle};
@@ -256,7 +256,7 @@ export const FoundImg = styled.img`
 export const ContainerCard = styled.div`
 margin-top: 30px;
 justify-content: center;
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
   margin-top: 60px;
 }
 
@@ -268,7 +268,7 @@ gap: 12px;
 margin-top: 30px;
 /* flex-direction: column; */
 justify-content: center;
-@media screen  and (${p => p.theme.media.fromTablet}){
+@media screen  and (${p => p.theme.media.tablet}){
   margin-top: 30px;
 }
 @media screen  and (${p => p.theme.media.desktop}){

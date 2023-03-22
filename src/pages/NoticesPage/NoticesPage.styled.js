@@ -18,9 +18,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   margin: 0 auto;
-  @media screen and (${theme.media.mobile}) {
-   
-  }
+ 
   padding: 0 20px;
     width: 320px;
   @media screen and (${theme.media.tablet}) {

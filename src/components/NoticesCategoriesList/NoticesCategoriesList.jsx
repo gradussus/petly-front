@@ -2,7 +2,8 @@
 import NoticeCategoryItem from "components/NoticesPage/NoticeCategoryItem/NoticeCategoryItem";
 import axios from "axios";
 import { Ul, ContainerCard } from "../NoticesPage/NoticesPage.Style";
-
+import { ModalSample } from "components/Modal/Modal";
+import { ItemPetModal } from "components/ItemPetModal/ItemPetModal";
 import { useEffect, useState } from "react";
 // import noticesSelectors from '../../redux/notices/noticesSelectors';
 // import { Container } from 'components/ItemPetModal/ItemPetModal.Style';
@@ -12,17 +13,17 @@ const NAME_URL = 'https://petly-vxdt.onrender.com/'
 const NoticesCategoriesList = ({ type }) => {
   const [states, setStates] = useState([])
   const [pets, setPets] = useState('notices')
-  console.log("name", type)
-  
-  console.log("dog", pets)
+  const [showModal, setShowModal] = useState(false);
+  const [noticeId, setNoticeId] = useState('')
+// const query =
+const handleChange = (id) => setNoticeId(id)
+console.log("noticeId", noticeId)
   useEffect(() => {
-    console.log('type change')
-    
-   async function fetchNotice() {
-       console.log("NAME_URL",`'${NAME_URL}${pets}'`)
+
+    async function fetchNotice() {
       try {
         const { data } = await axios.get(`${NAME_URL}${pets}`)
-       
+
         setPets(`notices/${type}`);
         setStates(data)
       } catch (error) {
@@ -31,18 +32,29 @@ const NoticesCategoriesList = ({ type }) => {
     fetchNotice()
   }, [pets, type])
 
-  console.log("first", states)
+  const toggleModal = () => {
+    setShowModal(!showModal)
+  }
+
+  const onChangeModal = () => toggleModal()
   // const notices = useSelector(selectNotices);
   // const noticesList = notices.result ? notices.result : [];
   return (
-    <ContainerCard>
-      <Ul>
-      {states?.map(state => <NoticeCategoryItem noticeData={state} />
+    <>
+      <ContainerCard>
+        <Ul>
+          {states?.map(state => <NoticeCategoryItem noticeData={state} 
+          onChangeModal={onChangeModal} handleChange={handleChange}/>
 
-      )}
-    </Ul>
-    </ContainerCard>
-   
+          )}
+        </Ul>
+      </ContainerCard>
+      {showModal && <ModalSample toggleModal={toggleModal} >
+        <ItemPetModal />
+      </ModalSample>}
+    </>
+
+
   );
 };
 
