@@ -53,9 +53,9 @@ const NoticesPage = () => {
         <NoticesCategoriesList type={type} />
       </Section>
 
-      {/* <NoticesCategoriesList /> */}
+      // {/* <NoticesCategoriesList /> */}
 
-      {/* <ContainerBtn>
+      /*{ <ContainerBtn>
           <Btn>
             <BtnLost type="button">lost/found</BtnLost>
             <BtnGood type="button">in good hands</BtnGood>
@@ -69,8 +69,8 @@ const NoticesPage = () => {
           <br/></TabletBtnAdd></ContainerAdd>
           )}
 
-        </ContainerBtn> */}
-    </>
+        </ContainerBtn> }*/
+    // </>
 
   );
 };
