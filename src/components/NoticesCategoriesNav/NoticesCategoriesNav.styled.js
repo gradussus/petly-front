@@ -28,8 +28,7 @@ const NoticesCategoriesNavLink = styled(NavLink)`
   border-radius: 40px;
   transition: background-color 200ms, color 200ms;
   &:hover,
-  &:focus
-  {
+  &:focus, &.active {
     background-color: ${theme.colors.accent};
     color: ${theme.colors.white};
   }
