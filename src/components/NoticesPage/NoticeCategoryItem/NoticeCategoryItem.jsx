@@ -67,7 +67,7 @@ const NoticeCategoryItem = ({
     imageURL,
   } = noticeData;
   const userIsLoggedIn = true;
-  const noticeIsFavorite = true;
+  const noticeIsFavorite = false;
   const petAge = getPetAge(birthDate);
   const formattedCategory = categorySelector(category);
 
