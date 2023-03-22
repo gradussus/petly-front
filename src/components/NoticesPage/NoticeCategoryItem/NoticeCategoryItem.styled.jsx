@@ -199,7 +199,7 @@ export const DeleteButton = styled.button`
 
   &:hover {
     color: #ffffff;
-    background: #f59256;
+    background: #ff6101;
     transform: scale(1.05);
   }
 `;
