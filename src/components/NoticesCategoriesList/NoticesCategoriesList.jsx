@@ -15,11 +15,12 @@ const NoticesCategoriesList = ({ type }) => {
   const [pets, setPets] = useState('notices')
   const [showModal, setShowModal] = useState(false);
   const [noticeId, setNoticeId] = useState('')
-// const query =
-const handleChange = (id) => setNoticeId(id)
-console.log("noticeId", noticeId)
+  const [modalCard, setModalCard] = useState([])
+  // const query =
+  const handleChange = (id) => setNoticeId(id)
+  console.log("noticeId", noticeId)
   useEffect(() => {
-
+    console.log("first")
     async function fetchNotice() {
       try {
         const { data } = await axios.get(`${NAME_URL}${pets}`)
@@ -31,11 +32,24 @@ console.log("noticeId", noticeId)
     }
     fetchNotice()
   }, [pets, type])
+console.log("type", type)
+  useEffect(() => {
+    console.log("first")
+    async function fetchNotice() {
+      try {
+        const { data } = await axios.get(`${NAME_URL}notices/find_notice/${noticeId}`)
+
+        setModalCard(data)
+      } catch (error) {
+      }
+    }
+    fetchNotice()
+  }, [noticeId])
 
   const toggleModal = () => {
     setShowModal(!showModal)
   }
-
+  console.log('modalCard', modalCard)
   const onChangeModal = () => toggleModal()
   // const notices = useSelector(selectNotices);
   // const noticesList = notices.result ? notices.result : [];
@@ -43,14 +57,14 @@ console.log("noticeId", noticeId)
     <>
       <ContainerCard>
         <Ul>
-          {states?.map(state => <NoticeCategoryItem noticeData={state} 
-          onChangeModal={onChangeModal} handleChange={handleChange}/>
+          {states?.map(state => <NoticeCategoryItem noticeData={state}
+            onChangeModal={onChangeModal} handleChange={handleChange} />
 
           )}
         </Ul>
       </ContainerCard>
       {showModal && <ModalSample toggleModal={toggleModal} >
-        <ItemPetModal />
+        <ItemPetModal modalCard={modalCard} />
       </ModalSample>}
     </>
 

@@ -49,7 +49,7 @@ const NoticesCategoriesNav = () => {
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink
           // to="for-free"
-          onClick={() => setType('in-good-hands')}
+          onClick={() => setType('for-free')}
         >
           in good hands
         </NoticesCategoriesNavLink>
