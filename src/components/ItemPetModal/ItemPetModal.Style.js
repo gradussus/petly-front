@@ -5,7 +5,7 @@ export const Container = styled.div`
  height: 100%;
  padding: 20px;
   
-  @media screen and (${p => p.theme.media.fromTablet}){
+  @media screen and (${p => p.theme.media.tablet}){
     /* display: flex; */
     width: 704px;
     height: 540px;
@@ -27,7 +27,7 @@ transform: translate(-50% -50%);
   width: 80vw;
   background-color: ${p => p.theme.colors.white};  
   border-radius: 20px;
-  @media screen and (${p => p.theme.media.fromTablet}){
+  @media screen and (${p => p.theme.media.tablet}){
     display: flex;
     width: 704px;
     height: 540px;
@@ -49,7 +49,7 @@ height: 34px;
 background-color: ${p => p.theme.colors.background};
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.round};
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     right: 32px;
     top: 32px;
 }
@@ -62,7 +62,7 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.bold};
 font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     grid-column: 2;
     grid-row: 1;
     margin: 0;
@@ -79,7 +79,7 @@ transform: translateX(-50%);
 height: 240px;
 margin-top: 40px;
 
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     width: 288px;
     height: 328px; 
     grid-column: 1;
@@ -95,7 +95,7 @@ margin-top: 16px;
 font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     grid-column: 2;
     grid-row: 2;
     margin-top: 20px;    
@@ -111,7 +111,7 @@ height: 100%;
 object-fit: cover;
 margin-right: auto;
 border-radius: 0px 0px 40px 40px;
- @media screen and (min-width: 768){
+ @media screen and (min-width: 768px){
     width: 288px;
 } 
 `;
@@ -142,7 +142,7 @@ margin-bottom: 40px;
 font-weight: ${p => p.theme.fontWeights.interMiddle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     grid-column: 1 / span 3;
     grid-row: 4;
     margin-top: 28px;
@@ -159,7 +159,7 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
 color: ${p => p.theme.colors.primeText};
-@media screen and (${p => p.theme.media.fromTablet}){   
+@media screen and (${p => p.theme.media.tablet}){   
     
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
@@ -171,7 +171,7 @@ export const ContainerBtn = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     grid-column: 2 / span 3;
     grid-row: 4;
    flex-direction: row;
@@ -206,7 +206,7 @@ display: grid;
     background-color: ${p => p.theme.colors.white};
     box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   } */
-  @media screen and (${p => p.theme.media.fromTablet}){
+  @media screen and (${p => p.theme.media.tablet}){
     grid-column: 2;
     grid-row: 3;
     margin: 0px;
@@ -235,7 +235,7 @@ border: ${p => p.theme.borders.large};
     background-color: ${p => p.theme.colors.white};
     box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   } */
-@media screen and (${p => p.theme.media.fromTablet}){
+@media screen and (${p => p.theme.media.tablet}){
     margin-left: 10px;
 }
 `;

@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import { ReactComponent as FavoriteIcon } from './tmp/icons-heart-default.svg';
 import { ReactComponent as InFavoriteIcon } from './tmp/icons-heart-variant1.svg';
-import { ModalSample } from 'components/Modal/Modal';
-import { ItemPetModal } from 'components/ItemPetModal/ItemPetModal';
 
 import {
   CardWrapper,
@@ -77,8 +74,8 @@ const categorySelector = category => {
 // };
 
 // Компонент должен принять в виде пропов: объекта и двух функций
-const NoticeCategoryItem = ({ noticeData, handleAddToFavorites }) => {
-  const [showModal, setShowModal] = useState(false);
+const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, onChangeModal, handleChange }) => {
+  // const [showModal, setShowModal] = useState(false);
   const {
     _id: id,
     category,
@@ -94,7 +91,8 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites }) => {
   const petAge = getPetAge(birthDate);
   const formattedCategory = categorySelector(category);
 
-  // console.log('noticeData', noticeData )
+
+// console.log('noticeData', noticeData )
   const handleAddToFavoritesClick = () => {
     if (userIsLoggedIn) {
       handleAddToFavorites(id);
@@ -102,62 +100,55 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites }) => {
       alert('You need to be logged in to use this feature.'); // TODO: Заменить на нотификацию библиотеки
     }
   };
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-  return (
-    <>
-      <CardWrapper>
-        <Img src={imageURL} alt="pet" />
-        <CategoryOverlay>
-          <Category>{formattedCategory}</Category>
-        </CategoryOverlay>
-        <HeartButton type="button" onClick={handleAddToFavoritesClick}>
-          {noticeIsFavorite ? <InFavoriteIcon /> : <FavoriteIcon />}
-        </HeartButton>
-        <Title>{title}</Title>
-        <DetailsWrapper>
-          <NoticeList>
+//   const toggleModal = () => {
+//     setShowModal(!showModal)
+// }
+  return (  
+    <CardWrapper>
+      <Img src={imageURL} alt="pet" />
+      <CategoryOverlay>
+        <Category>{formattedCategory}</Category>
+      </CategoryOverlay>
+      <HeartButton type="button" onClick={handleAddToFavoritesClick}>
+        {noticeIsFavorite ? <InFavoriteIcon /> : <FavoriteIcon />}
+      </HeartButton>
+      <Title>{title}</Title>
+      <DetailsWrapper>
+        <NoticeList>
+          <NoticeItem>
+            <NoticeItemName>Breed:</NoticeItemName>
+            {breed}
+          </NoticeItem>
+          <NoticeItem>
+            <NoticeItemName>Place:</NoticeItemName>
+            {location}
+          </NoticeItem>
+          <NoticeItem>
+            <NoticeItemName>Age:</NoticeItemName>
+            {petAge}
+          </NoticeItem>
+          {price > 0 && (
             <NoticeItem>
-              <NoticeItemName>Breed:</NoticeItemName>
-              {breed}
+              <NoticeItemName>Price:</NoticeItemName>
+              {price}$
             </NoticeItem>
-            <NoticeItem>
-              <NoticeItemName>Place:</NoticeItemName>
-              {location}
-            </NoticeItem>
-            <NoticeItem>
-              <NoticeItemName>Age:</NoticeItemName>
-              {petAge}
-            </NoticeItem>
-            {price > 0 && (
-              <NoticeItem>
-                <NoticeItemName>Price:</NoticeItemName>
-                {price}$
-              </NoticeItem>
-            )}
-          </NoticeList>
-          <BtnOverlay>
-            <LearnMoreButton type="button" onClick={() => toggleModal()}>
-              Learn more
-            </LearnMoreButton>
-            {noticeIsFavorite && (
-              <DeleteButton
-                type="button"
-                onClick={() => handleAddToFavorites(id)}
-              >
-                Delete
-              </DeleteButton>
-            )}
-          </BtnOverlay>
-        </DetailsWrapper>
-      </CardWrapper>
-      {showModal && (
-        <ModalSample toggleModal={toggleModal}>
-          <ItemPetModal />
-        </ModalSample>
-      )}
-    </>
+          )}
+        </NoticeList>
+        <BtnOverlay>
+          <LearnMoreButton
+            type="button"
+            onClick={() => {onChangeModal(); handleChange(id)}}
+          >
+            Learn more
+          </LearnMoreButton>
+          {noticeIsFavorite && (
+            <DeleteButton type="button" onClick={() => handleAddToFavorites(id)}>
+              Delete
+            </DeleteButton>
+          )}
+        </BtnOverlay>
+      </DetailsWrapper>
+    </CardWrapper>    
   );
 };
 
