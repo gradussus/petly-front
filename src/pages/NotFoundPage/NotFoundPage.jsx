@@ -7,7 +7,6 @@ const NotFoundPage = () => {
      <Page.Image>
       <Page.Title>Not Found</Page.Title>
       <Page.Title>404</Page.Title>
-
      </Page.Image>
      
 
