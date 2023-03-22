@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ReactComponent as DeleteIcon } from './tmp/icon-delete.svg';
 
 export const CardWrapper = styled.div`
   position: relative;
@@ -108,6 +109,7 @@ export const Title = styled.p`
   letter-spacing: -0.01em;
   color: #111111;
 `;
+
 export const NoticeList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -159,6 +161,9 @@ export const LearnMoreButton = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #f59256;
 
   background: #ffffff;
   border: 2px solid #f59256;
@@ -189,10 +194,14 @@ export const DeleteButton = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #ff6101;
 
   background: #ffffff;
-  border: 2px solid #f59256;
+  border: 2px solid #ff6101;
   border-radius: 40px;
+  fill: #ff6101;
 
   cursor: pointer;
   transition: all 0.3s ease;
@@ -201,9 +210,14 @@ export const DeleteButton = styled.button`
     color: #ffffff;
     background: #ff6101;
     transform: scale(1.05);
+    fill: #ffffff;
   }
 `;
 
 export const DetailsWrapper = styled.div`
   margin-top: auto;
+`;
+
+export const DeleteIcons = styled(DeleteIcon)`
+  margin-left: 13px;
 `;
