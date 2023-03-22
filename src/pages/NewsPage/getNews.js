@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const SERVER_NAME = 'https://github.com/gradussus/petly-api';
-
-axios.defaults.baseURL = SERVER_NAME;
+axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
 
 const getNews = async () => {
   try {
