@@ -14,6 +14,7 @@ import {
   BtnOverlay,
   LearnMoreButton,
   DeleteButton,
+  DetailsWrapper
 } from './NoticeCategoryItem.styled';
 
 //Форматирует дату рождения пета
@@ -112,39 +113,41 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites, onChangeModal, h
         {noticeIsFavorite ? <InFavoriteIcon /> : <FavoriteIcon />}
       </HeartButton>
       <Title>{title}</Title>
-      <NoticeList>
-        <NoticeItem>
-          <NoticeItemName>Breed:</NoticeItemName>
-          {breed}
-        </NoticeItem>
-        <NoticeItem>
-          <NoticeItemName>Place:</NoticeItemName>
-          {location}
-        </NoticeItem>
-        <NoticeItem>
-          <NoticeItemName>Age:</NoticeItemName>
-          {petAge}
-        </NoticeItem>
-        {price > 0 && (
+      <DetailsWrapper>
+        <NoticeList>
           <NoticeItem>
-            <NoticeItemName>Price:</NoticeItemName>
-            {price}$
+            <NoticeItemName>Breed:</NoticeItemName>
+            {breed}
           </NoticeItem>
-        )}
-      </NoticeList>
-      <BtnOverlay>
-        <LearnMoreButton
-          type="button"
-          onClick={() => {onChangeModal(); handleChange(id)}}
-        >
-          Learn more
-        </LearnMoreButton>
-        {noticeIsFavorite && (
-          <DeleteButton type="button" onClick={() => handleAddToFavorites(id)}>
-            Delete
-          </DeleteButton>
-        )}
-      </BtnOverlay>     
+          <NoticeItem>
+            <NoticeItemName>Place:</NoticeItemName>
+            {location}
+          </NoticeItem>
+          <NoticeItem>
+            <NoticeItemName>Age:</NoticeItemName>
+            {petAge}
+          </NoticeItem>
+          {price > 0 && (
+            <NoticeItem>
+              <NoticeItemName>Price:</NoticeItemName>
+              {price}$
+            </NoticeItem>
+          )}
+        </NoticeList>
+        <BtnOverlay>
+          <LearnMoreButton
+            type="button"
+            onClick={() => {onChangeModal(); handleChange(id)}}
+          >
+            Learn more
+          </LearnMoreButton>
+          {noticeIsFavorite && (
+            <DeleteButton type="button" onClick={() => handleAddToFavorites(id)}>
+              Delete
+            </DeleteButton>
+          )}
+        </BtnOverlay>
+      </DetailsWrapper>
     </CardWrapper>    
   );
 };
