@@ -12,7 +12,7 @@ export const NavMenu = styled.nav`
     position: absolute;
     top: -100%;
     left: 0;
-    z-index: 2;
+    z-index: 989;
     display: block;
     width: 100vw;
     height: 100%;
@@ -56,8 +56,8 @@ export const NavsBody = styled.div`
 
   @media (${props => props.theme.media.mobile}) {
     position: absolute;
-    top: -1000px;
-    z-index: 2;
+    top: -100%;
+    z-index: 989;
     left: 0;
     flex-direction: column-reverse;
     width: 100vw;
@@ -82,14 +82,14 @@ export const NavButtons = styled.div`
 
   @media (max-width: 1279px) {
     position: relative;
-    z-index: 3;
+    z-index: 991;
   }
 
   @media (${props => props.theme.media.mobile}) {
     justify-content: center;
     margin-bottom: 60px;
     margin-top: 46px;
-    z-index: 1;
+    z-index: 990;
   }
 `;
 

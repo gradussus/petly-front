@@ -8,6 +8,10 @@ export const UserDataBody = styled.div`
     flex: 0 0 35%;
     padding-right: 32px;
   }
+
+  @media (${props => props.theme.media.mobile}) {
+    margin-bottom: 47px;
+  }
 `;
 
 export const UserDataHead = styled.div`
@@ -47,4 +51,11 @@ export const UserDataContent = styled.div`
   @media (${props => props.theme.media.mobile}) {
     display: block;
   }
+`;
+
+export const UserLoader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 `;

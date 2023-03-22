@@ -30,9 +30,8 @@ export const userLogIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await axios.post('api/auth/login', credentials);
-      setAuthToken(response.data.data.token);
-      console.log(axios.defaults.headers.common.Authorization);
-      return response.data.data;
+      setAuthToken(response.data.token);
+      return response.data;
     } catch {
       return rejectWithValue('Failed to login. Please try again.');
     }
@@ -43,6 +42,7 @@ export const userLogOut = createAsyncThunk(
   'auth/logOut',
   async (_, { rejectWithValue }) => {
     try {
+      console.log(axios.defaults.headers.common.Authorization);
       await axios.post('api/auth/logout');
       clearAuthToken();
     } catch {

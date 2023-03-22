@@ -31,7 +31,7 @@ const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
       </NavMenu>
       <NavButtons>
         {isLoggedIn ? (
-          <AccountButton />
+          <AccountButton handleMenu={handleMenu} />
         ) : (
           <LoginButton handleMenu={handleMenu} />
         )}

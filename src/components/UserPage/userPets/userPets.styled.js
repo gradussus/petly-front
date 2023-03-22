@@ -11,3 +11,10 @@ export const UserPetsHead = styled.div`
   font-weight: ${props => props.theme.fontWeights.middle};
   font-size: ${props => props.theme.fontSizes.lx};
 `;
+
+export const NoUserPets = styled.div`
+  font-size: 24px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  padding: 20px;
+  text-align: center;
+`;
