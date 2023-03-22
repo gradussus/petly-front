@@ -13,6 +13,7 @@ import Loader from '../../loader/loader';
 
 const UserPets = () => {
   const [data, setData] = useState(null);
+
   const [status, setStatus] = useState('pending');
 
   const { token } = useAuth();
