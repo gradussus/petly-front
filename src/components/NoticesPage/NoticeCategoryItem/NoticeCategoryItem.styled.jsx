@@ -108,6 +108,7 @@ export const Title = styled.p`
   letter-spacing: -0.01em;
   color: #111111;
 `;
+
 export const NoticeList = styled.ul`
   display: flex;
   flex-direction: column;
