@@ -41,7 +41,7 @@ const getPetAge = dateString => {
 // Форматирует название категории
 const categorySelector = category => {
   switch (category) {
-    case 'in-good-hands':
+    case 'for-free':
       return 'in good hands';
     case 'lost-found':
       return 'lost/found';
