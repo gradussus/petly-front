@@ -8,7 +8,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 280px;
+  width: 280px;
 
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -22,18 +22,22 @@ export const CardWrapper = styled.div`
   ul {
     padding: 0 20px;
   }
+
+  @media screen and (${props => props.theme.media.tablet}) {
+    width: 336px;
+  }
 `;
 
 export const CategoryOverlay = styled.div`
   position: absolute;
-  top: ${props => props.theme.space[6]}px;
+  top: 20px;
   left: 0;
 
   display: flex;
   align-items: center;
   width: 158px;
   height: 28px;
-  padding-left: ${props => props.theme.space[5]}px;
+  padding-left: 20px;
 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
@@ -93,7 +97,7 @@ export const Title = styled.p`
   text-overflow: ellipsis; /* добавление трех точек */
   white-space: normal; /* разрешение переноса слов */
   -webkit-line-clamp: 2; /* необязательное свойство для браузеров, поддерживающих line-clamp */
-  
+
   padding: 0 20px;
   margin: 0 0 20px 0;
   font-family: 'Manrope';
@@ -115,7 +119,7 @@ export const NoticeItem = styled.li`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  
+
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
@@ -195,7 +199,7 @@ export const DeleteButton = styled.button`
 
   &:hover {
     color: #ffffff;
-    background: #f59256;
+    background: #ff6101;
     transform: scale(1.05);
   }
 `;
