@@ -23,7 +23,7 @@ export const Header = () => {
 
   return (
     <HeaderBody>
-      <HeaderLogo />
+      <HeaderLogo handleMenu={handleMenu} />
       <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
       <BurgerMenu
         onClick={() => handleMenu(!menuOpen)}
