@@ -46,12 +46,12 @@ function NoticesCategoriesNav({ onTypeChanged, }) {
           in good hands
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink 
-        // to="own" 
+        to="own" 
         onClick={() => onTypeChanged('own')}>
           own
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink
-          // to="favorite"
+          to="favorite"
           onClick={() => onTypeChanged('favorite')}
         >
           favorite

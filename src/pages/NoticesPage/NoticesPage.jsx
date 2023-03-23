@@ -23,7 +23,6 @@ const [type, setType] = useState('');
    setType(newType);
  }
  console.log('foundPets', foundPets)
-
  const handleFoundPets = (kindPets) => setFoundPet(kindPets)
 
   return (

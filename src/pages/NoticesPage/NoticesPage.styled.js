@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../theme';
 
 const Section = styled.section`
+ overflow-x: hidden;
   background-color: ${theme.colors.background};
   height: auto;
   padding-top: 42px ;
@@ -26,14 +27,14 @@ const Container = styled.div`
     gap: 12px;
     grid-template-columns: 1fr 130px;
     padding: 0 32px;
-    width: 768px;
+    /* width: 768px; */
   }
   @media screen and (${theme.media.desktop}) {
    
     gap: 12px;
     
     padding: 0 16px;
-    width: 1280px;
+    /* width: 1280px; */
   }
 `;
 
