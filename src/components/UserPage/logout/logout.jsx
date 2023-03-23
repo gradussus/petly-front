@@ -7,6 +7,7 @@ import { ReactComponent as LogoutSvg } from './image/logout.svg';
 
 import { LogoutBody } from './logout.styled';
 import { userLogOut } from '../../../redux/auth/operations';
+import { useAuth } from '../../../hooks/useAuth';
 
 const Logout = () => {
   const dispatch = useDispatch();
