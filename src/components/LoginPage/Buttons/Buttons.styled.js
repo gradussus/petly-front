@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { theme } from '../../../theme'
+import { theme } from '../../../theme';
 
 // import { Button } from "@mui/material";
 
-
-export const AccentButton = styled.div`
+export const AccentButton = styled.button`
   font-weight: ${theme.fontWeights.bold};
   font-size: ${theme.fontSizes.mx};
   width: 100%;
@@ -13,10 +12,9 @@ export const AccentButton = styled.div`
   border: ${theme.borders.large};
   background: ${theme.colors.accent};
   color: ${theme.colors.white};
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
-  
 `;
 
 export const TransparentButton = styled(AccentButton)`
