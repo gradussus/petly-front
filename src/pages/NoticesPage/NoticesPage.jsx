@@ -43,19 +43,18 @@ const NoticesPage = () => {
   }
 
   return (
-    
-      <Section>
-        <Title>Find your favorite pet</Title>
-        <NoticeFound />
-        <Container>
-          <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
-        </Container>
-        <NoticesCategoriesList type={type} />
-      </Section>
+    <Section>
+      <Title>Find your favorite pet</Title>
+      <NoticeFound />
+      <Container>
+        <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
+      </Container>
+      <NoticesCategoriesList type={type} />
+    </Section>
 
-      {/* <NoticesCategoriesList /> */}
+    /* <NoticesCategoriesList /> */
 
-      {/* <ContainerBtn>
+    /* <ContainerBtn>
           <Btn>
             <BtnLost type="button">lost/found</BtnLost>
             <BtnGood type="button">in good hands</BtnGood>
@@ -69,9 +68,7 @@ const NoticesPage = () => {
           <br/></TabletBtnAdd></ContainerAdd>
           )}
 
-        </ContainerBtn> */}
-    </>
-
+        </ContainerBtn> */
   );
 };
 
