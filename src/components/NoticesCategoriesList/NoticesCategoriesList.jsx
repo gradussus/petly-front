@@ -52,15 +52,9 @@ const NoticesCategoriesList = ({ type }) => {
         setModalCard(data);
       } catch (error) {}
     }
-<<<<<<< HEAD
-    fetchModal()
-  }, [noticeId])
-// console.log("first", type)
-=======
     fetchModal();
   }, [noticeId]);
 
->>>>>>> d731e21b55f7d0eff102b3934c5de0b724c817ac
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -81,22 +75,11 @@ const NoticesCategoriesList = ({ type }) => {
           ))}
         </Ul>
       </ContainerCard>
-<<<<<<< HEAD
-      {showModal && <ModalSample toggleModal={toggleModal} >
-        <ItemPetModal modalCard={modalCard} />
-      </ModalSample>}
-      {showModal && <ModalSample toggleModal={toggleModal} >
-        <AddPets />
-      </ModalSample>}
-     
-
-=======
       {showModal && (
         <ModalSample toggleModal={toggleModal}>
           <ItemPetModal modalCard={modalCard} />
         </ModalSample>
       )}
->>>>>>> d731e21b55f7d0eff102b3934c5de0b724c817ac
     </>
   );
 };
