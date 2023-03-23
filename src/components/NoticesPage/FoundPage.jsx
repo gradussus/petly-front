@@ -1,17 +1,45 @@
 import  found  from "components/ItemPetModal/image/found.svg";
-import { Input, Found, FoundImg, Label  } from "./NoticesPage.Style";
+import { Formik, ErrorMessage } from 'formik';
+import  * as Yup from 'yup';
+import {   FoundImg, Label  } from "./NoticesPage.Style";
+import { BtnSubmit, Input, Forma } from "./FoundPage.Style";
+import { useState } from "react";
 
-const NoticeFound = () => {
+const schema = Yup.object().shape({
+  namePets: Yup.string().min(3, 'Too Short!').max(10, 'Too Long!').required('Required'),  
+});
 
+const NoticeFound = ({handleFoundPets}) => {
+ 
+ const [kindPets, setKindPets] = useState('')
+handleFoundPets(() => kindPets)
+const initialValues = {
+  namePets: ''
+}
+const handelSubmit = (values, {resetForm
+}) =>{
+  
+  // const kindPets = values
+  setKindPets(values)
+// console.log('actions', actions)
+resetForm()
+
+
+console.log('kindPets',  kindPets)
+}
     return (
-        <Found>
+      <Formik initialValues={initialValues}
+      onSubmit={handelSubmit} validationSchema={schema} >
+        <Forma>
           <Label>
-          <Input placeholder="Search"/> 
-          <FoundImg src={found} alt="found" />
-          </Label>
-        
+          <Input placeholder="Search" type="text" name="namePets" /> 
+          <ErrorMessage name="namePets" />
+          <BtnSubmit type="submit"><FoundImg src={found} alt="found" /></BtnSubmit>          
+          </Label>     
                
-      </Found>
+      </Forma>
+      </Formik>
+        
     )
 };
 export default NoticeFound;

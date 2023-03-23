@@ -7,6 +7,10 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  /* @media screen and (${theme.media.mobile}) {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+  } */
 `;
 
 const NoticesCategoriesNavLink = styled(NavLink)`
@@ -34,7 +38,15 @@ const NoticesCategoriesNavLink = styled(NavLink)`
   }
   cursor: pointer;
 `;
+const ContainerBtn = styled.div`
+ @media screen and (${theme.media.mobile}) {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1;
+  }
 
-const elements = { NoticesCategoriesNavLink, Container };
+`
+
+const elements = { NoticesCategoriesNavLink, Container, ContainerBtn };
 
 export default elements;

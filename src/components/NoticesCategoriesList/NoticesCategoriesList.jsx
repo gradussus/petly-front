@@ -20,6 +20,7 @@ const NoticesCategoriesList = ({ type }) => {
   const handleChange = id => setNoticeId(id);
 
   useEffect(() => {
+    
     async function fetchNotice() {
       try {
         if (['sell', 'lost-found', 'for-free'].includes(type)) {
@@ -42,6 +43,7 @@ const NoticesCategoriesList = ({ type }) => {
     if (!noticeId) {
       return;
     }
+    
     async function fetchModal() {
       try {
         const { data } = await axios.get(

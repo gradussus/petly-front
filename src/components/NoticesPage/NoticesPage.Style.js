@@ -22,41 +22,12 @@ font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
 }
 `;
-export const Found = styled.div`
-position: relative;
-display: flex;
-margin: 28px 0px;
-justify-content: center;
 
-`;
 export const ImgFound = styled.img`
 position: absolute;
 resize: 50%;
 `;
-export const Input = styled.input`
-/* position: relative; */
-width: 280px;
-padding: 9px 12px;
-border: ${p => p.theme.borders.none};
-border-radius: 20px;
-margin-left: auto;
-margin-right: auto;
-@media screen  and (${p => p.theme.media.tablet}){
-    width: 608px;
-padding: 8px 20px;
-&::placeholder{
-   font-weight: ${p => p.theme.fontWeights.middle};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-}
-}
-@media screen  and (${p => p.theme.media.desktop}){
-    font-weight: ${p => p.theme.fontWeights.bold};
-font-size: ${p => p.theme.fontSizes.ml};
-line-height: ${p => p.theme.lineHeights.heading};
-}
 
-`;
 export const ContainerBtn = styled.div`
 margin-top: 28px;
 margin-bottom: 30px;
@@ -69,139 +40,17 @@ margin-bottom: 30px;
   
 }
 `;
-export const Btn = styled.div`
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
 
-`;
 
-export const BtnLost = styled.button`
-width: 131px;
-padding: 8px;
-border: ${p => p.theme.borders.large};
-border-radius: 20px;
-background-color: ${p => p.theme.colors.white};
-color: ${p => p.theme.colors.primeText};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-&:hover,
-  &:focus,
-  &.active {
-    background-color: ${p => p.theme.colors.accent};
-    color: ${p => p.theme.colors.white};
-  }
-@media screen  and (${p => p.theme.media.tablet}){
-width: 162px;
-font-weight: ${p => p.theme.fontWeights.middle};
-padding: 10px 28px;
-}
-`;
-export const BtnGood = styled.button`
-width: 155px;
-padding: 8px;
-grid-column: 1;
-grid-row: 2;
-border: ${p => p.theme.borders.none};
-border-radius: 20px;
-background-color: ${p => p.theme.colors.accent};
-color: ${p => p.theme.colors.white};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-&:hover,
-  &:focus,
-  &.active {
-    background-color: ${p => p.theme.colors.accent};
-    color: ${p => p.theme.colors.white};
-  }
-@media screen  and (${p => p.theme.media.tablet}){
-width: 197px;
-font-weight: ${p => p.theme.fontWeights.middle};
-padding: 10px 28px;
-
-}
-`;
-export const BtnFavorite = styled.button`
-width: 140px;
-padding: 8px;
-grid-column: 1;
-grid-row: 3;
-border: ${p => p.theme.borders.large};
-border-radius: 20px;
-color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.white};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-&:hover,
-  &:focus,
-  &.active {
-    background-color: ${p => p.theme.colors.accent};
-    color: ${p => p.theme.colors.white};
-  }
-@media screen  and (${p => p.theme.media.tablet}){
-width: 175px;
-padding: 10px 28px;
-font-weight: ${p => p.theme.fontWeights.middle};
-
-}
-`;
-export const BtnSell = styled.button`
-width: 81px;
-padding: 8px;
-grid-column: 2;
-grid-row: 2;
-border: ${p => p.theme.borders.large};
-border-radius: 20px;
-color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.white};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-&:hover,
-  &:focus,
-  &.active {
-    background-color: ${p => p.theme.colors.accent};
-    color: ${p => p.theme.colors.white};
-  }
-@media screen  and (${p => p.theme.media.tablet}){
-width: 91px;
-padding: 10px 28px;
-font-weight: ${p => p.theme.fontWeights.middle};
-
-}
-`;
-export const BtnMy = styled.button`
-width: 105px;
-padding: 8px;
-grid-column: 2;
-grid-row: 3;
-border: ${p => p.theme.borders.large};
-border-radius: 20px;
-color: ${p => p.theme.colors.primeText};
-background-color: ${p => p.theme.colors.white};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-&:hover,
-  &:focus,
-  &.active {
-    background-color: ${p => p.theme.colors.accent};
-    color: ${p => p.theme.colors.white};
-  }
-@media screen  and (${p => p.theme.media.tablet}){
-width: 126px;
-padding: 10px 28px;
-font-weight: ${p => p.theme.fontWeights.middle};
-
-}
-`;
 export const BtnAdd = styled.button`
 position: fixed;
-bottom: 100px;
-right: 100px;
+display: flex;
+gap: 5px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+bottom: 40px;
+right: 40px;
 width: 80px;
 height: 80px;
 z-index: 5;
@@ -214,20 +63,18 @@ color: ${p => p.theme.colors.white};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.xs};
 line-height: ${p => p.theme.lineHeights.heading};
-
-`;
-export const TabletBtnAdd = styled.button`
-width: 44px;
+@media screen  and (min-width: 768px){
+  position: static;
+  width: 44px;
 height: 44px;
-text-align: center;
-border: ${p => p.theme.borders.none};
-border-radius: ${p => p.theme.radii.round};
-background-color: ${p => p.theme.colors.accent};
-color: ${p => p.theme.colors.white};
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size: ${p => p.theme.fontSizes.xs};
-line-height: ${p => p.theme.lineHeights.heading};
-
+align-items: center;
+justify-content: center;
+}
+`;
+export const Span = styled.span`
+@media screen  and (min-width: 768px){
+ display: none;  
+}
 `;
 
 export const ContainerAdd = styled.div`
@@ -248,16 +95,26 @@ export const FoundImg = styled.img`
  position: absolute;
  top: 50%;
  right: 16px;
- transform: translateY(-50% ) translateX(-50% )
+ transform: translateY(-50% ) translateX(-50% );
   
 `;
 
 
 export const ContainerCard = styled.div`
 margin-top: 30px;
-justify-content: center;
+margin-left: auto;
+  margin-right: auto;
 @media screen  and (${p => p.theme.media.tablet}){
   margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 768px;
+}
+@media screen  and (${p => p.theme.media.desktop}){
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
 }
 
 `;
@@ -265,14 +122,25 @@ export const Ul = styled.ul`
 display: flex;
 flex-wrap: wrap;
 gap: 12px;
+justify-content: center;
+margin-right: auto;
+margin-left: auto;
 margin-top: 30px;
 /* flex-direction: column; */
-justify-content: center;
+
 @media screen  and (${p => p.theme.media.tablet}){
   margin-top: 30px;
+  display: flex;
+flex-wrap: wrap;
+gap: 12px;
+justify-content: center;
 }
 @media screen  and (${p => p.theme.media.desktop}){
   margin-top: 30px;
+  display: flex;
+flex-wrap: wrap;
+gap: 12px;
+justify-content: center;
 }
 `;
 
@@ -286,8 +154,12 @@ height: 288px;
 
 `;
 export const P = styled.p`
-color: ${p => p.theme.colors.primeText};
+opacity: 0;
+@media screen  and (min-width: 768px){
+  opacity: 1;
+  color: ${p => p.theme.colors.primeText};
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size: ${p => p.theme.fontSizes.mx};
 line-height: ${p => p.theme.lineHeights.heading};
+}
 `; 
