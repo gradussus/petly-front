@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
-import { userLogIn } from '../../redux/auth/operations';
+import { userLogIn } from '../../../redux/auth/operations';
 
 import { Input } from './Input/Input';
 import { AccentButton } from './Buttons/Buttons';
-import { AuthForm } from 'components/AuthForm/AuthForm';
-import { RedirectLink } from 'components/LoginPage/RedirectLink/RedirectLink';
+import { AuthForm } from 'components/RegLog/AuthForm/AuthForm';
+import { RedirectLink } from 'components/RegLog/LoginPage/RedirectLink/RedirectLink';
 import { Formik, ErrorMessage } from 'formik';
 import { ErrorMessages } from '../RegisterPage/ErrorMessages/ErrorMessages';
 import { LoginValidation } from './Shema';
