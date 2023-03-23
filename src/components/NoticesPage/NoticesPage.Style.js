@@ -22,41 +22,12 @@ font-size: ${p => p.theme.fontSizes.ml};
 line-height: ${p => p.theme.lineHeights.heading};
 }
 `;
-export const Found = styled.div`
-position: relative;
-display: flex;
-margin: 28px 0px;
-justify-content: center;
 
-`;
 export const ImgFound = styled.img`
 position: absolute;
 resize: 50%;
 `;
-export const Input = styled.input`
-/* position: relative; */
-width: 280px;
-padding: 9px 12px;
-border: ${p => p.theme.borders.none};
-border-radius: 20px;
-margin-left: auto;
-margin-right: auto;
-@media screen  and (${p => p.theme.media.tablet}){
-    width: 608px;
-padding: 8px 20px;
-&::placeholder{
-   font-weight: ${p => p.theme.fontWeights.middle};
-font-size: ${p => p.theme.fontSizes.mx};
-line-height: ${p => p.theme.lineHeights.heading};
-}
-}
-@media screen  and (${p => p.theme.media.desktop}){
-    font-weight: ${p => p.theme.fontWeights.bold};
-font-size: ${p => p.theme.fontSizes.ml};
-line-height: ${p => p.theme.lineHeights.heading};
-}
 
-`;
 export const ContainerBtn = styled.div`
 margin-top: 28px;
 margin-bottom: 30px;
@@ -200,8 +171,8 @@ font-weight: ${p => p.theme.fontWeights.middle};
 `;
 export const BtnAdd = styled.button`
 position: fixed;
-bottom: 100px;
-right: 100px;
+bottom: 40px;
+right: 40px;
 width: 80px;
 height: 80px;
 z-index: 5;
@@ -233,6 +204,7 @@ line-height: ${p => p.theme.lineHeights.heading};
 export const ContainerAdd = styled.div`
 display: flex;
 gap: 12px;
+/* grid-column: 2 */
 margin-left: auto;
 align-items: baseline;
 

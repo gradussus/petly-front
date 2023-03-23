@@ -8,7 +8,7 @@ import Vector from "components/ItemPetModal/image/Vector.svg";
 export const ItemPetModal = ({ modalCard }) => {
     console.log("modalCard", modalCard)
     const { name, birthDate, breed, location, sex, imageURL,
-        comments, price, sell, owner } = modalCard
+        comments, price, sell, owner, title } = modalCard
 // console.log('owner', owner)
 // console.log('phone', phone)
     return (
@@ -18,7 +18,7 @@ export const ItemPetModal = ({ modalCard }) => {
                 {{ sell } && <Status> sell </Status>}
                 {!{ sell } && <Status> in-good-hands </Status>}
             </ContainerImg>
-            <Title>Сute dog looking for a home</Title>
+            <Title>{title}</Title>
             <Box>
                 <div>Name:</div>
                 <div>{name}</div>

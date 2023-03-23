@@ -11,12 +11,22 @@ import { Helmet } from 'react-helmet';
 
 const { Section, Container } = elements;
 
+
+
 const NoticesPage = () => { 
+  const [foundPets, setFoundPet] = useState('')
+  // const handleAddPetsChange = () => {
+
+  // }
   
 const [type, setType] = useState('');
  function handleTypeChange(newType) {
    setType(newType);
  }
+ console.log('foundPets', foundPets)
+
+ const handleFoundPets = (kindPets) => setFoundPet(kindPets)
+
   return (
     
       <Section>
@@ -24,11 +34,11 @@ const [type, setType] = useState('');
           <title>Notices</title>
         </Helmet>
         <Title>Find your favorite pet</Title>
-        <NoticeFound />
+        <NoticeFound handleFoundPets={handleFoundPets}/>
         <Container>
           <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
         </Container>
-        <NoticesCategoriesList type={type} />
+        <NoticesCategoriesList type={type} foundPets={foundPets} />
       </Section>
      
    

@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
+// import { ContainerBtn } from 'components/ItemPetModal/ItemPetModal.Style';
 
 const { NoticesCategoriesNavLink, Container } = elements;
 
-function NoticesCategoriesNav({ onTypeChanged }) {
+function NoticesCategoriesNav({ onTypeChanged, }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -26,6 +27,7 @@ function NoticesCategoriesNav({ onTypeChanged }) {
   return (
     <>
       <Container>
+       
         <NoticesCategoriesNavLink
           to="sell"
           onClick={() => onTypeChanged('sell')}
@@ -44,18 +46,22 @@ function NoticesCategoriesNav({ onTypeChanged }) {
         >
           in good hands
         </NoticesCategoriesNavLink>
-        <NoticesCategoriesNavLink to="own" onClick={() => onTypeChanged('own')}>
+        <NoticesCategoriesNavLink 
+        // to="own" 
+        onClick={() => onTypeChanged('own')}>
           own
         </NoticesCategoriesNavLink>
         <NoticesCategoriesNavLink
-          to="favorite"
+          // to="favorite"
           onClick={() => onTypeChanged('favorite')}
         >
           favorite
         </NoticesCategoriesNavLink>
-
-        <AddNoticeButton />
+       
+        
+        
       </Container>
+      <AddNoticeButton  />
     </>
   );
 }
