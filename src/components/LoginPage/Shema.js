@@ -1,9 +1,22 @@
 import { object, string } from "yup";
 
-export const LoginValidation = object().shape({
-    email: string()
-      .required("Valid email required")
-      .email("Please set the correct email"),
-    password: string().min(6, "must be 6 characters long").max(16, "must be less than 16 characters").required("Required"),
+const emailRegexp =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passwordRegexp = /^[a-zA-Z0-9а-яА-Я]+$/;
 
-  });
+export const LoginValidation = object().shape({
+  email: string()
+  .required("Please Enter your email")
+  .matches(
+    emailRegexp,
+    "Enter your email <example@mail.com>"
+  ),
+  password:
+  string()
+  .required('Please Enter your password')
+  .min(7)
+  .max(32)
+  .matches(
+    passwordRegexp,
+    "Password's length min 7, max 32, without spaces"
+)});
