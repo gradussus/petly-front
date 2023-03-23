@@ -36,7 +36,7 @@ const NoticesCategoriesList = ({ type }) => {
       } catch (error) {}
     }
     fetchNotice();
-  }, [type]);
+  }, [type, token]);
 
   useEffect(() => {
     if (!noticeId) {
