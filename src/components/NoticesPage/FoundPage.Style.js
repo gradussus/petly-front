@@ -4,6 +4,7 @@ import {  Field, Form } from 'formik';
 
 export const BtnSubmit = styled.button`
 position: absolute;
+text-align: center;
 right: 0;
 
 width: 40px;
@@ -44,3 +45,9 @@ margin: 28px 0px;
 justify-content: center;
 
 `;
+export const Label = styled.label`
+display: flex;
+    justify-content: center;
+    align-items: center;
+
+`
