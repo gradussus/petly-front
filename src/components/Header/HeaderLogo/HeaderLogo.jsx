@@ -1,7 +1,7 @@
 import { HeaderLogotype } from './HeaderLogo.styled';
-export const HeaderLogo = () => {
+export const HeaderLogo = ({ handleMenu }) => {
   return (
-    <HeaderLogotype to="/">
+    <HeaderLogotype to="/" onClick={() => handleMenu(false)}>
       pet<span>l</span>y
     </HeaderLogotype>
   );
