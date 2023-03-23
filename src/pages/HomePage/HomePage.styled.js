@@ -1,70 +1,5 @@
 import styled from 'styled-components';
 
-export const Home = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    background-position: right bottom, bottom;
-    background-repeat: no-repeat;
-    background-size: 20rem, 100vw;
-    padding-top: 60px;
-    height: calc(100vh - 72px);
-    max-height: 601px
-
-    @media (${props => props.theme.media.tablet}) {
-      align-items: flex-start;
-      background-image: url('./images/tablet/labro_tablet.png'), url('./images/tablet/bg_tablet.png');
-      background-size: 31rem, 100vw;
-      padding-top: 88px;
-      max-height: 1193px;
-    }
-  
-    @media (${props => props.theme.media.desktop}) {
-      background-image: url('./images/desktop/labro_desk.png'), url('./images/desktop/bg_desktop.png');
-      background-size: 35rem, 100vw;
-      padding-top: 92px;
-      max-height: 768px;
-    }
-`;
-
-export const BackgroundL = styled.img`
-    position: absolute;
-    width: 0px;
-
-    @media (${props => props.theme.media.desktop}) {
-      align-items: flex-start;
-      width: 1248px;
-      bottom: 0;
-    };
-`;
-
-export const BackgroundSm = styled.img`
-    position: absolute;
-    align-items: flex-start;
-    width: 100vw;
-    z-index: -1;
-    padding: 0;
-    bottom: 0;
-    left: -20px; 
-
-    @media (${props => props.theme.media.tablet}) {
-      align-items: flex-start;
-      background-size: 31rem,100vw;
-      background-position: 100% 100%,bottom;
-      background-repeat: no-repeat;
-      background-size: 20rem,100vw;
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 72px);
-      padding-top: 50px;
-    };
-  
-    @media (${props => props.theme.media.desktop}) {
-      width: 0px;
-      
-    };
-`;
-
 export const Title = styled.h1`
 
   font-family: 'Manrope';
@@ -74,7 +9,7 @@ export const Title = styled.h1`
   line-height: 44px;
   max-width: 280px;
   line-height: 1.37;
-
+  padding-top: 30px;
   opacity: 0%;
   animation-name: title;
   animation-duration: 1000ms;;
@@ -84,16 +19,14 @@ export const Title = styled.h1`
 
   @media (${props => props.theme.media.tablet}) {
     font-size: ${props => props.theme.fontSizes.xl};
-    max-width: 700px;
+    max-width: 588px;
+    padding-top: 72px;
   }
-
-  // @media (${props => props.theme.media.fromTablet}) {
-  //   max-width: 700px;
-  // }
 
   @media (${props => props.theme.media.desktop}) {
     font-size: ${props => props.theme.fontSizes.xl};
     max-width: 588px;
+    padding-top: 72px;
   }
 
   @keyframes title {
@@ -113,14 +46,14 @@ export const Heart = styled.img`
   animation-name: heart;
   animation-duration: 2000ms;
   animation-timing-function: linear;
-  animation-delay: 1500ms;
+  animation-delay: 1000ms;
   animation-fill-mode: forwards;
 
   @media (${props => props.theme.media.desktop}) {
     opacity: 0%;
     width: 92px;
     right: 40%;
-    bottom: 70%;
+    bottom: 75%;
   }
   @keyframes heart {
     0% {
@@ -143,33 +76,100 @@ export const Heart = styled.img`
 export const Labro = styled.img`
   position: absolute;
   align-item: centre;
-  width: 380px;
-  bottom: 0px;
+  width: 280px;
+  bottom: 0;
   right: 0px;
-  padding: 0 auto;
+  padding-top: 29px;
   opacity: 1;
   z-index: 100;
-  // background: url(./images/mobile/labro_mobile.png);
   transition-duration: 1000ms;
 
   @media (${props => props.theme.media.tablet}) {
     background: url(./images/mobile/labro_mobile.png);
-    width: 382px;
+    width: 636px;
+    padding-top: 80px;
     bottom: 0px;
   }; 
-
-  // @media (${props => props.theme.media.fromTablet}) {
-  //   background: url(./images/tablet/labro_tablet.png);
-  //   right: 200px;
-  //   bottom: 0px;
-  // } 
 
   @media (${props => props.theme.media.desktop}) {
     background: url(./images/desktop/labro_desk.png);
     width: 524px;
-    padding-right: 18px;
+    right: 18px;
+    overflow-block:hidden;
   }
 `;
+
+export const BackgroundL = styled.img`
+    position: absolute;
+    width: 0px;
+
+    @media (${props => props.theme.media.desktop}) {
+      align-items: flex-start;
+      width: 1580px;
+     left: 32px;
+      bottom: 0;
+
+      height: calc(100vh - 320px);
+      padding-top: 50px;
+      
+    };
+`;
+
+export const BackgroundR = styled.img`
+    position: absolute;
+    width: 0px;
+    z-index: 90;
+
+    @media (${props => props.theme.media.desktop}) {
+      align-items: flex-start;
+      width: 350px;
+      bottom: 0;
+      right: 0;
+    };
+`;
+
+export const BackgroundSm = styled.img`
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    width: 1279px;
+    z-index: -1;
+    padding: 0;
+    bottom: 0;
+    left: -20px; 
+    
+    
+    // background-position: 100% 100%,bottom;
+    // background-repeat: no-repeat;
+ 
+    // display: flex;
+    // flex-direction: column;
+    height: calc(100vh - 172px);
+    // padding-top: 50px;
+
+    @media (${props => props.theme.media.tablet}) {
+      // align-items: flex-start;
+      // background-size: 31rem,100vw;
+      // background-position: 100% 100%,bottom;
+      // background-repeat: no-repeat;
+      // background-size: 20rem,100vw;
+      // display: flex;
+      // flex-direction: column;
+      height: calc(100vh - 72px);
+      padding-top: 50px;
+    };
+  
+    @media (${props => props.theme.media.desktop}) {
+      width: 0px;
+      
+    };
+`;
+
+
+
+
+
+
 
 
   //=============================
