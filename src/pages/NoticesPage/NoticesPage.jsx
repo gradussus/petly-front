@@ -1,10 +1,11 @@
-import { useState } from 'react';
 
-import NoticeFound from 'components/NoticesPage/FoundPage';
+import { 
+  useState } from "react";
+
+import NoticeFound from "components/NoticesPage/FoundPage";
+import { Title } from "../../components/NoticesPage/NoticesPage.Style";
 import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
 import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
-import { Title } from '../../components/NoticesPage/NoticesPage.Style';
-
 import elements from './NoticesPage.styled';
 
 const { Section, Container } = elements;
@@ -40,7 +41,6 @@ const [type, setType] = useState('');
    
   );
 
-   
 };
 
 export default NoticesPage;

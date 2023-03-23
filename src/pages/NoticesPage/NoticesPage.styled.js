@@ -29,11 +29,9 @@ const Container = styled.div`
     width: 768px;
   }
   @media screen and (${theme.media.desktop}) {
-    /* display: flex;  */
+   
     gap: 12px;
-    /* display: grid; 
-    gap: 12px;
-    grid-template-columns: 1fr 130px; */
+    
     padding: 0 16px;
     width: 1280px;
   }

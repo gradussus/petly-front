@@ -3,9 +3,15 @@ import {  Field, Form } from 'formik';
 
 
 export const BtnSubmit = styled.button`
+position: absolute;
+right: 0;
+
 width: 40px;
 height: 40px;
 border-radius: 50%;
+border: ${p => p.theme.borders.none};
+background-color: ${p => p.theme.colors.white};
+
 `;
 export const Input = styled(Field)`
 /* position: relative; */
