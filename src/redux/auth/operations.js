@@ -3,14 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/';
 
-const setAuthToken = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-const clearAuthToken = () => {
-  axios.defaults.headers.common.Authorization = '';
-};
-
 export const registerNewUser = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
@@ -30,7 +22,6 @@ export const userLogIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await axios.post('api/auth/login', credentials);
-      setAuthToken(response.data.token);
       return response.data;
     } catch {
       return rejectWithValue('Failed to login. Please try again.');
@@ -40,11 +31,13 @@ export const userLogIn = createAsyncThunk(
 
 export const userLogOut = createAsyncThunk(
   'auth/logOut',
-  async (_, { rejectWithValue }) => {
+  async (token, { rejectWithValue }) => {
     try {
-      console.log(axios.defaults.headers.common.Authorization);
-      await axios.post('api/auth/logout');
-      clearAuthToken();
+      await axios.post('api/auth/logout', token, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
     } catch {
       return rejectWithValue('Failed to log out. Please try again.');
     }
