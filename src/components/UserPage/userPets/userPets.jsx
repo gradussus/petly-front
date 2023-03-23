@@ -8,7 +8,7 @@ import { NoUserPets, UserPetsBody, UserPetsHead } from './userPets.styled';
 import { UserLoader } from '../userData/userData.styled';
 
 import ItemPets from './itemPets/itemPets';
-import AddPet from '../../addPet/addPet';
+import AddPet from '../addPet/addPet';
 import Loader from '../../loader/loader';
 
 const UserPets = () => {
@@ -40,11 +40,8 @@ const UserPets = () => {
     }
   }, [status]);
 
-  let visiblePets = data ? data : [];
-
   const removePet = id => {
-    visiblePets = data.filter(item => item._id !== id);
-    console.log(visiblePets);
+    setData(data.filter(item => item._id !== id));
   };
 
   return (
@@ -57,9 +54,9 @@ const UserPets = () => {
         <UserLoader>
           <Loader />
         </UserLoader>
-      ) : visiblePets?.length > 0 ? (
+      ) : data?.length > 0 ? (
         <>
-          {visiblePets?.map(
+          {data?.map(
             ({ petName, _id, birthDate, imageURL, comments, breed }) => (
               <ItemPets
                 key={_id}

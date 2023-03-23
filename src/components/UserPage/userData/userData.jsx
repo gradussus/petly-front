@@ -48,7 +48,7 @@ const UserData = () => {
       <UserDataHead>My information:</UserDataHead>
       <UserDataContent>
         <UserImage image={data?.avatarURL} />
-        {status === 'fulfilled' ? (
+        {status === 'fulfilled' && (
           <UserForm
             userBirthDate={data?.birthDate}
             userCity={data?.city}
@@ -56,7 +56,8 @@ const UserData = () => {
             userName={data?.name}
             userPhone={data?.phone}
           />
-        ) : (
+        )}
+        {status === 'pending' && (
           <UserLoader>
             <Loader />
           </UserLoader>
