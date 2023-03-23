@@ -12,17 +12,6 @@ import { AuthForm }  from 'components/RegLog/AuthForm/AuthForm';
 import { RedirectLink } from 'components/RegLog/RegisterPage/RedirectLink/RedirectLink';
 import { useState } from 'react';
 import { FisrtStepShema, SecondStepShema } from './Shema';
-// import {
-//   ErrorMessages,
-//   Input,
-//   AccentButton,
-//   TransparentButton,
-//   AuthForm,
-//   RedirectLink,
-//   FisrtStepShema,
-//   SecondStepShema
-// } from './RegisterFormComponents'
-// // 
 
 
 let initialValues = {
@@ -105,49 +94,3 @@ export const RegisterForm = () => {
 
 
 
-
-// return (
-//   <>
-//   {step === 0 ?
-//  ( <Formik initialValues={initialValues} onSubmit={firstHandleSubmit} validationSchema={FisrtStepShema}>
-
-//     <AuthForm title="Registration" >
-      
-//         <Input placeholder="Email" type="email" name="email"  />
-//         <ErrorMessage name='email' component={ErrorMessages}/>
-
-//         <Input placeholder="Password" type="password" name="password"/>
-//         <ErrorMessage name='password'component={ErrorMessages}/>
-
-//         <Input placeholder="Confirm Password" type="password" name="confirmPassword"/>
-//         <ErrorMessage name='confirmPassword' component={ErrorMessages}/>
-
-//         <AccentButton type="submit">Next</AccentButton>
-
-
-//         <RedirectLink/>
-
-//     </AuthForm> 
-//   </Formik>)
-//       :
-//   (<Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={SecondStepShema}>
-//         <AuthForm title="Registration" >
-//         <Input placeholder="Name" type="text" name="name"  />
-//         <ErrorMessage name='name' component={ErrorMessages}/>
-         
-
-//           <Input placeholder="City, region" type="text" name="city"  />
-//           <ErrorMessage name='city' component={ErrorMessages}/>
-
-//           <Input placeholder="Mobile phone" type="tel" name="phone"  />
-//           <ErrorMessage name='phone' component={ErrorMessages}/>
-
-//           <AccentButton type="submit">Register</AccentButton>
-//           <TransparentButton type="submit" onClick={() => setStep(0)}>Back</TransparentButton>
-//           <RedirectLink/>
-//         </AuthForm>
-//       </Formik>)
-// }
-//       </>
-
-//   );
