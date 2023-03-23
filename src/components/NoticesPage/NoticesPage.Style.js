@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-width: 100vw;
+width: 100%;
 text-align: center;
 text-decoration: 0;
 margin: 0;
@@ -114,7 +114,7 @@ margin-left: auto;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
-  width: 1280px;
+  /* width: 1280px; */
 }
 
 `;
