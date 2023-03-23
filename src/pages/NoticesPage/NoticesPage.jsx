@@ -1,13 +1,11 @@
+import { useState } from 'react';
 
-import { 
-  useState } from "react";
-
-import NoticeFound from "components/NoticesPage/FoundPage";
-import { Title } from "../../components/NoticesPage/NoticesPage.Style";
+import NoticeFound from 'components/NoticesPage/FoundPage';
 import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
 import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
+import { Title } from '../../components/NoticesPage/NoticesPage.Style';
+
 import elements from './NoticesPage.styled';
-import { Helmet } from 'react-helmet';
 
 const { Section, Container } = elements;
 
@@ -30,9 +28,7 @@ const [type, setType] = useState('');
   return (
     
       <Section>
-        <Helmet>
-          <title>Notices</title>
-        </Helmet>
+       
         <Title>Find your favorite pet</Title>
         <NoticeFound handleFoundPets={handleFoundPets}/>
         <Container>
@@ -44,6 +40,7 @@ const [type, setType] = useState('');
    
   );
 
+   
 };
 
 export default NoticesPage;

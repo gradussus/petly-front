@@ -8,13 +8,10 @@ import {
 } from './userImage.styled';
 import { ReactComponent as InputSvg } from './image/imgInputSvg.svg';
 
-const UserImage = () => {
+const UserImage = ({ image }) => {
   return (
     <UserImg>
-      <img
-        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-        alt=""
-      />
+      <img src={`https:${image}`} alt="User Avatar" />
       <UserImgInputBody>
         <UserImgInput
           type="file"

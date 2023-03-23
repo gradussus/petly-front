@@ -1,7 +1,7 @@
 import elements from './NoticesCategoriesNav.styled';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
+import { useAuth } from '../../hooks/useAuth';
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
 // import { ContainerBtn } from 'components/ItemPetModal/ItemPetModal.Style';
 
@@ -9,6 +9,7 @@ const { NoticesCategoriesNavLink, Container } = elements;
 
 function NoticesCategoriesNav({ onTypeChanged, }) {
   const { pathname } = useLocation();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     if (pathname.includes('sell')) {

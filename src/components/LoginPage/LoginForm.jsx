@@ -1,15 +1,14 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Formik, ErrorMessage } from 'formik';
-import { userLogIn } from '../../redux/auth/operations';
-
-import { toast } from 'react-toastify';
 import { useAuth } from '../../hooks/useAuth';
+import { toast } from 'react-toastify';
+import { userLogIn } from '../../redux/auth/operations';
 
 import { Input } from './Input/Input';
 import { AccentButton } from './Buttons/Buttons';
 import { AuthForm } from 'components/AuthForm/AuthForm';
 import { RedirectLink } from 'components/LoginPage/RedirectLink/RedirectLink';
+import { Formik, ErrorMessage } from 'formik';
 import { ErrorMessages } from '../RegisterPage/ErrorMessages/ErrorMessages';
 import { LoginValidation } from './Shema';
 
@@ -27,20 +26,21 @@ export const LoginForm = () => {
     dispatch(userLogIn(values));
   };
 
+  useEffect(() => {
+    if (error) toast.error(`${error}`, { theme: 'colored' });
+  }, [error]);
+
   const handleSubmit = (values, { resetForm }) => {
     handleLogin(values);
     resetForm();
   };
-
-  useEffect(() => {
-    if (error) toast.error(`${error}`, { theme: 'colored' });
-  }, [error]);
 
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={LoginValidation}
+      handleSubmit
     >
       <AuthForm title="Login" onSubmit={handleSubmit}>
         <Input placeholder="Email" type="email" name="email" />
@@ -50,7 +50,7 @@ export const LoginForm = () => {
         <ErrorMessage name="password" component={ErrorMessages} />
 
         <AccentButton type="submit">Login</AccentButton>
-        <RedirectLink />
+        <RedirectLink onClick={() => handleSubmit} />
       </AuthForm>
     </Formik>
   );
