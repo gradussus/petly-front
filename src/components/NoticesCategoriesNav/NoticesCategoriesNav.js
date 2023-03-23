@@ -57,10 +57,7 @@ function NoticesCategoriesNav({ onTypeChanged, }) {
           onClick={() => onTypeChanged('favorite')}
         >
           favorite
-        </NoticesCategoriesNavLink>
-       
-        
-        
+        </NoticesCategoriesNavLink>          
       </Container>
       <AddNoticeButton  />
     </>
