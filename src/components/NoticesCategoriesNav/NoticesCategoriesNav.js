@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // import { useAuth } from '../../hooks/useAuth';
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
-// import { ContainerBtn } from 'components/ItemPetModal/ItemPetModal.Style';
 
 const { NoticesCategoriesNavLink, Container } = elements;
 
