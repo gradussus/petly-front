@@ -1,7 +1,7 @@
 import elements from './NoticesCategoriesNav.styled';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
 
 const { NoticesCategoriesNavLink, Container } = elements;
