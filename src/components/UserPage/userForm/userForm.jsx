@@ -28,6 +28,8 @@ const UserForm = ({
         theme: 'colored',
       });
     }
+
+    if (status === 'fulfilled') setTargetInput('');
   }, [status]);
 
   const { token } = useAuth();
@@ -70,6 +72,7 @@ const UserForm = ({
       .required('Email is required')
       .email('Email is not correct'),
   });
+
   return (
     <>
       <Formik
@@ -85,7 +88,6 @@ const UserForm = ({
         validateOnBlur
         onSubmit={values => {
           updateUser(values);
-          setTargetInput('');
         }}
         validationSchema={validationSchema}
       >
