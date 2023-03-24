@@ -8,7 +8,7 @@ import vectorSm from './images/tablet/bg_tablet.png';
 
 
 const HomePage = () => {
-  return <>
+  return <SC.Home>
     <SC.Title>
         <span>Take good care of</span>
         <br />
@@ -19,7 +19,7 @@ const HomePage = () => {
     <SC.BackgroundL src={vectorL} alt="background" /> 
     <SC.BackgroundR src={vectorR} alt="background" />
     <SC.BackgroundSm src={vectorSm} alt="background" />
-  </>;
+  </SC.Home>;
 };
 
 export default HomePage;

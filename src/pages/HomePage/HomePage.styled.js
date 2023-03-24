@@ -1,5 +1,25 @@
 import styled from 'styled-components';
 
+export const Home = styled.div`
+display: block;
+box-sizing: border-box;
+margin: 0 auto;
+padding: 0 20px;
+
+
+@media (${props => props.theme.media.tablet}) {
+  padding: 0 32px;
+}
+
+@media (${props => props.theme.media.desktop}) {
+  display: block;
+box-sizing: border-box;
+  max-width: 1280px;
+padding: 0px 16px;
+margin: 0 auto;
+}
+`;
+
 export const Title = styled.h1`
 
   font-family: 'Manrope';
@@ -86,8 +106,8 @@ export const Labro = styled.img`
 
   @media (${props => props.theme.media.tablet}) {
     background: url(./images/mobile/labro_mobile.png);
-    width: 636px;
-    padding-top: 80px;
+    width: 436px;
+    padding-top: 352px;
     bottom: 0px;
   }; 
 
