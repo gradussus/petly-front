@@ -10,10 +10,7 @@ const NewsCard = newItem => {
   return (
     <>
       <Card>
-        <Title>
-          {/* <span>{title}</span> */}
-          {name}
-        </Title>
+        <Title>{name}</Title>
         <Elem>{text}</Elem>
 
         <Box>

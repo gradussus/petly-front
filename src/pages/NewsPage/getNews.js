@@ -1,17 +1,8 @@
-import axios from 'axios';
+// import axios from 'axios';
+// import { getNews } from 'utils/api/getNews';
 // import { useEffect } from 'react';
 // import { useState } from 'react';
-
-axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
-
-export const getNews = async () => {
-  try {
-    const response = await axios.get('/news');
-    return response.data;
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+// import { toast } from 'react-toastify';
 
 // const NewsData = () => {
 //   const [data, setData] = useState(null);
@@ -33,8 +24,8 @@ export const getNews = async () => {
 //   };
 // };
 
-// useEffect = () => {
-//   if ('rejected') {
+// useEffect(() => {
+//   if (status === 'rejected') {
 //     toast.error('Nothing found. Please, try again.', { theme: 'colored' });
 //   }
-// };
+// }, [status]);

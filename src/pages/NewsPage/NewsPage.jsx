@@ -4,7 +4,8 @@ import { ToastContainer } from "react-toastify";
 import { Container, Box, Card, Title, SearchBox, Input, Button, NotFoundBox, NotFound } from "./newsPage.styled";
 import NewsCard from "../../components/NewsPage/NewsCard";
 import searchIcon from "../../img/search.svg";
-import getNews from "./getNews";
+import { getNews } from "utils/api/getNews";
+
 function News() {
   const [news, setNews] = useState([]);
   const [searchParams, setSeachParams] = useSearchParams();
@@ -22,6 +23,7 @@ function News() {
     };
     newsPage();
   }, []);
+
 
   const handleChange = e => {
     setSeachParams({ query: e.currentTarget.value.toLocaleLowerCase().trim() });
