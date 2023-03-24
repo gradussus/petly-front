@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Formik } from 'formik';
+import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
+import { Formik } from 'formik';
 
 import { UserFormBody } from './userForm.styled';
 import { UserFormInput, UserFormItem, UserFormLabel } from './userForm.styled';
@@ -8,16 +8,53 @@ import { UserFormInput, UserFormItem, UserFormLabel } from './userForm.styled';
 import FormButtons from './userFormBtn/UserFormBtn';
 import Logout from '../logout/logout';
 
-const UserForm = () => {
-  const fakeData = {
-    name: 'Anna',
-    email: 'anna00@gmail.com',
-    birthday: null,
-    phone: '+380000000000',
-    city: 'Kiev',
-  };
+import { useAuth } from '../../../hooks/useAuth';
+import { updateUserData } from '../../../utils/api/getUserData';
+import { toast } from 'react-toastify';
 
+const UserForm = ({
+  userBirthDate,
+  userCity,
+  userEmail,
+  userPhone,
+  userName,
+}) => {
   const [targetInput, setTargetInput] = useState('');
+  const [status, setStatus] = useState('pending');
+
+  useEffect(() => {
+    if (status === 'rejected') {
+      toast.error('Unfortunately, we were unable to obtain user data.', {
+        theme: 'colored',
+      });
+    }
+
+    if (status === 'fulfilled') setTargetInput('');
+  }, [status]);
+
+  const { token } = useAuth();
+
+  const updateUser = async values => {
+    try {
+      setStatus('pending');
+
+      const credentials = {
+        name: values.name,
+        email: values.email,
+        city: values.city,
+        phone: values.phone,
+      };
+
+      if (values.birthDate) {
+        credentials.birthDate = values.birthDate.split('-').reverse().join('-');
+      }
+
+      await updateUserData(token, credentials);
+      setStatus('fulfilled');
+    } catch {
+      setStatus('rejected');
+    }
+  };
 
   const handleTarget = target => {
     setTargetInput(target);
@@ -35,14 +72,22 @@ const UserForm = () => {
       .required('Email is required')
       .email('Email is not correct'),
   });
+
   return (
     <>
       <Formik
-        initialValues={fakeData}
+        initialValues={{
+          name: userName,
+          email: userEmail,
+          birthDate: userBirthDate
+            ? userBirthDate.split('-').reverse().join('-')
+            : null,
+          phone: userPhone,
+          city: userCity,
+        }}
         validateOnBlur
         onSubmit={values => {
-          console.log(values);
-          setTargetInput('');
+          updateUser(values);
         }}
         validationSchema={validationSchema}
       >
@@ -94,18 +139,18 @@ const UserForm = () => {
               />
             </UserFormItem>
             <UserFormItem>
-              <UserFormLabel htmlFor={`birthday`}>Birthday:</UserFormLabel>
+              <UserFormLabel htmlFor={`birthDate`}>Birthday:</UserFormLabel>
               <UserFormInput
                 type="date"
-                name="birthday"
+                name="birthDate"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.birthday ? values.birthday : ''}
-                disabled={targetInput !== 'birthday'}
+                value={values.birthDate ? values.birthDate : ''}
+                disabled={targetInput !== 'birthDate'}
               />
               <FormButtons
-                error={errors?.birthday}
-                owner="birthday"
+                error={errors?.birthDate}
+                owner="birthDate"
                 isValid={isValid}
                 targetInput={targetInput}
                 handleTarget={handleTarget}

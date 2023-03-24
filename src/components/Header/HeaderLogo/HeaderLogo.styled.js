@@ -22,6 +22,6 @@ export const HeaderLogotype = styled(NavLink)`
   @media (max-width: 1279px) {
     flex: 1 1 auto;
     position: relative;
-    z-index: 3;
+    z-index: 991;
   }
 `;

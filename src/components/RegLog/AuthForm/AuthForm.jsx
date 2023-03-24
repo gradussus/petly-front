@@ -9,4 +9,4 @@ export const AuthForm = ({title, children}) => {
       </SC.AuthForm>
     );
   };
- 
+  

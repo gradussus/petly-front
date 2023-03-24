@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../theme';
+import { theme } from '../../../../theme';
 
 export const AccentButton = styled.button`
   font-weight: ${theme.fontWeights.bold};
@@ -10,9 +10,15 @@ export const AccentButton = styled.button`
   border: ${theme.borders.large};
   background: ${theme.colors.accent};
   color: ${theme.colors.white};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const TransparentButton = styled(AccentButton)`
   background: ${theme.colors.background};
   color: ${theme.colors.black};
+  margin-top: 16px;
 `;
+
+export const NextBtn = styled(AccentButton)``;

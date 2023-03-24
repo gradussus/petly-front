@@ -8,17 +8,26 @@ import Vector from "components/ItemPetModal/image/Vector.svg";
 export const ItemPetModal = ({ modalCard }) => {
     console.log("modalCard", modalCard)
     const { name, birthDate, breed, location, sex, imageURL,
-        comments, price, sell, owner } = modalCard
-// console.log('owner', owner)
-// console.log('phone', phone)
+        comments, price, owner, title, category } = modalCard
+        const categorySelector = category => {
+            switch (category) {
+              case 'for-free':
+                return 'in good hands';
+              case 'lost-found':
+                return 'lost/found';
+              default:
+                return 'sell';
+            }
+          };
+          const formattedCategory = categorySelector(category);
     return (
         <Container>
             <ContainerImg>
                 <Image src={imageURL} />
-                {{ sell } && <Status> sell </Status>}
-                {!{ sell } && <Status> in-good-hands </Status>}
+               
+                <Status> {formattedCategory} </Status>
             </ContainerImg>
-            <Title>Сute dog looking for a home</Title>
+            <Title>{title}</Title>
             <Box>
                 <div>Name:</div>
                 <div>{name}</div>
