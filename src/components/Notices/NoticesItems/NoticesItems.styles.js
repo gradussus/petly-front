@@ -18,11 +18,17 @@ export const NoticesItemBody = styled.div`
   background: #fff;
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   border-radius: 0 0 40px 40px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export const NoticesItemContent = styled.div`
   padding: 20px;
-  margin-bottom: 20px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const NoticesItemImg = styled.div`
@@ -37,6 +43,7 @@ export const NoticesItemTitle = styled.div`
   font-size: 28px;
   line-height: 38px;
   margin-bottom: 20px;
+  flex: 1 1 auto;
 `;
 
 export const NoticesItemText = styled.div`
@@ -55,7 +62,7 @@ export const NoticesItemText = styled.div`
 `;
 
 export const NoticesItemBtn = styled.div`
-  margin: 0 20px 32px;
+  margin: 20px 0 32px;
   border: 2px solid #f59256;
   border-radius: 40px;
   padding: 8px 0;

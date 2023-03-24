@@ -1,4 +1,6 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import {
   NoticeBody,
   NoticeTitle,
@@ -6,10 +8,10 @@ import {
   NoticesHead,
   NoticesHeadBtn,
 } from '../../components/Notices/Notices.styled';
+
 import NoticesSearch from '../../components/Notices/NoticesSearch/NoticesSearch';
 import NoticesButtons from '../../components/Notices/NoticesButtons/NoticesButtons';
-import AddPet from '../../components/UserPage/addPet/addPet';
-import { Outlet } from 'react-router-dom';
+import NoticesAddPet from '../../components/Notices/NoticesAddPet/NoticesAddPet';
 
 const NoticePage = () => {
   return (
@@ -21,7 +23,7 @@ const NoticePage = () => {
       <NoticesHead>
         <NoticesButtons />
         <NoticesHeadBtn>
-          <AddPet />
+          <NoticesAddPet />
         </NoticesHeadBtn>
       </NoticesHead>
       <Outlet />

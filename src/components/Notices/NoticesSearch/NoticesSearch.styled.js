@@ -25,5 +25,5 @@ export const NoticesSearchImage = styled.div`
   height: 24px;
   position: absolute;
   top: 9px;
-  right: 10px;
+  right: 15px;
 `;

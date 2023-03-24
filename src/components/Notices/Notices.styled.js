@@ -5,6 +5,12 @@ export const NoticeTitle = styled.div`
   font-weight: 700;
   font-size: 48px;
   line-height: 66px;
+
+  @media (${props => props.theme.media.mobile}) {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+  }
 `;
 
 export const NoticeBody = styled.div`
@@ -26,4 +32,17 @@ export const NoticesHeadBtn = styled.div`
   flex: 0 0 160px;
   display: flex;
   justify-content: flex-end;
+
+  @media (${props => props.theme.media.mobile}) {
+    position: fixed;
+    top: 420px;
+    right: 20px;
+  }
+`;
+
+export const NoticesPreview = styled.div`
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 66px;
 `;
