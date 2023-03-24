@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Ul, ContainerCard } from '../NoticesPage/NoticesPage.Style';
 import { ModalSample } from 'components/Modal/Modal';
 import { ItemPetModal } from 'components/ItemPetModal/ItemPetModal';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
 const NAME_URL = 'https://petly-vxdt.onrender.com/notices/';
@@ -19,48 +19,25 @@ const NoticesCategoriesList = ({ type, foundPets }) => {
 
   // const query =
   const handleChange = id => setNoticeId(id);
-
+useEffect(()=> {
+  setQuery(foundPets)
+}, [foundPets])
 
 // console.log("first", namePets)
-// console.log("query", query)
-// useEffect(() => {
-//   setQuery(foundPets)
-//   console.log('MY')
-//   console.log(foundPets)
-//   async function fetchFoundNotice() {
-//     try {
-//       if(!foundPets){
-//         return
-//       }console.log('foundPets.namePets',  foundPets.namePets)
-//         const { data } = await axios.get(`${NAME_URL}search/${type}/${foundPets.namePets}`)
-//         setStates(data);  
-//         // setQuery('');        
-     
-     
-//     } catch (error) {}
-    
-//   }
-//   fetchFoundNotice()
-// }, [foundPets, type])
+console.log("query", query)
 
-console.log("type", type)
+
+console.log("type", query.namePets)
   useEffect(() => {
+
+    
     console.log('search', `${NAME_URL}search/${type}/${query.namePets}`)
-    console.log('query', query)
-    console.log('foundPets', foundPets.namePets)
-    setQuery(foundPets)
     async function fetchNotice() {
       try {
+      
         if (['sell', 'lost-found', 'for-free'].includes(type)) {
-          if (foundPets){
-            const { data } = await axios.get(`${NAME_URL}search/${type}/${foundPets.namePets}`)
-            setStates(data);
-          }
-          else {
-            const { data } = await axios.get(`${NAME_URL}${type}`);
-            setStates(data);
-          }
-          
+          const { data } = await axios.get(`${NAME_URL}${type}`);
+          setStates(data);
         } else if (['own', 'favorite'].includes(type)) {
           const { data } = await axios.get(`${NAME_URL}${type}`, {
             headers: {
@@ -71,11 +48,14 @@ console.log("type", type)
 
          
         }
-        
-      } catch (error) {}
+      } catch (error) {
+        console.log('Error: ' + error.message);
+      }
     }
     fetchNotice();
-  }, [type, token,query, foundPets]);
+  }, [type, token, query]);
+  
+ 
 
   useEffect(() => {
     if (!noticeId) {
