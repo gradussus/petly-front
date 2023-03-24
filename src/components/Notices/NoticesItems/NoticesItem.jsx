@@ -33,7 +33,7 @@ const NoticesItem = ({
         <img src={imageURL} alt="pet avatar" />
       </NoticesItemImg>
       <NoticesItemContent>
-        <NoticesItemTitle>{comments}</NoticesItemTitle>
+        <NoticesItemTitle>{title}</NoticesItemTitle>
         <NoticesItemText>
           <div>Breed:</div>
           {breed}
