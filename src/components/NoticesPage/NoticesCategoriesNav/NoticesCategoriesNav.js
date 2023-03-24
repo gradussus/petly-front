@@ -1,14 +1,14 @@
 import elements from './NoticesCategoriesNav.styled';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import AddNoticeButton from 'components/NoticesPage/AddNoticeButton';
 
 const { NoticesCategoriesNavLink, Container } = elements;
 
-function NoticesCategoriesNav({ onTypeChanged, }) {
+function NoticesCategoriesNav({ onTypeChanged }) {
   const { pathname } = useLocation();
-  // const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     if (pathname.includes('sell')) {
@@ -26,7 +26,7 @@ function NoticesCategoriesNav({ onTypeChanged, }) {
 
   return (
     <>
-      <Container>       
+      <Container>
         <NoticesCategoriesNavLink
           to="sell"
           onClick={() => onTypeChanged('sell')}
@@ -45,19 +45,24 @@ function NoticesCategoriesNav({ onTypeChanged, }) {
         >
           in good hands
         </NoticesCategoriesNavLink>
-        <NoticesCategoriesNavLink 
-        to="own" 
-        onClick={() => onTypeChanged('own')}>
-          own
-        </NoticesCategoriesNavLink>
-        <NoticesCategoriesNavLink
-          to="favorite"
-          onClick={() => onTypeChanged('favorite')}
-        >
-          favorite
-        </NoticesCategoriesNavLink>          
+        {isLoggedIn && (
+          <NoticesCategoriesNavLink
+            to="own"
+            onClick={() => onTypeChanged('own')}
+          >
+            own
+          </NoticesCategoriesNavLink>
+        )}
+        {isLoggedIn && (
+          <NoticesCategoriesNavLink
+            to="favorite"
+            onClick={() => onTypeChanged('favorite')}
+          >
+            favorite
+          </NoticesCategoriesNavLink>
+        )}
+        <AddNoticeButton />
       </Container>
-      <AddNoticeButton  />
     </>
   );
 }
