@@ -1,30 +1,16 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  @media ${p => p.theme.media.mobile} {
-    display: flex;
-    flex-direction: column;
-    ::before {
-      content: ' ';
-      height: 4px;
-      margin-bottom: 4px;
-      background: linear-gradient(90deg, #ff634e 0%, #ffdf48 105.44%);
-      border-radius: 40px;
-      width: 200px;
-    }
-  }
-  @media ${p => p.theme.media.tablet} {
-    ::before {
-      content: ' ';
-      height: 8px;
-      width: 280px;
-    }
-  }
-  @media ${p => p.theme.media.desktop} {
-    ::before {
-      content: ' ';
-      width: 340px;
-    }
+  // @media ${p => p.theme.media.mobile} {
+  display: flex;
+  flex-direction: column;
+  ::before {
+    content: ' ';
+    height: 4px;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, #ff634e 0%, #ffdf48 105.44%);
+    border-radius: 40px;
+    width: 200px;
   }
 `;
 
@@ -94,7 +80,7 @@ export const Link = styled.a`
   font-weight: 500;
   :hover,
   :focus {
-    color: 
+    color:
     hoverBtn: #FF6101;
   }
 `;
