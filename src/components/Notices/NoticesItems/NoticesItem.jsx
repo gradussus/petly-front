@@ -12,13 +12,11 @@ import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
 const NoticesItem = ({
   imageURL,
   id,
-  name,
   title,
   price,
   birthDate,
   location,
   breed,
-  comments,
   favoriteData,
   setFavoriteData,
 }) => {
