@@ -39,3 +39,9 @@ export const removeUserPets = async (token, id) => {
 
   return response.data;
 };
+
+export const getFriends = async () => {
+  const response = await axios.get('/friends');
+
+  return response.data;
+}
