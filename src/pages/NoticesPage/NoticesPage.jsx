@@ -1,89 +1,35 @@
+import { useState } from 'react';
 
-// import { useEffect, useState } from "react";
+import NoticeFound from 'components/NoticesPage/FoundPage';
+import NoticesCategoriesNav from 'components/NoticesPage/NoticesCategoriesNav/NoticesCategoriesNav';
+import NoticesCategoriesList from 'components/NoticesPage/NoticesCategoriesList/NoticesCategoriesList';
 
-import NoticeFound from "components/NoticesPage/FoundPage";
-import { Title } from "../../components/NoticesPage/NoticesPage.Style";
-import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
-// import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
+import { Title } from '../../components/NoticesPage/NoticesPage.Style';
+
 import elements from './NoticesPage.styled';
-import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
+
 const { Section, Container } = elements;
 
-
-
-
 const NoticesPage = () => {
-  // const [state, setState] = useState([]) 
-  // const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  const [type, setType] = useState('');
+  function handleTypeChange(newType) {
+    setType(newType);
+  }
 
-  //   useEffect(() => {
-  //     window.onresize = () => {setWindowWidth(window.screen.width)};
-
-  //     return () => {window.onresize = false};
-  // }, [windowWidth]);
-  // console.log("windowWidth", window.onresize)
-  // const screen = windowWidth
-  // console.log("screen", screen) 
-
-  //   useEffect(() => {
-  //     if(!state ) {
-  //       return
-  //     }
-  //     const fetchNotice = async () => {        
-  //       try {
-  //         const {data} = await axios.get(`${NAME_URL}`)        
-  //         setState(data)   
-  //         console.log("data", state)    
-  //       } catch (error) {
-  //       }
-  //     }
-  //     fetchNotice()
-  //   }, [])
-
+  const test = useParams();
+  console.log(test);
 
   return (
-    <>
-      <Section>
-        <Helmet>
-          <title>Notices</title>
-        </Helmet>
-        <Title>Find your favorite pet</Title>
-        <NoticeFound />
-        <Container>
-          <NoticesCategoriesNav />
-          
-        </Container>
-        
-      </Section>
-      {/* <NoticesCategoriesList /> */}
-
-
-      {/* <ContainerBtn>
-          <Btn>
-            <BtnLost type="button">lost/found</BtnLost>
-            <BtnGood type="button">in good hands</BtnGood>
-            <BtnSell type="button">sell</BtnSell>
-            <BtnFavorite type="button">favorite ads</BtnFavorite>
-            <BtnMy type="button">my ads</BtnMy>
-          </Btn>
-          {(windowWidth < 768) ? (<BtnAdd type="button"><Img src={cross} alt="Cross" />
-          <br/>Add pet</BtnAdd>): 
-          (<ContainerAdd><P>Add pet</P> <TabletBtnAdd type="button"><Img src={cross} alt="Cross" />
-          <br/></TabletBtnAdd></ContainerAdd>
-          )}
-
-        </ContainerBtn> */}
-
-
-    </>
-
-  )
-
+    <Section>
+      <Title>Find your favorite pet</Title>
+      <NoticeFound />
+      <Container>
+        <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
+      </Container>
+      <NoticesCategoriesList type={type} />
+    </Section>
+  );
 };
 
-// const NoticesPage = () => {
-//   return (
-
-//   );
-// 
 export default NoticesPage;

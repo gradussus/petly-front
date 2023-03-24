@@ -16,8 +16,7 @@ function News() {
     const newsPage = async () => {
       try {
         const newsArray = await getNews();
-        const newsRes = newsArray.data.result;
-        setNews(newsRes);
+        setNews(newsArray);
       } catch (error) {
         console.log(error.message);
       }

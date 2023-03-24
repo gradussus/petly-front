@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { ReactComponent as FavoriteIcon } from './tmp/icons-heart-default.svg';
 import { ReactComponent as InFavoriteIcon } from './tmp/icons-heart-variant1.svg';
-import { ModalSample } from "components/Modal/Modal";
-import { ItemPetModal } from "components/ItemPetModal/ItemPetModal";
 
 
 import {
@@ -18,9 +15,10 @@ import {
   BtnOverlay,
   LearnMoreButton,
   DeleteButton,
+  DetailsWrapper,
+  DeleteIcons
 } from './NoticeCategoryItem.styled';
 
-//Форматирует дату рождения пета
 const getPetAge = dateString => {
   const today = new Date();
   const [day, month, year] = dateString.split('.');
@@ -41,10 +39,9 @@ const getPetAge = dateString => {
   }
 };
 
-// Форматирует название категории
 const categorySelector = category => {
   switch (category) {
-    case 'in-good-hands':
+    case 'for-free':
       return 'in good hands';
     case 'lost-found':
       return 'lost/found';
@@ -53,32 +50,12 @@ const categorySelector = category => {
   }
 };
 
-// ! Пример объекта для теста
-// const noticeData = {
-//   _id: '64170d5b224ab824d2bd485f',
-//   category: 'in-good-hands',
-//   title: 'Buldog',
-//   name: 'Test e',
-//   birthDate: '16.12.2020',
-//   breed: 'Pomeranian',
-//   sex: 'female',
-//   location: 'Dublin, Scotland',
-//   comments: 'The swettyiest dog ever',
-//   price: 1,
-//   owner: {
-//     _id: '6415b1f36140bcbc04c3a518',
-//     email: 'polly@ukr.net',
-//     phone: '0979482826',
-//   },
-//   imageURL:
-//     'https://images.pexels.com/photos/13240748/pexels-photo-13240748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-//   createdAt: '2023-03-19T13:25:47.743Z',
-//   updatedAt: '2023-03-19T13:25:47.743Z',
-// };
-
-// Компонент должен принять в виде пропов: объекта и двух функций
-const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
-  const [showModal, setShowModal] = useState(false);
+const NoticeCategoryItem = ({
+  noticeData,
+  handleAddToFavorites,
+  onChangeModal,
+  handleChange,
+}) => {
   const {
     _id: id,
     category,
@@ -94,8 +71,6 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
   const petAge = getPetAge(birthDate);
   const formattedCategory = categorySelector(category);
 
-
-// console.log('noticeData', noticeData )
   const handleAddToFavoritesClick = () => {
     if (userIsLoggedIn) {
       handleAddToFavorites(id);
@@ -103,11 +78,8 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
       alert('You need to be logged in to use this feature.'); // TODO: Заменить на нотификацию библиотеки
     }
   };
-  const toggleModal = () => {
-    setShowModal(!showModal)
-}
+
   return (
-    <>
     <CardWrapper>
       <Img src={imageURL} alt="pet" />
       <CategoryOverlay>
@@ -117,45 +89,49 @@ const NoticeCategoryItem = ({ noticeData, handleAddToFavorites,  }) => {
         {noticeIsFavorite ? <InFavoriteIcon /> : <FavoriteIcon />}
       </HeartButton>
       <Title>{title}</Title>
-      <NoticeList>
-        <NoticeItem>
-          <NoticeItemName>Breed:</NoticeItemName>
-          {breed}
-        </NoticeItem>
-        <NoticeItem>
-          <NoticeItemName>Place:</NoticeItemName>
-          {location}
-        </NoticeItem>
-        <NoticeItem>
-          <NoticeItemName>Age:</NoticeItemName>
-          {petAge}
-        </NoticeItem>
-        {price > 0 && (
+      <DetailsWrapper>
+        <NoticeList>
           <NoticeItem>
-            <NoticeItemName>Price:</NoticeItemName>
-            {price}$
+            <NoticeItemName>Breed:</NoticeItemName>
+            {breed}
           </NoticeItem>
-        )}
-      </NoticeList>
-      <BtnOverlay>
-        <LearnMoreButton
-          type="button"
-          onClick={() =>  toggleModal()}
-        >
-          Learn more
-        </LearnMoreButton>
-        {noticeIsFavorite && (
-          <DeleteButton type="button" onClick={() => handleAddToFavorites(id)}>
-            Delete
-          </DeleteButton>
-        )}
-      </BtnOverlay>     
+          <NoticeItem>
+            <NoticeItemName>Place:</NoticeItemName>
+            {location}
+          </NoticeItem>
+          <NoticeItem>
+            <NoticeItemName>Age:</NoticeItemName>
+            {petAge}
+          </NoticeItem>
+          {price > 0 && (
+            <NoticeItem>
+              <NoticeItemName>Price:</NoticeItemName>
+              {price}$
+            </NoticeItem>
+          )}
+        </NoticeList>
+        <BtnOverlay>
+          <LearnMoreButton
+            type="button"
+            onClick={() => {
+              onChangeModal();
+              handleChange(id);
+            }}
+          >
+            Learn more
+          </LearnMoreButton>
+          {noticeIsFavorite && (
+            <DeleteButton
+              type="button"
+              onClick={() => handleAddToFavorites(id)}
+            >
+              Delete
+              <DeleteIcons />
+            </DeleteButton>
+          )}
+        </BtnOverlay>
+      </DetailsWrapper>
     </CardWrapper>
-    {showModal && <ModalSample toggleModal={toggleModal} >
-                <ItemPetModal/>
-                </ModalSample>}
-    </>
-    
   );
 };
 

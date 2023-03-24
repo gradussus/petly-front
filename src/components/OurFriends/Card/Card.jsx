@@ -4,7 +4,9 @@ import {
   FriendsLink,
   FriendsPar,
   FriendsWrapper,
-  FriendsLogo,
+  FriendsLogoWrapper,
+  FriendsImg,
+  FriendsAddress,
 } from './Card.styled';
 
 export const Card = ({ friends }) => {
@@ -27,33 +29,36 @@ export const Card = ({ friends }) => {
               <FriendsLink href={url}>{title}</FriendsLink>
             </FriendsTitle>
             <FriendsWrapper>
-              <FriendsLogo>
-                <img
+              <FriendsLogoWrapper>
+                <FriendsImg
                   src={
                     imageUrl
                       ? imageUrl
                       : 'https://animals-city.org/wp-content/themes/animals-city/img/logo.svg'
                   }
                   alt={title}
-                  width="110px"
+                  
                 />
-              </FriendsLogo>
+              </FriendsLogoWrapper>
               <div>
                 <FriendsPar>Time:</FriendsPar>
                 <FriendsPar>
-                  {' '}
-                  Address:
+                  Address:<br />
                   <a href={addressUrl} target="_blank" rel="noreferrer">
-                    {address ? <span>{address}</span> : <hr />}
+                    {address ? (
+                      <FriendsAddress>{address}</FriendsAddress>
+                    ) : (
+                      <hr />
+                    )}
                   </a>
                 </FriendsPar>
                 <FriendsPar type="email">
-                  Email:
+                  Email:<br />
                   {email ? <span>{email}</span> : <hr />}
                 </FriendsPar>
                 <FriendsPar type="phone">
-                  Phone:
-                  {phone}
+                  Phone:<br />
+                  {phone ? <span>{phone}</span> : <hr />}
                 </FriendsPar>
               </div>
             </FriendsWrapper>
@@ -62,4 +67,4 @@ export const Card = ({ friends }) => {
       )}
     </>
   );
-}
+};
