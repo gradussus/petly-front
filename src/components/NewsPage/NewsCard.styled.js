@@ -42,11 +42,13 @@ export const Title = styled.h3`
       margin-left: 0px;
 
       @media ${p => p.theme.media.tablet} {
+        padding-bottom: 16px;
         width: calc(((100% - 32px) / 2) * 0.9);
         height: auto;
       }
       @media ${p => p.theme.media.desktop} {
         width: calc((100% - 64px) / 3);
+        margin-bottom: 40px;
       }
     }
     :hover span {

@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   @media ${p => p.theme.media.mobile} {
-    padding: 100px 20px 100px 20px;
+    padding-top: 34px;
+    padding-bottom: 100px;
   }
   @media ${p => p.theme.media.tablet} {
-    padding: 160px 32px 100px 32px;
+    padding-top: 70px;
+    padding-bottom: 100px;
   }
   @media ${p => p.theme.media.desktop} {
-    padding: 126px 16px 200px 16px;
+    padding-top: 49px;
+    padding-bottom: 200px;
   }
 `;
 
@@ -121,7 +124,6 @@ export const Box = styled.ul`
     flex-wrap: wrap;
   }
 `;
-
 export const Card = styled.li`
   @media ${p => p.theme.media.mobile} {
     margin-left: auto;
@@ -142,9 +144,9 @@ export const Card = styled.li`
   }
   @media ${p => p.theme.media.desktop} {
     width: calc((100% - 64px) / 3);
-    &:nth-child(2n + 1) {
-      margin-left: 32px;
-    }
+    // &:nth-child(2n + 1) {
+    //   margin-left: 32px;
+    // }
     &:nth-child(3n + 1) {
       margin-left: 0px;
     }
