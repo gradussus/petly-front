@@ -1,7 +1,7 @@
-// import { LoginForm } from 'components/RegLog/LoginPage/LoginForm';
+import { LoginForm } from 'components/RegLog/LoginPage/LoginForm';
 
-// const LoginPage = () => {
-//   return <LoginForm />;
-// };
+const LoginPage = () => {
+  return <LoginForm />;
+};
 
-// export default LoginPage;
+export default LoginPage;
