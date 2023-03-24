@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   @media ${p => p.theme.media.mobile} {
-    padding: 100px 20px 100px 20px;
+    padding: 54px 0px 100px 0px;
   }
   @media ${p => p.theme.media.tablet} {
-    padding: 160px 32px 100px 32px;
+    padding: 90px 0px 100px 0px;
   }
   @media ${p => p.theme.media.desktop} {
-    padding: 126px 16px 200px 16px;
+    padding: 69px 0px 200px 0px;
   }
 `;
 

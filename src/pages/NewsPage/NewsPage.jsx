@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { Container, Box, Card, Title, SearchBox, Input, Button, NotFoundBox, NotFound } from "./newsPage.styled";
 import NewsCard from "../../components/NewsPage/NewsCard";
 import searchIcon from "../../img/search.svg";
-import {getNews}  from "./getNews";
+import getNews from "./getNews";
 
 function News() {
   const [news, setNews] = useState([]);
@@ -47,7 +47,7 @@ function News() {
       <Title>News</Title>
       <ToastContainer />
       <SearchBox onSubmit={handleSubmit}>
-        <Input type="text" name="query" value={search} placeholder="Search" autoFocus onChange={handleChange} />
+        <Input type="text" name="query" value={search} placeholder="Search"  onChange={handleChange} />
         <Button type="submit">
           <img src={searchIcon} alt="searchIcon" />
         </Button>
