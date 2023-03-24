@@ -14,6 +14,8 @@ export const Card = styled.div`
     }
   }
   @media ${p => p.theme.media.tablet} {
+    display: flex;
+    flex-direction: column;
     ::before {
       content: ' ';
       height: 8px;

@@ -47,7 +47,6 @@ export const SearchBox = styled.form`
     position: relative;
     margin-left: auto;
     margin-right: auto;
-
     margin-bottom: 60px;
     width: 608px;
     height: 44px;

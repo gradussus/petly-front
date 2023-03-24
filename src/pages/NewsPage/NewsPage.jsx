@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { Container, Box, Card, Title, SearchBox, Input, Button, NotFoundBox, NotFound } from "./newsPage.styled";
 import NewsCard from "../../components/NewsPage/NewsCard";
 import searchIcon from "../../img/search.svg";
-import getNews from "./getNews";
+import {getNews}  from "./getNews";
 
 function News() {
   const [news, setNews] = useState([]);

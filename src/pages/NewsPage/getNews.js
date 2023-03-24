@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const SERVER_NAME = 'https://petly-vxdt.onrender.com';
+axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
 
-axios.defaults.baseURL = SERVER_NAME;
-
-export const getNews = async () => {
-  const response = await fetch(`${SERVER_NAME}/news`);
-  const result = response.json();
-  return result;
+const getNews = async () => {
+  try {
+    const response = await axios.get('/news');
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export default getNews;
