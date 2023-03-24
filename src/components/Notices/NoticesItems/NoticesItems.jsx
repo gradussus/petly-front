@@ -112,6 +112,7 @@ const NoticesItems = () => {
                 price={price}
                 comments={comments}
                 favoriteData={favoriteData}
+                setFavoriteData={setFavoriteData}
               />
             )
           )}

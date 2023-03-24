@@ -12,7 +12,6 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import { noticesReducer } from './notices/noticesSlice';
 import { authReducer } from './auth/authSlice';
 
 const persistConfig = {
@@ -25,7 +24,6 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    notices: noticesReducer,
     auth: persistedReducer,
   },
   middleware: getDefaultMiddleware =>

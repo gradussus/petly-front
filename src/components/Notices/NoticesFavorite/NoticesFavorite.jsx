@@ -12,8 +12,9 @@ import { addFavorite, removeFavorite } from '../../../utils/api/getNotices';
 import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
 
-const NoticesFavorite = ({ id, favoriteData }) => {
+const NoticesFavorite = ({ id, favoriteData, setFavoriteData }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [data, setData] = useState([]);
   const [status, setStatus] = useState('pending');
 
   const { token } = useAuth();
@@ -31,7 +32,10 @@ const NoticesFavorite = ({ id, favoriteData }) => {
         }
       );
     }
-  }, [status]);
+    if (status === 'fulfilled') {
+      setFavoriteData(data);
+    }
+  }, [status, setFavoriteData, data]);
 
   const handleAddFavorite = () => {
     if (token) {
@@ -40,7 +44,7 @@ const NoticesFavorite = ({ id, favoriteData }) => {
           setStatus('pending');
 
           const data = await addFavorite(token, id);
-          console.log(data);
+          setData(data);
           setStatus('fulfilled');
         } catch {
           setStatus('rejected');
@@ -59,7 +63,7 @@ const NoticesFavorite = ({ id, favoriteData }) => {
         setStatus('pending');
 
         const data = await removeFavorite(token, id);
-        console.log(data);
+        setData(data);
         setStatus('fulfilled');
       } catch {
         setStatus('rejected');

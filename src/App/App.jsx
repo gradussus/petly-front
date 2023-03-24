@@ -7,9 +7,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UserRoutes } from '../utils/userRoutes';
 import { AuthRoutes } from '../utils/authRoutes';
-import NoticesItems from '../components/Notices/NoticesItems/NoticesItems';
 
 const HomePage = lazy(() => import('pages/HomePage/'));
+const NoticesItems = lazy(() =>
+  import('../components/Notices/NoticesItems/NoticesItems')
+);
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const NewsPage = lazy(() => import('pages/NewsPage'));

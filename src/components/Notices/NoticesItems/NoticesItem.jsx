@@ -20,10 +20,15 @@ const NoticesItem = ({
   breed,
   comments,
   favoriteData,
+  setFavoriteData,
 }) => {
   return (
     <NoticesItemBody>
-      <NoticesFavorite favoriteData={favoriteData} id={id} />
+      <NoticesFavorite
+        favoriteData={favoriteData}
+        id={id}
+        setFavoriteData={setFavoriteData}
+      />
       <NoticesItemImg>
         <img src={imageURL} alt="pet avatar" />
       </NoticesItemImg>
