@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../../theme'
+import { theme } from '../../../../theme'
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
@@ -17,5 +17,5 @@ export const RedirectLink = styled(Link)`
 ` 
 export const TextBeforeLink = styled.p`
   margin-right: 5px;
-  color:${theme.colors.grey};
+  color:rgba(17, 17, 17, 0.6);
 `
