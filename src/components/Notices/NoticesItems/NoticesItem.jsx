@@ -8,12 +8,13 @@ import {
   NoticesItemBtn,
 } from './NoticesItems.styles';
 import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
-import getPetAge from '../../../utils/getPetAge'
+import getPetAge from '../../../utils/getPetAge';
 
 const NoticesItem = ({
   imageURL,
   id,
   title,
+  category,
   price,
   birthDate,
   location,
@@ -26,6 +27,7 @@ const NoticesItem = ({
       <NoticesFavorite
         favoriteData={favoriteData}
         id={id}
+        category={category}
         setFavoriteData={setFavoriteData}
       />
       <NoticesItemImg>

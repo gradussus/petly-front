@@ -92,6 +92,7 @@ const NoticesItems = () => {
             ({
               _id,
               title,
+              category,
               name,
               birthDate,
               imageURL,
@@ -104,6 +105,7 @@ const NoticesItems = () => {
                 key={_id}
                 id={_id}
                 title={title}
+                category={category}
                 name={name}
                 birthDate={birthDate}
                 imageURL={imageURL}
