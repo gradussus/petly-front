@@ -12,13 +12,11 @@ import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
 const NoticesItem = ({
   imageURL,
   id,
-  name,
   title,
   price,
   birthDate,
   location,
   breed,
-  comments,
   favoriteData,
   setFavoriteData,
 }) => {
@@ -33,7 +31,7 @@ const NoticesItem = ({
         <img src={imageURL} alt="pet avatar" />
       </NoticesItemImg>
       <NoticesItemContent>
-        <NoticesItemTitle>{comments}</NoticesItemTitle>
+        <NoticesItemTitle>{title}</NoticesItemTitle>
         <NoticesItemText>
           <div>Breed:</div>
           {breed}

@@ -19,8 +19,8 @@ const NoticesButtons = () => {
     { title: 'sell', href: 'sell', private: false },
     { title: 'lost/found', href: 'lost-found', private: false },
     { title: 'in good hands', href: 'for-free', private: false },
-    { title: 'favorite ads', href: 'own', private: true },
-    { title: 'my ads', href: 'favorite', private: true },
+    { title: 'favorite ads', href: 'favorite', private: true },
+    { title: 'my ads', href: 'own', private: true },
   ];
 
   const visibleItems = isLoggedIn

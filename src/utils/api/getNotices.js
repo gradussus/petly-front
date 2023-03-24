@@ -25,7 +25,6 @@ export const fetchUserFavorite = async token => {
 };
 
 export const addFavorite = async (token, id) => {
-  console.log(token);
   const response = await axios.post(
     `notices/add_favorite/${id}`,
     {},
