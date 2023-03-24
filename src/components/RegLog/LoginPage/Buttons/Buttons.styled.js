@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../../theme';
-
-// import { Button } from "@mui/material";
+import { theme } from '../../../../theme';
 
 export const AccentButton = styled.button`
   font-weight: ${theme.fontWeights.bold};
