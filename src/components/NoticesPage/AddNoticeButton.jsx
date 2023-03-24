@@ -1,16 +1,44 @@
-// import { useEffect, useState } from "react";
-import { BtnAdd, ContainerAdd, P, Span, Img } from "./NoticesPage.Style";
-import cross from "components/ItemPetModal/image/cross2.svg";
+import { useEffect, useState } from 'react';
+import {
+  BtnAdd,
+  ContainerAdd,
+  P,
+  TabletBtnAdd,
+  Img,
+} from './NoticesPage.Style';
+import cross from 'components/NoticesPage/ItemPetModal/image/cross2.svg';
 
-const AddNoticeButton = ({ onChangeModal }) => {
+const AddNoticeButton = () => {
+  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  useEffect(() => {
+    window.onresize = () => {
+      setWindowWidth(window.screen.width);
+    };
 
-    return (
-        <>
-            <ContainerAdd><P>Add pet</P> <BtnAdd type="button" ><Img src={cross} alt="Cross" />
-                <Span>Add pet</Span></BtnAdd></ContainerAdd>
-        </>
+    return () => {
+      window.onresize = false;
+    };
+  }, [windowWidth]);
 
-    )
-}
+  return (
+    <>
+      {windowWidth < 768 ? (
+        <BtnAdd type="button">
+          <Img src={cross} alt="Cross" />
+          <br />
+          Add pet
+        </BtnAdd>
+      ) : (
+        <ContainerAdd>
+          <P>Add pet</P>{' '}
+          <TabletBtnAdd type="button">
+            <Img src={cross} alt="Cross" />
+            <br />
+          </TabletBtnAdd>
+        </ContainerAdd>
+      )}
+    </>
+  );
+};
 
 export default AddNoticeButton;

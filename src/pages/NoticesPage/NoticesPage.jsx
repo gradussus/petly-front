@@ -1,45 +1,35 @@
+import { useState } from 'react';
 
-import { 
-  useState } from "react";
+import NoticeFound from 'components/NoticesPage/FoundPage';
+import NoticesCategoriesNav from 'components/NoticesPage/NoticesCategoriesNav/NoticesCategoriesNav';
+import NoticesCategoriesList from 'components/NoticesPage/NoticesCategoriesList/NoticesCategoriesList';
 
-import NoticeFound from "components/NoticesPage/FoundPage";
-import { Title } from "../../components/NoticesPage/NoticesPage.Style";
-import NoticesCategoriesNav from 'components/NoticesCategoriesNav/NoticesCategoriesNav';
-import NoticesCategoriesList from 'components/NoticesCategoriesList/NoticesCategoriesList';
+import { Title } from '../../components/NoticesPage/NoticesPage.Style';
+
 import elements from './NoticesPage.styled';
+import { useParams } from 'react-router-dom';
 
 const { Section, Container } = elements;
 
+const NoticesPage = () => {
+  const [type, setType] = useState('');
+  function handleTypeChange(newType) {
+    setType(newType);
+  }
 
-
-const NoticesPage = () => { 
-  const [foundPets, setFoundPet] = useState('')
-  // const handleAddPetsChange = () => {
-
-  // }
-  
-const [type, setType] = useState('');
- function handleTypeChange(newType) {
-   setType(newType);
- }
- console.log('foundPets', foundPets)
- const handleFoundPets = (kindPets) => setFoundPet(kindPets)
+  const test = useParams();
+  console.log(test);
 
   return (
-    
-      <Section>
-       
-        <Title>Find your favorite pet</Title>
-        <NoticeFound handleFoundPets={handleFoundPets}/>
-        <Container>
-          <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
-        </Container>
-        <NoticesCategoriesList type={type} foundPets={foundPets} />
-      </Section>
-     
-   
+    <Section>
+      <Title>Find your favorite pet</Title>
+      <NoticeFound />
+      <Container>
+        <NoticesCategoriesNav onTypeChanged={handleTypeChange} />
+      </Container>
+      <NoticesCategoriesList type={type} />
+    </Section>
   );
-
 };
 
 export default NoticesPage;
