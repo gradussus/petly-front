@@ -26,7 +26,7 @@ const Container = styled.div`
     display: grid; 
     gap: 12px;
     grid-template-columns: 1fr 130px;
-    padding: 0 32px;
+    /* padding: 0 32px; */
     /* width: 768px; */
   }
   @media screen and (${theme.media.desktop}) {
