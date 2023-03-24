@@ -8,6 +8,7 @@ import {
   NoticesItemBtn,
 } from './NoticesItems.styles';
 import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
+import getPetAge from '../../../utils/getPetAge'
 
 const NoticesItem = ({
   imageURL,
@@ -42,7 +43,7 @@ const NoticesItem = ({
         </NoticesItemText>
         <NoticesItemText>
           <div>Age:</div>
-          {birthDate}
+          {getPetAge(birthDate)}
         </NoticesItemText>
         {price > 0 && (
           <NoticesItemText>
