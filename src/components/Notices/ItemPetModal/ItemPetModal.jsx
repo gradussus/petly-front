@@ -52,8 +52,19 @@ export const ItemPetModal = ({ modalCard }) => {
         <Item href="">{owner?.email}</Item>
         <div>Phone:</div>
         <Item href="">{owner?.phone}</Item>
-        {price && <div>Price:</div>}
-        {price && <div>{price}</div>}
+        {price > 0 && ( 
+          <div>
+             <div>Price:</div>             
+          </div>         
+              
+        )}
+    {price > 0 && ( 
+          <div>
+            {price}$  
+          </div>         
+              
+        )}
+       
       </ContainerItem>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
