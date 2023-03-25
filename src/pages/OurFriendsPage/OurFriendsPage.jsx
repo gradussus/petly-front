@@ -3,11 +3,12 @@ import { getFriends } from '../../utils/api/getUserData';
 import { OurFriends } from '../../components/OurFriends/OurFriends';
 import { FriendsPageBody, FriendsTitle } from './OurFriendsPage.styled';
 
-import Loader from '../../components/loader/loader'
+import Loader from '../../components/loader/loader';
+import { LoaderContainer } from './OurFriendsPage.styled';
 
 const OurFriendsPage = () => {
   const [friends, setFriends] = useState([]);
-   const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // console.log(friends)
 
@@ -29,8 +30,13 @@ const OurFriendsPage = () => {
   return (
     <FriendsPageBody>
       <FriendsTitle>Our Friends</FriendsTitle>
-      {/* <OurFriends friends={friends} /> */}
-      {isLoading ? <Loader /> : <OurFriends friends={friends} />}
+      {isLoading ? (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      ) : (
+        <OurFriends friends={friends} />
+      )}
     </FriendsPageBody>
   );
 };
