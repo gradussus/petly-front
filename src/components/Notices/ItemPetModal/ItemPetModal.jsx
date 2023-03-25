@@ -12,10 +12,9 @@ import {
   Status,
   ContainerImg,
 } from './ItemPetModal.Style';
-import Vector from 'components/NoticesPage/ItemPetModal/image/Vector.svg';
+import Vector from '../ItemPetModal/image/Vector.svg';
 
 export const ItemPetModal = ({ modalCard }) => {
-  console.log('modalCard', modalCard);
   const {
     name,
     birthDate,
@@ -28,8 +27,7 @@ export const ItemPetModal = ({ modalCard }) => {
     sell,
     owner,
   } = modalCard;
-  // console.log('owner', owner)
-  // console.log('phone', phone)
+  
   return (
     <Container>
       <ContainerImg>

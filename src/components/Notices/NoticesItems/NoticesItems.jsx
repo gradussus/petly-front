@@ -9,10 +9,13 @@ import {
   fetchNoticesData,
   fetchNoticesUser,
   fetchUserFavorite,
+  fetchModal
 } from '../../../utils/api/getNotices';
 import { useAuth } from '../../../hooks/useAuth';
 import Loader from '../../loader/loader';
 import { NoticesPreview } from '../Notices.styled';
+import { ModalSample } from "../../Modal/Modal";
+import { ItemPetModal } from "../ItemPetModal/ItemPetModal";
 
 const NoticesItems = () => {
   const navigate = useNavigate();
@@ -22,6 +25,18 @@ const NoticesItems = () => {
   const [data, setData] = useState(null);
   const [favoriteData, setFavoriteData] = useState([]);
   const [status, setStatus] = useState('pending');
+  const [showModal, setShowModal] = useState(false);
+  const [noticeId, setNoticeId] = useState('');
+  const [modalCard, setModalCard] = useState([]);
+
+
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const onChangeModal = () => toggleModal();
+  const handleChange = id => setNoticeId(id);
 
   useEffect(() => {
     if (token) {
@@ -38,6 +53,21 @@ const NoticesItems = () => {
       })();
     }
   }, [token]);
+
+  useEffect(() => {
+    if (noticeId) {
+      (async () => {
+        try {
+          setStatus('pending');
+          const data = await fetchModal(noticeId);
+          setStatus('fulfilled');
+          setModalCard(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+    }
+  }, [noticeId]);
 
   useEffect(() => {
     if ((type === 'own' && !token) || (type === 'favorite' && !token)) {
@@ -113,6 +143,8 @@ const NoticesItems = () => {
                 comments={comments}
                 favoriteData={favoriteData}
                 setFavoriteData={setFavoriteData}
+                onChangeModal={onChangeModal}
+              handleChange={handleChange}
               />
             )
           )}
@@ -127,6 +159,11 @@ const NoticesItems = () => {
         <NoticesPreview>
           There are no pets in this section yet, add them soon!
         </NoticesPreview>
+      )}
+       {showModal && (
+        <ModalSample toggleModal={toggleModal}>
+          <ItemPetModal modalCard={modalCard} />
+        </ModalSample>
       )}
     </>
   );
