@@ -157,7 +157,12 @@ const NoticesItems = () => {
       )}
       {showModal && (
         <ModalSample toggleModal={toggleModal}>
-          <ItemPetModal modalCard={modalCard} />
+          <ItemPetModal
+            modalCard={modalCard}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            noticeId={noticeId}
+          />
         </ModalSample>
       )}
     </>
