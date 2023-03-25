@@ -91,26 +91,108 @@ export const Heart = styled.img`
   }
 `;
 
+// export const Labrador = styled.img`
+// display: block;
+// margin: 0 auto;
+// max-width: 100%;
+// position: absolute;
+// bottom: 0;
+// z-index: 100;
+// `;
+
 export const Labro = styled.img`
-  position: absolute;
-  align-item: centre;
+opacity: 1;
+position: absolute;
+bottom: 0;
+right: 0;
+width: 280px
+z-index: 100;
+
+@media screen and (min-width: 320px) {
   width: 280px;
-  bottom: 0;
-  padding-top: 29px;
-  opacity: 1;
+}
+
+@media(min-width: 320px)and (max-height:700px) {
+  width: 280px;
+}
+
+@media(min-width: 320px)and (max-height:550px) {
+  width:230px
+}
+
+@media screen and (min-width: 460px) {
+  width:320px
+}
+
+@media(min-width: 460px)and (min-height:1281px) {
+  width: 524px;
+}
+
+@media(min-width: 460px)and (max-height:1280px) {
+  width: 524px;
+}
+
+@media(min-width: 460px)and (max-height:1000px) {
+  width: 380px;
+}
+
+@media(min-width: 460px)and (max-height:600px) {
+  width: 380px;
+}
+
+@media(min-width: 460px)and (max-height:500px) {
+  width: 320px;
+}
+
+@media(min-width: 460px)and (max-height:400px) {  
+  width: 205px;
+}
+
+@media screen and (min-width: 768px) {  
+  width: 636px;
+}
+
+@media(min-width: 768px)and (max-height:800px) {
+  width: 380px;
+}
+
+@media(min-width: 768px)and (max-height:718px) { 
+  width: 320px;
+}
+
+@media(min-width: 768px)and (max-height:600px) {
+  width: 380px;
+}
+
+@media(min-width: 768px)and (max-height:500px) {
+  width: 320px;
+}
+
+@media(min-width: 768px)and (max-height:400px) { 
+  width: 230px;
+}
+
+@media screen and (min-width: 1280px) {
   z-index: 100;
-  transition-duration: 1000ms;
+  width: 524px;
+  right: 32px;
+}
 
-  @media (${props => props.theme.media.tablet}) {
-    width: calc(100vw - 18%);
-    bottom: 0px;
-    left: 80px;
-  }; 
+@media(min-width: 1280px)and (max-height:718px) {
+  width: 500px;
+}
 
-  @media (${props => props.theme.media.desktop}) {
-    width: calc(100vw - 67%);
-    right: 32px;
-  }
+@media(min-width: 1280px)and (max-height:600px) {
+  width: 380px;
+}
+
+@media(min-width: 1280px)and (max-height:500px) {
+  width: 320px;
+}
+
+@media(min-width: 1280px)and (max-height:400px) {
+  width: 230px; 
+}
 `;
 
 export const BackgroundL = styled.img`
