@@ -12,10 +12,9 @@ import {
   Status,
   ContainerImg,
 } from './ItemPetModal.Style';
-import Vector from 'components/NoticesPage/ItemPetModal/image/Vector.svg';
+import Vector from '../ItemPetModal/image/Vector.svg';
 
 export const ItemPetModal = ({ modalCard }) => {
-  console.log('modalCard', modalCard);
   const {
     name,
     birthDate,
@@ -25,17 +24,15 @@ export const ItemPetModal = ({ modalCard }) => {
     imageURL,
     comments,
     price,
-    sell,
+    category,    
     owner,
   } = modalCard;
-  // console.log('owner', owner)
-  // console.log('phone', phone)
+  
   return (
     <Container>
       <ContainerImg>
         <Image src={imageURL} />
-        {{ sell } && <Status> sell </Status>}
-        {!{ sell } && <Status> in-good-hands </Status>}
+         <Status> {category} </Status>      
       </ContainerImg>
       <Title>Сute dog looking for a home</Title>
       <Box>
@@ -55,8 +52,19 @@ export const ItemPetModal = ({ modalCard }) => {
         <Item href="">{owner?.email}</Item>
         <div>Phone:</div>
         <Item href="">{owner?.phone}</Item>
-        {price && <div>Price:</div>}
-        {price && <div>{price}</div>}
+        {price > 0 && ( 
+          <div>
+             <div>Price:</div>             
+          </div>         
+              
+        )}
+    {price > 0 && ( 
+          <div>
+            {price}$  
+          </div>         
+              
+        )}
+       
       </ContainerItem>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>

@@ -3,7 +3,7 @@ import NoticeCategoryItem from 'components/NoticesPage/NoticeCategoryItem/Notice
 import axios from 'axios';
 import { Ul, ContainerCard } from '../NoticesPage.Style';
 import { ModalSample } from 'components/Modal/Modal';
-import { ItemPetModal } from 'components/NoticesPage/ItemPetModal/ItemPetModal';
+import { ItemPetModal } from 'components/Notices/ItemPetModal/ItemPetModal';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../../hooks/useAuth';
 

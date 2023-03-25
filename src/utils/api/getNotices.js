@@ -24,6 +24,12 @@ export const fetchUserFavorite = async token => {
   return response.data;
 };
 
+export const fetchModal = async id => {
+  const response = await axios.get(`notices/find_notice/${id}`);
+
+  return response.data;
+};
+
 export const addFavorite = async (token, id) => {
   const response = await axios.post(
     `notices/add_favorite/${id}`,
