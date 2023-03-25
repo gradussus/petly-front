@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ItemPetModal } from 'components/NoticesPage/ItemPetModal/ItemPetModal';
-import { BtnAdd } from 'components/NoticesPage/ItemPetModal/ItemPetModal.Style';
+import { ItemPetModal } from 'components/Notices/ItemPetModal/ItemPetModal';
+import { BtnAdd } from 'components/Notices/ItemPetModal/ItemPetModal.Style';
 import { ModalSample } from 'components/Modal/Modal';
 import styled from 'styled-components';
 
