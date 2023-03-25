@@ -84,15 +84,18 @@ export const Title = styled.h1`
   }
 `;
 
-export const Labro = styled.img`
+export const LabroContainer = styled.div`
   position: absolute;
-  align-item: centre;
-  width: 380px;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: flex-start;
+ 
+  overflow: hidden;
   bottom: 0px;
-  left: 0px;
-  padding: 0 auto;
+  left: 0;
   z-index: 100;
-  background: url(./images/mobile/labro_mobile.png);
+
   transition-duration: 1000ms;
 
   opacity: 0%;
@@ -102,31 +105,34 @@ export const Labro = styled.img`
   animation-delay: 100ms;
   animation-fill-mode: forwards;
 
+  @keyframes labro {
+        0% {
+          
+          opacity: 100%;
+        }
+        100% {
+          opacity: 0%;
+        }
+      }
+ 
+`
+export const LabroImage = styled.img`
+  
+ 
+  object-fit: contain;
+  transform: scale(0.6);
+  
+
   @media (${props => props.theme.media.tablet}) {
-    background: url(./images/mobile/labro_mobile.png);
-    width: 260px;
-
-  } 
-
-  @media (${props => props.theme.media.fromTablet}) {
-    background: url(./images/tablet/labro_tablet.png);
-    right: 200px;
-    bottom: 0px;
-  } 
+     {
+      transform: scale(0.9);
+    }
+  };
 
   @media (${props => props.theme.media.desktop}) {
-    background: url(./images/desktop/labro_desk.png);
-    width: 400px;
-    right: 0;
-  }
+    {
+      transform: scale(1);
+    }
+  };
 
-  @keyframes labro {
-    0% {
-      
-      opacity: 100%;
-    }
-    100% {
-      opacity: 0%;
-    }
-  }
-`;
+`

@@ -12,7 +12,9 @@ const NotFoundPage = () => {
      404 Not Found
       </SC.Title>
       <HomeButtonNotFoundPage/>
-    <SC.Labro src={labro} alt="labrador" />
+    <SC.LabroContainer>
+    <SC.LabroImage src={labro} alt="labrador" /> 
+    </SC.LabroContainer>
     <SC.BackgroundL src={vectorL} alt="background" /> 
     <SC.BackgroundSm src={vectorSm} alt="background" />
   
