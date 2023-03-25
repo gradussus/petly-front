@@ -196,9 +196,10 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.none};
-&:focus, :hover {
-    background-color: ${p => p.theme.colors.white};
-    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+cursor: pointer;
+transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 export const ContainerItem = styled.div`
@@ -231,6 +232,12 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.large};
+cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
 @media screen and (min-width: 768px){
     margin-left: 10px;
