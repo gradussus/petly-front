@@ -1,12 +1,19 @@
-//--------------------------------------------------------//
 import { useState } from 'react';
 import { Popover2 } from '@blueprintjs/popover2';
 
-import { ScheduleBox, Button } from './WorkTime.styled';
+import {
+  ScheduleBox,
+  Button,
+  WorkingDay,
+  ScheduleContainer,
+} from './WorkTime.styled';
 
-export const WorkTime = () => {
-
+export const WorkTime = ({ workDays }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  console.log(workDays);
+
+  const DAYS_OF_WEEK = ['MN', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
 
   const handleInteraction = nextOpenState => {
     setIsOpen(nextOpenState);
@@ -16,13 +23,22 @@ export const WorkTime = () => {
     <Popover2
       content={
         <ScheduleBox>
-          <p>MN:</p>
-          <p>TU:</p>
-          <p>WE:</p>
-          <p>TH:</p>
-          <p>FR:</p>
-          <p>SA:</p>
-          <p>SU:</p>
+          {workDays &&
+            workDays.length > 0 &&
+            DAYS_OF_WEEK.map((day, index) => (
+              <ScheduleContainer key={index}>
+                <div>
+                  <WorkingDay>{day}</WorkingDay>
+                </div>
+                <div>
+                  <WorkingDay>
+                    {workDays[index]?.isOpen
+                      ? `${workDays[index].from} - ${workDays[index].to}`
+                      : 'Closed'}
+                  </WorkingDay>
+                </div>
+              </ScheduleContainer>
+            ))}
         </ScheduleBox>
       }
       interactionKind="click"
@@ -34,4 +50,3 @@ export const WorkTime = () => {
     </Popover2>
   );
 };
-

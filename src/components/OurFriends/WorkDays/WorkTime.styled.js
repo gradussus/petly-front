@@ -2,12 +2,21 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 
 export const ScheduleBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #ffffff;
   border: 1px solid #f59256;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  width: 120px;
   padding: 12px;
+`;
+
+export const ScheduleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 12px;
 `;
 
 export const WorkingDay = styled.p`

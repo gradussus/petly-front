@@ -43,7 +43,7 @@ export const Card = ({ friends }) => {
                 />
               </FriendsLogoWrapper>
               <div>
-                <WorkTime />
+                <WorkTime worktime={workDays} />
                 <FriendsPar>
                   Address:
                   <br />
