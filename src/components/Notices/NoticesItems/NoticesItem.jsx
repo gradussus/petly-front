@@ -57,7 +57,8 @@ const NoticesItem = ({
           </NoticesItemText>
         )}
         <NoticesItemBtn
-        onClick={() => {onChangeModal(); handleChange(id)}}>Learn more</NoticesItemBtn>
+        onClick={() => {onChangeModal(); handleChange(id)}}>
+          Learn more</NoticesItemBtn>
       </NoticesItemContent>
     </NoticesItemBody>
   );

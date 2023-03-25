@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
  width: 100%;
  height: 100%;
- padding: 20px;
+ padding: 40px 20px;
   
   @media screen and (min-width: 768px){
     width: 704px;
     height: 540px;
     display: flex;
      display: grid; 
-     padding: 32px 32px 20px;    
+     padding: 32px 20px;    
  gap: 0px 20px;
    grid-template-columns: 288px 1fr 50px; 
   grid-template-rows: auto auto auto 1fr 1fr;   
@@ -106,10 +106,11 @@ line-height: ${p => p.theme.fontWeights.heading};
 `;
 
 export const Image = styled.img`
-width: 240px;
+/* width: 240px; */
 height: 100%;
 object-fit: cover;
 margin-right: auto;
+margin-left: auto;
 border-radius: 0px 0px 40px 40px;
  @media screen and (min-width: 768px){
     width: 288px;

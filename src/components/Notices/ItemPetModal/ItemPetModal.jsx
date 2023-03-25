@@ -24,7 +24,7 @@ export const ItemPetModal = ({ modalCard }) => {
     imageURL,
     comments,
     price,
-    sell,
+    category,    
     owner,
   } = modalCard;
   
@@ -32,8 +32,7 @@ export const ItemPetModal = ({ modalCard }) => {
     <Container>
       <ContainerImg>
         <Image src={imageURL} />
-        {{ sell } && <Status> sell </Status>}
-        {!{ sell } && <Status> in-good-hands </Status>}
+         <Status> {category} </Status>      
       </ContainerImg>
       <Title>Сute dog looking for a home</Title>
       <Box>
