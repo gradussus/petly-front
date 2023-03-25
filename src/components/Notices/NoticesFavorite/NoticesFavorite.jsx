@@ -9,10 +9,11 @@ import {
   NoticesFavoriteTitle,
 } from './NoticesFavorite.styled';
 import { addFavorite, removeFavorite } from '../../../utils/api/getNotices';
+import getFormattedCategory from 'utils/getFormattedCategory';
 import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
 
-const NoticesFavorite = ({ id, favoriteData, setFavoriteData }) => {
+const NoticesFavorite = ({ id, favoriteData, setFavoriteData, category }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [data, setData] = useState([]);
   const [status, setStatus] = useState('pending');
@@ -73,7 +74,9 @@ const NoticesFavorite = ({ id, favoriteData, setFavoriteData }) => {
 
   return (
     <NoticesFavoriteBody>
-      <NoticesFavoriteTitle>In good hands</NoticesFavoriteTitle>
+      <NoticesFavoriteTitle>
+        {getFormattedCategory(category)}
+      </NoticesFavoriteTitle>
       <NoticesFavoriteBtnBody>
         <NoticesFavoriteBtn>
           {isFavorite ? (
