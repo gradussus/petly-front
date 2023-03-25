@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   @media ${p => p.theme.media.mobile} {
-    padding: 100px 20px 100px 20px;
+    padding-top: 34px;
+    padding-bottom: 100px;
   }
   @media ${p => p.theme.media.tablet} {
-    padding: 160px 32px 100px 32px;
+    padding-top: 70px;
+    padding-bottom: 100px;
   }
   @media ${p => p.theme.media.desktop} {
-    padding: 126px 16px 200px 16px;
+    padding-top: 49px;
+    padding-bottom: 200px;
   }
 `;
 
@@ -35,31 +38,12 @@ export const Title = styled.h1`
 `;
 
 export const SearchBox = styled.form`
-  @media ${p => p.theme.media.mobile} {
-    position: relative;
-    margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 280px;
-    height: 40px;
-  }
-  @media ${p => p.theme.media.tablet} {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-
-    margin-bottom: 60px;
-    width: 608px;
-    height: 44px;
-  }
-  @media ${p => p.theme.media.desktop} {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 60px;
-    width: 608px;
-    height: 44px;
-  }
+  position: relative;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  height: 40px;
 `;
 
 export const Button = styled.button`
@@ -112,44 +96,19 @@ export const Input = styled.input`
 `;
 
 export const Box = styled.ul`
-  @media ${p => p.theme.media.tablet} {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  @media ${p => p.theme.media.desktop} {
-    display: flex;
-    flex-wrap: wrap;
-  }
-`;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 32px;
+  grid-row-gap: 60px;
 
-export const Card = styled.li`
-  @media ${p => p.theme.media.mobile} {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    &:nth-last-child() {
-      margin-bottom: 0px;
-    }
-  }
   @media ${p => p.theme.media.tablet} {
-    width: calc((100% - 32px) / 2);
-    margin-left: 32px;
-    margin-bottom: 60px;
-    margin-right: 0px;
-    &:nth-child(2n + 1) {
-      margin-left: 0px;
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
-  @media ${p => p.theme.media.desktop} {
-    width: calc((100% - 64px) / 3);
-    &:nth-child(2n + 1) {
-      margin-left: 32px;
-    }
-    &:nth-child(3n + 1) {
-      margin-left: 0px;
-    }
+  @media ${p => p.theme.media.mobile} {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
+export const Card = styled.li``;
 
 export const NotFound = styled.p`
   font-size: 18px;
