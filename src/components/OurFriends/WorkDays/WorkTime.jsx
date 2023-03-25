@@ -4,16 +4,13 @@ import { Popover2 } from '@blueprintjs/popover2';
 
 import { ScheduleBox, Button } from './WorkTime.styled';
 
-
 export const WorkTime = () => {
-
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleInteraction = nextOpenState => {
     setIsOpen(nextOpenState);
   };
-
 
   return (
     <Popover2
