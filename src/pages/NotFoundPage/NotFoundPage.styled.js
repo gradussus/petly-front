@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Home = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 20px;
     align-items: center;
     background-image: url('./images/mobile/labro_mobile.png'), url('./images/mobile/bg_mobile.png');
     background-position: right bottom, bottom;
@@ -12,20 +13,6 @@ export const Home = styled.div`
     height: calc(100vh - 72px);
     max-height: 601px
 
-    @media (${props => props.theme.media.fromTablet}) {
-      align-items: flex-start;
-      background-image: url('./images/tablet/labro_tablet.png'), url('./images/tablet/bg_tablet.png');
-      background-size: 31rem, 100vw;
-      padding-top: 88px;
-      max-height: 1193px;
-    }
-  
-    @media (${props => props.theme.media.desktop}) {
-      background-image: url('./images/desktop/labro_desk.png'), url('./images/desktop/bg_desktop.png');
-      background-size: 35rem, 100vw;
-      padding-top: 92px;
-      max-height: 768px;
-    }
 `;
 
 export const BackgroundL = styled.img`
@@ -44,8 +31,7 @@ export const BackgroundSm = styled.img`
     z-index: -1;
     padding: 0;
     bottom: 0;
-    left: -20px; 
-
+    
     @media (${props => props.theme.media.tablet}) {
       bottom: -320px;
     };
@@ -118,7 +104,7 @@ export const Labro = styled.img`
 
   @media (${props => props.theme.media.tablet}) {
     background: url(./images/mobile/labro_mobile.png);
-    width: 382px;
+    width: 260px;
 
   } 
 
@@ -130,7 +116,7 @@ export const Labro = styled.img`
 
   @media (${props => props.theme.media.desktop}) {
     background: url(./images/desktop/labro_desk.png);
-    width: 524px;
+    width: 400px;
     right: 0;
   }
 

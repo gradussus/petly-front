@@ -1,4 +1,5 @@
 import * as SC from './NotFoundPage.styled';
+import { HomeButtonNotFoundPage } from 'components/HomeButton/HomeButton';
 
 
 import labro from './images/desktop/labrador.png';
@@ -10,11 +11,13 @@ const NotFoundPage = () => {
     <SC.Title>
      404 Not Found
       </SC.Title>
+      <HomeButtonNotFoundPage/>
     <SC.Labro src={labro} alt="labrador" />
     <SC.BackgroundL src={vectorL} alt="background" /> 
     <SC.BackgroundSm src={vectorSm} alt="background" />
+  
   </SC.Home>;
 };
 
-  
+
 export default NotFoundPage;
