@@ -1,5 +1,5 @@
 import { ModalContent, ModalBackdrop, BtnClose } from './Modal.Style';
-import Cross from 'components/NoticesPage/ItemPetModal/image/Cross.svg';
+import Cross from 'components/Notices/ItemPetModal/image/Cross.svg';
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 
