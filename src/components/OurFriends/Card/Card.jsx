@@ -1,7 +1,10 @@
+import { WorkTime } from '../WorkDays/WorkTime';
+
 import {
   FriendsItem,
   FriendsTitle,
-  FriendsLink,
+  FriendsLinkToAddress,
+  FriendsLinkToContacts,
   FriendsPar,
   FriendsWrapper,
   FriendsLogoWrapper,
@@ -26,7 +29,7 @@ export const Card = ({ friends }) => {
         }) => (
           <FriendsItem key={_id}>
             <FriendsTitle>
-              <FriendsLink href={url}>{title}</FriendsLink>
+              <FriendsLinkToAddress href={url}>{title}</FriendsLinkToAddress>
             </FriendsTitle>
             <FriendsWrapper>
               <FriendsLogoWrapper>
@@ -37,13 +40,13 @@ export const Card = ({ friends }) => {
                       : 'https://animals-city.org/wp-content/themes/animals-city/img/logo.svg'
                   }
                   alt={title}
-                  
                 />
               </FriendsLogoWrapper>
               <div>
-                <FriendsPar>Time:</FriendsPar>
+                <WorkTime />
                 <FriendsPar>
-                  Address:<br />
+                  Address:
+                  <br />
                   <a href={addressUrl} target="_blank" rel="noreferrer">
                     {address ? (
                       <FriendsAddress>{address}</FriendsAddress>
@@ -53,12 +56,26 @@ export const Card = ({ friends }) => {
                   </a>
                 </FriendsPar>
                 <FriendsPar type="email">
-                  Email:<br />
-                  {email ? <span>{email}</span> : <hr />}
+                  Email:
+                  <br />
+                  {email ? (
+                    <FriendsLinkToContacts href="mailto:{address}">
+                      {email}
+                    </FriendsLinkToContacts>
+                  ) : (
+                    <hr />
+                  )}
                 </FriendsPar>
                 <FriendsPar type="phone">
-                  Phone:<br />
-                  {phone ? <span>{phone}</span> : <hr />}
+                  Phone:
+                  <br />
+                  {phone ? (
+                    <FriendsLinkToContacts href="tel:{phone}">
+                      {phone}
+                    </FriendsLinkToContacts>
+                  ) : (
+                    <hr />
+                  )}
                 </FriendsPar>
               </div>
             </FriendsWrapper>
