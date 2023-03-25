@@ -3,17 +3,17 @@ import styled from "styled-components";
 export const Container = styled.div`
  width: 100%;
  height: 100%;
- padding: 20px;
+ padding: 40px 20px;
   
   @media screen and (min-width: 768px){
     width: 704px;
-    height: 540px;
+    /* height: 540px; */
     display: flex;
      display: grid; 
-     padding: 32px 32px 20px;    
+     padding: 32px 20px;    
  gap: 0px 20px;
-   grid-template-columns: 288px 1fr 50px; 
-  grid-template-rows: auto auto auto 1fr 1fr;   
+   grid-template-columns: 288px 1fr ; 
+  grid-template-rows: repeat(4, auto);   
   }
 `;
 
@@ -106,10 +106,11 @@ line-height: ${p => p.theme.fontWeights.heading};
 `;
 
 export const Image = styled.img`
-width: 240px;
+/* width: 240px; */
 height: 100%;
 object-fit: cover;
 margin-right: auto;
+margin-left: auto;
 border-radius: 0px 0px 40px 40px;
  @media screen and (min-width: 768px){
     width: 288px;
@@ -138,14 +139,17 @@ color: ${p => p.theme.colors.primeText};
 export const Text = styled.p`
 text-decoration: none;
 margin: 0;
+margin-top: 28px;
 margin-bottom: 40px;
-font-weight: ${p => p.theme.fontWeights.interMiddle};
+font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.fontWeights.heading};
 @media screen and (min-width: 768px){
     grid-column: 1 / span 3;
     grid-row: 4;
-    margin-top: 28px;
+    margin: 0;
+    padding-top: 28px;
+    padding-bottom: 32px;
     font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
@@ -192,9 +196,10 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.none};
-&:focus, :hover {
-    background-color: ${p => p.theme.colors.white};
-    box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+cursor: pointer;
+transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 export const ContainerItem = styled.div`
@@ -227,6 +232,12 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.fontWeights.heading};
 border: ${p => p.theme.borders.large};
+cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
 @media screen and (min-width: 768px){
     margin-left: 10px;

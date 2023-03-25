@@ -24,7 +24,7 @@ export const ItemPetModal = ({ modalCard }) => {
     imageURL,
     comments,
     price,
-    sell,
+    category,    
     owner,
   } = modalCard;
   
@@ -32,8 +32,7 @@ export const ItemPetModal = ({ modalCard }) => {
     <Container>
       <ContainerImg>
         <Image src={imageURL} />
-        {{ sell } && <Status> sell </Status>}
-        {!{ sell } && <Status> in-good-hands </Status>}
+         <Status> {category} </Status>      
       </ContainerImg>
       <Title>Сute dog looking for a home</Title>
       <Box>
@@ -53,8 +52,19 @@ export const ItemPetModal = ({ modalCard }) => {
         <Item href="">{owner?.email}</Item>
         <div>Phone:</div>
         <Item href="">{owner?.phone}</Item>
-        {price && <div>Price:</div>}
-        {price && <div>{price}</div>}
+        {price > 0 && ( 
+          <div>
+             <div>Price:</div>             
+          </div>         
+              
+        )}
+    {price > 0 && ( 
+          <div>
+            {price}$  
+          </div>         
+              
+        )}
+       
       </ContainerItem>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
