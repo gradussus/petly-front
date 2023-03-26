@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import NoticesItem from './NoticesItem';
 import Loader from '../../loader/loader';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ItemPetModal } from '../ItemPetModal/ItemPetModal';
 import { ModalSample } from '../../Modal/Modal';
 import { useAuth } from '../../../hooks/useAuth';
@@ -15,6 +15,7 @@ import {
   fetchPersonalNoticesUser,
   fetchUserFavorite,
   fetchModal,
+  fetchSearchNotices,
 } from '../../../utils/api/getNotices';
 
 import { NoticesPreview } from '../Notices.styled';
@@ -24,6 +25,9 @@ const NoticesItems = () => {
   const navigate = useNavigate();
   const { type } = useParams();
   const { token } = useAuth();
+
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query') ?? null;
 
   const [data, setData] = useState(null);
   const [favoriteData, setFavoriteData] = useState([]);
@@ -35,7 +39,7 @@ const NoticesItems = () => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
   };
 
   const onChangeModal = () => toggleModal();
@@ -57,7 +61,6 @@ const NoticesItems = () => {
     }
   }, [token]);
 
-  // ! notice owner
   useEffect(() => {
     if (token) {
       (async () => {
@@ -90,6 +93,21 @@ const NoticesItems = () => {
   }, [noticeId]);
 
   useEffect(() => {
+    if (query?.length > 0) {
+      (async () => {
+        try {
+          setStatus('pending');
+
+          const data = await fetchSearchNotices(type, query);
+          setStatus('fulfilled');
+          setData(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+      return;
+    }
+
     if ((type === 'own' && !token) || (type === 'favorite' && !token)) {
       return navigate('/login');
     }
@@ -121,13 +139,13 @@ const NoticesItems = () => {
         }
       })();
     }
-  }, [noticesUser, type, token, navigate]);
+  }, [noticesUser, type, token, navigate, query]);
 
   useEffect(() => {
     if (type === 'favorite') {
       setData(favoriteData);
     }
-  }, [favoriteData, type, token]);
+  }, [favoriteData, type]);
 
   useEffect(() => {
     if (status === 'rejected') {
@@ -143,28 +161,27 @@ const NoticesItems = () => {
   return (
     <>
       <NoticesItemsBody>
-        {status === 'fulfilled' &&
-          data?.map(item => (
-            <NoticesItem
-              key={item._id}
-              id={item._id}
-              title={item.title}
-              category={item.category}
-              name={item.name}
-              birthDate={item.birthDate}
-              imageURL={item.imageURL}
-              breed={item.breed}
-              location={item.location}
-              price={item.price}
-              comments={item.comments}
-              favoriteData={favoriteData}
-              setFavoriteData={setFavoriteData}
-              onChangeModal={onChangeModal}
-              handleChange={handleChange}
-              noticesUser={noticesUser}
-              setNoticesUser={setNoticesUser}
-            />
-          ))}
+        {data?.map(item => (
+          <NoticesItem
+            key={item._id}
+            id={item._id}
+            title={item.title}
+            category={item.category}
+            name={item.name}
+            birthDate={item.birthDate}
+            imageURL={item.imageURL}
+            breed={item.breed}
+            location={item.location}
+            price={item.price}
+            comments={item.comments}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            onChangeModal={onChangeModal}
+            handleChange={handleChange}
+            noticesUser={noticesUser}
+            setNoticesUser={setNoticesUser}
+          />
+        ))}
       </NoticesItemsBody>
       {status === 'pending' && (
         <NoticesLoader>
