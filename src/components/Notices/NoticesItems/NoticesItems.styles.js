@@ -15,7 +15,7 @@ export const NoticesItemsBody = styled.div`
 `;
 
 export const NoticesItemBody = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.itemBackground};
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   border-radius: 0 0 40px 40px;
   position: relative;
@@ -39,8 +39,8 @@ export const NoticesItemImg = styled.div`
 `;
 
 export const NoticesItemTitle = styled.div`
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  font-size: ${props => props.theme.fontSizes.mm};
   line-height: 38px;
   margin-bottom: 20px;
   flex: 1 1 auto;
@@ -48,8 +48,8 @@ export const NoticesItemTitle = styled.div`
 
 export const NoticesItemText = styled.div`
   display: flex;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 22px;
 
   &:not(:last-child) {
@@ -63,8 +63,8 @@ export const NoticesItemText = styled.div`
 
 export const NoticesItemBtn = styled.div`
   margin: 20px 0 32px;
-  border: 2px solid #f59256;
-  border-radius: 40px;
+  border: ${props => props.theme.borders.large};
+  border-radius: ${props => props.theme.radii.large};
   padding: 8px 0;
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@ export const NoticesItemBtn = styled.div`
   transition: color 0.3s;
 
   &:hover {
-    color: #f59256;
+    color: ${props => props.theme.colors.accent};
   }
 `;
 

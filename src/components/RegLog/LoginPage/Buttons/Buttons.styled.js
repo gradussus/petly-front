@@ -9,7 +9,7 @@ export const AccentButton = styled.button`
   padding: 10px;
   border: ${theme.borders.large};
   background: ${theme.colors.accent};
-  color: ${theme.colors.white};
+  color: ${theme.colors.accentText};
   &:hover {
     cursor: pointer;
   }
@@ -17,7 +17,7 @@ export const AccentButton = styled.button`
 
 export const TransparentButton = styled(AccentButton)`
   background: ${theme.colors.background};
-  color: ${theme.colors.black};
+  color: ${theme.colors.secondaryText};
   margin-top: 16px;
 `;
 
