@@ -29,6 +29,7 @@ const modalRef = useRef()
     window.addEventListener('mousedown', closeModal);
     return () => window.removeEventListener('mousedown', closeModal);
   });
+  
   return createPortal(
     <ModalBackdrop  >
       <ModalContent ref={modalRef}>
