@@ -24,25 +24,8 @@ export const WorkingDay = styled.p`
   font-weight: ${theme.fontWeights.middle};
   font-size: ${theme.fontSizes.xs};
   line-height: 1.33;
-  
+
 `;
-
-// export const CurrentDay = styled.h4`
-//   font-size: ${theme.fontSizes.xs};
-//   font-weight: ${theme.fontWeights.middle};
-//   color: ${theme.colors.secondaryText};
-//   line-height: ${theme.lineHeights.heading};
-
-//   @media screen and (${theme.media.tablet}) {
-//     font-size: ${theme.fontSizes.s};
-//     line-height: 1.38;
-//   }
-
-//   @media screen and (${theme.media.desktop}) {
-//     font-size: ${theme.fontSizes.m};
-//     line-height: 1.3;
-//   }
-// `;
 
 export const CurrentDayButton = styled.button`
   background: none;
@@ -58,10 +41,18 @@ export const CurrentDayButton = styled.button`
   color: ${theme.colors.black};
   line-height: ${theme.lineHeights.heading};
 
+  &:hover,
+  &:focus {
+    color: ${theme.colors.accent};
+  }
+
+  &.active {
+    color: ${theme.colors.accent};
+  }
+
   @media screen and (${theme.media.tablet}) {
     font-size: ${theme.fontSizes.s};
     line-height: 1.38;
-
   }
 
   @media screen and (${theme.media.desktop}) {
@@ -79,5 +70,4 @@ export const Notification = styled.p`
   font-weight: ${theme.fontWeights.middle};
   color: ${theme.colors.secondaryText};
   line-height: ${theme.lineHeights.heading};
-
 `;

@@ -70,7 +70,8 @@ export const FriendsLinkToContacts = styled.a`
   text-decoration: none;
   color: ${theme.colors.primeText};
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: ${theme.colors.accent};
   }
 `;
@@ -116,7 +117,6 @@ export const FriendsPar = styled.h4`
 
 export const FriendsLogoWrapper = styled.div`
   margin-right: 12px;
-  
 
   @media screen and (${theme.media.tablet}) {
     margin-right: 14px;

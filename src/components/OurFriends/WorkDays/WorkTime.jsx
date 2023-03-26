@@ -12,7 +12,7 @@ import {
 
 export const WorkTime = ({ workDays }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isPopoverClicked, setIsPopoverClicked] = useState(false);
   // console.log(workDays);
 
   const DAYS_OF_WEEK = ['MN', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
@@ -20,6 +20,7 @@ export const WorkTime = ({ workDays }) => {
 
   const handleInteraction = nextOpenState => {
     setIsOpen(nextOpenState);
+    setIsPopoverClicked(nextOpenState);
   };
 
   return (
@@ -57,11 +58,14 @@ export const WorkTime = ({ workDays }) => {
         onInteraction={nextOpenState => handleInteraction(nextOpenState)}
         placement="bottom-start"
       >
-        <CurrentDayButton type="button">
-          {workDays !== null && workDays[currentDayIndex]?.isOpen
-            ? `${workDays[currentDayIndex].from} - ${workDays[currentDayIndex].to}`
-            : workDays === null
+        <CurrentDayButton
+          type="button"
+          className={isPopoverClicked && isOpen ? 'active' : ''}
+        >
+          {workDays === null || workDays.length === 0
             ? 'Free schedule'
+            : workDays[currentDayIndex]?.isOpen
+            ? `${workDays[currentDayIndex].from} - ${workDays[currentDayIndex].to}`
             : 'Closed'}
         </CurrentDayButton>
       </Popover2>
