@@ -33,6 +33,7 @@ export const ItemPetModal = ({
   const { token } = useAuth();
 
   const {
+    title,
     name,
     birthDate,
     breed,
@@ -103,7 +104,7 @@ export const ItemPetModal = ({
         <Image src={imageURL} />
         <Status> {category} </Status>
       </ContainerImg>
-      <Title>Сute dog looking for a home</Title>
+      <Title>{title}</Title>
       <Box>
         <div>Name:</div>
         <div>{name}</div>

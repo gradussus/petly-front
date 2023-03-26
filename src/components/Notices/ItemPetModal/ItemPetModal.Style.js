@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 40px 20px;
+  min-height: 80vh;
+  padding: 20px 20px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -18,11 +18,13 @@ export const Container = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
   transform: translate(-50% -50%);
   padding: 20px;
   width: 80vw;
+  margin-top: 200px;
+  height: 80vh;
   background-color: ${p => p.theme.colors.white};
   border-radius: 20px;
   @media screen and (min-width: 768px) {
@@ -71,7 +73,8 @@ export const ContainerImg = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  height: 240px;
+  width: 100%;
+  height: 100%;
   margin-top: 40px;
 
   @media screen and (min-width: 768px) {
@@ -85,7 +88,7 @@ export const ContainerImg = styled.div`
 export const Box = styled.ul`
   display: grid;
   grid-gap: 8px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   margin-top: 16px;
   font-weight: ${p => p.theme.fontWeights.middle};
   font-size: ${p => p.theme.fontSizes.s};
@@ -101,8 +104,8 @@ export const Box = styled.ul`
 `;
 
 export const Image = styled.img`
-  /* width: 240px; */
-  height: 100%;
+  height: auto;
+	max-width: 100%;
   object-fit: cover;
   margin-right: auto;
   margin-left: auto;
@@ -134,8 +137,8 @@ export const Status = styled.a`
 export const Text = styled.p`
   text-decoration: none;
   margin: 0;
-  margin-top: 28px;
-  margin-bottom: 40px;
+  padding-top: 18px;
+  padding-bottom: 10px;
   font-weight: ${p => p.theme.fontWeights.middle};
   font-size: ${p => p.theme.fontSizes.s};
   line-height: ${p => p.theme.fontWeights.heading};

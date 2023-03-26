@@ -7,7 +7,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const ModalSample = ({ toggleModal, children }) => {
 
-  const modalRef = useRef()
+const modalRef = useRef()
   document.body.style.overflow = "hidden";
   useEffect(() =>{
     const close = (e) => {
