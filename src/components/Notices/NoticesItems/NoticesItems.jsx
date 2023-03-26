@@ -33,6 +33,7 @@ const NoticesItems = () => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    document.body.style.overflow = "";
   };
 
   const onChangeModal = () => toggleModal();

@@ -4,14 +4,21 @@ export const ModalBackdrop = styled.div`
 position: fixed;
 top: 0;
   left: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
   z-index: 10;
   background-color: rgba(17, 17, 17, 0.6);
   
 `;
 export const ModalContent = styled.div`
-position: absolute;  
+position: absolute; 
+overflow: hidden;
+
 top: 50%;
 left: 50%;
 transform: translateY(-50%) translateX(-50%);
@@ -33,5 +40,5 @@ height: 34px;
 background-color: ${p => p.theme.colors.background};
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.round};
-
+cursor: pointer;
 `;
