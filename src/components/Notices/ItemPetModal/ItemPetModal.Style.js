@@ -111,6 +111,7 @@ export const Image = styled.img`
   margin-left: auto;
   border-radius: 0px 0px 40px 40px;
   @media screen and (min-width: 768px) {
+    height: 328px;
     width: 288px;
   }
 `;
