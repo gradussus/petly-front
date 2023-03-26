@@ -73,3 +73,9 @@ export const fetchPersonalNoticesUser = async token => {
   });
   return response.data;
 };
+
+export const fetchSearchNotices = async (type, search) => {
+  const response = await axios.get(`notices/search/${type}/${search}`);
+
+  return response.data;
+};
