@@ -1,16 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+package-lock.json
+
 #Junk
 .vscode/
 .idea/
-package-lock.json
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-
-package-lock.json
 
 # testing
 /coverage
@@ -29,4 +28,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-package-lock.json

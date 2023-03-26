@@ -28,11 +28,11 @@ export const App = () => {
           <Route index element={<HomePage />} />
           <Route
             path="register"
-            element={<AuthRoutes component={RegisterPage} redirectTo="/" />}
+            element={<AuthRoutes component={RegisterPage} redirectTo="/user" />}
           />
           <Route
             path="login"
-            element={<AuthRoutes component={LoginPage} redirectTo="/" />}
+            element={<AuthRoutes component={LoginPage} redirectTo="/user" />}
           />
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticePage />}>
@@ -40,8 +40,8 @@ export const App = () => {
           </Route>
           <Route path="friends" element={<OurFriendsPage />} />
           <Route path="user" element={<UserRoutes component={UserPage} />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastContainer />
     </>

@@ -6,9 +6,9 @@ import {
   NoticesItemText,
   NoticesItemContent,
   NoticesItemBtn,
-  
 } from './NoticesItems.styles';
 import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
+import NoticesDelete from '../NoticesDelete/NoticesDelete';
 import getPetAge from '../../../utils/getPetAge';
 
 const NoticesItem = ({
@@ -23,7 +23,9 @@ const NoticesItem = ({
   favoriteData,
   setFavoriteData,
   onChangeModal,
-  handleChange
+  handleChange,
+  noticesUser,
+  setNoticesUser,
 }) => {
   return (
     <NoticesItemBody>
@@ -57,7 +59,18 @@ const NoticesItem = ({
           </NoticesItemText>
         )}
         <NoticesItemBtn
-        onClick={() => {onChangeModal(); handleChange(id)}}>Learn more</NoticesItemBtn>
+          onClick={() => {
+            onChangeModal();
+            handleChange(id);
+          }}
+        >
+          Learn more
+        </NoticesItemBtn>
+        <NoticesDelete
+          id={id}
+          noticesUser={noticesUser}
+          setNoticesUser={setNoticesUser}
+        />
       </NoticesItemContent>
     </NoticesItemBody>
   );

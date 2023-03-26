@@ -5,6 +5,8 @@ export const FriendsItem = styled.li`
   background-color: ${theme.colors.white};
   border-radius: 20px;
 
+  transition: transform 0.3s ease-in-out 0s;
+  
   @media screen and (${theme.media.mobile}) {
     width: 280px;
     margin-left: auto;
@@ -17,7 +19,7 @@ export const FriendsItem = styled.li`
 
   @media screen and (${theme.media.tablet}) {
     width: 336px;
-    
+
     &:nth-last-child(-n + 2) {
       margin-bottom: 0;
     }
@@ -59,10 +61,19 @@ export const FriendsTitle = styled.h3`
   }
 `;
 
-export const FriendsLink = styled.a`
+export const FriendsLinkToAddress = styled.a`
   text-decoration: underline;
-  position: relative;
+  
   color: ${theme.colors.accent};
+`;
+
+export const FriendsLinkToContacts = styled.a`
+  text-decoration: none;
+  color: ${theme.colors.primeText};
+
+  &:hover {
+    color: ${theme.colors.accent};
+  };
 `;
 
 export const FriendsAddress = styled.span`
