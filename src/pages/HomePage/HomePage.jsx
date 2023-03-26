@@ -6,7 +6,6 @@ import vectorL from './images/desktop/bg_desk_left.png';
 import vectorR from './images/desktop/bg_desk_right.png';
 import vectorSm from './images/tablet/bg_tablet.png';
 
-
 const HomePage = () => {
   return <SC.Home>
     <SC.Title>
