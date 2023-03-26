@@ -9,27 +9,25 @@ export const ModalSample = ({ toggleModal, children }) => {
 
   const modalRef = useRef()
   document.body.style.overflow = "hidden";
-  useEffect(() => {
-    const close = e => {
-      e.stopPropagation();
-      if (e.code === 'Escape') {
-        toggleModal();
-        document.body.style.overflow = "";
+  useEffect(() =>{
+    const close = (e) => {
+        if(e.code === 'Escape'){            
+        toggleModal()
+        }
       }
-    };
-    return () => window.removeEventListener('keydown', close);
-  });
+      window.addEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
+})
   useEffect(() => {
     
-    const close = e => {
-      e.preventDefault()
+    const closeModal = e => {
+     
       if (!modalRef.current.contains(e.target)) {
-        toggleModal();
-       
+        toggleModal();       
       }
     };
-    window.addEventListener('mousedown', close);
-    return () => window.removeEventListener('mousedown', close);
+    window.addEventListener('mousedown', closeModal);
+    return () => window.removeEventListener('mousedown', closeModal);
   });
   return createPortal(
     <ModalBackdrop  >
