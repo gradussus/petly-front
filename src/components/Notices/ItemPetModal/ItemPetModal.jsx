@@ -131,17 +131,15 @@ export const ItemPetModal = ({
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
         <BtnContact type="button">Contact</BtnContact>
-        <BtnAdd type="button">
-          Add to{' '}
-          {isFavorite ? (
-            <FavoriteSvg
-              fill={'#F59256'}
-              onClick={() => handleRemoveFavorite()}
-            />
-          ) : (
-            <FavoriteSvg onClick={() => handleAddFavorite()} />
-          )}
-        </BtnAdd>
+        {isFavorite ? (
+          <BtnAdd type="button" onClick={() => handleRemoveFavorite()}>
+            Add to <FavoriteSvg fill={'#F59256'} />
+          </BtnAdd>
+        ) : (
+          <BtnAdd type="button" onClick={() => handleAddFavorite()}>
+            Add to <FavoriteSvg />
+          </BtnAdd>
+        )}
       </ContainerBtn>
     </Container>
   );
