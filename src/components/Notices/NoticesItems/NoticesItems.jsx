@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import {
   fetchNoticesData,
   fetchNoticesUser,
+  fetchPersonalNoticesUser,
   fetchUserFavorite,
   fetchModal,
 } from '../../../utils/api/getNotices';
@@ -26,6 +27,7 @@ const NoticesItems = () => {
 
   const [data, setData] = useState(null);
   const [favoriteData, setFavoriteData] = useState([]);
+  const [noticesUser, setNoticesUser] = useState([]);
   const [status, setStatus] = useState('pending');
   const [showModal, setShowModal] = useState(false);
   const [noticeId, setNoticeId] = useState('');
@@ -47,6 +49,23 @@ const NoticesItems = () => {
           const data = await fetchUserFavorite(token);
           setStatus('fulfilled');
           setFavoriteData(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+    }
+  }, [token]);
+
+  // ! notice owner
+  useEffect(() => {
+    if (token) {
+      (async () => {
+        try {
+          setStatus('pending');
+          const data = await fetchPersonalNoticesUser(token);
+
+          setStatus('fulfilled');
+          setNoticesUser(data);
         } catch {
           setStatus('rejected');
         }
@@ -101,7 +120,7 @@ const NoticesItems = () => {
         }
       })();
     }
-  }, [type, token, navigate]);
+  }, [noticesUser, type, token, navigate]);
 
   useEffect(() => {
     if (type === 'favorite') {
@@ -141,6 +160,8 @@ const NoticesItems = () => {
               setFavoriteData={setFavoriteData}
               onChangeModal={onChangeModal}
               handleChange={handleChange}
+              noticesUser={noticesUser}
+              setNoticesUser={setNoticesUser}
             />
           ))}
       </NoticesItemsBody>

@@ -61,19 +61,35 @@ export const NoticesItemText = styled.div`
   }
 `;
 
-export const NoticesItemBtn = styled.div`
-  margin: 20px 0 32px;
+export const NoticesItemBtn = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 28px;
+  margin-top: 20px;
+
+  height: 38px;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #f59256;
+
+  background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
-  padding: 8px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #f59256;
+    color: #ffffff;
+    background: #f59256;
+    transform: scale(1.05);
   }
 `;
 
