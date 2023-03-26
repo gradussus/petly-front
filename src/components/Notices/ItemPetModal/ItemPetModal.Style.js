@@ -172,13 +172,13 @@ export const ContainerBtn = styled.div`
   @media screen and (min-width: 768px) {
     grid-column: 2 / span 3;
     grid-row: 5;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: baseline;
     align-self: end;
   }
 `;
 export const BtnContact = styled.button`
-  width: 240px;
+  width: 100%;
   padding-top: 9px;
   padding-bottom: 9px;
   border-radius: ${p => p.theme.radii.large};
@@ -210,7 +210,7 @@ export const ContainerItem = styled.div`
   }
 `;
 export const BtnAdd = styled.button`
-  width: 240px;
+  width: 100%;
   padding-top: 9px;
   padding-bottom: 9px;
   display: flex;
