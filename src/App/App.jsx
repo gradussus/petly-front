@@ -40,8 +40,8 @@ export const App = () => {
           </Route>
           <Route path="friends" element={<OurFriendsPage />} />
           <Route path="user" element={<UserRoutes component={UserPage} />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastContainer />
     </>

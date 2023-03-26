@@ -118,9 +118,9 @@ export const ItemPetModal = ({
       </Box>
       <ContainerItem>
         <div>Email:</div>
-        <Item href="">{owner?.email}</Item>
+        <Item href="mailto:{owner?.email}">{owner?.email}</Item>
         <div>Phone:</div>
-        <Item href="">{owner?.phone}</Item>
+        <Item href="tel: {owner?.phone}">{owner?.phone}</Item>
         {price > 0 && (
           <div>
             <div>Price:</div>
@@ -131,17 +131,15 @@ export const ItemPetModal = ({
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
         <BtnContact type="button">Contact</BtnContact>
-        <BtnAdd type="button">
-          Add to{' '}
-          {isFavorite ? (
-            <FavoriteSvg
-              fill={'#F59256'}
-              onClick={() => handleRemoveFavorite()}
-            />
-          ) : (
-            <FavoriteSvg onClick={() => handleAddFavorite()} />
-          )}
-        </BtnAdd>
+        {isFavorite ? (
+          <BtnAdd type="button" onClick={() => handleRemoveFavorite()}>
+            Add to <FavoriteSvg fill={'#F59256'} />
+          </BtnAdd>
+        ) : (
+          <BtnAdd type="button" onClick={() => handleAddFavorite()}>
+            Add to <FavoriteSvg />
+          </BtnAdd>
+        )}
       </ContainerBtn>
     </Container>
   );

@@ -55,3 +55,27 @@ export const removeFavorite = async (token, id) => {
   );
   return response.data;
 };
+
+export const removePersonalNotice = async (token, id) => {
+  const response = await axios.delete(`notices/delete/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
+export const fetchPersonalNoticesUser = async token => {
+  const response = await axios.get(`notices/own`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
+export const fetchSearchNotices = async (type, search) => {
+  const response = await axios.get(`notices/search/${type}/${search}`);
+
+  return response.data;
+};

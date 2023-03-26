@@ -61,19 +61,38 @@ export const NoticesItemText = styled.div`
   }
 `;
 
-export const NoticesItemBtn = styled.div`
+
+export const NoticesItemBtn = styled.button`
   margin: 20px 0 32px;
   border: ${props => props.theme.borders.large};
   border-radius: ${props => props.theme.radii.large};
   padding: 8px 0;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  padding: 8px 28px;
+  margin-top: 20px;
+
+  height: 38px;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: ${props => props.theme.colors.accent};
+
+  background: ${props => props.theme.colors.itemBackground};
+
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: ${props => props.theme.colors.accent};
+    color: ${props => props.theme.colors.accentText};
+    background: ${props => props.theme.colors.accent};
+    transform: scale(1.05);
   }
 `;
 
