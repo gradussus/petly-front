@@ -161,28 +161,27 @@ const NoticesItems = () => {
   return (
     <>
       <NoticesItemsBody>
-        {status === 'fulfilled' &&
-          data?.map(item => (
-            <NoticesItem
-              key={item._id}
-              id={item._id}
-              title={item.title}
-              category={item.category}
-              name={item.name}
-              birthDate={item.birthDate}
-              imageURL={item.imageURL}
-              breed={item.breed}
-              location={item.location}
-              price={item.price}
-              comments={item.comments}
-              favoriteData={favoriteData}
-              setFavoriteData={setFavoriteData}
-              onChangeModal={onChangeModal}
-              handleChange={handleChange}
-              noticesUser={noticesUser}
-              setNoticesUser={setNoticesUser}
-            />
-          ))}
+        {data?.map(item => (
+          <NoticesItem
+            key={item._id}
+            id={item._id}
+            title={item.title}
+            category={item.category}
+            name={item.name}
+            birthDate={item.birthDate}
+            imageURL={item.imageURL}
+            breed={item.breed}
+            location={item.location}
+            price={item.price}
+            comments={item.comments}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            onChangeModal={onChangeModal}
+            handleChange={handleChange}
+            noticesUser={noticesUser}
+            setNoticesUser={setNoticesUser}
+          />
+        ))}
       </NoticesItemsBody>
       {status === 'pending' && (
         <NoticesLoader>

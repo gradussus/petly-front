@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   NoticesSearchInput,
   NoticesSearchInputBody,
@@ -8,12 +8,25 @@ import {
 import { ReactComponent as SearchSvg } from './image/search.svg';
 import { ReactComponent as RemoveBtn } from './image/removeSearch.svg';
 
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 const NoticesSearch = () => {
   const [input, setInput] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState('');
+  const { type } = useParams();
+
+  const handleChange = input => {
+    setSearchParams({
+      query: input.toLocaleLowerCase().trim(),
+    });
+    handleSearch(input.toLocaleLowerCase());
+  };
+
+  useEffect(() => {
+    setInput('');
+    setSearch('');
+  }, [type]);
 
   const handleSearch = text => {
     setSearch(text);
@@ -23,13 +36,6 @@ const NoticesSearch = () => {
     if (event.keyCode === 13) {
       handleChange(input);
     }
-  };
-
-  const handleChange = input => {
-    setSearchParams({
-      query: input.toLocaleLowerCase().trim(),
-    });
-    handleSearch(input.toLocaleLowerCase());
   };
 
   const handleClearSearch = () => {
@@ -44,6 +50,7 @@ const NoticesSearch = () => {
         value={input}
         onChange={event => setInput(event.target.value)}
         onKeyDown={handleKeyDown}
+        disabled={type === 'favorite' || type === 'own'}
       />
       <NoticesSearchImage>
         {search?.length > 0 ? (
