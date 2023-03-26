@@ -23,17 +23,11 @@ export const WorkingDay = styled.p`
   font-weight: ${theme.fontWeights.middle};
   font-size: ${theme.fontSizes.xs};
   line-height: 1.33;
+
+  
 `;
 
-export const Button = styled.button`
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-
+export const CurrentDay = styled.p`
   font-size: ${theme.fontSizes.xs};
   font-weight: ${theme.fontWeights.middle};
   color: ${theme.colors.black};
@@ -52,4 +46,15 @@ export const Button = styled.button`
     line-height: 1.3;
     padding-bottom: 12px;
   }
+`;
+
+export const Button = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 0;
 `;
