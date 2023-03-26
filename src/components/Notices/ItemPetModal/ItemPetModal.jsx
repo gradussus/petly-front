@@ -118,9 +118,9 @@ export const ItemPetModal = ({
       </Box>
       <ContainerItem>
         <div>Email:</div>
-        <Item href="">{owner?.email}</Item>
+        <Item href="mailto:{owner?.email}">{owner?.email}</Item>
         <div>Phone:</div>
-        <Item href="">{owner?.phone}</Item>
+        <Item href="tel: {owner?.phone}">{owner?.phone}</Item>
         {price > 0 && (
           <div>
             <div>Price:</div>

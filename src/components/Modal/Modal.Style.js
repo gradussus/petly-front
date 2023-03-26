@@ -7,9 +7,9 @@ top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0px;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   overflow-y: auto;
   z-index: 10;
   background-color: rgba(17, 17, 17, 0.6);
@@ -17,12 +17,9 @@ top: 0;
 `;
 export const ModalContent = styled.div`
 position: absolute; 
-overflow: hidden;
-
 top: 50%;
 left: 50%;
 transform: translateY(-50%) translateX(-50%);
-
 background-color: ${p => p.theme.colors.white};
 box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
 border-radius: 20px;
