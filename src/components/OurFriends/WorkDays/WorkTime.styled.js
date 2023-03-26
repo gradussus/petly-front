@@ -10,6 +10,7 @@ export const ScheduleBox = styled.div`
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding: 12px;
+  margin-top: 3px;
 `;
 
 export const ScheduleContainer = styled.div`
@@ -23,7 +24,6 @@ export const WorkingDay = styled.p`
   font-weight: ${theme.fontWeights.middle};
   font-size: ${theme.fontSizes.xs};
   line-height: 1.33;
-
   
 `;
 
@@ -56,5 +56,20 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  margin: 0;
+
+  font-size: ${theme.fontSizes.xs};
+  font-weight: ${theme.fontWeights.middle};
+  color: ${theme.colors.black};
+  line-height: ${theme.lineHeights.heading};
+
+  @media screen and (${theme.media.tablet}) {
+    font-size: ${theme.fontSizes.s};
+    line-height: 1.38;
+
+  }
+
+  @media screen and (${theme.media.desktop}) {
+    font-size: ${theme.fontSizes.m};
+    line-height: 1.3;
+  }
 `;
