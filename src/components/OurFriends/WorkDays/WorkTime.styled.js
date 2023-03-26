@@ -30,7 +30,7 @@ export const WorkingDay = styled.p`
 export const CurrentDay = styled.p`
   font-size: ${theme.fontSizes.xs};
   font-weight: ${theme.fontWeights.middle};
-  color: ${theme.colors.black};
+  color: ${theme.colors.secondaryText};
   line-height: ${theme.lineHeights.heading};
   padding-bottom: 4px;
 

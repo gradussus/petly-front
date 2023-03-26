@@ -11,18 +11,18 @@ export const NoticesButtonsBody = styled.div`
 
 export const NoticesButtonsItem = styled(NavLink)`
   padding: 10px 28px;
-  background: #ffffff;
-  border: 2px solid #f59256;
-  border-radius: 40px;
-  font-weight: 500;
-  font-size: 20px;
+  background: ${props => props.theme.colors.itemBackground};
+  border: ${props => props.theme.borders.large};
+  border-radius: ${props => props.theme.radii.large};
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.mx};
   line-height: 27px;
-  color: #111111;
+  color: ${props => props.theme.colors.primeText};
   transition: all 0.3s;
 
   :hover,
   &.active {
-    background: #f59256;
-    color: #fff;
+    background: ${props => props.theme.colors.accent};
+    color: ${props => props.theme.colors.accentText};
   }
 `;

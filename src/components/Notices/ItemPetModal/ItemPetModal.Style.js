@@ -121,7 +121,7 @@ export const Status = styled.a`
   left: 0;
   width: 158px;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: ${p => p.theme.colors.grayBackground};
   border-top-right-radius: ${p => p.theme.radii.large};
   border-bottom-right-radius: ${p => p.theme.radii.large};
   font-style: normal;

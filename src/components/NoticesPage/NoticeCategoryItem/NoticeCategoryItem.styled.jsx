@@ -11,8 +11,8 @@ export const CardWrapper = styled.div`
   align-items: center;
   width: 280px;
 
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: ${props => props.theme.radii.large};
+  border-bottom-left-radius: ${props => props.theme.radii.large};
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   transition: transform 0.3s ease-in-out;
 
@@ -40,7 +40,7 @@ export const CategoryOverlay = styled.div`
   height: 28px;
   padding-left: 20px;
 
-  background: rgba(255, 255, 255, 0.6);
+  background: ${props => props.theme.colors.grayBackground};
   backdrop-filter: blur(2px);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -49,13 +49,13 @@ export const CategoryOverlay = styled.div`
 export const Category = styled.p`
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.xs};
   line-height: 15px;
 
   letter-spacing: 0.04em;
 
-  color: #111111;
+  color: ${props => props.theme.colors.primeText};
 `;
 
 export const Img = styled.img`
@@ -76,10 +76,10 @@ export const HeartButton = styled.button`
 
   width: 44px;
   height: 44px;
-  background: rgba(255, 255, 255, 0.6);
+  background: ${props => props.theme.colors.grayBackground};
   backdrop-filter: blur(2px);
   border: none;
-  border-radius: 50%;
+  border-radius: ${props => props.theme.radii.round};
 
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -103,11 +103,11 @@ export const Title = styled.p`
   margin: 0 0 20px 0;
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  font-size: ${props => props.theme.fontSizes.mm};
   line-height: 38px;
   letter-spacing: -0.01em;
-  color: #111111;
+  color: ${props => props.theme.colors.primeText};
 `;
 
 export const NoticeList = styled.ul`
@@ -124,11 +124,11 @@ export const NoticeItem = styled.li`
 
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 22px;
 
-  color: #111111;
+  color: ${props => props.theme.colors.primeText};
 
   :not(:last-child) {
     margin-bottom: 8px;
@@ -159,22 +159,22 @@ export const LearnMoreButton = styled.button`
 
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 22px;
   letter-spacing: 0.04em;
-  color: #f59256;
+  color: ${props => props.theme.colors.accent};
 
-  background: #ffffff;
-  border: 2px solid #f59256;
+  background: ${props => props.theme.colors.itemBackground};
+  border: ${props => props.theme.borders.large};
   border-radius: 40px;
 
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #ffffff;
-    background: #f59256;
+    color: ${props => props.theme.colors.accentText};
+    background: ${props => props.theme.colors.accent};
     transform: scale(1.05);
   }
 `;
@@ -192,25 +192,25 @@ export const DeleteButton = styled.button`
 
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 22px;
   letter-spacing: 0.04em;
-  color: #ff6101;
+  color: ${props => props.theme.colors.activeAccent};
 
-  background: #ffffff;
-  border: 2px solid #ff6101;
-  border-radius: 40px;
-  fill: #ff6101;
+  background: ${props => props.theme.colors.itemBackground};
+  border: 2px solid ${props => props.theme.colors.activeAccent};
+  border-radius: ${props => props.theme.radii.large};
+  fill: ${props => props.theme.colors.activeAccent};
 
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #ffffff;
-    background: #ff6101;
+    color: ${props => props.theme.colors.accentText};
+    background: ${props => props.theme.colors.activeAccent};
     transform: scale(1.05);
-    fill: #ffffff;
+    fill: ${props => props.theme.colors.itemBackground};
   }
 `;
 
