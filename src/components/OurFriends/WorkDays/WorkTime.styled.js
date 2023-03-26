@@ -10,7 +10,7 @@ export const ScheduleBox = styled.div`
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding: 12px;
-  margin-top: 3px;
+  margin-top: -15px;
 `;
 
 export const ScheduleContainer = styled.div`
@@ -27,28 +27,24 @@ export const WorkingDay = styled.p`
   
 `;
 
-export const CurrentDay = styled.p`
-  font-size: ${theme.fontSizes.xs};
-  font-weight: ${theme.fontWeights.middle};
-  color: ${theme.colors.secondaryText};
-  line-height: ${theme.lineHeights.heading};
-  padding-bottom: 4px;
+// export const CurrentDay = styled.h4`
+//   font-size: ${theme.fontSizes.xs};
+//   font-weight: ${theme.fontWeights.middle};
+//   color: ${theme.colors.secondaryText};
+//   line-height: ${theme.lineHeights.heading};
 
-  @media screen and (${theme.media.tablet}) {
-    font-size: ${theme.fontSizes.s};
-    line-height: 1.38;
+//   @media screen and (${theme.media.tablet}) {
+//     font-size: ${theme.fontSizes.s};
+//     line-height: 1.38;
+//   }
 
-    padding-bottom: 8px;
-  }
+//   @media screen and (${theme.media.desktop}) {
+//     font-size: ${theme.fontSizes.m};
+//     line-height: 1.3;
+//   }
+// `;
 
-  @media screen and (${theme.media.desktop}) {
-    font-size: ${theme.fontSizes.m};
-    line-height: 1.3;
-    padding-bottom: 12px;
-  }
-`;
-
-export const Button = styled.button`
+export const CurrentDayButton = styled.button`
   background: none;
   color: inherit;
   border: none;
@@ -72,4 +68,16 @@ export const Button = styled.button`
     font-size: ${theme.fontSizes.m};
     line-height: 1.3;
   }
+`;
+
+export const AltScheduleContainer = styled.div`
+  width: 120px;
+`;
+
+export const Notification = styled.p`
+  font-size: ${theme.fontSizes.xs};
+  font-weight: ${theme.fontWeights.middle};
+  color: ${theme.colors.secondaryText};
+  line-height: ${theme.lineHeights.heading};
+
 `;

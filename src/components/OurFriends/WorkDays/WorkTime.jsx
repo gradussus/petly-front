@@ -3,10 +3,11 @@ import { Popover2 } from '@blueprintjs/popover2';
 
 import {
   ScheduleBox,
-  Button,
+  CurrentDayButton,
   WorkingDay,
   ScheduleContainer,
-  CurrentDay,
+  AltScheduleContainer,
+  Notification,
 } from './WorkTime.styled';
 
 export const WorkTime = ({ workDays }) => {
@@ -26,8 +27,7 @@ export const WorkTime = ({ workDays }) => {
       <Popover2
         content={
           <ScheduleBox>
-            {workDays &&
-              workDays.length > 0 &&
+            {workDays && workDays.length > 0 ? (
               DAYS_OF_WEEK.map((day, index) => (
                 <ScheduleContainer key={index}>
                   <div>
@@ -41,7 +41,15 @@ export const WorkTime = ({ workDays }) => {
                     </WorkingDay>
                   </div>
                 </ScheduleContainer>
-              ))}
+              ))
+            ) : (
+              <AltScheduleContainer>
+                <Notification>
+                  We have flexible working schedule. Feel free to contact us any
+                  time by email or phone.
+                </Notification>
+              </AltScheduleContainer>
+            )}
           </ScheduleBox>
         }
         interactionKind="click"
@@ -49,13 +57,14 @@ export const WorkTime = ({ workDays }) => {
         onInteraction={nextOpenState => handleInteraction(nextOpenState)}
         placement="bottom-start"
       >
-        <Button type="button">Time:</Button>
+        <CurrentDayButton type="button">
+          {workDays !== null && workDays[currentDayIndex]?.isOpen
+            ? `${workDays[currentDayIndex].from} - ${workDays[currentDayIndex].to}`
+            : workDays === null
+            ? 'Free schedule'
+            : 'Closed'}
+        </CurrentDayButton>
       </Popover2>
-      <CurrentDay>
-        {workDays && workDays[currentDayIndex]?.isOpen
-          ? `${workDays[currentDayIndex].from} - ${workDays[currentDayIndex].to}`
-          : 'Closed'}
-      </CurrentDay>
     </>
   );
 };
