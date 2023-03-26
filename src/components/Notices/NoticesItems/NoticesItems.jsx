@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
 import NoticesItem from './NoticesItem';
+import Loader from '../../loader/loader';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { NoticesItemsBody, NoticesLoader } from './NoticesItems.styles';
+import { ItemPetModal } from '../ItemPetModal/ItemPetModal';
+import { ModalSample } from '../../Modal/Modal';
+import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
+
 import {
   fetchNoticesData,
   fetchNoticesUser,
   fetchUserFavorite,
-  fetchModal
+  fetchModal,
 } from '../../../utils/api/getNotices';
-import { useAuth } from '../../../hooks/useAuth';
-import Loader from '../../loader/loader';
+
 import { NoticesPreview } from '../Notices.styled';
-import { ModalSample } from "../../Modal/Modal";
-import { ItemPetModal } from "../ItemPetModal/ItemPetModal";
+import { NoticesItemsBody, NoticesLoader } from './NoticesItems.styles';
 
 const NoticesItems = () => {
   const navigate = useNavigate();
@@ -28,8 +30,6 @@ const NoticesItems = () => {
   const [showModal, setShowModal] = useState(false);
   const [noticeId, setNoticeId] = useState('');
   const [modalCard, setModalCard] = useState([]);
-
-
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -105,6 +105,12 @@ const NoticesItems = () => {
   }, [type, token, navigate]);
 
   useEffect(() => {
+    if (type === 'favorite') {
+      setData(favoriteData);
+    }
+  }, [favoriteData, type, token]);
+
+  useEffect(() => {
     if (status === 'rejected') {
       toast.error(
         'Failed to fetch data, please reload the page or try again later',
@@ -119,38 +125,25 @@ const NoticesItems = () => {
     <>
       <NoticesItemsBody>
         {status === 'fulfilled' &&
-          data?.map(
-            ({
-              _id,
-              title,
-              category,
-              name,
-              birthDate,
-              imageURL,
-              location,
-              breed,
-              price,
-              comments,
-            }) => (
-              <NoticesItem
-                key={_id}
-                id={_id}
-                title={title}
-                category={category}
-                name={name}
-                birthDate={birthDate}
-                imageURL={imageURL}
-                breed={breed}
-                location={location}
-                price={price}
-                comments={comments}
-                favoriteData={favoriteData}
-                setFavoriteData={setFavoriteData}
-                onChangeModal={onChangeModal}
+          data?.map(item => (
+            <NoticesItem
+              key={item._id}
+              id={item._id}
+              title={item.title}
+              category={item.category}
+              name={item.name}
+              birthDate={item.birthDate}
+              imageURL={item.imageURL}
+              breed={item.breed}
+              location={item.location}
+              price={item.price}
+              comments={item.comments}
+              favoriteData={favoriteData}
+              setFavoriteData={setFavoriteData}
+              onChangeModal={onChangeModal}
               handleChange={handleChange}
-              />
-            )
-          )}
+            />
+          ))}
       </NoticesItemsBody>
       {status === 'pending' && (
         <NoticesLoader>
@@ -158,14 +151,19 @@ const NoticesItems = () => {
         </NoticesLoader>
       )}
 
-      {data?.length === 0 && (
+      {data?.length === 0 && status !== 'pending' && (
         <NoticesPreview>
           There are no pets in this section yet, add them soon!
         </NoticesPreview>
       )}
-       {showModal && (
+      {showModal && (
         <ModalSample toggleModal={toggleModal}>
-          <ItemPetModal modalCard={modalCard} />
+          <ItemPetModal
+            modalCard={modalCard}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            noticeId={noticeId}
+          />
         </ModalSample>
       )}
     </>

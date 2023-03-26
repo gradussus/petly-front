@@ -15,6 +15,13 @@ export const NoticeTitle = styled.div`
 
 export const NoticeBody = styled.div`
   margin: 60px 0;
+
+  @media (${props => props.theme.media.mobile}) {
+    margin: 40px 0;
+  }
+  @media (${props => props.theme.media.tablet}) {
+    margin: 90px 0;
+  }
 `;
 
 export const NoticesSearchBody = styled.div`
@@ -37,6 +44,7 @@ export const NoticesHeadBtn = styled.div`
     position: fixed;
     top: 420px;
     right: 20px;
+    z-index: 2;
   }
 `;
 

@@ -1,3 +1,10 @@
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+
+import { useAuth } from '../../../hooks/useAuth';
+import { addFavorite, removeFavorite } from '../../../utils/api/getNotices';
+import { ReactComponent as FavoriteSvg } from './image/favorite-icon.svg';
+
 import {
   Title,
   Image,
@@ -12,9 +19,19 @@ import {
   Status,
   ContainerImg,
 } from './ItemPetModal.Style';
-import Vector from '../ItemPetModal/image/Vector.svg';
 
-export const ItemPetModal = ({ modalCard }) => {
+export const ItemPetModal = ({
+  modalCard,
+  favoriteData,
+  setFavoriteData,
+  noticeId,
+}) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [data, setData] = useState([]);
+  const [status, setStatus] = useState('pending');
+
+  const { token } = useAuth();
+
   const {
     name,
     birthDate,
@@ -24,15 +41,67 @@ export const ItemPetModal = ({ modalCard }) => {
     imageURL,
     comments,
     price,
-    category,    
+    category,
     owner,
   } = modalCard;
-  
+
+  useEffect(() => {
+    setIsFavorite(favoriteData.some(item => item._id === noticeId));
+  }, [favoriteData, noticeId]);
+
+  useEffect(() => {
+    if (status === 'rejected') {
+      toast.error(
+        'Something went wrong, please try again or reload the page.',
+        {
+          theme: 'colored',
+        }
+      );
+    }
+    if (status === 'fulfilled') {
+      setFavoriteData(data);
+    }
+  }, [status, setFavoriteData, data]);
+
+  const handleAddFavorite = () => {
+    if (token) {
+      (async () => {
+        try {
+          setStatus('pending');
+
+          const data = await addFavorite(token, noticeId);
+          setData(data);
+          setStatus('fulfilled');
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+    } else {
+      toast.error('This feature is only available to an authorized user', {
+        theme: 'colored',
+      });
+    }
+  };
+
+  const handleRemoveFavorite = () => {
+    (async () => {
+      try {
+        setStatus('pending');
+
+        const data = await removeFavorite(token, noticeId);
+        setData(data);
+        setStatus('fulfilled');
+      } catch {
+        setStatus('rejected');
+      }
+    })();
+  };
+
   return (
     <Container>
       <ContainerImg>
         <Image src={imageURL} />
-         <Status> {category} </Status>      
+        <Status> {category} </Status>
       </ContainerImg>
       <Title>Сute dog looking for a home</Title>
       <Box>
@@ -52,28 +121,26 @@ export const ItemPetModal = ({ modalCard }) => {
         <Item href="">{owner?.email}</Item>
         <div>Phone:</div>
         <Item href="">{owner?.phone}</Item>
-        {price > 0 && ( 
+        {price > 0 && (
           <div>
-             <div>Price:</div>             
-          </div>         
-              
+            <div>Price:</div>
+          </div>
         )}
-    {price > 0 && ( 
-          <div>
-            {price}$  
-          </div>         
-              
-        )}
-       
+        {price > 0 && <div>{price}$</div>}
       </ContainerItem>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
         <BtnContact type="button">Contact</BtnContact>
         <BtnAdd type="button">
           Add to{' '}
-          <span>
-            <img src={Vector} className="Vector" alt="Vector" />
-          </span>
+          {isFavorite ? (
+            <FavoriteSvg
+              fill={'#F59256'}
+              onClick={() => handleRemoveFavorite()}
+            />
+          ) : (
+            <FavoriteSvg onClick={() => handleAddFavorite()} />
+          )}
         </BtnAdd>
       </ContainerBtn>
     </Container>

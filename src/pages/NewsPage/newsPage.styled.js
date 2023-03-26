@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 60px;
+  padding: 60px 0;
   @media (${p => p.theme.media.mobile}) {
-    padding-bottom: 100px;
+    padding: 40px 0;
   }
   @media (${p => p.theme.media.tablet}) {
-    padding-bottom: 100px;
-  }
-  @media (${p => p.theme.media.desktop}) {
-    padding-bottom: 200px;
+    padding: 90px 0;
   }
 `;
 
