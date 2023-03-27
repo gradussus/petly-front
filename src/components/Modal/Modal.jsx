@@ -29,10 +29,16 @@ const modalRef = useRef()
     window.addEventListener('mousedown', closeModal);
     return () => window.removeEventListener('mousedown', closeModal);
   });
-  
+
+  function handleBackdropClick(e) {
+    if (e.target === e.currentTarget) {
+      toggleModal();
+    }
+  }
   return createPortal(
-    <ModalBackdrop  >
-      <ModalContent ref={modalRef}>
+    <ModalBackdrop onClick={handleBackdropClick}>
+      <ModalContent>
+
         <BtnClose type="button" onClick={toggleModal}>
           <Cross/>
         </BtnClose>
