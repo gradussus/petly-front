@@ -85,7 +85,6 @@ const UserForm = ({
           phone: userPhone,
           city: userCity,
         }}
-        validateOnBlur
         onSubmit={values => {
           updateUser(values);
         }}
@@ -95,9 +94,9 @@ const UserForm = ({
           values,
           errors,
           handleChange,
-          handleBlur,
           isValid,
           handleSubmit,
+          handleBlur,
         }) => (
           <UserFormBody>
             <UserFormItem>
