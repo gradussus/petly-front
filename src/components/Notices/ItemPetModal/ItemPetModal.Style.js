@@ -23,6 +23,8 @@ export const Modal = styled.div`
   transform: translate(-50% -50%);
   padding: 20px;
   width: 80vw;
+  margin-top: 200px;
+  height: 80vh;
   background-color: ${p => p.theme.colors.white};
   border-radius: 20px;
   @media screen and (min-width: 768px) {
@@ -34,7 +36,7 @@ export const Modal = styled.div`
     padding: 32px 32px 20px;
     gap: 0px 20px;
     grid-template-columns: 288px 1fr 50px;
-    grid-template-rows: 76px auto auto 1fr 90px;
+    grid-template-rows: 76px auto auto 90px;
   }
 `;
 export const BtnClose = styled.button`
@@ -78,7 +80,7 @@ export const ContainerImg = styled.div`
     width: 288px;
     height: 328px;
     grid-column: 1;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
     margin: 0;
   }
 `;
@@ -107,6 +109,7 @@ export const Image = styled.img`
   margin-left: auto;
   border-radius: 0px 0px 40px 40px;
   @media screen and (min-width: 768px) {
+    height: 328px;
     width: 288px;
   }
 `;
@@ -193,21 +196,7 @@ export const BtnContact = styled.button`
     transform: scale(1.1);
   }
 `;
-export const ContainerItem = styled.div`
-  display: grid;
-  grid-gap: 8px;
-  grid-template-columns: 1fr 2fr;
-  margin-top: 8px;
-  @media screen and (min-width: 768px) {
-    grid-column: 2;
-    grid-row: 3;
-    margin: 0px;
-    align-items: flex-start;
-    font-weight: ${p => p.theme.fontWeights.interMiddle};
-    font-size: ${p => p.theme.fontSizes.m};
-    line-height: ${p => p.theme.fontWeights.heading};
-  }
-`;
+
 export const BtnAdd = styled.button`
   width: 240px;
   padding-top: 9px;

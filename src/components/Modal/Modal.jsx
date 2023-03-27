@@ -7,7 +7,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const ModalSample = ({ toggleModal, children }) => {
 
-  const modalRef = useRef()
+const modalRef = useRef()
   document.body.style.overflow = "hidden";
   useEffect(() =>{
     const close = (e) => {
@@ -29,6 +29,7 @@ export const ModalSample = ({ toggleModal, children }) => {
     window.addEventListener('mousedown', closeModal);
     return () => window.removeEventListener('mousedown', closeModal);
   });
+  
   return createPortal(
     <ModalBackdrop  >
       <ModalContent ref={modalRef}>
