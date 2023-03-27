@@ -34,7 +34,7 @@ const modalRef = useRef()
     <ModalBackdrop  >
       <ModalContent ref={modalRef}>
         <BtnClose type="button" onClick={toggleModal}>
-          <img src={Cross} className="Cross" alt="Cross" />
+          <Cross/>
         </BtnClose>
         {children}
       </ModalContent>
