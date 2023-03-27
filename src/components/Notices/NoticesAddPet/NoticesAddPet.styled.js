@@ -12,7 +12,7 @@ export const NoticesAddPetBody = styled.div`
     padding: 16px;
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: ${p => p.theme.radii.round};
     background: ${props => props.theme.colors.accent};
   }
 `;
@@ -24,18 +24,18 @@ export const NoticesAddPetTitle = styled.div`
 
   @media (${props => props.theme.media.mobile}) {
     font-size: ${props => props.theme.fontSizes.xs};
-    color: #fff;
+    color: ${props => props.theme.colors.accentText};
   }
 `;
 
 export const NoticesAddPetButton = styled.button`
   width: 40px;
   height: 40px;
-  background: #f59256;
+  background: ${props => props.theme.colors.accent};
   border: none;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.radii.round};
   font-size: ${props => props.theme.fontSizes.l};
-  color: white;
+  color: ${props => props.theme.colors.itemBackground};
   transition: background 0.2s;
   cursor: pointer;
   display: flex;
@@ -44,7 +44,7 @@ export const NoticesAddPetButton = styled.button`
   padding-bottom: 2px;
   @media (min-width: 768px) {
     &:hover {
-      background: #f5a675;
+      background: ${props => props.theme.colors.backgroundSecondary};
     }
   }
   @media (${props => props.theme.media.mobile}) {

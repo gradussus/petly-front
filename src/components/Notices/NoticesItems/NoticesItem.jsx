@@ -8,24 +8,31 @@ import {
   NoticesItemBtn,
 } from './NoticesItems.styles';
 import NoticesFavorite from '../NoticesFavorite/NoticesFavorite';
-import getPetAge from '../../../utils/getPetAge'
+import NoticesDelete from '../NoticesDelete/NoticesDelete';
+import getPetAge from '../../../utils/getPetAge';
 
 const NoticesItem = ({
   imageURL,
   id,
   title,
+  category,
   price,
   birthDate,
   location,
   breed,
   favoriteData,
   setFavoriteData,
+  onChangeModal,
+  handleChange,
+  noticesUser,
+  setNoticesUser,
 }) => {
   return (
     <NoticesItemBody>
       <NoticesFavorite
         favoriteData={favoriteData}
         id={id}
+        category={category}
         setFavoriteData={setFavoriteData}
       />
       <NoticesItemImg>
@@ -51,7 +58,19 @@ const NoticesItem = ({
             {price}$
           </NoticesItemText>
         )}
-        <NoticesItemBtn>Learn more</NoticesItemBtn>
+        <NoticesItemBtn
+          onClick={() => {
+            onChangeModal();
+            handleChange(id);
+          }}
+        >
+          Learn more
+        </NoticesItemBtn>
+        <NoticesDelete
+          id={id}
+          noticesUser={noticesUser}
+          setNoticesUser={setNoticesUser}
+        />
       </NoticesItemContent>
     </NoticesItemBody>
   );

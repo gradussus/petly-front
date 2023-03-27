@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
+
 import { BurgerMenu, HeaderBody } from './Header.styled';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
 
 import HeaderNavMenu from './HeaderNavs/HeaderNavMenu/HeaderNavMenu';
 
 export const Header = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = open => {
     setMenuOpen(open);
   };
-
   useEffect(() => {
     if (menuOpen) {
       document.body.classList.add('active');
@@ -20,7 +21,6 @@ export const Header = () => {
       document.body.classList.remove('active');
     }
   }, [menuOpen]);
-
   return (
     <HeaderBody>
       <HeaderLogo handleMenu={handleMenu} />
@@ -32,5 +32,6 @@ export const Header = () => {
         <span></span>
       </BurgerMenu>
     </HeaderBody>
+
   );
 };

@@ -1,27 +1,49 @@
 import React, { useEffect, useState } from 'react';
 
 import NoticesItem from './NoticesItem';
+import Loader from '../../loader/loader';
 
-import { useNavigate, useParams } from 'react-router-dom';
-import { NoticesItemsBody, NoticesLoader } from './NoticesItems.styles';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { ItemPetModal } from '../ItemPetModal/ItemPetModal';
+import { ModalSample } from '../../Modal/Modal';
+import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
+
 import {
   fetchNoticesData,
   fetchNoticesUser,
+  fetchPersonalNoticesUser,
   fetchUserFavorite,
+  fetchModal,
+  fetchSearchNotices,
 } from '../../../utils/api/getNotices';
-import { useAuth } from '../../../hooks/useAuth';
-import Loader from '../../loader/loader';
+
 import { NoticesPreview } from '../Notices.styled';
+import { NoticesItemsBody, NoticesLoader } from './NoticesItems.styles';
 
 const NoticesItems = () => {
   const navigate = useNavigate();
   const { type } = useParams();
   const { token } = useAuth();
 
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query') ?? null;
+
   const [data, setData] = useState(null);
   const [favoriteData, setFavoriteData] = useState([]);
+  const [noticesUser, setNoticesUser] = useState([]);
   const [status, setStatus] = useState('pending');
+  const [showModal, setShowModal] = useState(false);
+  const [noticeId, setNoticeId] = useState('');
+  const [modalCard, setModalCard] = useState([]);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+    document.body.style.overflow = '';
+  };
+
+  const onChangeModal = () => toggleModal();
+  const handleChange = id => setNoticeId(id);
 
   useEffect(() => {
     if (token) {
@@ -40,6 +62,52 @@ const NoticesItems = () => {
   }, [token]);
 
   useEffect(() => {
+    if (token) {
+      (async () => {
+        try {
+          setStatus('pending');
+          const data = await fetchPersonalNoticesUser(token);
+
+          setStatus('fulfilled');
+          setNoticesUser(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (noticeId) {
+      (async () => {
+        try {
+          setStatus('pending');
+          const data = await fetchModal(noticeId);
+          setStatus('fulfilled');
+          setModalCard(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+    }
+  }, [noticeId]);
+
+  useEffect(() => {
+    if (query?.length > 0) {
+      (async () => {
+        try {
+          setStatus('pending');
+
+          const data = await fetchSearchNotices(type, query);
+          setStatus('fulfilled');
+          setData(data);
+        } catch {
+          setStatus('rejected');
+        }
+      })();
+      return;
+    }
+
     if ((type === 'own' && !token) || (type === 'favorite' && !token)) {
       return navigate('/login');
     }
@@ -71,7 +139,13 @@ const NoticesItems = () => {
         }
       })();
     }
-  }, [type, token, navigate]);
+  }, [noticesUser, type, token, navigate, query]);
+
+  useEffect(() => {
+    if (type === 'favorite') {
+      setData(favoriteData);
+    }
+  }, [favoriteData, type]);
 
   useEffect(() => {
     if (status === 'rejected') {
@@ -87,35 +161,27 @@ const NoticesItems = () => {
   return (
     <>
       <NoticesItemsBody>
-        {status === 'fulfilled' &&
-          data?.map(
-            ({
-              _id,
-              title,
-              name,
-              birthDate,
-              imageURL,
-              location,
-              breed,
-              price,
-              comments,
-            }) => (
-              <NoticesItem
-                key={_id}
-                id={_id}
-                title={title}
-                name={name}
-                birthDate={birthDate}
-                imageURL={imageURL}
-                breed={breed}
-                location={location}
-                price={price}
-                comments={comments}
-                favoriteData={favoriteData}
-                setFavoriteData={setFavoriteData}
-              />
-            )
-          )}
+        {data?.map(item => (
+          <NoticesItem
+            key={item._id}
+            id={item._id}
+            title={item.title}
+            category={item.category}
+            name={item.name}
+            birthDate={item.birthDate}
+            imageURL={item.imageURL}
+            breed={item.breed}
+            location={item.location}
+            price={item.price}
+            comments={item.comments}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            onChangeModal={onChangeModal}
+            handleChange={handleChange}
+            noticesUser={noticesUser}
+            setNoticesUser={setNoticesUser}
+          />
+        ))}
       </NoticesItemsBody>
       {status === 'pending' && (
         <NoticesLoader>
@@ -123,10 +189,20 @@ const NoticesItems = () => {
         </NoticesLoader>
       )}
 
-      {data?.length === 0 && (
+      {data?.length === 0 && status !== 'pending' && (
         <NoticesPreview>
           There are no pets in this section yet, add them soon!
         </NoticesPreview>
+      )}
+      {showModal && (
+        <ModalSample toggleModal={toggleModal}>
+          <ItemPetModal
+            modalCard={modalCard}
+            favoriteData={favoriteData}
+            setFavoriteData={setFavoriteData}
+            noticeId={noticeId}
+          />
+        </ModalSample>
       )}
     </>
   );
