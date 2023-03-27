@@ -16,7 +16,9 @@ const FormButtons = ({
 }) => {
   const handleClickTarget = () => {
     if (targetInput !== '') {
-      return alert(targetInput);
+      return toast.error(`Finish editing the field first ${targetInput} 😕`, {
+        theme: 'colored',
+      });
     }
     handleTarget(owner);
   };
@@ -24,7 +26,7 @@ const FormButtons = ({
   useEffect(() => {
     if (error) {
       toast.error(`${error} 😕`, {
-        theme: 'colored',
+        theme: 'light',
       });
     }
   }, [error]);

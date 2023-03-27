@@ -44,4 +44,21 @@ export const getFriends = async () => {
   const response = await axios.get('/friends');
 
   return response.data;
-}
+};
+
+export const updateAvatar = async (token, avatar) => {
+  const response = await axios.patch(
+    `api/auth/avatars`,
+    {
+      image: avatar,
+    },
+    {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return response.data;
+};
