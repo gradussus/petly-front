@@ -63,7 +63,6 @@ export const FriendsTitle = styled.h3`
 
 export const FriendsLinkToAddress = styled.a`
   text-decoration: underline;
-
   color: ${theme.colors.accent};
 `;
 
@@ -71,15 +70,20 @@ export const FriendsLinkToContacts = styled.a`
   text-decoration: none;
   color: ${theme.colors.primeText};
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: ${theme.colors.accent};
   }
 `;
 
 export const FriendsAddress = styled.span`
   text-decoration: underline;
-  position: relative;
   color: ${theme.colors.secondaryText};
+
+  &:hover,
+  &:focus {
+    color: ${theme.colors.accent};
+  }
 `;
 
 export const FriendsPar = styled.h4`
