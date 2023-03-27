@@ -1,5 +1,5 @@
 import { ModalContent, ModalBackdrop, BtnClose } from './Modal.Style';
-import Cross from '../Notices/ItemPetModal/image/Cross.svg';
+import {ReactComponent as Cross} from '../Notices/ItemPetModal/image/Cross.svg';
 import { createPortal } from 'react-dom';
 import { useEffect, useRef } from 'react';
 
@@ -34,7 +34,7 @@ const modalRef = useRef()
     <ModalBackdrop  >
       <ModalContent ref={modalRef}>
         <BtnClose type="button" onClick={toggleModal}>
-          <img src={Cross} className="Cross" alt="Cross" />
+          <Cross/>
         </BtnClose>
         {children}
       </ModalContent>
