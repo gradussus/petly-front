@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { theme } from '../../../theme'
+import { theme } from '../../../../../theme'
 import { Form } from 'formik';
 
-export const AuthForm = styled(Form)`
+export const AddPetForm = styled(Form)`
 
 margin-left:auto;
 margin-right:auto;
-/* margin-top: 12px; */
 
 width: 100%;
 display: flex;
@@ -16,7 +15,9 @@ align-items: center;
 
 padding: 0px;
 border-radius: ${theme.radii.large};
-background: transparent;
+background: ${theme.colors.white};
+
+/* background: transparent; */
 
 text-align: center;
 

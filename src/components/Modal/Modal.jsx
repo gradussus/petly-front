@@ -15,8 +15,13 @@ export const ModalSample = ({ toggleModal, children }) => {
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
   });
+  function handleBackdropClick(e) {
+    if (e.target === e.currentTarget) {
+      toggleModal();
+    }
+  }
   return createPortal(
-    <ModalBackdrop>
+    <ModalBackdrop onClick={handleBackdropClick}>
       <ModalContent>
         <BtnClose type="button" onClick={toggleModal}>
           <img src={Cross} className="Cross" alt="Cross" />

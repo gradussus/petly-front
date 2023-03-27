@@ -28,7 +28,7 @@ export const NoticesAddPetTitle = styled.div`
   }
 `;
 
-export const NoticesAddPetButton = styled.div`
+export const NoticesAddPetButton = styled.button`
   width: 40px;
   height: 40px;
   background: #f59256;

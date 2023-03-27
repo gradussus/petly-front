@@ -16,9 +16,9 @@ top: 50%;
 left: 50%;
 transform: translateY(-50%) translateX(-50%);
 
-background-color: ${p => p.theme.colors.white};
-box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-border-radius: 20px;
+/* background-color: ${p => p.theme.colors.white}; */
+/* box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07); */
+/* border-radius: 40px; */
   
 `;
 export const BtnClose = styled.button`
