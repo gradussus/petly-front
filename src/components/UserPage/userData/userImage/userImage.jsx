@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import { updateAvatar } from '../../../../utils/api/getUserData';
 import { useAuth } from '../../../../hooks/useAuth';
@@ -21,17 +21,18 @@ const UserImage = ({ image }) => {
 
   const { token } = useAuth();
 
-  const handleUpdateAvatar = async () => {
+  const handleUpdateAvatar = useCallback(async () => {
     try {
       setStatus('pending');
 
       const data = await updateAvatar(token, selectedFile);
       setImageUrl(data);
+      setSelectedFile(null);
       setStatus('fulfilled');
     } catch {
       setStatus('rejected');
     }
-  };
+  }, [selectedFile, token]);
 
   const handleFileInputChange = event => {
     setSelectedFile(event.target.files[0]);
