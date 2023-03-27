@@ -15,8 +15,6 @@ export const AccountBtn = styled(Link)`
   font-size: ${props => props.theme.fontSizes.m};
   line-height: ${props => props.theme.lineHeights.heading};
 
-  
-
   &:hover {
     background: #f5a675;
   }
@@ -26,7 +24,6 @@ export const LoginButtons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  border: 1px solid green;
 `;
 
 export const Login = styled(Link)`
