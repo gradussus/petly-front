@@ -63,7 +63,7 @@ export const NoticesItemText = styled.div`
 
 
 export const NoticesItemBtn = styled.button`
-  margin: 20px 0 32px;
+  margin: 20px 0 12px;
   border: ${props => props.theme.borders.large};
   border-radius: ${props => props.theme.radii.large};
   padding: 8px 0;
