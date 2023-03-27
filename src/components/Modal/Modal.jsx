@@ -22,9 +22,9 @@ const modalRef = useRef()
     
     const closeModal = e => {
      
-      // if (!modalRef.current.contains(e.target)) {
-      //   toggleModal();       
-      // }
+      if (!modalRef.current.contains(e.target)) {
+        toggleModal();       
+      }
     };
     window.addEventListener('mousedown', closeModal);
     return () => window.removeEventListener('mousedown', closeModal);
