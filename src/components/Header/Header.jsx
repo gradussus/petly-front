@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useMediaQuery from 'react-responsive';
 
 import { BurgerMenu, HeaderBody } from './Header.styled';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
@@ -6,12 +7,12 @@ import { HeaderLogo } from './HeaderLogo/HeaderLogo';
 import HeaderNavMenu from './HeaderNavs/HeaderNavMenu/HeaderNavMenu';
 
 export const Header = () => {
+  const isDesktop = useMediaQuery({ minWidth: 1279 });
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = open => {
     setMenuOpen(open);
   };
-
   useEffect(() => {
     if (menuOpen) {
       document.body.classList.add('active');
@@ -20,17 +21,31 @@ export const Header = () => {
       document.body.classList.remove('active');
     }
   }, [menuOpen]);
-
   return (
+    // <HeaderBody>
+    //   <HeaderLogo handleMenu={handleMenu} />
+    //   <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
+    //   <BurgerMenu
+    //     onClick={() => handleMenu(!menuOpen)}
+    //     className={menuOpen ? 'active' : ''}
+    //   >
+    //     <span></span>
+    //   </BurgerMenu>
+    // </HeaderBody>
+
     <HeaderBody>
       <HeaderLogo handleMenu={handleMenu} />
-      <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
-      <BurgerMenu
-        onClick={() => handleMenu(!menuOpen)}
-        className={menuOpen ? 'active' : ''}
-      >
-        <span></span>
-      </BurgerMenu>
+      {isDesktop && (
+        <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
+      )}
+      {!isDesktop && (
+        <BurgerMenu
+          onClick={() => handleMenu(!menuOpen)}
+          className={menuOpen ? 'active' : ''}
+        >
+          <span></span>
+        </BurgerMenu>
+      )}
     </HeaderBody>
   );
 };
