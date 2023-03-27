@@ -10,12 +10,12 @@ export const NoticesFavoriteBody = styled.div`
 `;
 
 export const NoticesFavoriteTitle = styled.div`
-  background: rgba(255, 255, 255, 0.6);
+  background: ${props => props.theme.colors.grayBackground};
   backdrop-filter: blur(2px);
   padding: 6px 50px 6px 20px;
   border-radius: 0 40px 40px 0;
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.xs};
   line-height: 16px;
 `;
 
@@ -29,8 +29,8 @@ export const NoticesFavoriteBtnBody = styled.div`
 export const NoticesFavoriteBtn = styled.div`
   flex: 0 0 44px;
   height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  border-radius: ${props => props.theme.radii.round};
+  background: ${props => props.theme.colors.grayBackground};
   backdrop-filter: blur(2px);
 
   display: flex;

@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const NoticeTitle = styled.div`
   text-align: center;
-  font-weight: 700;
-  font-size: 48px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  font-size: ${props => props.theme.fontSizes.ll};
   line-height: 66px;
 
   @media (${props => props.theme.media.mobile}) {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: ${props => props.theme.fontWeights.bold};
+    font-size: ${props => props.theme.fontSizes.ml};
     line-height: 33px;
   }
 `;
@@ -50,7 +50,7 @@ export const NoticesHeadBtn = styled.div`
 
 export const NoticesPreview = styled.div`
   text-align: center;
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  font-size: ${props => props.theme.fontSizes.ml};
   line-height: 66px;
 `;

@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 
 export const FriendsItem = styled.li`
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.itemBackground};
   border-radius: 20px;
 
   transition: transform 0.3s ease-in-out 0s;
-  
+
   @media screen and (${theme.media.mobile}) {
     width: 280px;
     margin-left: auto;
@@ -63,7 +63,6 @@ export const FriendsTitle = styled.h3`
 
 export const FriendsLinkToAddress = styled.a`
   text-decoration: underline;
-  
   color: ${theme.colors.accent};
 `;
 
@@ -71,21 +70,26 @@ export const FriendsLinkToContacts = styled.a`
   text-decoration: none;
   color: ${theme.colors.primeText};
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: ${theme.colors.accent};
-  };
+  }
 `;
 
 export const FriendsAddress = styled.span`
   text-decoration: underline;
-  position: relative;
-  color: ${theme.colors.black};
+  color: ${theme.colors.secondaryText};
+
+  &:hover,
+  &:focus {
+    color: ${theme.colors.accent};
+  }
 `;
 
 export const FriendsPar = styled.h4`
   font-size: ${theme.fontSizes.xs};
   font-weight: ${theme.fontWeights.middle};
-  color: ${theme.colors.black};
+  color: ${theme.colors.secondaryText};
   line-height: ${theme.lineHeights.heading};
 
   &:not(:last-child) {

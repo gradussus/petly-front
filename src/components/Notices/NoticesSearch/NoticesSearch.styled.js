@@ -8,15 +8,15 @@ export const NoticesSearchInputBody = styled.div`
 
 export const NoticesSearchInput = styled.input`
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  border-radius: 40px;
+  border-radius: ${props => props.theme.radii.large};
   padding: 8px 20px;
   height: 44px;
   width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: ${props => props.theme.colors.itemBackground};
   border: none;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.ml};
   line-height: 27px;
 `;
 

@@ -38,6 +38,7 @@ export const ItemPetModal = ({
     birthDate,
     breed,
     location,
+    title,
     sex,
     imageURL,
     comments,
