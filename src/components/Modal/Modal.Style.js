@@ -31,7 +31,6 @@ export const ModalContent = styled.div`
     max-height: none;
   }
 `;
-
 export const BtnClose = styled.button`
   position: absolute;
   display: flex;
