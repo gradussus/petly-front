@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useMediaQuery from 'react-responsive';
+
 
 import { BurgerMenu, HeaderBody } from './Header.styled';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
@@ -7,7 +7,7 @@ import { HeaderLogo } from './HeaderLogo/HeaderLogo';
 import HeaderNavMenu from './HeaderNavs/HeaderNavMenu/HeaderNavMenu';
 
 export const Header = () => {
-  const isDesktop = useMediaQuery({ minWidth: 1279 });
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = open => {
@@ -22,30 +22,16 @@ export const Header = () => {
     }
   }, [menuOpen]);
   return (
-    // <HeaderBody>
-    //   <HeaderLogo handleMenu={handleMenu} />
-    //   <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
-    //   <BurgerMenu
-    //     onClick={() => handleMenu(!menuOpen)}
-    //     className={menuOpen ? 'active' : ''}
-    //   >
-    //     <span></span>
-    //   </BurgerMenu>
-    // </HeaderBody>
-
     <HeaderBody>
       <HeaderLogo handleMenu={handleMenu} />
-      {isDesktop && (
-        <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
-      )}
-      {!isDesktop && (
-        <BurgerMenu
-          onClick={() => handleMenu(!menuOpen)}
-          className={menuOpen ? 'active' : ''}
-        >
-          <span></span>
-        </BurgerMenu>
-      )}
+      <HeaderNavMenu handleMenu={handleMenu} menuOpen={menuOpen} />
+      <BurgerMenu
+        onClick={() => handleMenu(!menuOpen)}
+        className={menuOpen ? 'active' : ''}
+      >
+        <span></span>
+      </BurgerMenu>
     </HeaderBody>
+
   );
 };
