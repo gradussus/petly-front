@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50% -50%);
   padding: 20px;
