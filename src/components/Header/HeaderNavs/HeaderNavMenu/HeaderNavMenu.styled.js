@@ -102,6 +102,7 @@ export const NavItem = styled(NavLink)`
 
   &.active {
     color: ${props => props.theme.colors.accent};
+    text-decoration: underline;
   }
 
   &:hover {

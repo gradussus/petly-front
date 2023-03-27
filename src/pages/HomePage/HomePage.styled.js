@@ -8,7 +8,7 @@ export const Home = styled.div`
 
   @media (${props => props.theme.media.tablet}) {
     padding: 0;
-  }
+  };
 
   @media (${props => props.theme.media.desktop}) {
   display: block;
@@ -16,7 +16,7 @@ export const Home = styled.div`
   max-width: 1280px;
   padding: 0;
   margin: 0 auto;
-  }
+  };
 `;
 
 export const Title = styled.h1`
@@ -32,30 +32,30 @@ export const Title = styled.h1`
   animation-name: title;
   animation-duration: 1000ms;;
   animation-timing-function: linear;
-  animation-delay: 500ms;
+  animation-delay: 300ms;
   animation-fill-mode: forwards;
 
   @media (${props => props.theme.media.tablet}) {
     font-size: ${props => props.theme.fontSizes.xl};
     max-width: 588px;
     padding-top: 72px;
-  }
+  };
 
   @media (${props => props.theme.media.desktop}) {
     font-size: ${props => props.theme.fontSizes.xl};
     max-width: 588px;
     padding-top: 72px;
-  }
+  };
 
   @keyframes title {
     0% {
       margin-left: -1000px;
       opacity: 0%;
-    }
+    };
     100% {
       opacity: 100%;
-    }
-  }
+    };
+  };
 `;
 
 export const Heart = styled.img`
@@ -64,7 +64,7 @@ export const Heart = styled.img`
   animation-name: heart;
   animation-duration: 2000ms;
   animation-timing-function: linear;
-  animation-delay: 1000ms;
+  animation-delay: 700ms;
   animation-fill-mode: forwards;
 
   @media (${props => props.theme.media.desktop}) {
@@ -72,45 +72,118 @@ export const Heart = styled.img`
     width: 92px;
     right: 40%;
     bottom: 75%;
-  }
+  };
   @keyframes heart {
     0% {
       scale: 0%;
-    }
+    };
     40% {
       scale: 0%;
-    }
+    };
     80% {
       scale: 150%;
       opacity: 100%;
-    }
+    };
     100% {
       scale: 100%;
       opacity: 100%;
-    }
-  }
+    };
+  };
 `;
 
 export const Labro = styled.img`
-  position: absolute;
-  align-item: centre;
-  width: 280px;
-  bottom: 0;
-  padding-top: 29px;
   opacity: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
   z-index: 100;
-  transition-duration: 1000ms;
 
-  @media (${props => props.theme.media.tablet}) {
-    width: calc(100vw - 18%);
-    bottom: 0px;
-    left: 80px;
-  }; 
+  @media screen and (min-width: 320px) {
+    width: 280px;
+  };
 
-  @media (${props => props.theme.media.desktop}) {
-    width: calc(100vw - 67%);
+  @media(min-width: 320px)and (max-height:700px) {
+    width: 280px;
+  };
+
+  @media(min-width: 320px)and (max-height:550px) {
+    width:230px
+  };
+
+  @media screen and (min-width: 460px) {
+    width:320px
+  };
+
+  @media(min-width: 460px)and (min-height:1281px) {
+    width: 524px;
+  };
+
+  @media(min-width: 460px)and (max-height:1280px) {
+    width: 524px;
+  };
+
+  @media(min-width: 460px)and (max-height:1000px) {
+    width: 380px;
+  };
+
+  @media(min-width: 460px)and (max-height:600px) {
+    width: 380px;
+  };
+
+  @media(min-width: 460px)and (max-height:500px) {
+    width: 320px;
+  };
+
+  @media(min-width: 460px)and (max-height:400px) {  
+    width: 205px;
+  };
+
+  @media screen and (min-width: 768px) {  
+    width: 636px;
+  };
+
+  @media(min-width: 768px)and (max-height:800px) {
+    width: 380px;
+  };
+
+  @media(min-width: 768px)and (max-height:718px) { 
+    width: 320px;
+  };
+
+  @media(min-width: 768px)and (max-height:600px) {
+    width: 380px;
+  };
+
+  @media(min-width: 768px)and (max-height:500px) {
+    width: 320px;
+  };
+
+  @media(min-width: 768px)and (max-height:400px) { 
+    width: 230px;
+  };
+
+  @media screen and (min-width: 1280px) {
+    z-index: 100;
+    width: 524px;
     right: 32px;
-  }
+  };
+
+  @media(min-width: 1280px)and (max-height:718px) {
+    width: 500px;
+  };
+
+  @media(min-width: 1280px)and (max-height:600px) {
+    width: 380px;
+  };
+
+  @media(min-width: 1280px)and (max-height:500px) {
+    width: 320px;
+  };
+
+  @media(min-width: 1280px)and (max-height:400px) {
+    width: 230px; 
+  };
 `;
 
 export const BackgroundL = styled.img`
@@ -166,4 +239,4 @@ export const BackgroundSm = styled.img`
   //=============================
   //Mobile: max-width 767px
   //Tablet: min-width 768px, max-width 1279px
-  //Desctop: min-width 1280 px
+  //Desktop: min-width 1280 px

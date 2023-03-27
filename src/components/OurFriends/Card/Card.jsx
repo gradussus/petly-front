@@ -29,7 +29,9 @@ export const Card = ({ friends }) => {
         }) => (
           <FriendsItem key={_id}>
             <FriendsTitle>
-              <FriendsLinkToAddress href={url}>{title}</FriendsLinkToAddress>
+              <FriendsLinkToAddress href={url} target="_blank" rel="noreferrer">
+                {title}
+              </FriendsLinkToAddress>
             </FriendsTitle>
             <FriendsWrapper>
               <FriendsLogoWrapper>
@@ -43,7 +45,12 @@ export const Card = ({ friends }) => {
                 />
               </FriendsLogoWrapper>
               <div>
-                <WorkTime />
+                <FriendsPar>
+                  Time:
+                  <br />
+                  <WorkTime workDays={workDays} />
+                </FriendsPar>
+
                 <FriendsPar>
                   Address:
                   <br />
