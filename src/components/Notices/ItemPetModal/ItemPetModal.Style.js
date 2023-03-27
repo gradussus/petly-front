@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 40px 20px;
+  padding: 60px 20px 20px;
 
   @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 100%;
     width: 704px;
     display: flex;
     display: grid;
@@ -54,6 +54,7 @@ export const BtnClose = styled.button`
 export const Title = styled.h1`
   text-decoration: none;
   margin-top: 16px;
+  margin-bottom: 16px;
   font-weight: ${p => p.theme.fontWeights.bold};
   font-size: ${p => p.theme.fontSizes.ml};
   line-height: ${p => p.theme.fontWeights.heading};
@@ -72,7 +73,6 @@ export const ContainerImg = styled.div`
   left: 50%;
   transform: translateX(-50%);
   height: 240px;
-  margin-top: 40px;
 
   @media screen and (min-width: 768px) {
     width: 288px;
@@ -101,7 +101,6 @@ export const Box = styled.ul`
 `;
 
 export const Image = styled.img`
-  /* width: 240px; */
   height: 100%;
   object-fit: cover;
   margin-right: auto;
@@ -116,12 +115,12 @@ export const Status = styled.a`
   display: flex;
   padding: 6px;
   z-index: 10;
-  top: 20px;
+  top: 0;
   transform: translateY(100%);
   left: 0;
   width: 158px;
   justify-content: center;
-  background-color: ${p => p.theme.colors.grayBackground};
+  background-color: rgba(255, 255, 255, 0.6);
   border-top-right-radius: ${p => p.theme.radii.large};
   border-bottom-right-radius: ${p => p.theme.radii.large};
   font-style: normal;
@@ -172,13 +171,13 @@ export const ContainerBtn = styled.div`
   @media screen and (min-width: 768px) {
     grid-column: 2 / span 3;
     grid-row: 5;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: baseline;
     align-self: end;
   }
 `;
 export const BtnContact = styled.button`
-  width: 100%;
+  width: 240px;
   padding-top: 9px;
   padding-bottom: 9px;
   border-radius: ${p => p.theme.radii.large};
@@ -210,7 +209,7 @@ export const ContainerItem = styled.div`
   }
 `;
 export const BtnAdd = styled.button`
-  width: 100%;
+  width: 240px;
   padding-top: 9px;
   padding-bottom: 9px;
   display: flex;
