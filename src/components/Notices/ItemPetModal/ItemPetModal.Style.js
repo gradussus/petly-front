@@ -87,7 +87,7 @@ export const ContainerImg = styled.div`
 export const Box = styled.ul`
   display: grid;
   grid-gap: 8px;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   margin-top: 16px;
   font-weight: ${p => p.theme.fontWeights.middle};
   font-size: ${p => p.theme.fontSizes.s};
@@ -136,8 +136,8 @@ export const Status = styled.a`
 export const Text = styled.p`
   text-decoration: none;
   margin: 0;
-  padding-top: 18px;
-  padding-bottom: 10px;
+  margin-top: 28px;
+  margin-bottom: 40px;
   font-weight: ${p => p.theme.fontWeights.middle};
   font-size: ${p => p.theme.fontSizes.s};
   line-height: ${p => p.theme.fontWeights.heading};
