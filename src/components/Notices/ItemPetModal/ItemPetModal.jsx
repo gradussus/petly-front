@@ -15,7 +15,6 @@ import {
   Box,
   BtnAdd,
   Item,
-  ContainerItem,
   Status,
   ContainerImg,
 } from './ItemPetModal.Style';
@@ -116,8 +115,6 @@ export const ItemPetModal = ({
         <div>{location}</div>
         <div>The sex:</div>
         <div>{sex}</div>
-      </Box>
-      <ContainerItem>
         <div>Email:</div>
         <Item href="mailto:{owner?.email}">{owner?.email}</Item>
         <div>Phone:</div>
@@ -128,7 +125,7 @@ export const ItemPetModal = ({
           </div>
         )}
         {price > 0 && <div>{price}$</div>}
-      </ContainerItem>
+      </Box>     
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
         <BtnContact type="button">Contact</BtnContact>
