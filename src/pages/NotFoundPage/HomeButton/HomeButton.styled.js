@@ -13,6 +13,18 @@ background: ${props => props.theme.colors.accent};
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.mx};
 line-height: ${props => props.theme.lineHeights.heading};
+z-index: 100;
+border: solid 1px ${props => props.theme.colors.background};
+
+
+@media (${props => props.theme.media.tablet}) {
+  border: solid 1px ${props => props.theme.colors.background};
+}
+
+@media (${props => props.theme.media.desktop}) {
+  border: none;
+}
+
 
 &:hover {
   background: #f5a675;

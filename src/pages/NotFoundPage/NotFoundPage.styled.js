@@ -5,7 +5,6 @@ export const Home = styled.div`
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    background-image: url('./images/mobile/labro_mobile.png'), url('./images/mobile/bg_mobile.png');
     background-position: right bottom, bottom;
     background-repeat: no-repeat;
     background-size: 20rem, 100vw;
@@ -18,6 +17,7 @@ export const Home = styled.div`
 export const BackgroundL = styled.img`
     position: absolute;
     width: 0px;
+    z-index: -1;
 
     @media (${props => props.theme.media.desktop}) {
       width: 100vw;

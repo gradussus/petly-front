@@ -1,5 +1,5 @@
 import * as SC from './NotFoundPage.styled';
-import { HomeButtonNotFoundPage } from 'components/HomeButton/HomeButton';
+import { HomeButtonNotFoundPage } from 'pages/NotFoundPage/HomeButton/HomeButton';
 
 
 import labro from './images/desktop/labrador.png';
