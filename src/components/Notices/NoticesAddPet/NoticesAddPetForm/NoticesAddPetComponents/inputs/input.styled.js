@@ -34,12 +34,11 @@ export const CommentsInput = styled(Field)`
   }
 `;
 export const FormAddPet = styled.div`
-  width: 450px;
   margin-bottom: 28px;
   position: relative;
-  @media (max-width: 767px) {
-    width: 300px;
-  }
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const LabelTitle = styled.label`
@@ -74,6 +73,8 @@ export const AddPetFormInput = styled(Field)`
 export const TypeOfAddNav = styled.div`
   margin: -12px;
   margin-bottom: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const Mandatory = styled.span`
