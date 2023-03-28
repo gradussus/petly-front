@@ -33,7 +33,6 @@ const UserPets = () => {
   }, [token]);
 
   const handleAddPet = async (credentials, image) => {
-    console.log(credentials);
     try {
       setStatus('pendingPet');
 
