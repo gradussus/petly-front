@@ -11,6 +11,7 @@ import { AuthForm } from 'components/RegLog/AuthForm/AuthForm';
 import { RedirectLink } from 'components/RegLog/RegisterPage/RedirectLink/RedirectLink';
 import { useState } from 'react';
 import { FisrtStepShema, SecondStepShema } from './Shema';
+import { Wrapper } from './RegisterForm.styled'
 
 let initialValues = {
   email: '',
@@ -44,61 +45,63 @@ export const RegisterForm = () => {
     if (error) toast.error(`${error}`, { theme: 'colored' });
   }, [error]);
 
-  return (
-        <Formik
-          initialValues={initialValues}
-          onSubmit={step === 0 ? firstHandleSubmit : handleSubmit}
-          validationSchema={step === 0 ? FisrtStepShema : SecondStepShema}
-          validateOnChange={false}
-          validateOnBlur={false}
-        >
-          <AuthForm title="Registration">
-            {step === 0 ? 
-            <>
-            <ErrorWrapper>
-            <Input placeholder="Email" type="email" name="email" />
-            <ErrorMessage name="email" component={ErrorMessages} />
-            </ErrorWrapper>
+  return (<Wrapper>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={step === 0 ? firstHandleSubmit : handleSubmit}
+              validationSchema={step === 0 ? FisrtStepShema : SecondStepShema}
+              validateOnChange={false}
+              validateOnBlur={false}
+            >
+              <AuthForm title="Registration">
+                {step === 0 ? 
+                <>
+                <ErrorWrapper>
+                <Input placeholder="Email" type="email" name="email" />
+                <ErrorMessage name="email" component={ErrorMessages} />
+                </ErrorWrapper>
 
-            <ErrorWrapper>
-            <Input placeholder="Password" type="password" name="password" />
-            <ErrorMessage name="password" component={ErrorMessages} />
-            </ErrorWrapper>
+                <ErrorWrapper>
+                <Input placeholder="Password" type="password" name="password" />
+                <ErrorMessage name="password" component={ErrorMessages} />
+                </ErrorWrapper>
 
-            <ErrorWrapper>
-            <Input
-              placeholder="Confirm Password"
-              type="password"
-              name="confirmPassword"
-            />
-            <ErrorMessage name="confirmPassword" component={ErrorMessages} />
-            </ErrorWrapper>
+                <ErrorWrapper>
+                <Input
+                  placeholder="Confirm Password"
+                  type="password"
+                  name="confirmPassword"
+                />
+                <ErrorMessage name="confirmPassword" component={ErrorMessages} />
+                </ErrorWrapper>
 
-            <AccentButton type="submit">Next</AccentButton>
-            </>  
-            :
-            (<>
-            <ErrorWrapper>
-            <Input placeholder="Name" type="text" name="name" />
-            <ErrorMessage name="name" component={ErrorMessages} id='1'/>
-            </ErrorWrapper> 
+                <AccentButton type="submit">Next</AccentButton>
+                </>  
+                :
+                (<>
+                <ErrorWrapper>
+                <Input placeholder="Name" type="text" name="name" />
+                <ErrorMessage name="name" component={ErrorMessages} id='1'/>
+                </ErrorWrapper> 
 
-            <ErrorWrapper>
-            <Input placeholder="City, region" type="text" name="city"/>
-            <ErrorMessage name="city" component={ErrorMessages}  id='2' />
-            </ErrorWrapper>
+                <ErrorWrapper>
+                <Input placeholder="City, region" type="text" name="city"/>
+                <ErrorMessage name="city" component={ErrorMessages}  id='2' />
+                </ErrorWrapper>
 
-            <ErrorWrapper>
-            <Input placeholder="Mobile phone" type="tel" name="phone" />
-            <ErrorMessage name="phone" component={ErrorMessages} id='3' />
-            </ErrorWrapper>
+                <ErrorWrapper>
+                <Input placeholder="Mobile phone" type="tel" name="phone" />
+                <ErrorMessage name="phone" component={ErrorMessages} id='3' />
+                </ErrorWrapper>
 
-            <AccentButton type="submit">Register</AccentButton>
-            <TransparentButton type="button" onClick={() => setStep(0)}>Back</TransparentButton>
-            </>)
-            }
-            <RedirectLink />
-          </AuthForm>
-        </Formik>
+                <AccentButton type="submit">Register</AccentButton>
+                <TransparentButton type="button" onClick={() => setStep(0)}>Back</TransparentButton>
+                </>)
+                }
+                <RedirectLink />
+              </AuthForm>
+            </Formik>
+
+        </Wrapper>
   );
 };

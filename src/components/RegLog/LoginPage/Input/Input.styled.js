@@ -3,6 +3,8 @@ import { theme } from '../../../../theme'
 import { Field } from 'formik';
 
 export const Input = styled(Field)`
+  position: relative;
+  z-index:3;
   width: 100%;
   box-sizing: border-box;
   margin-left:auto;

@@ -37,7 +37,7 @@ export const ItemPetModal = ({
     name,
     birthDate,
     breed,
-    location,    
+    location,
     sex,
     imageURL,
     comments,
@@ -117,19 +117,21 @@ export const ItemPetModal = ({
         <div>The sex:</div>
         <div>{sex}</div>
         <div>Email:</div>
-        <Item href="mailto:{owner?.email}">{owner?.email}</Item>
+        <Item href={`mailto:${owner?.email}`}>{owner?.email}</Item>
         <div>Phone:</div>
-        <Item href="tel: {owner?.phone}">{owner?.phone}</Item>
+        <Item href={`tel:${owner?.phone}`}>{owner?.phone}</Item>
         {price > 0 && (
           <div>
             <div>Price:</div>
           </div>
         )}
         {price > 0 && <div>{price}$</div>}
-      </Box>     
+      </Box>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
-        <BtnContact href="tel: {owner?.phone}">Contact</BtnContact>
+
+        <BtnContact href={`tel:${owner?.phone}`}>Contact</BtnContact>
+
         {isFavorite ? (
           <BtnAdd type="button" onClick={() => handleRemoveFavorite()}>
             Add to <FavoriteSvg fill={'#F59256'} />

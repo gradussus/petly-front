@@ -25,7 +25,7 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<HomePage />}/>
           <Route
             path="register"
             element={<AuthRoutes component={RegisterPage} redirectTo="/user" />}

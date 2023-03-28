@@ -1,0 +1,1 @@
+// export { FooterModal } from './FooterModal';
