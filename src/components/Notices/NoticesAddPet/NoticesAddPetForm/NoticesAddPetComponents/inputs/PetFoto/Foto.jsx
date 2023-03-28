@@ -31,20 +31,18 @@ export const FileInput = () => {
 
         }
  
-
     return (
         <>
-      {!answerData ? (  
-      <>  Load the pet's image
+       Load the pet's image
+          {!answerData ?
         <LabelFile>
-           <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
+        <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
        </LabelFile>
-       </>
-)
-:       <img src={answerData} alt='' width={140} />}
-</>
-     
-      
+         :
+        <LabelFile>
+         <img src={answerData} alt='' width={140} onClick={()=>setAnswerData(null)} />
+       </LabelFile>}
+        </>
     );
   };
 

@@ -11,12 +11,19 @@ export const ErrorWrapper = styled.div`
 export const Border = styled.div`
     width: 100%;
     height: 50px;
-    border: 2px #E2001A solid;
+    outline: 1px #E2001A solid;
     border-radius: ${theme.radii.large};
     position: absolute;
-    top: 0px;
+    top: -0.5px;
     right: 0px;
 
+`
+
+export const Dagger = styled.img`
+    position:absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
 `
 
 export const ErrorMessages = styled.div`

@@ -3,7 +3,8 @@ import * as SC from './ErrorMessages.styled';
 export const ErrorMessages = (props) => {
   return (
   <>
-  {/* <SC.Border/> */}
+  <SC.Dagger src={require("./Error-logo.png")}/>
+  <SC.Border/>
   <SC.ErrorMessages  {...props} />
   
   </>)

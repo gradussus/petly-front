@@ -6,7 +6,6 @@ export const AuthForm = styled(Form)`
 
 margin-left:auto;
 margin-right:auto;
-/* margin-top: 12px; */
 
   width: 100%;
   display: flex;
@@ -25,7 +24,6 @@ margin-right:auto;
     padding: 60px 80px;
 
 
-    /* margin-top: 134px; */
     background: ${theme.colors.white};
 
     width: 608px;
@@ -34,7 +32,6 @@ margin-right:auto;
 
 
 @media screen and (min-width: 1280px){
-    /* margin-top: 60px; */
 
     width: 620px;
   }
