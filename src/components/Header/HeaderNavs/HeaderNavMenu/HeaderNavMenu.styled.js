@@ -2,6 +2,40 @@ import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
 
+export const NavsBody = styled.div`
+  display: none;
+
+  @media (${props => props.theme.media.desktop}) {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  @media (${props => props.theme.media.tablet}) {
+    display: flex;
+    // flex: 1 1 auto;
+  }
+
+  @media (${props => props.theme.media.mobile}) {
+    display: flex;
+    position: absolute;
+    top: -100%;
+    z-index: 989;
+    left: 0;
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: 100%;
+    overflow: scroll;
+    transition: top 0.3s;
+    padding-top: 88px;
+    background: ${props => props.theme.colors.background};
+
+    &.active {
+      display: flex;
+      top: 0;
+    }
+  }
+`;
+
 export const NavMenu = styled.nav`
   display: flex;
   align-items: center;
@@ -47,31 +81,7 @@ export const NavMenu = styled.nav`
   }
 `;
 
-export const NavsBody = styled.div`
-  display: flex;
 
-  @media (${props => props.theme.media.desktop}) {
-    flex: 1 1 auto;
-  }
-
-  @media (${props => props.theme.media.mobile}) {
-    position: absolute;
-    top: -100%;
-    z-index: 989;
-    left: 0;
-    flex-direction: column-reverse;
-    width: 100vw;
-    height: 100%;
-    overflow: scroll;
-    transition: top 0.3s;
-    padding-top: 88px;
-    background: ${props => props.theme.colors.background};
-
-    &.active {
-      top: 0;
-    }
-  }
-`;
 
 export const NavButtons = styled.div`
   display: flex;
