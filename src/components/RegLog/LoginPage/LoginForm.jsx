@@ -9,7 +9,7 @@ import { AccentButton } from './Buttons/Buttons';
 import { AuthForm } from 'components/RegLog/AuthForm/AuthForm';
 import { RedirectLink } from 'components/RegLog/LoginPage/RedirectLink/RedirectLink';
 import { Formik, ErrorMessage } from 'formik';
-import { ErrorMessages } from '../RegisterPage/ErrorMessages/ErrorMessages';
+import { ErrorMessages, ErrorWrapper } from '../RegisterPage/ErrorMessages/ErrorMessages';
 import { LoginValidation } from './Shema';
 
 const initialValues = {
@@ -43,11 +43,15 @@ export const LoginForm = () => {
       handleSubmit
     >
       <AuthForm title="Login" onSubmit={handleSubmit}>
-        <Input placeholder="Email" type="email" name="email" />
-        <ErrorMessage name="email" component={ErrorMessages} />
+        <ErrorWrapper>
+          <Input placeholder="Email" type="email" name="email" />
+          <ErrorMessage name="email" component={ErrorMessages} />
+        </ErrorWrapper>
 
-        <Input placeholder="Password" type="password" name="password" />
-        <ErrorMessage name="password" component={ErrorMessages} />
+        <ErrorWrapper>
+          <Input placeholder="Password" type="password" name="password" />
+          <ErrorMessage name="password" component={ErrorMessages} />
+        </ErrorWrapper>
 
         <AccentButton type="submit">Login</AccentButton>
         <RedirectLink onClick={() => handleSubmit} />
