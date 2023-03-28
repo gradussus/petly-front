@@ -31,7 +31,7 @@ import {
 } from './NoticesAddPetComponents/inputs/input.styled';
 
 
-axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/notices'
+// axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/notices'
 
 let initialValues = {
   title: '',
@@ -63,7 +63,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
   });
 
   const createNewPets = async (token, credentials, image) => {
-    const response = await axios.post('/create',
+    const response = await axios.post('/notices/create',
       {
         image,
         ...credentials,
