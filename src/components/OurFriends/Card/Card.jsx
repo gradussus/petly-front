@@ -66,7 +66,7 @@ export const Card = ({ friends }) => {
                   Email:
                   <br />
                   {email ? (
-                    <FriendsLinkToContacts href="mailto:{address}">
+                    <FriendsLinkToContacts href={`mailto:${address}`}>
                       {email}
                     </FriendsLinkToContacts>
                   ) : (
@@ -77,7 +77,7 @@ export const Card = ({ friends }) => {
                   Phone:
                   <br />
                   {phone ? (
-                    <FriendsLinkToContacts href="tel:{phone}">
+                    <FriendsLinkToContacts href={`tel:${phone}`}>
                       {phone}
                     </FriendsLinkToContacts>
                   ) : (
