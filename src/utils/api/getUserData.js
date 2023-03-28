@@ -30,6 +30,24 @@ export const getUserPets = async token => {
   return response.data;
 };
 
+export const createUserPets = async (token, credentials, image) => {
+  const response = await axios.post(
+    `api/pets/create`,
+    {
+      image,
+      ...credentials,
+    },
+    {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return response.data;
+};
+
 export const removeUserPets = async (token, id) => {
   const response = await axios.delete(`api/pets/${id}`, {
     headers: {

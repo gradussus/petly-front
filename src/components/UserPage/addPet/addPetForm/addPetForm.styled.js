@@ -20,10 +20,10 @@ export const PetFormTitle = styled.div`
 export const PetFormInputBody = styled.div`
   width: 450px;
   margin-bottom: 28px;
+  position: relative;
 
   @media (max-width: 767px) {
     width: 300px;
-    margin-bottom: 16px;
   }
 `;
 
@@ -88,27 +88,6 @@ export const PetFormBack = styled.div`
   @media (max-width: 767px) {
     text-align: center;
     margin-bottom: 12px;
-  }
-
-  @media (min-width: 768px) {
-    &:hover {
-      background: #f59256;
-      color: #fdf7f2;
-    }
-  }
-`;
-
-export const PetFormSuccess = styled.div`
-  cursor: pointer;
-  background: #f59256;
-  border-radius: 40px;
-  padding: 10px 60px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 27px;
-  color: #ffffff;
-  @media (max-width: 767px) {
-    text-align: center;
   }
 
   @media (min-width: 768px) {
@@ -202,5 +181,23 @@ export const PetFormAddImg = styled.div`
     width: 48px;
     position: absolute;
     transform: rotate(90deg);
+  }
+`;
+
+export const PetFormError = styled.div`
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+`;
+
+export const PetFormErrorArea = styled.div`
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+
+  @media (max-width: 767px) {
+    bottom: -75px;
   }
 `;

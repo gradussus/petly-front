@@ -6,6 +6,8 @@ import {
   PetFormAddImg,
   PetFormBack,
   PetFormButtons,
+  PetFormError,
+  PetFormErrorArea,
   PetFormImgBody,
   PetFormImgPreview,
   PetFormImgTitle,
@@ -16,20 +18,22 @@ import {
   PetFormInputImgLabel,
   PetFormInputTitle,
   PetFormSubmit,
-  PetFormSuccess,
   PetFormTitle,
 } from './addPetForm.styled';
 import { toast } from 'react-toastify';
+import * as yup from 'yup';
 
-const initialValues = {
-  petName: '',
-  birthDate: '',
-  breed: '',
-  comments: '',
-};
-const validationSchema = Yup.object().shape({});
+const validationSchemaOne = Yup.object().shape({
+  petName: yup.string().required('petName is required'),
+  birthDate: yup.string().required('birthDate is required'),
+  breed: yup.string().required('breed is required'),
+});
 
-const AddPetForm = ({ setShowModal }) => {
+const validationSchemaTwo = Yup.object().shape({
+  comments: yup.string().required('comments is required'),
+});
+
+const AddPetForm = ({ setShowModal, handleAddPet }) => {
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
@@ -50,22 +54,46 @@ const AddPetForm = ({ setShowModal }) => {
     }
   };
 
-  const handleSubmit = values => {
+  const handleSubmit = (values, { resetForm }) => {
     if (!selectedFile) {
       return toast.error('Add a photo to continue.', {
         theme: 'colored',
       });
     }
-    console.log(values);
+
+    const credentials = {
+      petName: values.petName,
+      birthDate: values.birthDate.split('-').reverse().join('-'),
+      breed: values.breed,
+      comments: values.comments,
+    };
+    handleAddPet(credentials, selectedFile);
+    resetForm();
+    setSelectedFile(null);
+    setImagePreviewUrl(null);
+    setShowModal(false);
+  };
+  let initialValue = {
+    petName: '',
+    birthDate: '',
+    breed: '',
+    comments: '',
+  };
+
+  const firstHandleSubmit = values => {
+    initialValue = { ...values };
+    nextStep();
   };
 
   return (
     <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
+      initialValues={initialValue}
+      validationSchema={step === 1 ? validationSchemaOne : validationSchemaTwo}
+      onSubmit={step === 1 ? firstHandleSubmit : handleSubmit}
+      validateOnChange={false}
+      validateOnBlur={false}
     >
-      {({ isSubmitting }) => (
+      {() => (
         <PetForm>
           <PetFormTitle>Add pet</PetFormTitle>
           <Form>
@@ -73,6 +101,9 @@ const AddPetForm = ({ setShowModal }) => {
               <>
                 <PetFormInputBody>
                   <PetFormInputTitle>Name pet</PetFormInputTitle>
+                  <PetFormError>
+                    <ErrorMessage name="petName" />
+                  </PetFormError>
                   <PetFormInput
                     type="text"
                     name="petName"
@@ -81,6 +112,9 @@ const AddPetForm = ({ setShowModal }) => {
                 </PetFormInputBody>
                 <PetFormInputBody>
                   <PetFormInputTitle>Date of birth</PetFormInputTitle>
+                  <PetFormError>
+                    <ErrorMessage name="birthDate" />
+                  </PetFormError>
                   <PetFormInput
                     type="date"
                     name="birthDate"
@@ -89,6 +123,9 @@ const AddPetForm = ({ setShowModal }) => {
                 </PetFormInputBody>
                 <PetFormInputBody>
                   <PetFormInputTitle>Breed</PetFormInputTitle>
+                  <PetFormError>
+                    <ErrorMessage name="breed" />
+                  </PetFormError>
                   <PetFormInput
                     type="text"
                     name="breed"
@@ -99,7 +136,7 @@ const AddPetForm = ({ setShowModal }) => {
                   <PetFormBack onClick={() => setShowModal(false)}>
                     Cancel
                   </PetFormBack>
-                  <PetFormSuccess onClick={nextStep}>Next</PetFormSuccess>
+                  <PetFormSubmit type="submit">Next</PetFormSubmit>
                 </PetFormButtons>
               </>
             ) : (
@@ -128,6 +165,9 @@ const AddPetForm = ({ setShowModal }) => {
                 </PetFormImgBody>
                 <PetFormInputBody>
                   <PetFormInputTitle>Comments</PetFormInputTitle>
+                  <PetFormErrorArea>
+                    <ErrorMessage name="comments" />
+                  </PetFormErrorArea>
                   <PetFormInputArea>
                     <Field
                       as="textarea"

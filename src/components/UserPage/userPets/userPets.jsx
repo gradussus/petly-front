@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { getUserPets } from '../../../utils/api/getUserData';
+import { createUserPets, getUserPets } from '../../../utils/api/getUserData';
 import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
 
@@ -12,7 +12,7 @@ import AddPet from '../addPet/addPet';
 import Loader from '../../loader/loader';
 
 const UserPets = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   const [status, setStatus] = useState('pending');
 
@@ -32,11 +32,35 @@ const UserPets = () => {
     })();
   }, [token]);
 
+  const handleAddPet = async (credentials, image) => {
+    console.log(credentials);
+    try {
+      setStatus('pendingPet');
+
+      const dataPet = await createUserPets(token, credentials, image);
+      setStatus('fulfilledPet');
+      setData(prev => [...prev, dataPet]);
+    } catch {
+      setStatus('rejectedPet');
+    }
+  };
+
   useEffect(() => {
     if (status === 'rejected') {
       toast.error('Unfortunately, we were unable to obtain user data.', {
         theme: 'colored',
       });
+    }
+    if (status === 'rejectedPet') {
+      toast.error(
+        'Unfortunately, we could not add a pet, please try again or repeat the request later.',
+        {
+          theme: 'colored',
+        }
+      );
+    }
+    if (status === 'fulfilledPet') {
+      toast.success('Pet successfully added.');
     }
   }, [status]);
 
@@ -48,7 +72,7 @@ const UserPets = () => {
     <UserPetsBody>
       <UserPetsHead>
         <div>My pets:</div>
-        <AddPet />
+        <AddPet handleAddPet={handleAddPet} />
       </UserPetsHead>
       {status === 'pending' ? (
         <UserLoader>
