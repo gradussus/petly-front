@@ -89,6 +89,8 @@ const UserForm = ({
           updateUser(values);
         }}
         validationSchema={validationSchema}
+        validateOnChange={false}
+        validateOnBlur={false}
       >
         {({
           values,
