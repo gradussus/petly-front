@@ -170,6 +170,9 @@ export const Item = styled.a`
     line-height: ${p => p.theme.fontWeights.heading};
     color: ${p => p.theme.colors.primeText};
   }
+  &:hover {
+    color: ${p => p.theme.colors.accent};
+  }
 `;
 export const ContainerBtn = styled.div`
   display: flex;
@@ -185,8 +188,10 @@ export const ContainerBtn = styled.div`
   }
 `;
 export const BtnContact = styled.a`
+
   display: flex;
   justify-content: center;
+
   width: 240px;
   padding-top: 9px;
   padding-bottom: 9px;
@@ -199,6 +204,7 @@ export const BtnContact = styled.a`
   border: ${p => p.theme.borders.none};
   cursor: pointer;
   transition: transform 0.3s;
+  text-align: center;
   &:hover {
     transform: scale(1.1);
   }
