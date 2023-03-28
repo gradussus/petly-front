@@ -1,5 +1,5 @@
 import * as SC from './HomePage.styled.js';
-
+import { Footer } from 'components/Footer';
 import heartImg from './images/desktop/heart.png';
 import labro from './images/desktop/labro_desk.png';
 import vectorL from './images/desktop/bg_desk_left.png';
@@ -18,6 +18,7 @@ const HomePage = () => {
     <SC.BackgroundL src={vectorL} alt="background" /> 
     <SC.BackgroundR src={vectorR} alt="background" />
     <SC.BackgroundSm src={vectorSm} alt="background" />
+    <Footer />
   </SC.Home>;
 };
 
