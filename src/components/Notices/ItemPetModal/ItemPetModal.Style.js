@@ -159,11 +159,15 @@ export const Item = styled.a`
   font-size: ${p => p.theme.fontSizes.s};
   line-height: ${p => p.theme.fontWeights.heading};
   color: ${p => p.theme.colors.primeText};
+  transition: color 0.3s;
   @media screen and (min-width: 768px) {
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.fontWeights.heading};
     color: ${p => p.theme.colors.primeText};
+  }
+  &:hover {
+    color: ${p => p.theme.colors.accent};
   }
 `;
 export const ContainerBtn = styled.div`
@@ -179,7 +183,7 @@ export const ContainerBtn = styled.div`
     align-self: end;
   }
 `;
-export const BtnContact = styled.button`
+export const BtnContact = styled.a`
   width: 240px;
   padding-top: 9px;
   padding-bottom: 9px;
@@ -192,6 +196,7 @@ export const BtnContact = styled.button`
   border: ${p => p.theme.borders.none};
   cursor: pointer;
   transition: transform 0.3s;
+  text-align: center;
   &:hover {
     transform: scale(1.1);
   }
