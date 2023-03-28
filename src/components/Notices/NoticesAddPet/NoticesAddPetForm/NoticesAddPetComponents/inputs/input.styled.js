@@ -10,12 +10,34 @@ width: 100%;
 height: 100% */
 `
 export const LabelFileInput = styled.label`
-width: 140px;
-height: 140px;
+padding: 34px;
+text-align: start;
+display: inline-block;
+justify-content: start;
+align-items: center;
+margin-top: 8px;
+/* margin-bottom: 28px; */
+/* width: 140px;
+height: 140px; */
 background: #FDF7F2;
 border-radius: 20px;
+`;
+export const Text = styled.p`
+
+margin: 0;
+margin-top: 20px;
+margin-bottom: 8px;
+text-align: start;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+`;
+export const ContainerImg = styled.div`
+display: flex;
+justify-content: start;
+margin-bottom: 28px;
 margin-right: auto;
-`
+`;
 export const CommentsInput= styled(Field)`
 
   width: 100%;
@@ -33,5 +55,6 @@ export const CommentsInput= styled(Field)`
     /* min-height: 113px;
     width: 448px; */
 }
+
 
 `

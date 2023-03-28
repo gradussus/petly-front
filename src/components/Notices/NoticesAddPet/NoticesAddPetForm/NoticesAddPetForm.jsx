@@ -12,10 +12,22 @@ import React, { useEffect } from 'react';
 import { AddPetForm } from './NoticesAddPetComponents/form';
 import { Input } from '../../../RegLog/LoginPage/Input/Input'
 import { useState } from 'react';
-import { TypeofAddBtn, CancelBtn, Wrapper, NextBtn, TypeOfSexBtn, ActiveTypeOfSexBtn, DoneBtn, TypeofAddBtnActive } from './NoticesAddPetComponents/buttons/buttons'
+import { TypeofAddBtn, CancelBtn, Wrapper, NextBtn, 
+  TypeOfSexBtn, ActiveTypeOfSexBtn, 
+  DoneBtn, TypeofAddBtnActive } from './NoticesAddPetComponents/buttons/buttons'
 import { CommentsInput } from './NoticesAddPetComponents/inputs/input'
 import { FileInput } from './NoticesAddPetComponents/inputs/PetFoto/Foto'
+// import { Container } from '@mui/material';
 // import { AddPetValidation } from "./NoticesAddPetComponents/schema"
+import {
+  Text,
+  Male,
+  Label,
+  ContainerBtn,
+  LabelComments,
+  WrapperModal
+ } from "../NoticesAddPet.styled";
+// import { Container } from '@mui/system';
  
 
 
@@ -107,40 +119,49 @@ const ClickOnSex = (e) => {
           </Wrapper>
           </>):(
           <>
-            <p>The sex</p>
-            <Wrapper>
-            <div>
+            <Text>The sex</Text>
+            <WrapperModal>
+              
+
+              
+              <Male>
               <img src={require("./NoticesAddPetComponents/img/Male.png")} alt="male" width={60} />
               {activeSex === 'male' ? 
               <ActiveTypeOfSexBtn>Male</ActiveTypeOfSexBtn> : 
               <TypeOfSexBtn onClick={ClickOnSex} name='male'>Male</TypeOfSexBtn>}
-            </div>
+            </Male>
             <div>
               <img src={require("./NoticesAddPetComponents/img/female.png")} alt="female" width={60} />
               {activeSex === 'female' ? 
               <ActiveTypeOfSexBtn>Female</ActiveTypeOfSexBtn> : 
               <TypeOfSexBtn onClick={ClickOnSex} name='female'>Female</TypeOfSexBtn>}
             </div>
-            </Wrapper>
+             
+            
+            </WrapperModal>
 
 
-            <label> Location
+            <Label> Location
           <Input placeholder="Location" type="text" name="location"/>
-            </label>
+            </Label>
             {typeOfAddActive === 'sell'? 
-            (<label> Price
+            (<Label> Price
             <Input placeholder="Price" type="text" name="price"/>
-              </label>): null
+              </Label>): null
           }
            <FileInput/>
-            <label> Comments
-          <CommentsInput placeholder="Comments" type="text" name="comments"/>
-            </label>
-
+            <LabelComments> Comments
+          <CommentsInput placeholder="Type breed" type="text" name="comments"/>
+            </LabelComments>
+          
           <Wrapper>
-          <CancelBtn onClick={()=> setStep(0)}>Back</CancelBtn>
-          <DoneBtn>Done</DoneBtn>
-        </Wrapper>
+          <ContainerBtn>
+            <CancelBtn onClick={()=> setStep(0)}>Back</CancelBtn>
+            <DoneBtn>Done</DoneBtn>
+            </ContainerBtn>
+          </Wrapper>
+          
+          
         </>)
           
           }

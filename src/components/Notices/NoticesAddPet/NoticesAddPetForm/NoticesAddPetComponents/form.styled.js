@@ -7,13 +7,13 @@ export const AddPetForm = styled(Form)`
 margin-left:auto;
 margin-right:auto;
 
-width: 100%;
+width: 90vw;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 
-padding: 0px;
+padding: 20px;
 border-radius: ${theme.radii.large};
 background: ${theme.colors.white};
 
@@ -22,7 +22,7 @@ background: ${theme.colors.white};
 text-align: center;
 
 @media screen and (min-width: 768px){
-padding: 60px 80px;
+padding: 40px 80px;
 
     /* margin-top: 134px; */
     background: ${theme.colors.white};
@@ -39,7 +39,7 @@ padding: 60px 80px;
  `;
 
 export const Title = styled.h3`
-margin-bottom: 40px;
+margin-top: 40px;
 
 font-family: ${theme.fonts.body};
 font-weight: ${theme.fontWeights.middle};

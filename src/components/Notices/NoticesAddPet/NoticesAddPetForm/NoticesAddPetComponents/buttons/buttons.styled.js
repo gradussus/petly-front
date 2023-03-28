@@ -26,8 +26,7 @@ export const TypeofAddBtnActive = styled(TypeofAddBtn)`
 `
 
 export const DoneBtn = styled.button`
-
-padding: 10px 28px;
+padding: 9px 101px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
@@ -36,8 +35,8 @@ padding: 10px 28px;
   line-height: 27px;
   transition: all 0.3s;
 
-  margin-right: 20px;
-  width: 180px;
+  
+  
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
 :hover,
@@ -48,8 +47,8 @@ padding: 10px 28px;
 `
 
 export const CancelBtn = styled(TypeofAddBtn)`
-margin-right: 20px;
-width: 180px;
+margin-bottom: 12px;
+padding: 9px 99px;
 `
 export const NextBtn = styled.div`
 
@@ -76,6 +75,7 @@ export const NextBtn = styled.div`
 export const Wrapper = styled.div`
 display:flex;
 max-width: 380px;
+
 `
 
 export const TypeOfSexBtn = styled.button`

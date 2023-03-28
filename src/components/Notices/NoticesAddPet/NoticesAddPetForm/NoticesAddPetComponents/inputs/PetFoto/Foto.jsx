@@ -1,7 +1,11 @@
 import * as SC from '../input.styled';
 
-import { LabelFile } from '../input';
+
 import { useState } from 'react';
+import { ReactComponent as CrossSvg } from '../../img/Cross.svg';
+import {  LabelFile } from '../input';
+ import { Text, ContainerImg } from '../input.styled';
+// import { Container } from '@mui/system';
 // import axios from 'axios';
 
 // const baseURL = 'https://petly-vxdt.onrender.com/notices/create';
@@ -35,10 +39,17 @@ export const FileInput = () => {
     return (
         <>
       {!answerData ? (  
-      <>  Load the pet's image
-        <LabelFile>
-           <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
-       </LabelFile>
+      <>  
+      <Text>Load the pet's image</Text>
+      <ContainerImg>
+      <LabelFile>
+           <CrossSvg/> 
+            </LabelFile>
+      </ContainerImg>
+            
+           <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} >         
+           </SC.FileInput>
+           
        </>
 )
 :       <img src={answerData} alt='' width={140} />}
