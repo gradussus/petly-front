@@ -201,6 +201,7 @@ const NoticesItems = () => {
             favoriteData={favoriteData}
             setFavoriteData={setFavoriteData}
             noticeId={noticeId}
+            
           />
         </ModalSample>
       )}

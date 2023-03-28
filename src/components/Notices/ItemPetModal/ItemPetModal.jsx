@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import { useAuth } from '../../../hooks/useAuth';
+import  getFormattedCategory  from "../../../utils/getFormattedCategory";
 import { addFavorite, removeFavorite } from '../../../utils/api/getNotices';
 import { ReactComponent as FavoriteSvg } from './image/favorite-icon.svg';
 
@@ -16,7 +17,7 @@ import {
   BtnAdd,
   Item,
   Status,
-  ContainerImg,
+  ContainerImg,  
 } from './ItemPetModal.Style';
 
 export const ItemPetModal = ({
@@ -101,7 +102,7 @@ export const ItemPetModal = ({
     <Container>
       <ContainerImg>
         <Image src={imageURL} />
-        <Status> {category} </Status>
+        <Status> {getFormattedCategory(category)} </Status>
       </ContainerImg>
       <Title>{title}</Title>
       <Box>
