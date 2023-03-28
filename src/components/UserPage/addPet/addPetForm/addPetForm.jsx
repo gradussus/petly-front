@@ -24,13 +24,29 @@ import { toast } from 'react-toastify';
 import * as yup from 'yup';
 
 const validationSchemaOne = Yup.object().shape({
-  petName: yup.string().required('petName is required'),
+  petName: yup
+    .string()
+    .required('petName is required')
+    .matches(
+      /^[a-zA-Zа-яА-ЯіІїЇґҐ]+(?: [a-zA-Zа-яА-ЯіІїЇґҐ]+)*$/,
+      'enter valid petName'
+    ),
   birthDate: yup.string().required('birthDate is required'),
-  breed: yup.string().required('breed is required'),
+  breed: yup
+    .string()
+    .required('breed is required')
+    .matches(
+      /^[a-zA-Zа-яА-ЯіІїЇґҐ]+(?: [a-zA-Zа-яА-ЯіІїЇґҐ]+)*$/,
+      'enter valid breed'
+    ),
 });
 
 const validationSchemaTwo = Yup.object().shape({
-  comments: yup.string().required('comments is required'),
+  comments: yup
+    .string()
+    .required('comments is required')
+    .min(8, 'minimum length 8')
+    .max(120, 'maximum length 120'),
 });
 
 const AddPetForm = ({ setShowModal, handleAddPet }) => {
