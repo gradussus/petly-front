@@ -192,22 +192,21 @@ export const BackgroundL = styled.img`
 
   @media (${props => props.theme.media.desktop}) {
     align-items: flex-start;
-    width: calc(100vw - 5%);
+    width: 100vw;
     left: 0;
     bottom: 0;
-    height: calc(100vh - 45%);
+    z-index: 90;
   };
 `;
 
 export const BackgroundR = styled.img`
   position: absolute;
   width: 0px;
-  z-index: 90;
-
+  
   @media (${props => props.theme.media.desktop}) {
-    align-items: flex-start;
-    width: calc(100vw - 75%);
-    height: calc(100vh - 47%);
+    align-items: flex-end;
+    width: calc(100vw - 70%);
+    height: calc(100vh - 45%);
     bottom: 0;
     right: 0;
   };
