@@ -27,7 +27,6 @@ const NoticesItem = ({
   noticesUser,
   setNoticesUser,
 }) => {
-  console.log('first', category)
   return (
     <NoticesItemBody>
       <NoticesFavorite
