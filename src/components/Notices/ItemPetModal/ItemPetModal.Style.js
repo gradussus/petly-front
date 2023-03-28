@@ -159,7 +159,11 @@ export const Item = styled.a`
   font-size: ${p => p.theme.fontSizes.s};
   line-height: ${p => p.theme.fontWeights.heading};
   color: ${p => p.theme.colors.primeText};
-  transition: color 0.3s;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
   @media screen and (min-width: 768px) {
     font-weight: ${p => p.theme.fontWeights.interMiddle};
     font-size: ${p => p.theme.fontSizes.m};
@@ -184,6 +188,10 @@ export const ContainerBtn = styled.div`
   }
 `;
 export const BtnContact = styled.a`
+
+  display: flex;
+  justify-content: center;
+
   width: 240px;
   padding-top: 9px;
   padding-bottom: 9px;

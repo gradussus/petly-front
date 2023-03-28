@@ -1,5 +1,5 @@
 import { Formik, ErrorMessage } from 'formik';
-import { ErrorMessages } from './ErrorMessages/ErrorMessages';
+import { ErrorMessages, ErrorWrapper } from './ErrorMessages/ErrorMessages';
 import { registerNewUser } from '../../../redux/auth/operations';
 import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
@@ -45,55 +45,60 @@ export const RegisterForm = () => {
   }, [error]);
 
   return (
-    <>
-      {step === 0 ? (
         <Formik
           initialValues={initialValues}
-          onSubmit={firstHandleSubmit}
-          validationSchema={FisrtStepShema}
+          onSubmit={step === 0 ? firstHandleSubmit : handleSubmit}
+          validationSchema={step === 0 ? FisrtStepShema : SecondStepShema}
+          validateOnChange={false}
+          validateOnBlur={false}
         >
           <AuthForm title="Registration">
+            {step === 0 ? 
+            <>
+            <ErrorWrapper>
             <Input placeholder="Email" type="email" name="email" />
             <ErrorMessage name="email" component={ErrorMessages} />
+            </ErrorWrapper>
 
+            <ErrorWrapper>
             <Input placeholder="Password" type="password" name="password" />
             <ErrorMessage name="password" component={ErrorMessages} />
+            </ErrorWrapper>
 
+            <ErrorWrapper>
             <Input
               placeholder="Confirm Password"
               type="password"
               name="confirmPassword"
             />
             <ErrorMessage name="confirmPassword" component={ErrorMessages} />
+            </ErrorWrapper>
 
             <AccentButton type="submit">Next</AccentButton>
-            <RedirectLink />
-          </AuthForm>
-        </Formik>
-      ) : (
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleSubmit}
-          validationSchema={SecondStepShema}
-        >
-          <AuthForm title="Registration">
+            </>  
+            :
+            (<>
+            <ErrorWrapper>
             <Input placeholder="Name" type="text" name="name" />
-            <ErrorMessage name="name" component={ErrorMessages} />
+            <ErrorMessage name="name" component={ErrorMessages} id='1'/>
+            </ErrorWrapper> 
 
-            <Input placeholder="City, region" type="text" name="city" />
-            <ErrorMessage name="city" component={ErrorMessages} />
+            <ErrorWrapper>
+            <Input placeholder="City, region" type="text" name="city"/>
+            <ErrorMessage name="city" component={ErrorMessages}  id='2' />
+            </ErrorWrapper>
 
+            <ErrorWrapper>
             <Input placeholder="Mobile phone" type="tel" name="phone" />
-            <ErrorMessage name="phone" component={ErrorMessages} />
+            <ErrorMessage name="phone" component={ErrorMessages} id='3' />
+            </ErrorWrapper>
 
             <AccentButton type="submit">Register</AccentButton>
-            <TransparentButton type="submit" onClick={() => setStep(0)}>
-              Back
-            </TransparentButton>
+            <TransparentButton type="button" onClick={() => setStep(0)}>Back</TransparentButton>
+            </>)
+            }
             <RedirectLink />
           </AuthForm>
         </Formik>
-      )}
-    </>
   );
 };

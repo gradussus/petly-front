@@ -8,9 +8,11 @@ export const Input = styled(Field)`
   margin-left:auto;
   margin-right:auto;
   border-radius: ${theme.radii.large};
-  margin-bottom: 40px;
   padding: 12px 32px;
   border: ${theme.borders.normal};
   background: ${theme.colors.background};
   color: ${theme.colors.primeText};
+  &:focus-visible {
+  outline: none;
+  }
 `;

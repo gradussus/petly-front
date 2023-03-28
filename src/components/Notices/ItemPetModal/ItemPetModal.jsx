@@ -128,7 +128,9 @@ export const ItemPetModal = ({
       </Box>
       <Text>Comments: {comments}</Text>
       <ContainerBtn>
+
         <BtnContact href={`tel:${owner?.phone}`}>Contact</BtnContact>
+
         {isFavorite ? (
           <BtnAdd type="button" onClick={() => handleRemoveFavorite()}>
             Add to <FavoriteSvg fill={'#F59256'} />
