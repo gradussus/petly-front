@@ -4,7 +4,6 @@ import { theme } from '../../../../theme'
 export const ErrorWrapper = styled.div`
     width: 100%;
     position: relative;
-
     margin-bottom: 40px;
 
 `
@@ -23,7 +22,7 @@ export const Dagger = styled.img`
     position:absolute;
     top: 15px;
     right: 20px;
-    z-index: 999;
+    z-index: 4;
 `
 
 export const ErrorMessages = styled.div`
@@ -35,7 +34,7 @@ export const ErrorMessages = styled.div`
     text-align:start;
     color: #E2001A;
     position: absolute;
-    z-index: 999;
+    z-index: 2;
     top: 55px;
     right: -32px;
     width: 100%;

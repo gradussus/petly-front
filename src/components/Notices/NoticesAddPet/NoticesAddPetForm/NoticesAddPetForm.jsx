@@ -1,17 +1,14 @@
 // import { Formik, ErrorMessage, Field } from 'formik';
 import { Formik } from 'formik';
-
 // import { ErrorMessages } from './ErrorMessages/ErrorMessages';
-// import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import React, { useEffect } from 'react';
 
-// import React from 'react';
-
-// import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { AddPetForm } from './NoticesAddPetComponents/form';
 import { Input } from '../../../RegLog/LoginPage/Input/Input';
 import { useState } from 'react';
+import { useAuth } from '../../../../hooks/useAuth';
 import {
   TypeofAddBtn,
   CancelBtn,
@@ -33,6 +30,9 @@ import {
   Mandatory,
 } from './NoticesAddPetComponents/inputs/input.styled';
 
+
+axios.defaults.baseURL = 'https://petly-vxdt.onrender.com/notices'
+
 let initialValues = {
   title: '',
   namePet: '',
@@ -45,9 +45,11 @@ let initialValues = {
 };
 
 export const NoticesAddPetForm = ({ toggleModal }) => {
+  const { token } = useAuth();
   const [step, setStep] = useState(0);
   const [activeSex, setActiveSex] = useState('male');
   const [typeOfAddActive, seTypeOfAddActive] = useState('sell');
+  const [image, setFile] = useState(null);
 
   useEffect(() => {
     const close = e => {
@@ -60,42 +62,66 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
     return () => window.removeEventListener('keydown', close);
   });
 
-  const handleSubmit = (
-    { title, namePet, birth, breed, location, price, file, comments },
-    { resetForm }
-  ) => {
+  const createNewPets = async (token, credentials, image) => {
+    const response = await axios.post('/create',
+      {
+        image,
+        ...credentials,
+      },
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  
+    return response.data;
+  };
+
+  const handleSubmit = ({title, namePet, birth, breed, location, price, comments} , { resetForm }) => {
+    console.log({title, namePet, birth, breed, location, price, comments});
     let birthDate = '';
-    if (title && namePet && birth && breed && location && comments) {
-      birthDate = birth.split('-').reverse().join('.');
-      const data = {
-        birthDate,
-        title,
-        namePet,
-        breed,
-        location,
-        price,
-        file,
-        comments,
-        sex: activeSex,
-        category: typeOfAddActive,
-      };
-      console.log(data);
-    } else {
-      toast.error('Please fill correct all fields', { theme: 'colored' });
-    }
+    const convNumber = Number(price)
+
+    if (title && namePet && birth && breed && location && comments){
+     birthDate = birth.split('-').reverse().join('.');
+     
+     const data = {birthDate,title, name: namePet, breed, location, price: convNumber, comments,sex: activeSex, category: typeOfAddActive};
+     console.log(data);
+     
+    createNewPets(token, data, image);
     resetForm();
+    toggleModal();
+  } else {
+    toast.error('Please fill correct all fields', { theme: 'colored' })
+  }
+
+    
   };
   const ClickOnSex = e => {
     setActiveSex(e.target.name);
   };
 
-  const onTypeOfClick = e => {
-    seTypeOfAddActive(e.target.name);
-  };
+  const onTypeOfClick = (e) => {
+    const type = e.target.name;
+    switch (type) {
+      case 'sell':
+        seTypeOfAddActive(type);
+        break;
+    
+      case 'lost/found':
+        seTypeOfAddActive("lost-found");
+        break;
+      case 'in good hands':
+        seTypeOfAddActive("for-free");
+        break;
+    
+      default:
+        seTypeOfAddActive("for-free");
+    }
 
-  //   useEffect(() => {
-  //     if (error) toast.error(`${error}`, { theme: 'colored' });
-  //   }, [error]);
+ }
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
@@ -215,7 +241,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                 <Input placeholder="Price" type="text" name="price" />
               </label>
             ) : null}
-            <FileInput />
+            <FileInput setToFormFile={setFile}/>
             <label>
               {' '}
               Comments
