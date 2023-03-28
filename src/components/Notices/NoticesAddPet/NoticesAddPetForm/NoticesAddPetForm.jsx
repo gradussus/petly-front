@@ -145,7 +145,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                 name="namePet"
               />
             </FormAddPet>
-
             <FormAddPet>
               <LabelTitle htmlFor="birth">Date of birth</LabelTitle>
               <AddPetFormInput
@@ -154,7 +153,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                 name="birth"
               />
             </FormAddPet>
-
             <FormAddPet>
               <LabelTitle htmlFor="breed">Breed</LabelTitle>
               <AddPetFormInput
