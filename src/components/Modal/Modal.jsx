@@ -6,39 +6,38 @@ import { useEffect, useRef } from 'react';
 const modalRoot = document.querySelector('#modal-root');
 
 export const ModalSample = ({ toggleModal, children }) => {
+  const modalRef = useRef();
 
-const modalRef = useRef()
-  document.body.style.overflow = "hidden";
-  useEffect(() =>{
-    const close = (e) => {
-        if(e.code === 'Escape'){            
-        toggleModal()
-        }
-      }
-      window.addEventListener('keydown', close)
-    return () => window.removeEventListener('keydown', close)
-})
   useEffect(() => {
-    
+    document.body.style.overflow = "hidden";
+    const close = (e) => {
+      if(e.code === 'Escape'){            
+        toggleModal()
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [toggleModal]);
+
+  useEffect(() => {
     const closeModal = e => {
-     
       if (!modalRef.current.contains(e.target)) {
         toggleModal();       
       }
     };
     window.addEventListener('mousedown', closeModal);
     return () => window.removeEventListener('mousedown', closeModal);
-  });
+  }, [toggleModal]);
 
   function handleBackdropClick(e) {
     if (e.target === e.currentTarget) {
       toggleModal();
     }
   }
+
   return createPortal(
     <ModalBackdrop onClick={handleBackdropClick}>
-      <ModalContent>
-
+      <ModalContent ref={modalRef}>
         <BtnClose type="button" onClick={toggleModal}>
           <Cross/>
         </BtnClose>
