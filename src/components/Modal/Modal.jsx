@@ -35,6 +35,12 @@ export const ModalSample = ({ toggleModal, children }) => {
     }
   }
 
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return createPortal(
     <ModalBackdrop onClick={handleBackdropClick}>
       <ModalContent ref={modalRef}>
