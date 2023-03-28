@@ -2,12 +2,8 @@ import * as SC from '../input.styled';
 
 import { LabelFile } from '../input';
 import { useState } from 'react';
-// import axios from 'axios';
 
-// const baseURL = 'https://petly-vxdt.onrender.com/notices/create';
-
-
-export const FileInput = () => {
+export const FileInput = ({setToFormFile}) => {
     const [answerData, setAnswerData] = useState(null);
 
 
@@ -21,6 +17,7 @@ export const FileInput = () => {
 
           reader.onloadend = function () {
             setAnswerData(reader.result);
+            setToFormFile(file);
           }
 
           if (file) {
@@ -45,17 +42,3 @@ export const FileInput = () => {
         </>
     );
   };
-
-
-     // const uploadFunction = async () =>{
-    //     if (!selectedFile){
-    //         return alert("Please select a file")
-    //     }
-    //         let response = await fetch(baseURL, {
-    //           method: 'POST',
-    //           body: new FormData(selectedFile)
-    //         });
-        
-    //         let result = await response.json();
-    //         console.log(result);
-    // }
