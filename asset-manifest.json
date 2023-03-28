@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/petly-front/static/css/main.b91724bd.css",
-    "main.js": "/petly-front/static/js/main.7fa67cb5.js",
-    "static/js/403.0188f7a7.chunk.js": "/petly-front/static/js/403.0188f7a7.chunk.js",
+    "main.js": "/petly-front/static/js/main.e2e8b23f.js",
+    "static/css/169.cd4a0ddb.chunk.css": "/petly-front/static/css/169.cd4a0ddb.chunk.css",
+    "static/js/169.2082ac32.chunk.js": "/petly-front/static/js/169.2082ac32.chunk.js",
     "static/js/712.71826674.chunk.js": "/petly-front/static/js/712.71826674.chunk.js",
     "static/js/664.6eadd940.chunk.js": "/petly-front/static/js/664.6eadd940.chunk.js",
     "static/js/604.a9f93967.chunk.js": "/petly-front/static/js/604.a9f93967.chunk.js",
@@ -20,8 +21,20 @@
     "static/media/bg_tablet.png": "/petly-front/static/media/bg_tablet.beb92b38f15f8671f168.png",
     "static/media/labro_desk.png": "/petly-front/static/media/labro_desk.232abbab4437beed4d14.png",
     "static/media/bg_desk_left.png": "/petly-front/static/media/bg_desk_left.33bc8592a5111f005e72.png",
+    "static/media/fedor.jpg": "/petly-front/static/media/fedor.51830c3d048a4c4061a0.jpg",
     "static/media/bg_desk_right.png": "/petly-front/static/media/bg_desk_right.9a45c379451db3570469.png",
+    "static/media/mykola.jpg": "/petly-front/static/media/mykola.8adc7ae2aee4c369fa0a.jpg",
     "static/media/bgi-mobile.png": "/petly-front/static/media/bgi-mobile.7e3b7147b440cea8d08d.png",
+    "static/media/andrii.jpg": "/petly-front/static/media/andrii.bcd19946b1d408641efb.jpg",
+    "static/media/vitalii.jpg": "/petly-front/static/media/vitalii.aaed51cc68f73310c83c.jpg",
+    "static/media/oleksandr.jpg": "/petly-front/static/media/oleksandr.fc402faebe076eade208.jpg",
+    "static/media/maks.jpg": "/petly-front/static/media/maks.88f383bcc89de7436637.jpg",
+    "static/media/oleg.jpg": "/petly-front/static/media/oleg.70b2caf94eeeb9326ea6.jpg",
+    "static/media/ivan.jpg": "/petly-front/static/media/ivan.90e0e4290508fcf1499e.jpg",
+    "static/media/darina.jpg": "/petly-front/static/media/darina.df1fbd8f445cd9ed4865.jpg",
+    "static/media/serhiiSl.jpg": "/petly-front/static/media/serhiiSl.4578c2a532c7b45a8234.jpg",
+    "static/media/olena.jpg": "/petly-front/static/media/olena.0d77a5296d97ca83d198.jpg",
+    "static/media/natali.jpg": "/petly-front/static/media/natali.f8a96123f8c17f477a0c.jpg",
     "static/media/favorite-icon.svg": "/petly-front/static/media/favorite-icon.fb6393a20eabcbbed90b6004da892056.svg",
     "static/media/icon-delete.svg": "/petly-front/static/media/icon-delete.3f9968c8cab5a611c4cabd815f29fd24.svg",
     "static/media/remove.svg": "/petly-front/static/media/remove.58d3e3e157f77824df59484249f1b2b7.svg",
@@ -36,8 +49,9 @@
     "static/media/removeSearch.svg": "/petly-front/static/media/removeSearch.8e44172cf3df32c550767c93f355945a.svg",
     "static/media/logout.svg": "/petly-front/static/media/logout.6ff845014dd5c03939177294b6b9279f.svg",
     "main.b91724bd.css.map": "/petly-front/static/css/main.b91724bd.css.map",
-    "main.7fa67cb5.js.map": "/petly-front/static/js/main.7fa67cb5.js.map",
-    "403.0188f7a7.chunk.js.map": "/petly-front/static/js/403.0188f7a7.chunk.js.map",
+    "main.e2e8b23f.js.map": "/petly-front/static/js/main.e2e8b23f.js.map",
+    "169.cd4a0ddb.chunk.css.map": "/petly-front/static/css/169.cd4a0ddb.chunk.css.map",
+    "169.2082ac32.chunk.js.map": "/petly-front/static/js/169.2082ac32.chunk.js.map",
     "712.71826674.chunk.js.map": "/petly-front/static/js/712.71826674.chunk.js.map",
     "664.6eadd940.chunk.js.map": "/petly-front/static/js/664.6eadd940.chunk.js.map",
     "604.a9f93967.chunk.js.map": "/petly-front/static/js/604.a9f93967.chunk.js.map",
@@ -52,6 +66,6 @@
   },
   "entrypoints": [
     "static/css/main.b91724bd.css",
-    "static/js/main.7fa67cb5.js"
+    "static/js/main.e2e8b23f.js"
   ]
 }
