@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-display: none;
-@media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    backdrop-filter: blur(20px);
-    background: hsla(0,0%,100%,.1);
-    bottom: 0;
-    left: 0;
-    box-shadow: -1px -5px 10px -1px rgba(0,0,0,.5);
-    display: flex;
-    font-size: 14px;
-    height: 30px;
-    position: fixed;
-    width: 100vw;
-    z-index: 1001;
-};  
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        backdrop-filter: blur(20px);
+        background: hsla(0,0%,100%,.1);
+        bottom: 0;
+        left: 0;
+        box-shadow: -1px -5px 10px -1px rgba(0,0,0,.5);
+        display: flex;
+        font-size: 14px;
+        height: 30px;
+        position: fixed;
+        width: 100vw;
+        z-index: 1001;
+    };  
 `;
 
 export const FooterSection = styled.div`
@@ -79,22 +79,18 @@ export const TeamWrapper = styled.div`
 
     @media screen and (min-width: 460px) {
         width: 360px;
-    }
-
+    };
     @media screen and (max-width: (768px - 1)) {
         width: 420px;
-    }
-
+    };
     @media screen and (min-width: 768px) {
         margin: -30px;
         width: 480px;
         border-radius: 25px;
-    }
-
+    };
     @media screen and (min-width: 1280px) {
-        margin: -30px;
         width: 480px;
-    }
+    };
 `;
 
 export const TeamCard = styled.div`
@@ -102,20 +98,25 @@ export const TeamCard = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: inherit;
     margin: 10px 15px;
     width: calc((100% - 60px) / 2);
+
     @media screen and (min-width: 768px) {
         width: calc((100% - 120px) / 4);
-    }
-
+    };
     @media screen and (min-width: 1280px) {
-        margin: 20px;
+        margin: 10px 20px;
         width: calc((100% - 160px) / 4);
-    }
+    };
     &:hover {
-        transform: translate(5px, 15px);
-        }
-`;   
+        transform: translate(5px, 5px);
+    };
+`; 
+
+export const TeamLink = styled.a`
+color: #000;
+`
 
 export const TeamImage = styled.img`
     z-index: 100;
@@ -127,37 +128,16 @@ export const TeamImage = styled.img`
 `;
 
 export const TeamName = styled.p`
-margin-bottom: 5px;
-
+    margin-bottom: 5px;
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 `;
 
 export const TeamRole = styled.p`
-font-family: 'Roboto', sans-serif;
-
+    font-family: 'Roboto', sans-serif;
+    color: #545454;
     @media screen and (max-width: (768px - 1)) {
         font-size: 14px;
-    }
-
-    color: #545454;
+    };
 `;
-
-// export const Github = styled.svg`
-// @media screen and (max-width: (1280px - 1)) {
-//     display: none;
-// }
-
-// z-index: 50;
-// position: absolute;
-// top: 93px;
-// left: 90px;  
-
-// transform: translate(0px, 0px);
-// transition: transform, 250ms cubic-bezier(0.4, 0, 0.2, 1);
-// &:hover {
-
-//     transform: translate(15px, 55px);
-
-// }
-// `;

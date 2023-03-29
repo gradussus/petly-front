@@ -26,7 +26,6 @@
     border-radius: 15px;
     transform: scale(0.5);
     transition: 0.4s all;
-    scroll-behavior: unset;
 }
 
 .modal__content.active {
