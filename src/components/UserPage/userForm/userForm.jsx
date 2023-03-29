@@ -148,6 +148,7 @@ const UserForm = ({
                 onBlur={handleBlur}
                 value={values.birthDate ? values.birthDate : ''}
                 disabled={targetInput !== 'birthDate'}
+                max={new Date().toISOString().split("T")[0]}
               />
               <FormButtons
                 error={errors?.birthDate}
