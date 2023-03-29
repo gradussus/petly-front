@@ -87,7 +87,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
   };
 
   const handleSubmit = ({title, namePet, birth, breed, location, price, comments} , { resetForm }) => {
-    console.log({title, namePet, birth, breed, location, price, comments});
     let birthDate = '';
     const convNumber = Number(price)
 
@@ -95,7 +94,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
      birthDate = birth.split('-').reverse().join('.');
 
      const data = {birthDate,title, name: namePet, breed, location, price: convNumber, comments,sex: activeSex, category: typeOfAddActive};
-     console.log(data);
 
     createNewPets(token, data, image);
     resetForm();

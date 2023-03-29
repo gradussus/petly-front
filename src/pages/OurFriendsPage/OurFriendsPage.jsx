@@ -10,7 +10,6 @@ const OurFriendsPage = () => {
   const [friends, setFriends] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // console.log(friends)
 
   useEffect(() => {
     async function fetch() {
@@ -19,7 +18,6 @@ const OurFriendsPage = () => {
         const response = await getFriends();
         setFriends(response);
       } catch (error) {
-        console.log(error.message);
       } finally {
         setIsLoading(false);
       }
