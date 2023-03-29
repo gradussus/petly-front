@@ -32,7 +32,7 @@ export const TypeofAddBtnActive = styled(TypeofAddBtn)`
 
 export const DoneBtn = styled.button`
   margin-top: 12px;
-  padding: 9px 60px;
+  padding: 9px 99px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
@@ -56,9 +56,14 @@ export const DoneBtn = styled.button`
 `;
 
 export const CancelBtn = styled(TypeofAddBtn)`
-  width: 180px;
-  padding: 9px 28px;
-  margin-left: 0;
+  /* width: 180px; */
+  padding: 9px 92px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-left: 0; */
+  @media screen and (min-width: 768px) {
+    padding: 9px 65px;
+  }
 `;
 // export const BackBtn = styled(TypeofAddBtn)`
 //   padding: 9px 101px;
@@ -69,7 +74,7 @@ export const CancelBtn = styled(TypeofAddBtn)`
 // `;
 export const NextBtn = styled.button`
   margin-top: 12px;
-  padding: 9px 60px;
+  padding: 9px 101px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
@@ -85,6 +90,10 @@ export const NextBtn = styled.button`
   :hover,
   &.active {
     background: ${theme.colors.backgroundSecondary};
+  }
+  @media screen and (min-width: 768px) {
+    padding: 9px 45px;
+    margin-left: 20px;
   }
 `;
 

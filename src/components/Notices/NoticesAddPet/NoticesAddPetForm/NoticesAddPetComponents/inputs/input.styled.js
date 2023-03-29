@@ -17,7 +17,7 @@ export const LabelFileInput = styled.label`
   margin-right: auto;
   padding: 36px;
 `;
-export const CommentsInput = styled.textarea`
+export const CommentsInput = styled(Field)`
   width: 100%;
   
   box-sizing: border-box;
