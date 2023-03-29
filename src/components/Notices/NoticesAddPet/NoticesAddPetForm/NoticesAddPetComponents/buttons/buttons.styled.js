@@ -31,18 +31,13 @@ export const TypeofAddBtnActive = styled(TypeofAddBtn)`
 `;
 
 export const DoneBtn = styled.button`
+  margin-top: 12px;
   padding: 9px 60px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
-  font-weight: 500;
   font-size: 20px;
-  line-height: 27px;
   transition: all 0.3s;
-  margin-top: 12px;
-
-  /* margin-right: 20px;
-  width: 180px; */
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
   cursor: pointer;

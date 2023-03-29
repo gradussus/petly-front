@@ -263,7 +263,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
             <Wrapper>
             <ContainerBtn>
               <CancelBtn onClick={() => setStep(0)}>Back</CancelBtn>
-              <NextBtn>Done</NextBtn>
+              <DoneBtn>Done</DoneBtn>
               </ContainerBtn>
             </Wrapper>
           </>
