@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/petly-front/static/css/main.b91724bd.css",
-    "main.js": "/petly-front/static/js/main.0af07965.js",
-    "static/css/169.669d5aec.chunk.css": "/petly-front/static/css/169.669d5aec.chunk.css",
-    "static/js/169.02669a42.chunk.js": "/petly-front/static/js/169.02669a42.chunk.js",
+    "main.js": "/petly-front/static/js/main.6e017130.js",
+    "static/css/169.4d90df21.chunk.css": "/petly-front/static/css/169.4d90df21.chunk.css",
+    "static/js/169.9cff3530.chunk.js": "/petly-front/static/js/169.9cff3530.chunk.js",
     "static/js/712.4d310e29.chunk.js": "/petly-front/static/js/712.4d310e29.chunk.js",
     "static/js/664.6eadd940.chunk.js": "/petly-front/static/js/664.6eadd940.chunk.js",
     "static/js/604.a9f93967.chunk.js": "/petly-front/static/js/604.a9f93967.chunk.js",
@@ -52,9 +52,9 @@
     "static/media/removeSearch.svg": "/petly-front/static/media/removeSearch.8e44172cf3df32c550767c93f355945a.svg",
     "static/media/logout.svg": "/petly-front/static/media/logout.6ff845014dd5c03939177294b6b9279f.svg",
     "main.b91724bd.css.map": "/petly-front/static/css/main.b91724bd.css.map",
-    "main.0af07965.js.map": "/petly-front/static/js/main.0af07965.js.map",
-    "169.669d5aec.chunk.css.map": "/petly-front/static/css/169.669d5aec.chunk.css.map",
-    "169.02669a42.chunk.js.map": "/petly-front/static/js/169.02669a42.chunk.js.map",
+    "main.6e017130.js.map": "/petly-front/static/js/main.6e017130.js.map",
+    "169.4d90df21.chunk.css.map": "/petly-front/static/css/169.4d90df21.chunk.css.map",
+    "169.9cff3530.chunk.js.map": "/petly-front/static/js/169.9cff3530.chunk.js.map",
     "712.4d310e29.chunk.js.map": "/petly-front/static/js/712.4d310e29.chunk.js.map",
     "664.6eadd940.chunk.js.map": "/petly-front/static/js/664.6eadd940.chunk.js.map",
     "604.a9f93967.chunk.js.map": "/petly-front/static/js/604.a9f93967.chunk.js.map",
@@ -68,6 +68,6 @@
   },
   "entrypoints": [
     "static/css/main.b91724bd.css",
-    "static/js/main.0af07965.js"
+    "static/js/main.6e017130.js"
   ]
 }
