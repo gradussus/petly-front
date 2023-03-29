@@ -1,50 +1,46 @@
 import styled from 'styled-components';
-import { theme } from '../../../../../theme'
-import { Form } from 'formik';
+import { theme } from '../../../../../theme';
 
-export const AddPetForm = styled(Form)`
+export const AddPetForm = styled.div`
+  margin-left: auto;
+  margin-right: auto;
 
-margin-left:auto;
-margin-right:auto;
+  width: 90vw;
 
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  padding: 20px;
+  border-radius: ${theme.radii.large};
+  background: ${theme.colors.white};
 
-padding: 20px;
-border-radius: ${theme.radii.large};
-background: ${theme.colors.white};
+  /* background: transparent; */
 
-/* background: transparent; */
+  text-align: center;
 
-text-align: center;
-
-@media screen and (min-width: 768px){
-padding: 40px 80px;
+  @media screen and (min-width: 768px) {
+    padding: 40px 80px;
 
     /* margin-top: 134px; */
     background: ${theme.colors.white};
     width: 608px;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
-}
+  }
 
-@media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     /* margin-top: 60px; */
     width: 620px;
-
-}
-
- `;
+  }
+`;
 
 export const Title = styled.h3`
-margin-bottom: 40px;
+  margin-bottom: 40px;
 
-font-family: ${theme.fonts.body};
-font-weight: ${theme.fontWeights.middle};
-font-size: ${theme.fontSizes.l};
-line-height: 49px;
-letter-spacing: 0.04em;
-`
+  font-family: ${theme.fonts.body};
+  font-weight: ${theme.fontWeights.middle};
+  font-size: ${theme.fontSizes.l};
+  line-height: 49px;
+  letter-spacing: 0.04em;
+`;
