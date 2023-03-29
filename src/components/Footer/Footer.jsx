@@ -53,10 +53,10 @@ export const Footer = () => {
                         </a>
                     </SC.TeamCard>
                     <SC.TeamCard>
-                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
-                            <SC.TeamImage src={volodymyrUrl} loading="lazy" alt="Volodymyr"/>
-                            <SC.TeamName>Volodymyr</SC.TeamName>
-                            <SC.TeamRole>Team Lead QA</SC.TeamRole>
+                        <a href="https://github.com/Ghozzty" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={fedirUrl} loading="lazy" alt="Fedir"/>
+                            <SC.TeamName>Fedir</SC.TeamName>
+                            <SC.TeamRole>Developer</SC.TeamRole>
                         </a>
                     </SC.TeamCard>
                     <SC.TeamCard>
@@ -116,10 +116,10 @@ export const Footer = () => {
                         </a>
                     </SC.TeamCard>
                     <SC.TeamCard>
-                        <a href="https://github.com/Ghozzty" target="_blank" rel="noreferrer" class="team-link">
-                            <SC.TeamImage src={fedirUrl} loading="lazy" alt="Fedir"/>
-                            <SC.TeamName>Fedir</SC.TeamName>
-                            <SC.TeamRole>Developer</SC.TeamRole>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={volodymyrUrl} loading="lazy" alt="Volodymyr"/>
+                            <SC.TeamName>Volodymyr</SC.TeamName>
+                            <SC.TeamRole>Team Lead QA</SC.TeamRole>
                         </a>
                     </SC.TeamCard>
                     <SC.TeamCard>
