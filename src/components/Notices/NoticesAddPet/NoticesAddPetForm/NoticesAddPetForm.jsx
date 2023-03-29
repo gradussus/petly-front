@@ -254,7 +254,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
               Comments
               </LabelComments>
               <CommentsInput
-                placeholder="Type breed"
+                placeholder="Type comment"
                 type="text"
                 name="comments"
               />

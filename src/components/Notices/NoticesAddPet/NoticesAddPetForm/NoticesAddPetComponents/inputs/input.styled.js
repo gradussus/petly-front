@@ -19,7 +19,7 @@ export const LabelFileInput = styled.label`
 `;
 export const CommentsInput = styled.textarea`
   width: 100%;
-  height: 113px;
+  
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -32,7 +32,7 @@ export const CommentsInput = styled.textarea`
   color: ${theme.colors.primeText};
 
   @media screen and (min-width: 768px) {
-    height: 80px;
+    height: 113px;
     /* min-height: 113px;
     width: 448px; */
   }
