@@ -15,6 +15,7 @@ export const LabelFileInput = styled.label`
   background: #fdf7f2;
   border-radius: 20px;
   margin-right: auto;
+  padding: 36px;
 `;
 export const CommentsInput = styled(Field)`
   width: 100%;
@@ -80,3 +81,20 @@ export const TypeOfAddNav = styled.div`
 export const Mandatory = styled.span`
   color: ${p => p.theme.colors.activeAccent};
 `;
+export const Text = styled.p`
+
+margin: 0;
+margin-top: 20px;
+margin-bottom: 8px;
+text-align: start;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+`;
+export const ContainerImg = styled.div`
+display: flex;
+justify-content: start;
+margin-bottom: 28px;
+margin-right: auto;
+`;
+

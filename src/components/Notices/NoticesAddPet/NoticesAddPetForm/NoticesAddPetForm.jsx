@@ -29,6 +29,13 @@ import {
   TypeOfAddNav,
   Mandatory,
 } from './NoticesAddPetComponents/inputs/input.styled';
+import {
+  Text,
+  Male,
+  Label,
+  ContainerBtn,
+  LabelComments,
+ } from "../NoticesAddPet.styled";
 
 
 axios.defaults.baseURL = 'https://petly-vxdt.onrender.com'
@@ -197,9 +204,9 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
           </>
         ) : (
           <>
-            <p>The sex</p>
+            <Text>The sex</Text>
             <Wrapper>
-              <div>
+              <Male>
                 <img
                   src={require('./NoticesAddPetComponents/img/Male.png')}
                   alt="male"
@@ -212,7 +219,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                     Male
                   </TypeOfSexBtn>
                 )}
-              </div>
+              </Male>
               <div>
                 <img
                   src={require('./NoticesAddPetComponents/img/female.png')}
@@ -229,32 +236,34 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
               </div>
             </Wrapper>
 
-            <label>
+            <Label>
               {' '}
               Location
               <Input placeholder="Location" type="text" name="location" />
-            </label>
+            </Label>
             {typeOfAddActive === 'sell' ? (
-              <label>
+              <Label>
                 {' '}
                 Price
                 <Input placeholder="Price" type="text" name="price" />
-              </label>
+              </Label>
             ) : null}
             <FileInput setToFormFile={setFile}/>
-            <label>
+            <LabelComments>
               {' '}
               Comments
               <CommentsInput
-                placeholder="Comments"
+                placeholder="Type breed"
                 type="text"
                 name="comments"
               />
-            </label>
+            </LabelComments>
 
             <Wrapper>
+            <ContainerBtn>
               <CancelBtn onClick={() => setStep(0)}>Back</CancelBtn>
               <DoneBtn>Done</DoneBtn>
+              </ContainerBtn>
             </Wrapper>
           </>
         )}
