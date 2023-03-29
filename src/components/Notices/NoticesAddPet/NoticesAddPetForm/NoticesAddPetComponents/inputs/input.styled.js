@@ -15,9 +15,11 @@ export const LabelFileInput = styled.label`
   background: #fdf7f2;
   border-radius: 20px;
   margin-right: auto;
+  padding: 36px;
 `;
-export const CommentsInput = styled(Field)`
+export const CommentsInput = styled.textarea`
   width: 100%;
+  height: 113px;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -29,6 +31,7 @@ export const CommentsInput = styled(Field)`
   color: ${theme.colors.primeText};
 
   @media screen and (min-width: 768px) {
+    height: 80px;
     /* min-height: 113px;
     width: 448px; */
   }
@@ -80,3 +83,25 @@ export const TypeOfAddNav = styled.div`
 export const Mandatory = styled.span`
   color: ${p => p.theme.colors.activeAccent};
 `;
+export const Text = styled.p`
+
+margin: 0;
+margin-top: 20px;
+margin-bottom: 8px;
+text-align: start;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
+`;
+
+
+export const ContainerImg = styled.div`
+display: flex;
+justify-content: start;
+margin-bottom: 28px;
+margin-right: auto;
+`;
+

@@ -2,6 +2,9 @@ import * as SC from '../input.styled';
 
 import { LabelFile } from '../input';
 import { useState } from 'react';
+import { ReactComponent as CrossSvg } from '../../img/Cross.svg';
+
+import { Text } from '../input.styled';
 
 export const FileInput = ({setToFormFile}) => {
     const [answerData, setAnswerData] = useState(null);
@@ -30,13 +33,16 @@ export const FileInput = ({setToFormFile}) => {
  
     return (
         <>
-       Load the pet's image
+        <Text>Load the pet's image</Text>
+       
           {!answerData ?
         <LabelFile>
+          <CrossSvg/> 
         <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
        </LabelFile>
          :
         <LabelFile>
+          
          <img src={answerData} alt='' width={140} onClick={()=>setAnswerData(null)} />
        </LabelFile>}
         </>

@@ -8,12 +8,13 @@ margin-left:auto;
 margin-right:auto;
 
 width: 100%;
+
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 
-padding: 0px;
+padding: 20px;
 border-radius: ${theme.radii.large};
 background: ${theme.colors.white};
 
@@ -22,7 +23,7 @@ background: ${theme.colors.white};
 text-align: center;
 
 @media screen and (min-width: 768px){
-padding: 60px 80px;
+padding: 40px 80px;
 
     /* margin-top: 134px; */
     background: ${theme.colors.white};

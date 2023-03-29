@@ -54,3 +54,66 @@ export const NoticesAddPetButton = styled.button`
     }
   }
 `;
+export const ContainerModal = styled.div`
+margin-right: auto;
+display: flex;
+justify-content: start;
+`;
+export const Text = styled.p`
+margin-top: 20px;
+margin-bottom: 18px;
+text-align: start;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
+`;
+
+
+
+export const Male = styled.div`
+margin-right: 50px;
+margin-left: auto;
+`;
+export const Label = styled.label`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+margin-top: 32px;
+margin-bottom: 16px;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
+`;
+
+export const LabelComments = styled.label`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 32px;
+width: 100%;
+font-weight: ${props => props.theme.fontWeights.middle};
+font-size: ${props => props.theme.fontSizes.ms};
+line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
+`;
+
+export const ContainerBtn = styled.div`
+
+@media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+`;
+export const WrapperModal = styled.div`
+display:flex;
+margin-right: auto;
+`
