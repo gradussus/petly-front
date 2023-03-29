@@ -11,7 +11,7 @@ export const ModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
-  z-index: 10;
+  z-index: 1000;
   background-color: rgba(17, 17, 17, 0.6);
 `;
 export const ModalContent = styled.div`
