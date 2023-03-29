@@ -14,9 +14,13 @@ import darinaUrl from './FooterModal/Images/darina.jpg';
 import ivanUrl from './FooterModal/Images/ivan.jpg';
 import mykolaUrl from './FooterModal/Images/mykola.jpg';
 import fedirUrl from './FooterModal/Images/fedor.jpg';
+import volodymyrUrl from './FooterModal/Images/volodymyr.jpg';
+import innaUrl from './FooterModal/Images/inna.jpg';
+import valeriiaUrl from './FooterModal/Images/valeriia.jpg';
+import veronikaUrl from './FooterModal/Images/veronika.jpg';
 
 export const Footer = () => {
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
     return <SC.FooterContainer>
         <SC.FooterSection>
         <SC.FooterContent>© 2023 All Rights Reserved</SC.FooterContent>
@@ -42,16 +46,23 @@ export const Footer = () => {
                         </a>
                     </SC.TeamCard>
                     <SC.TeamCard>
-                        <a href="https://github.com/Natali2721" target="_blank" rel="noreferrer" class="team-link">
-                            <SC.TeamImage src={nataliUrl} loading="lazy" alt="Natali" class="team-image"/>
-                            <SC.TeamName>Natali</SC.TeamName>
-                            <SC.TeamRole>Developer</SC.TeamRole>
-                        </a>
-                    </SC.TeamCard>
-                    <SC.TeamCard>
                         <a href="https://github.com/IvanBlazhko" target="_blank" rel="noreferrer" class="team-link">
                             <SC.TeamImage src={ivanUrl} loading="lazy" alt="Ivan"/>
                             <SC.TeamName>Ivan</SC.TeamName>
+                            <SC.TeamRole>Team Lead (front part)</SC.TeamRole>
+                        </a>
+                    </SC.TeamCard>
+                    <SC.TeamCard>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={volodymyrUrl} loading="lazy" alt="Volodymyr"/>
+                            <SC.TeamName>Volodymyr</SC.TeamName>
+                            <SC.TeamRole>Team Lead QA</SC.TeamRole>
+                        </a>
+                    </SC.TeamCard>
+                    <SC.TeamCard>
+                        <a href="https://github.com/Natali2721" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={nataliUrl} loading="lazy" alt="Natali" class="team-image"/>
+                            <SC.TeamName>Natali</SC.TeamName>
                             <SC.TeamRole>Developer</SC.TeamRole>
                         </a>
                     </SC.TeamCard>
@@ -109,6 +120,27 @@ export const Footer = () => {
                             <SC.TeamImage src={fedirUrl} loading="lazy" alt="Fedir"/>
                             <SC.TeamName>Fedir</SC.TeamName>
                             <SC.TeamRole>Developer</SC.TeamRole>
+                        </a>
+                    </SC.TeamCard>
+                    <SC.TeamCard>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={innaUrl} loading="lazy" alt="Inna"/>
+                            <SC.TeamName>Inna</SC.TeamName>
+                            <SC.TeamRole>QA Engineer</SC.TeamRole>
+                        </a>
+                    </SC.TeamCard>
+                    <SC.TeamCard>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={valeriiaUrl} loading="lazy" alt=" Valeriia"/>
+                            <SC.TeamName> Valeriia</SC.TeamName>
+                            <SC.TeamRole>QA Engineer</SC.TeamRole>
+                        </a>
+                    </SC.TeamCard>
+                    <SC.TeamCard>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer" class="team-link">
+                            <SC.TeamImage src={veronikaUrl} loading="lazy" alt="Veronika"/>
+                            <SC.TeamName>Veronika</SC.TeamName>
+                            <SC.TeamRole>QA Engineer</SC.TeamRole>
                         </a>
                     </SC.TeamCard>
                 </SC.TeamWrapper>

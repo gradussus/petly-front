@@ -206,7 +206,7 @@ export const BackgroundR = styled.img`
   @media (${props => props.theme.media.desktop}) {
     align-items: flex-end;
     width: calc(100vw - 70%);
-    height: calc(100vh - 45%);
+    height: calc(100vh - 65%);
     bottom: 0;
     right: 0;
   };
