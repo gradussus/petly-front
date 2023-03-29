@@ -62,12 +62,14 @@ justify-content: start;
 export const Text = styled.p`
 margin-top: 20px;
 margin-bottom: 18px;
+margin-right: auto;
 text-align: start;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
 @media screen and (min-width: 768px) {
   font-size: ${props => props.theme.fontSizes.ml};
+  margin-bottom: 31px;
   }
 `;
 
@@ -76,19 +78,25 @@ line-height: ${props => props.theme.lineHeights.body};
 export const Male = styled.div`
 margin-right: 50px;
 margin-left: auto;
+margin-bottom: 32px;
+@media screen and (min-width: 768px) {
+  margin-bottom: 40px;
+  }
 `;
 export const Label = styled.label`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 width: 100%;
-margin-top: 32px;
+
 margin-bottom: 16px;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
 @media screen and (min-width: 768px) {
   font-size: ${props => props.theme.fontSizes.ml};
+  
+  margin-bottom: 28px;
   }
 `;
 
@@ -103,6 +111,7 @@ font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
 @media screen and (min-width: 768px) {
   font-size: ${props => props.theme.fontSizes.ml};
+  margin-top: 28px;
   }
 `;
 
