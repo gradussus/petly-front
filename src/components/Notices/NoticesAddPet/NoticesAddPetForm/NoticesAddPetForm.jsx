@@ -82,7 +82,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
         },
       }
     );
-  
+
     return response.data;
   };
 
@@ -93,10 +93,10 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
 
     if (title && namePet && birth && breed && location && comments){
      birthDate = birth.split('-').reverse().join('.');
-     
+
      const data = {birthDate,title, name: namePet, breed, location, price: convNumber, comments,sex: activeSex, category: typeOfAddActive};
      console.log(data);
-     
+
     createNewPets(token, data, image);
     resetForm();
     toggleModal();
@@ -104,7 +104,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
     toast.error('Please fill correct all fields', { theme: 'colored' })
   }
 
-    
+
   };
   const ClickOnSex = e => {
     setActiveSex(e.target.name);
@@ -116,14 +116,14 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
       case 'sell':
         seTypeOfAddActive(type);
         break;
-    
+
       case 'lost/found':
         seTypeOfAddActive("lost-found");
         break;
       case 'in good hands':
         seTypeOfAddActive("for-free");
         break;
-    
+
       default:
         seTypeOfAddActive("for-free");
     }
@@ -258,12 +258,12 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                 type="text"
                 name="comments"
               />
-           
+
 
             <Wrapper>
             <ContainerBtn>
               <CancelBtn onClick={() => setStep(0)}>Back</CancelBtn>
-              <DoneBtn>Done</DoneBtn>
+              <NextBtn>Done</NextBtn>
               </ContainerBtn>
             </Wrapper>
           </>
