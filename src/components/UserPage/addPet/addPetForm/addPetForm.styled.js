@@ -79,7 +79,10 @@ export const PetFormButtons = styled.div`
 export const PetFormBack = styled.div`
   border: 2px solid #f59256;
   border-radius: 40px;
-  padding: 10px 28px;
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
   font-weight: 500;
   font-size: 20px;
   line-height: 27px;
@@ -102,7 +105,10 @@ export const PetFormSubmit = styled.button`
   cursor: pointer;
   background: #f59256;
   border-radius: 40px;
-  padding: 10px 60px;
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
   font-weight: 500;
   font-size: 20px;
   line-height: 27px;

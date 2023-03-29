@@ -6,8 +6,8 @@ export const FileInput = styled.input`
   opacity: 0;
   visibility: hidden;
   /* background-color: red;
-width: 100%;
-height: 100% */
+  width: 100%;
+  height: 100% */
 `;
 export const LabelFileInput = styled.label`
   width: 140px;
@@ -17,7 +17,7 @@ export const LabelFileInput = styled.label`
   margin-right: auto;
   padding: 36px;
 `;
-export const CommentsInput = styled.textarea`
+export const CommentsInput = styled(Field)`
   width: 100%;
   
   box-sizing: border-box;
