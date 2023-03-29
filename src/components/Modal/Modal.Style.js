@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ModalBackdrop = styled.div`
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   display: flex;
   justify-content: center;

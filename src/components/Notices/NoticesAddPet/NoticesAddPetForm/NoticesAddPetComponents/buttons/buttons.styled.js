@@ -40,6 +40,9 @@ export const DoneBtn = styled.button`
   line-height: 27px;
   transition: all 0.3s;
   margin-top: 12px;
+  @media screen and (min-width: 768px) {
+    padding: 9px 65px;
+  }
 
   /* margin-right: 20px;
   width: 180px; */
@@ -94,6 +97,8 @@ export const Wrapper = styled.div`
 
 export const TypeOfSexBtn = styled.button`
   width: 100%;
+  font-weight: 500;
+  font-size: 20px;
   background-color: transparent;
   color: ${theme.colors.black};
   border: none;
@@ -104,6 +109,8 @@ export const TypeOfSexBtn = styled.button`
 `;
 export const ActiveTypeOfSexBtn = styled.button`
   width: 100%;
+  font-weight: 500;
+  font-size: 20px;
   background-color: transparent;
   color: ${theme.colors.accent};
   border: none;

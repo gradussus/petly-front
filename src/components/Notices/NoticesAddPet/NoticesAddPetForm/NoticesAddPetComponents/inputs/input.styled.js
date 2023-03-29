@@ -25,6 +25,7 @@ export const CommentsInput = styled.textarea`
   margin-right: auto;
   border-radius: ${theme.radii.large};
   margin-bottom: 40px;
+  margin-top: 12px;
   padding: 12px 32px;
   border: ${theme.borders.normal};
   background: ${theme.colors.background};
@@ -84,16 +85,17 @@ export const Mandatory = styled.span`
   color: ${p => p.theme.colors.activeAccent};
 `;
 export const Text = styled.p`
-
 margin: 0;
 margin-top: 20px;
 margin-bottom: 8px;
+margin-right: auto;
 text-align: start;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
 @media screen and (min-width: 768px) {
   font-size: ${props => props.theme.fontSizes.ml};
+  margin-bottom: 12px;
   }
 `;
 
