@@ -6,8 +6,6 @@ export const OurFriends = ({ friends }) => {
     return null;
   }
 
-  // console.log(friends);
-
   return (
     <FriendsList>
       <Card friends={friends} />

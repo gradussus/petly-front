@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
+display: none;
 @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -15,7 +16,7 @@ export const FooterContainer = styled.footer`
     height: 30px;
     position: fixed;
     width: 100vw;
-    z-index: 101;
+    z-index: 1001;
 };  
 `;
 
@@ -65,37 +66,34 @@ export const MenuItemLink = styled.a`
     };
 `;
 
-/********** */
+/********** Modal */
 
 export const TeamWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    // margin: -20px;
     max-height: 95%;
+    width: 180px;
     overflow: auto;
+    background-color: #fff;
+    border-radius: 15px;
 
     @media screen and (min-width: 460px) {
-        // margin-top: 70px;
-        width: 240px;
+        width: 360px;
     }
 
     @media screen and (max-width: (768px - 1)) {
-        // margin-top: 70px;
-        width: 320px;
+        width: 420px;
     }
 
-    background-color: #FFFFFF;
-    border-radius: 15px;
-
     @media screen and (min-width: 768px) {
-        width: 600px;
+        margin: -30px;
+        width: 480px;
         border-radius: 25px;
     }
 
     @media screen and (min-width: 1280px) {
         margin: -30px;
-
-        // width: 800px;
+        width: 480px;
     }
 `;
 
