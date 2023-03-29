@@ -183,7 +183,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
             {step === 1 ? (
               <>
                 <TypeOfAddNav>
-                  <div>1111</div>
                   <TypeofAddBtn
                     onClick={onTypeOfClick}
                     name="lost/found"
