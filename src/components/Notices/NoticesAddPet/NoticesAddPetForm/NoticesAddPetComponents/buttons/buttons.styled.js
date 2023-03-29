@@ -43,6 +43,10 @@ export const DoneBtn = styled.button`
   @media screen and (min-width: 768px) {
     padding: 9px 65px;
   }
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0;
+  }
 
   /* margin-right: 20px;
   width: 180px; */
@@ -59,6 +63,10 @@ export const CancelBtn = styled(TypeofAddBtn)`
   width: 180px;
   padding: 9px 28px;
   margin-left: 0;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0 0 20px;
+  }
 `;
 // export const BackBtn = styled(TypeofAddBtn)`
 //   padding: 9px 101px;
@@ -73,12 +81,8 @@ export const NextBtn = styled.button`
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
-  //font-weight: 500;
   font-size: 20px;
-  //line-height: 27px;
   transition: all 0.3s;
-  //margin-right: 20px;
-  //width: 180px;
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
   cursor: pointer;
@@ -86,12 +90,44 @@ export const NextBtn = styled.button`
   &.active {
     background: ${theme.colors.backgroundSecondary};
   }
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0;
+  }
+`;
+
+export const AddPetFormError = styled.div`
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 20px;
+`;
+
+export const AddPetFormErrorLocation = styled.div`
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 20px;
+`;
+
+export const AddPetFormErrorComment = styled.div`
+  color: red;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   max-width: 380px;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+  }
 `;
 
 export const TypeOfSexBtn = styled.button`

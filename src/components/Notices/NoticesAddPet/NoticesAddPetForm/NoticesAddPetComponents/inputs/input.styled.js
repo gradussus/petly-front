@@ -10,16 +10,27 @@ export const FileInput = styled.input`
   height: 100% */
 `;
 export const LabelFileInput = styled.label`
-  width: 140px;
-  height: 140px;
   background: #fdf7f2;
   border-radius: 20px;
-  margin-right: auto;
-  padding: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 140px;
+  width: 140px;
+  margin: 0 auto;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 45px;
+    left: 45px;
+  }
+  //padding: 36px;
 `;
 export const CommentsInput = styled(Field)`
   width: 100%;
-  
+
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -84,26 +95,28 @@ export const TypeOfAddNav = styled.div`
 export const Mandatory = styled.span`
   color: ${p => p.theme.colors.activeAccent};
 `;
+export const FileWrapper = styled.div`
+  padding: 0 20px;
+`;
+
 export const Text = styled.p`
-margin: 0;
-margin-top: 20px;
-margin-bottom: 8px;
-margin-right: auto;
-text-align: start;
-font-weight: ${props => props.theme.fontWeights.middle};
-font-size: ${props => props.theme.fontSizes.ms};
-line-height: ${props => props.theme.lineHeights.body};
-@media screen and (min-width: 768px) {
-  font-size: ${props => props.theme.fontSizes.ml};
-  margin-bottom: 12px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  margin-right: auto;
+  text-align: start;
+  font-weight: ${props => props.theme.fontWeights.middle};
+  font-size: ${props => props.theme.fontSizes.ms};
+  line-height: ${props => props.theme.lineHeights.body};
+  @media screen and (min-width: 768px) {
+    font-size: ${props => props.theme.fontSizes.ml};
+    margin-bottom: 12px;
   }
 `;
 
-
 export const ContainerImg = styled.div`
-display: flex;
-justify-content: start;
-margin-bottom: 28px;
-margin-right: auto;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 28px;
+  margin-right: auto;
 `;
-

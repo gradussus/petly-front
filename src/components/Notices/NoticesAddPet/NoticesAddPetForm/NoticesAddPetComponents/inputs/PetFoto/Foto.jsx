@@ -4,46 +4,52 @@ import { LabelFile } from '../input';
 import { useState } from 'react';
 import { ReactComponent as CrossSvg } from '../../img/Cross.svg';
 
-import { Text } from '../input.styled';
+import { FileWrapper, Text } from '../input.styled';
 
-export const FileInput = ({setToFormFile}) => {
-    const [answerData, setAnswerData] = useState(null);
+export const FileInput = ({ setToFormFile }) => {
+  const [answerData, setAnswerData] = useState(null);
 
+  const handleChange = e => {
+    let file = e.target.files[0];
 
-    const handleChange = (e) => {
+    const reader = new FileReader();
 
-        let file = e.target.files[0];
+    reader.onloadend = function () {
+      setAnswerData(reader.result);
+      setToFormFile(file);
+    };
 
-
-        const reader  = new FileReader();
-
-          reader.onloadend = function () {
-            setAnswerData(reader.result);
-            setToFormFile(file);
-          }
-
-          if (file) {
-            setAnswerData(reader.readAsDataURL(file));
-          } else {
-            setAnswerData('');
-          }
-
-        }
-
-    return (
-        <>
-        <Text>Load the pet's image</Text>
-
-          {!answerData ?
-        <LabelFile>
-          <CrossSvg/>
-        <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
-       </LabelFile>
-         :
-        <LabelFile>
-
-         <img src={answerData} alt='' width={140} onClick={()=>setAnswerData(null)} />
-       </LabelFile>}
-        </>
-    );
+    if (file) {
+      setAnswerData(reader.readAsDataURL(file));
+    } else {
+      setAnswerData('');
+    }
   };
+
+  return (
+    <FileWrapper>
+      <Text>Load the pet's image</Text>
+
+      {!answerData ? (
+        <LabelFile>
+          <CrossSvg />
+          <SC.FileInput
+            type="file"
+            name="file"
+            accept="image/*"
+            onChange={handleChange}
+          ></SC.FileInput>
+        </LabelFile>
+      ) : (
+        <LabelFile>
+          <img
+            src={answerData}
+            alt=""
+            width={140}
+            onClick={() => setAnswerData(null)}
+          />
+        </LabelFile>
+      )}
+    </FileWrapper>
+  );
+};
