@@ -66,7 +66,12 @@ text-align: start;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
 `;
+
+
 
 export const Male = styled.div`
 margin-right: 50px;
@@ -82,15 +87,23 @@ margin-bottom: 16px;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
 `;
+
 export const LabelComments = styled.label`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: 32px;
+width: 100%;
 font-weight: ${props => props.theme.fontWeights.middle};
 font-size: ${props => props.theme.fontSizes.ms};
 line-height: ${props => props.theme.lineHeights.body};
+@media screen and (min-width: 768px) {
+  font-size: ${props => props.theme.fontSizes.ml};
+  }
 `;
 
 export const ContainerBtn = styled.div`

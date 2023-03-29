@@ -58,6 +58,13 @@ export const CancelBtn = styled(TypeofAddBtn)`
   margin-bottom: 0px;
   width: 180px;
 `;
+// export const BackBtn = styled(TypeofAddBtn)`
+//   padding: 9px 101px;
+//   margin-right: 20px;
+//   margin-top: 0px;
+//   margin-bottom: 0px;
+//   /* width: 180px; */
+// `;
 export const NextBtn = styled.div`
   padding: 10px 28px;
   background: #ffffff;
