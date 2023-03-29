@@ -76,6 +76,7 @@ export const TeamWrapper = styled.div`
     overflow: auto;
     background-color: #fff;
     border-radius: 15px;
+
     @media screen and (min-width: 460px) {
         width: 360px;
     };
@@ -100,6 +101,7 @@ export const TeamCard = styled.div`
     color: inherit;
     margin: 10px 15px;
     width: calc((100% - 60px) / 2);
+
     @media screen and (min-width: 768px) {
         width: calc((100% - 120px) / 4);
     };
@@ -108,9 +110,13 @@ export const TeamCard = styled.div`
         width: calc((100% - 160px) / 4);
     };
     &:hover {
-        transform: translate(5px, 15px);
+        transform: translate(5px, 5px);
     };
-`;   
+`; 
+
+export const TeamLink = styled.a`
+color: #000;
+`
 
 export const TeamImage = styled.img`
     z-index: 100;
