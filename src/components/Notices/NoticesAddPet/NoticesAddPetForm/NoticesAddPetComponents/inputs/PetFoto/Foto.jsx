@@ -11,7 +11,6 @@ export const FileInput = ({setToFormFile}) => {
 
 
     const handleChange = (e) => {
-        console.log('log file' , e.target.files[0]);
 
         let file = e.target.files[0];
 
@@ -30,19 +29,19 @@ export const FileInput = ({setToFormFile}) => {
           }
 
         }
- 
+
     return (
         <>
         <Text>Load the pet's image</Text>
-       
+
           {!answerData ?
         <LabelFile>
-          <CrossSvg/> 
+          <CrossSvg/>
         <SC.FileInput type='file' name="file" accept="image/*" onChange={handleChange} ></SC.FileInput>
        </LabelFile>
          :
         <LabelFile>
-          
+
          <img src={answerData} alt='' width={140} onClick={()=>setAnswerData(null)} />
        </LabelFile>}
         </>

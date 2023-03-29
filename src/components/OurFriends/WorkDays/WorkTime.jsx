@@ -13,7 +13,7 @@ import {
 export const WorkTime = ({ workDays }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPopoverClicked, setIsPopoverClicked] = useState(false);
-  // console.log(workDays);
+
 
   const DAYS_OF_WEEK = ['MN', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
   const currentDayIndex = new Date().getDay();

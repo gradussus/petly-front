@@ -18,7 +18,6 @@ const NoticesPage = () => {
   }
 
   const test = useParams();
-  console.log(test);
 
   return (
     <Section>
