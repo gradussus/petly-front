@@ -209,7 +209,6 @@ export const BtnContact = styled.a`
     transform: scale(1.1);
   }
 `;
-
 export const BtnAdd = styled.button`
   width: 240px;
   padding-top: 9px;
