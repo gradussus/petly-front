@@ -56,9 +56,9 @@ export const DoneBtn = styled.button`
 export const CancelBtn = styled(TypeofAddBtn)`
   /* width: 180px; */
   padding: 9px 92px;
-  margin-left: auto;
-  margin-right: auto;
-  /* margin-left: 0; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin-left: 32px;
   @media screen and (min-width: 768px) {
     padding: 9px 65px;
   }
@@ -98,7 +98,12 @@ export const NextBtn = styled.button`
 export const Wrapper = styled.div`
   display: flex;
   max-width: 380px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-right: auto;
+  margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+  margin-bottom: 40px;
+  }
 `;
 
 export const TypeOfSexBtn = styled.button`

@@ -78,10 +78,10 @@ line-height: ${props => props.theme.lineHeights.body};
 export const Male = styled.div`
 margin-right: 50px;
 margin-left: auto;
-margin-bottom: 32px;
-@media screen and (min-width: 768px) {
+/* margin-bottom: 32px; */
+/* @media screen and (min-width: 768px) {
   margin-bottom: 40px;
-  }
+  } */
 `;
 export const Label = styled.label`
 display: flex;
