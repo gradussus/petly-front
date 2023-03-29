@@ -21,8 +21,8 @@
 
 .modal__content {
     position: relative;
-    top: -330px;
-    padding: 20px;
+    top: -400px;
+    padding: 15px;
     border-radius: 15px;
     transform: scale(0.5);
     transition: 0.4s all;
