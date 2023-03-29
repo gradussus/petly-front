@@ -43,7 +43,6 @@ export const DoneBtn = styled.button`
   @media screen and (min-width: 768px) {
     padding: 9px 65px;
   }
-
   /* margin-right: 20px;
   width: 180px; */
   color: ${theme.colors.white};
