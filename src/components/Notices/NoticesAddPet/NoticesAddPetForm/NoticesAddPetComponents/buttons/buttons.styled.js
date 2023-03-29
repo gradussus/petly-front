@@ -54,7 +54,6 @@ export const DoneBtn = styled.button`
     background: ${theme.colors.backgroundSecondary};
   }
 `;
-
 export const CancelBtn = styled(TypeofAddBtn)`
   /* width: 180px; */
   padding: 9px 92px;
