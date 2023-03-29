@@ -31,18 +31,13 @@ export const TypeofAddBtnActive = styled(TypeofAddBtn)`
 `;
 
 export const DoneBtn = styled.button`
-  padding: 9px 101px;
+  margin-top: 12px;
+  padding: 9px 60px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
-  font-weight: 500;
   font-size: 20px;
-  line-height: 27px;
   transition: all 0.3s;
-  margin-top: 12px;
-
-  /* margin-right: 20px;
-  width: 180px; */
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
   cursor: pointer;
@@ -53,10 +48,9 @@ export const DoneBtn = styled.button`
 `;
 
 export const CancelBtn = styled(TypeofAddBtn)`
-  margin-right: 20px;
-  margin-top: 0px;
-  margin-bottom: 0px;
   width: 180px;
+  padding: 9px 28px;
+  margin-left: 0;
 `;
 // export const BackBtn = styled(TypeofAddBtn)`
 //   padding: 9px 101px;
@@ -65,18 +59,18 @@ export const CancelBtn = styled(TypeofAddBtn)`
 //   margin-bottom: 0px;
 //   /* width: 180px; */
 // `;
-export const NextBtn = styled.div`
-  padding: 10px 28px;
+export const NextBtn = styled.button`
+  margin-top: 12px;
+  padding: 9px 60px;
   background: #ffffff;
   border: 2px solid #f59256;
   border-radius: 40px;
-  font-weight: 500;
+  //font-weight: 500;
   font-size: 20px;
-  line-height: 27px;
+  //line-height: 27px;
   transition: all 0.3s;
-
-  margin-right: 20px;
-  width: 180px;
+  //margin-right: 20px;
+  //width: 180px;
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
   cursor: pointer;
@@ -89,7 +83,7 @@ export const NextBtn = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   max-width: 380px;
-  margin-right: auto;
+  margin: 0 auto;
 `;
 
 export const TypeOfSexBtn = styled.button`
