@@ -42,6 +42,7 @@ axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
 
 export const NoticesAddPetForm = ({ toggleModal }) => {
   const { token } = useAuth();
+
   const [step, setStep] = useState(1);
 
   const [activeSex, setActiveSex] = useState('male');
