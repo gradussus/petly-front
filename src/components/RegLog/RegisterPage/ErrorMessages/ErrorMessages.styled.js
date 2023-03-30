@@ -9,7 +9,7 @@ export const ErrorWrapper = styled.div`
 `
 export const Border = styled.div`
     width: 100%;
-    height: 50px;
+    height: 44px;
     outline: 1px #E2001A solid;
     border-radius: ${theme.radii.large};
     position: absolute;
@@ -20,7 +20,7 @@ export const Border = styled.div`
 
 export const Dagger = styled.img`
     position:absolute;
-    top: 15px;
+    top: 11px;
     right: 20px;
     z-index: 4;
 `
