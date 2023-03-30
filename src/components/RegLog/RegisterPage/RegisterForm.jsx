@@ -31,9 +31,9 @@ export const RegisterForm = () => {
     { email, password, city, phone, name },
     { resetForm }
   ) => {
+    
     dispatch(registerNewUser({ email, password, city, phone, name }));
 
-    resetForm();
   };
 
   const firstHandleSubmit = values => {

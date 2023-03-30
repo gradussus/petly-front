@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from '../../../hooks/useAuth';
 import { toast } from 'react-toastify';
 import { userLogIn } from '../../../redux/auth/operations';
-import { Wrapper } from '../RegisterPage/RegisterForm.styled';
+import { LoginWrapper } from '../RegisterPage/RegisterForm.styled';
 import { Input } from './Input/Input';
 import { AccentButton } from './Buttons/Buttons';
 import { AuthForm } from 'components/RegLog/AuthForm/AuthForm';
@@ -36,7 +36,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Wrapper>
+    <LoginWrapper>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -58,6 +58,6 @@ export const LoginForm = () => {
           <RedirectLink onClick={() => handleSubmit} />
         </AuthForm>
       </Formik>
-    </Wrapper>
+    </LoginWrapper>
   );
 };
