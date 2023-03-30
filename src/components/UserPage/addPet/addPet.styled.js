@@ -25,7 +25,7 @@ export const AddPetButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2px;
+  padding-right: 2px;
   @media (min-width: 768px) {
     &:hover {
       background: #f5a675;

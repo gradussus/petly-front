@@ -59,6 +59,13 @@ export const Box = styled.div`
 export const Link = styled.a`
   color: ${p => p.theme.colors.accent};
   font-weight: 500;
+  transition: color 0.3s;
+
+  @media (min-width: 768px) {
+    &:hover {
+      color: #000;
+    }
+  }
 `;
 
 export const Data = styled.span`

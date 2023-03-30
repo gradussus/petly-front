@@ -6,8 +6,8 @@ import { ReactComponent as CrossSvg } from '../../img/Cross.svg';
 
 import { FileWrapper, Text } from '../input.styled';
 
-export const FileInput = ({ setToFormFile }) => {
-  const [answerData, setAnswerData] = useState(null);
+export const FileInput = ({ setToFormFile, image }) => {
+  const [, setAnswerData] = useState(null);
 
   const handleChange = e => {
     let file = e.target.files[0];
@@ -30,7 +30,7 @@ export const FileInput = ({ setToFormFile }) => {
     <FileWrapper>
       <Text>Load the pet's image</Text>
 
-      {!answerData ? (
+      {!image ? (
         <LabelFile>
           <CrossSvg />
           <SC.FileInput
@@ -42,8 +42,14 @@ export const FileInput = ({ setToFormFile }) => {
         </LabelFile>
       ) : (
         <LabelFile>
+          <SC.FileInput
+            type="file"
+            name="file"
+            accept="image/*"
+            onChange={handleChange}
+          ></SC.FileInput>
           <img
-            src={answerData}
+            src={URL.createObjectURL(image)}
             alt=""
             width={140}
             onClick={() => setAnswerData(null)}
