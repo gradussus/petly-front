@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import {
@@ -12,8 +12,30 @@ import {
 import NoticesSearch from '../../components/Notices/NoticesSearch/NoticesSearch';
 import NoticesButtons from '../../components/Notices/NoticesButtons/NoticesButtons';
 import NoticesAddPet from '../../components/Notices/NoticesAddPet/NoticesAddPet';
+import axios from 'axios';
 
 const NoticePage = () => {
+  const [userOwnPetData, setData] = useState({});
+
+  axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
+
+  const createNewPets = async (token, credentials, image) => {
+    const response = await axios.post(
+      '/notices/create',
+      {
+        image,
+        ...credentials,
+      },
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    setData(response.data);
+  };
+
   return (
     <NoticeBody>
       <NoticeTitle>Find your favorite pet</NoticeTitle>
@@ -23,10 +45,10 @@ const NoticePage = () => {
       <NoticesHead>
         <NoticesButtons />
         <NoticesHeadBtn>
-          <NoticesAddPet />
+          <NoticesAddPet createNewPets={createNewPets} />
         </NoticesHeadBtn>
       </NoticesHead>
-      <Outlet />
+      <Outlet context={userOwnPetData} />
     </NoticeBody>
   );
 };

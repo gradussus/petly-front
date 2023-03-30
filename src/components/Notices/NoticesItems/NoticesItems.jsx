@@ -3,7 +3,12 @@ import React, { useEffect, useState } from 'react';
 import NoticesItem from './NoticesItem';
 import Loader from '../../loader/loader';
 
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import {
+  useNavigate,
+  useOutletContext,
+  useParams,
+  useSearchParams,
+} from 'react-router-dom';
 import { ItemPetModal } from '../ItemPetModal/ItemPetModal';
 import { ModalSample } from '../../Modal/Modal';
 import { useAuth } from '../../../hooks/useAuth';
@@ -29,6 +34,8 @@ const NoticesItems = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('query') ?? null;
 
+  const userOwnPetData = useOutletContext();
+
   const [data, setData] = useState(null);
   const [favoriteData, setFavoriteData] = useState([]);
   const [noticesUser, setNoticesUser] = useState([]);
@@ -44,6 +51,10 @@ const NoticesItems = () => {
 
   const onChangeModal = () => toggleModal();
   const handleChange = id => setNoticeId(id);
+
+  useEffect(() => {
+    setNoticesUser(prev => [userOwnPetData, ...prev]);
+  }, [userOwnPetData]);
 
   useEffect(() => {
     if (token) {
