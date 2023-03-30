@@ -3,47 +3,34 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const NavsBody = styled.div`
-  display: flex;
-  position: absolute;
-  flex-direction: column-reverse;
-  height: 100%;
-  background: ${props => props.theme.colors.background};
-  z-index: 989;
-  padding-top: 88px;
-  left: 0;
-  overflow: scroll;
-  top: -100%;
-  justify-content: flex-end;
-  gap: 20px;
-  padding-top: 20px;
-  transition: top 0.3s;
+  display: none;
 
-  &.active {
-    top: 88px;
+  @media (${props => props.theme.media.desktop}) {
+    display: flex;
+    flex: 1 1 auto;
   }
 
   @media (${props => props.theme.media.tablet}) {
     display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;
-    position: relative;
-    top: 0;
-    padding-top: 0px;
-
-    &.active {
-      top: 0;
-    }
+    // flex: 1 1 auto;
   }
 
-  @media (${props => props.theme.media.desktop}) {
+  @media (${props => props.theme.media.mobile}) {
     display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;
-    position: relative;
-    top: 0;
-    padding-top: 0px;
+    position: absolute;
+    top: -100%;
+    z-index: 989;
+    left: 0;
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: 100%;
+    overflow: scroll;
+    transition: top 0.3s;
+    padding-top: 88px;
+    background: ${props => props.theme.colors.background};
 
     &.active {
+      display: flex;
       top: 0;
     }
   }
@@ -51,42 +38,69 @@ export const NavsBody = styled.div`
 
 export const NavMenu = styled.nav`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
   flex: 1 1 auto;
-  background: ${props => props.theme.colors.background};
-  padding-top: 20px;
-  width: 100vw;
 
   @media (${props => props.theme.media.tablet}) {
-    position: fixed;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    left: 0px;
+    position: absolute;
     top: -100%;
+    left: 0;
+    z-index: 989;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    background: ${props => props.theme.colors.background};
+    padding-top: 88px;
     transition: top 0.3s;
+    a {
+      display: block;
+      text-align: center;
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
 
     &.active {
-      top: 88px;
+      top: 0;
     }
   }
-  @media (${props => props.theme.media.desktop}) {
-    flex-direction: row;
-    gap: 80px;
-    padding: 0;
+
+  @media (${props => props.theme.media.mobile}) {
+    display: block;
+
+    a {
+      display: block;
+      width: 100vw;
+      text-align: center;
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
   }
 `;
 
-export const NavButtonsContainer = styled.div`
+
+
+export const NavButtons = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: ${props => props.theme.colors.background};
   font-weight: ${props => props.theme.fontWeights.middle};
   font-size: ${props => props.theme.fontSizes.mx};
   line-height: ${props => props.theme.lineHeights.heading};
+
+  @media (max-width: 1279px) {
+    position: relative;
+    z-index: 991;
+  }
+
+  @media (${props => props.theme.media.mobile}) {
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 46px;
+    z-index: 990;
+  }
 `;
 
 export const NavItem = styled(NavLink)`

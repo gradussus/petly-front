@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavsBody, NavMenu, NavButtonsContainer } from './HeaderNavMenu.styled';
+import { NavsBody, NavMenu, NavButtons } from './HeaderNavMenu.styled';
 
 import HeaderNavMenuItem from './HeaderNavMenuItem';
 import LoginButton from '../HeaderNavButton/LoginButton';
@@ -29,13 +29,13 @@ const HeaderNavMenu = ({ handleMenu, menuOpen }) => {
           />
         ))}
       </NavMenu>
-      <NavButtonsContainer>
+      <NavButtons>
         {isLoggedIn ? (
           <AccountButton handleMenu={handleMenu} />
         ) : (
           <LoginButton handleMenu={handleMenu} />
         )}
-      </NavButtonsContainer>
+      </NavButtons>
     </NavsBody>
   );
 };
