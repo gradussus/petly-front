@@ -16,30 +16,12 @@ import { useNavigate } from 'react-router-dom';
 
 axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
 
-const NoticesAddPet = () => {
+const NoticesAddPet = ({ createNewPets }) => {
   const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
 
   const { token } = useAuth();
-
-  const createNewPets = async (token, credentials, image) => {
-    const response = await axios.post(
-      '/notices/create',
-      {
-        image,
-        ...credentials,
-      },
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    return response.data;
-  };
 
   const handleNavigate = () => {
     navigate('/notices/own');
