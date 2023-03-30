@@ -14,7 +14,7 @@ export const HeaderBody = styled.header`
       left: 0;
       width: 100vw;
       height: 88px;
-      z-index: 990;
+      // z-index: 990;
       background: ${props => props.theme.colors.background};
     }
   }
