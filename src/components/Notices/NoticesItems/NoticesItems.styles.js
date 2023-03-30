@@ -33,7 +33,6 @@ export const NoticesItemContent = styled.div`
 
 export const NoticesItemImg = styled.div`
   img {
-    object-fit: cover;
     height: 288px;
     width: 100%;
   }
