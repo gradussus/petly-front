@@ -16,7 +16,7 @@ const ItemPets = ({ id, name, breed, image, comments, birth, removePet }) => {
           Name: <span>{name}</span>
         </ItemPetsText>
         <ItemPetsText>
-          Date of birth: <span>{birth}</span>
+          Date of birth: <span>{birth.replace(/-/g, '.')}</span>
         </ItemPetsText>
         <ItemPetsText>
           Breed: <span>{breed}</span>

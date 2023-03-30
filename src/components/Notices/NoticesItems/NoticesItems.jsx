@@ -75,7 +75,7 @@ const NoticesItems = () => {
         }
       })();
     }
-  }, [token]);
+  }, [token, type]);
 
   useEffect(() => {
     if (noticeId) {
@@ -201,7 +201,6 @@ const NoticesItems = () => {
             favoriteData={favoriteData}
             setFavoriteData={setFavoriteData}
             noticeId={noticeId}
-            
           />
         </ModalSample>
       )}

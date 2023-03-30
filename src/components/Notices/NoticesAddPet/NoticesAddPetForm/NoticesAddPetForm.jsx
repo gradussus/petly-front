@@ -2,10 +2,9 @@ import { Formik, ErrorMessage, Form } from 'formik';
 import { toast } from 'react-toastify';
 import React, { useEffect } from 'react';
 
-import axios from 'axios';
 import { AddPetForm } from './NoticesAddPetComponents/form';
 import { useState } from 'react';
-import { useAuth } from '../../../../hooks/useAuth';
+
 import {
   TypeofAddBtn,
   CancelBtn,
@@ -38,11 +37,7 @@ import {
   AddPetFormErrorLocation,
 } from './NoticesAddPetComponents/buttons/buttons.styled';
 
-axios.defaults.baseURL = 'https://petly-vxdt.onrender.com';
-
-export const NoticesAddPetForm = ({ toggleModal }) => {
-  const { token } = useAuth();
-
+export const NoticesAddPetForm = ({ toggleModal, handleCreatePets }) => {
   const [step, setStep] = useState(1);
 
   const [activeSex, setActiveSex] = useState('male');
@@ -59,24 +54,6 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
   });
-
-  const createNewPets = async (token, credentials, image) => {
-    const response = await axios.post(
-      '/notices/create',
-      {
-        image,
-        ...credentials,
-      },
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    return response.data;
-  };
 
   const handleSubmit = (
     { title, namePet, birth, breed, location, price, comments },
@@ -100,9 +77,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
         category: typeOfAddActive,
       };
 
-      createNewPets(token, data, image);
-      resetForm();
-      toggleModal();
+      handleCreatePets(data, image);
     } else {
       toast.error('Please fill correct all fields', { theme: 'colored' });
     }
@@ -314,7 +289,7 @@ export const NoticesAddPetForm = ({ toggleModal }) => {
                     </AddPetFormError>
                   </FormAddPet>
                 ) : null}
-                <FileInput setToFormFile={setFile} />
+                <FileInput setToFormFile={setFile} image={image} />
                 <FormAddPet>
                   <LabelComments>Comments</LabelComments>
                   <CommentsInput

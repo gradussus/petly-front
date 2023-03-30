@@ -108,7 +108,7 @@ export const PetFormSubmit = styled.button`
   flex: 1 1 50%;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  align-items: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 27px;
@@ -117,6 +117,11 @@ export const PetFormSubmit = styled.button`
   @media (max-width: 767px) {
     text-align: center;
     width: 100%;
+  }
+  @media (min-width: 768px) {
+    &:hover {
+      background: #f5a675;
+    }
   }
 `;
 

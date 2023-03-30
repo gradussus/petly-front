@@ -41,7 +41,7 @@ export const NoticesAddPetButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2px;
+  padding-bottom: 8px;
   @media (min-width: 768px) {
     &:hover {
       background: ${props => props.theme.colors.backgroundSecondary};

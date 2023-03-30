@@ -135,7 +135,7 @@ const AddPetForm = ({ setShowModal, handleAddPet }) => {
                     type="date"
                     name="birthDate"
                     placeholder="Type date of birth"
-                    max={new Date().toISOString().split("T")[0]}
+                    max={new Date().toISOString().split('T')[0]}
                   />
                 </PetFormInputBody>
                 <PetFormInputBody>
