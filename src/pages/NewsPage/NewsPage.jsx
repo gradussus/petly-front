@@ -116,7 +116,7 @@ function News() {
         </LoaderBox>
       )}
       <Box>
-        {news.length > 0 &&
+        {news?.length > 0 &&
           filteredNews.map(newItem => (
             <Card key={newItem._id}>
               <NewsCard newItem={newItem} />

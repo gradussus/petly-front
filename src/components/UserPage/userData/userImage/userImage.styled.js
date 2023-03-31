@@ -4,6 +4,7 @@ export const UserImg = styled.div`
   margin-bottom: 32px;
 
   img {
+    object-fit: cover;
     width: 233px;
     height: 233px;
     margin: 0 auto;

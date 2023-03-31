@@ -33,6 +33,7 @@ export const NoticesItemContent = styled.div`
 
 export const NoticesItemImg = styled.div`
   img {
+    object-fit: cover;
     height: 288px;
     width: 100%;
   }
@@ -60,7 +61,6 @@ export const NoticesItemText = styled.div`
     flex: 0 0 60px;
   }
 `;
-
 
 export const NoticesItemBtn = styled.button`
   margin: 20px 0 12px;
