@@ -13,7 +13,7 @@ export const Border = styled.div`
     outline: 1px #E2001A solid;
     border-radius: ${theme.radii.large};
     position: absolute;
-    top: -0.5px;
+    top: 0px;
     right: 0px;
 
 `
