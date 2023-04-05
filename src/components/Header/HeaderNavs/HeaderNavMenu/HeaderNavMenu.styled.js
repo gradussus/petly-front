@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const NavsBody = styled.div`
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   position: absolute;
   flex-direction: column-reverse;
@@ -12,7 +12,6 @@ export const NavsBody = styled.div`
   z-index: 989;
   padding-top: 88px;
   left: 0;
-  overflow: scroll;
   top: -100%;
   justify-content: flex-end;
   gap: 20px;
@@ -115,4 +114,3 @@ export const NavItem = styled(NavLink)`
     font-size: ${props => props.theme.fontSizes.llx};
   }
 `;
-
