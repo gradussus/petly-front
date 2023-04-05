@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderBody = styled.header`
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   align-items: center;
   padding: 20px 0;
@@ -15,7 +15,7 @@ export const HeaderBody = styled.header`
       left: 0;
       width: 100vw;
       height: 88px;
-      // z-index: 990;
+      //z-index: 990;
       background: ${props => props.theme.colors.background};
     }
   }
@@ -63,4 +63,3 @@ export const BurgerMenu = styled.div`
     }
   }
 `;
-

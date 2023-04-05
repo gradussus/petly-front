@@ -58,6 +58,7 @@ export const NavMenu = styled.nav`
   background: ${props => props.theme.colors.background};
   padding-top: 20px;
   width: 100vw;
+  z-index: -1;
 
   @media (${props => props.theme.media.tablet}) {
     position: fixed;
